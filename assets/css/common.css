@@ -384,7 +384,7 @@ p { margin: 0 0 1em; }
   aspect-ratio: 16/10;
   background: var(--bg-soft);
   background-size: cover;
-  background-position: center;
+  background-position: top center;
 }
 .service-card .body { padding: 18px 20px 20px; }
 .service-card .grant {
@@ -768,7 +768,7 @@ th {
 }
 .service-spotlight .thumb {
   background-size: cover;
-  background-position: center;
+  background-position: top center;
   background-color: var(--bg-soft);
   min-height: 240px;
 }
