@@ -866,3 +866,317 @@ th {
   font-weight: 500;
 }
 .service-spotlight .info .more::after { content: " →"; }
+
+/* ============================================
+   多框架影響力分析 section
+   ============================================ */
+.section-analysis {
+  background: linear-gradient(180deg, var(--bg) 0%, #FAF6EC 100%);
+}
+.analysis-intro {
+  background: var(--bg-card);
+  padding: 22px 26px;
+  border-left: 4px solid var(--gold);
+  border-radius: var(--radius-sm);
+  margin-bottom: 36px;
+  box-shadow: var(--shadow);
+}
+.analysis-intro p {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+.framework-block {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px 30px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow);
+}
+.framework-label {
+  display: inline-block;
+  font-size: 0.78rem;
+  color: var(--gold);
+  background: rgba(184, 134, 11, 0.1);
+  padding: 4px 12px;
+  border-radius: 999px;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.framework-block h3 {
+  margin: 0 0 8px;
+  font-size: 1.4rem;
+  color: var(--ink);
+}
+.framework-desc {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+/* IOOI 流程圖 */
+.iooi-flow {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr auto 1fr;
+  gap: 6px;
+  align-items: stretch;
+}
+@media (max-width: 920px) {
+  .iooi-flow { grid-template-columns: 1fr; gap: 12px; }
+  .iooi-arrow { transform: rotate(90deg); padding: 4px 0; justify-content: center; }
+}
+.iooi-stage {
+  background: var(--bg-soft);
+  border-top: 4px solid var(--ink-mute);
+  border-radius: var(--radius-sm);
+  padding: 16px 14px;
+}
+.iooi-stage[data-color="found"]  { border-top-color: var(--role-found); }
+.iooi-stage[data-color="guard"]  { border-top-color: var(--role-guard); }
+.iooi-stage[data-color="act"]    { border-top-color: var(--role-act); }
+.iooi-stage[data-color="cont"]   { border-top-color: var(--role-cont); }
+.iooi-stage[data-color="gold"]   { border-top-color: var(--gold); }
+.iooi-step {
+  font-family: "Noto Serif TC", serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--gold);
+  line-height: 1;
+}
+.iooi-name {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  font-weight: 600;
+  margin: 4px 0 12px;
+  letter-spacing: 0.04em;
+}
+.iooi-stage ul {
+  padding-left: 16px;
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--ink);
+  line-height: 1.6;
+}
+.iooi-stage ul li { margin-bottom: 6px; }
+.iooi-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+/* 陪力卡 5 階段 */
+.peili-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+@media (max-width: 600px) {
+  .peili-grid { grid-template-columns: 1fr; gap: 10px; }
+}
+.peili-stage {
+  background: var(--bg-soft);
+  border-radius: var(--radius-sm);
+  padding: 14px 12px;
+  text-align: center;
+}
+.peili-num {
+  font-family: "Noto Serif TC", serif;
+  font-size: 1.4rem;
+  color: var(--gold);
+  font-weight: 600;
+}
+.peili-name {
+  font-family: "Noto Serif TC", serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 4px 0 2px;
+}
+.peili-meaning {
+  font-size: 0.75rem;
+  color: var(--ink-mute);
+  margin-bottom: 12px;
+}
+.peili-people {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: stretch;
+}
+.person-chip {
+  display: inline-block;
+  font-size: 0.72rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  background: var(--bg-card);
+  border-left: 3px solid var(--ink-mute);
+  text-align: left;
+}
+.person-chip[data-role="found"] { border-left-color: var(--role-found); color: var(--role-found); }
+.person-chip[data-role="guard"] { border-left-color: var(--role-guard); color: var(--role-guard); }
+.person-chip[data-role="act"]   { border-left-color: var(--role-act); color: var(--role-act); }
+.person-chip[data-role="cont"]  { border-left-color: var(--role-cont); color: var(--role-cont); }
+.person-chip-all {
+  font-size: 0.78rem;
+  padding: 4px 10px;
+  background: var(--gold);
+  color: #fff;
+  border-radius: 999px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.framework-insight {
+  background: rgba(184, 134, 11, 0.06);
+  border-radius: var(--radius-sm);
+  padding: 18px 22px;
+  border-left: 3px solid var(--gold);
+  margin-top: 20px;
+}
+.framework-insight h4 {
+  margin: 0 0 10px;
+  color: var(--gold);
+  font-size: 0.92rem;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+.framework-insight ul {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  line-height: 1.8;
+}
+.framework-insight ul li { margin-bottom: 4px; }
+
+/* 獎助金資源結構 */
+.grant-structure {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.grant-row {
+  display: grid;
+  grid-template-columns: 180px 60px 1fr;
+  gap: 16px;
+  align-items: center;
+  background: var(--bg-soft);
+  padding: 14px 18px;
+  border-radius: var(--radius-sm);
+}
+@media (max-width: 720px) {
+  .grant-row { grid-template-columns: 1fr; gap: 6px; }
+}
+.grant-tier-tag {
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 999px;
+  text-align: center;
+  color: #fff;
+}
+.grant-tier-tag[data-tier="global"]    { background: #B8860B; }
+.grant-tier-tag[data-tier="district"]  { background: #C49E60; }
+.grant-tier-tag[data-tier="club"]      { background: #2E7D5B; }
+.grant-tier-tag[data-tier="community"] { background: #5C7A6B; }
+.grant-count {
+  font-family: "Noto Serif TC", serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--gold);
+  text-align: center;
+}
+.grant-list {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+/* 未來可延伸的分析 */
+.framework-future {
+  background: var(--bg-card);
+  border: 1px dashed var(--gold-soft);
+  border-radius: var(--radius);
+  padding: 28px 30px;
+  margin-bottom: 24px;
+}
+.framework-future h3 {
+  margin: 0 0 8px;
+  color: var(--ink);
+  font-size: 1.2rem;
+}
+.future-intro {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+.future-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+@media (max-width: 920px) { .future-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .future-grid { grid-template-columns: 1fr; } }
+.future-card {
+  background: var(--bg-soft);
+  padding: 16px 18px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line-soft);
+}
+.future-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  color: var(--gold);
+  background: rgba(184,134,11,0.1);
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+.future-title {
+  font-weight: 600;
+  font-size: 0.98rem;
+  color: var(--ink);
+  margin-bottom: 6px;
+  font-family: "Noto Serif TC", serif;
+}
+.future-desc {
+  font-size: 0.82rem;
+  color: var(--ink-mute);
+  line-height: 1.65;
+}
+
+/* SROI-ready 結語 */
+.sroi-callout {
+  background: linear-gradient(135deg, var(--ink) 0%, #3A332A 100%);
+  color: #D6CFC2;
+  padding: 26px 30px;
+  border-radius: var(--radius);
+  margin-top: 8px;
+}
+.sroi-label {
+  font-size: 0.74rem;
+  color: var(--gold-soft);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  margin-bottom: 10px;
+}
+.sroi-callout p {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: #E5DFD2;
+  margin: 0 0 8px;
+}
+.sroi-callout p:last-child { margin-bottom: 0; }
+.sroi-callout strong { color: var(--gold-soft); }
