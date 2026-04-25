@@ -655,27 +655,23 @@ th {
 }
 
 /* ============================================
-   首頁 Hero — 9 位社友橫排
+   首頁 Hero — 9 位社友橫排（簡潔版）
    ============================================ */
 .people-strip {
   margin-top: 44px;
-  position: relative;
-  padding-bottom: 280px; /* 預留 hover-card 浮層空間 */
 }
 .people-strip-grid {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
-  gap: 10px;
-  max-width: 920px;
+  gap: 12px;
+  max-width: 940px;
   margin: 0 auto;
-  align-items: start;
 }
 @media (max-width: 920px) {
-  .people-strip-grid { grid-template-columns: repeat(5, 1fr); gap: 14px; }
-  .people-strip { padding-bottom: 0; }
+  .people-strip-grid { grid-template-columns: repeat(5, 1fr); gap: 18px; }
 }
 @media (max-width: 600px) {
-  .people-strip-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .people-strip-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
 }
 
 .person-tile {
@@ -683,14 +679,18 @@ th {
   text-align: center;
   text-decoration: none;
   color: inherit;
-  position: relative;
   cursor: pointer;
+  padding: 4px 2px 8px;
+  border-radius: var(--radius-sm);
+  transition: background .15s;
 }
+.person-tile:hover { background: rgba(184, 134, 11, 0.06); color: inherit; }
+
 .person-tile .avatar-circle {
-  width: 76px;
-  height: 76px;
+  width: 78px;
+  height: 78px;
   border-radius: 50%;
-  margin: 0 auto 8px;
+  margin: 0 auto 10px;
   border: 3px solid var(--gold);
   background-size: cover;
   background-position: center;
@@ -702,12 +702,11 @@ th {
   font-weight: 600;
   background-color: var(--bg-soft);
   color: var(--ink);
-  transition: transform .2s, box-shadow .2s, border-color .2s;
+  transition: transform .2s, box-shadow .2s;
 }
-.person-tile:hover .avatar-circle,
-.person-tile:focus-visible .avatar-circle {
-  transform: scale(1.06);
-  box-shadow: 0 4px 16px rgba(184, 134, 11, 0.4);
+.person-tile:hover .avatar-circle {
+  transform: scale(1.08);
+  box-shadow: 0 6px 18px rgba(184, 134, 11, 0.45);
 }
 .person-tile[data-role="found"] .avatar-circle { background-color: #EFE3DA; color: var(--role-found); border-color: var(--role-found); }
 .person-tile[data-role="guard"] .avatar-circle { background-color: #DCE6F0; color: var(--role-guard); border-color: var(--role-guard); }
@@ -715,132 +714,26 @@ th {
 .person-tile[data-role="cont"]  .avatar-circle { background-color: #DCE9DF; color: var(--role-cont);  border-color: var(--role-cont); }
 
 .person-tile .name-label {
-  font-size: 0.88rem;
+  font-size: 0.92rem;
   color: var(--ink);
-  font-weight: 500;
+  font-weight: 600;
   font-family: "Noto Serif TC", serif;
+  line-height: 1.3;
 }
 .person-tile .role-label {
-  font-size: 0.7rem;
+  font-size: 0.74rem;
   color: var(--ink-mute);
-  margin-top: 2px;
-}
-
-/* Hover tooltip — 桌面版 */
-.person-tile .hover-card {
-  position: absolute;
-  top: calc(100% + 14px);
-  left: 50%;
-  transform: translateX(-50%) translateY(-8px);
-  width: 300px;
-  background: var(--bg-card);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 16px;
-  box-shadow: var(--shadow-hover);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .2s, transform .2s;
-  z-index: 30;
-  text-align: left;
-}
-.person-tile .hover-card::before {
-  content: "";
-  position: absolute;
-  top: -7px;
-  left: 50%;
-  transform: translateX(-50%) rotate(45deg);
-  width: 12px;
-  height: 12px;
-  background: var(--bg-card);
-  border-left: 1px solid var(--line);
-  border-top: 1px solid var(--line);
-}
-.person-tile:hover .hover-card,
-.person-tile:focus-visible .hover-card {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
-  pointer-events: auto;
-}
-/* 邊角避免被裁切 */
-.people-strip-grid > .person-tile:nth-child(1) .hover-card,
-.people-strip-grid > .person-tile:nth-child(2) .hover-card { left: 0; transform: translateX(0) translateY(-8px); }
-.people-strip-grid > .person-tile:nth-child(1):hover .hover-card,
-.people-strip-grid > .person-tile:nth-child(2):hover .hover-card { transform: translateX(0) translateY(0); }
-.people-strip-grid > .person-tile:nth-child(1) .hover-card::before,
-.people-strip-grid > .person-tile:nth-child(2) .hover-card::before { left: 38px; }
-.people-strip-grid > .person-tile:nth-child(8) .hover-card,
-.people-strip-grid > .person-tile:nth-child(9) .hover-card { left: auto; right: 0; transform: translateX(0) translateY(-8px); }
-.people-strip-grid > .person-tile:nth-child(8):hover .hover-card,
-.people-strip-grid > .person-tile:nth-child(9):hover .hover-card { transform: translateX(0) translateY(0); }
-.people-strip-grid > .person-tile:nth-child(8) .hover-card::before,
-.people-strip-grid > .person-tile:nth-child(9) .hover-card::before { left: auto; right: 38px; }
-
-.hover-card .theme {
-  font-family: "Noto Serif TC", serif;
-  font-weight: 600;
-  font-size: 0.98rem;
-  color: var(--gold);
-  margin-bottom: 8px;
-}
-.hover-card .quote {
-  font-size: 0.85rem;
-  color: var(--ink-soft);
-  line-height: 1.6;
-  margin-bottom: 12px;
-}
-.hover-card .service-mini {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  padding: 10px;
-  background: var(--bg-soft);
-  border-radius: var(--radius-sm);
-  text-decoration: none;
-  color: inherit;
-  transition: background .15s;
-}
-.hover-card .service-mini:hover { background: rgba(184,134,11,0.12); }
-.hover-card .service-mini .thumb-mini {
-  width: 56px;
-  height: 56px;
-  background-size: cover;
-  background-position: center;
-  border-radius: var(--radius-sm);
-  flex-shrink: 0;
-}
-.hover-card .service-mini .info { flex: 1; min-width: 0; }
-.hover-card .service-mini .info .label {
-  font-size: 0.7rem;
-  color: var(--gold);
-  margin-bottom: 2px;
-}
-.hover-card .service-mini .info .title {
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: var(--ink);
+  margin-top: 3px;
   line-height: 1.4;
 }
-.hover-card .no-service {
-  font-size: 0.8rem;
-  color: var(--ink-mute);
-  font-style: italic;
-  padding: 10px;
-  background: var(--bg-soft);
-  border-radius: var(--radius-sm);
-  text-align: center;
-}
-.hover-card .cta {
-  display: block;
-  margin-top: 10px;
-  text-align: right;
-  font-size: 0.85rem;
-  color: var(--gold);
-  font-weight: 500;
-}
-
-@media (max-width: 920px) {
-  .person-tile .hover-card { display: none; }
+.person-tile .has-plan-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--green);
+  border-radius: 50%;
+  margin-left: 4px;
+  vertical-align: middle;
 }
 
 /* ============================================
