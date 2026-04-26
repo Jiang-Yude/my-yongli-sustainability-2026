@@ -1742,14 +1742,14 @@ th {
 }
 .axis-num {
   font-family: 'Noto Serif TC', serif;
-  font-size: 1.8rem;
+  font-size: 1.15rem;
   font-weight: 600;
-  width: 56px;
-  height: 56px;
-  line-height: 56px;
-  margin: 0 auto 10px;
-  border-radius: 50%;
+  display: inline-block;
+  padding: 8px 22px;
+  margin: 0 auto 12px;
+  border-radius: 22px;
   color: white;
+  letter-spacing: 0.18em;
 }
 .axis-people .axis-num { background: linear-gradient(135deg, #B8860B, #D4A847); }
 .axis-work .axis-num { background: linear-gradient(135deg, #2E7D5B, #4FA67D); }
@@ -1915,4 +1915,16 @@ th {
 }
 .next-section .risk-footer strong {
   color: #2E7D5B;
+}
+
+/* 陪力卡每階段加一行白話解釋 */
+.peili-explain {
+  font-size: 0.78rem;
+  color: var(--ink-mute);
+  line-height: 1.55;
+  margin: 6px 0 10px;
+  padding: 6px 8px;
+  background: rgba(184, 134, 11, 0.06);
+  border-radius: 4px;
+  border-left: 2px solid rgba(184, 134, 11, 0.3);
 }
