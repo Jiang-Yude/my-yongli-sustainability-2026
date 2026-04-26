@@ -883,9 +883,9 @@ th {
 }
 .analysis-intro p {
   margin: 0;
-  font-size: 1.05rem;
+  font-size: 1.12rem;
   color: var(--ink-soft);
-  line-height: 1.7;
+  line-height: 1.85;
 }
 
 .framework-block {
@@ -914,8 +914,8 @@ th {
 }
 .framework-desc {
   color: var(--ink-soft);
-  font-size: 0.95rem;
-  line-height: 1.7;
+  font-size: 1.05rem;
+  line-height: 1.8;
   margin-bottom: 24px;
 }
 
@@ -958,11 +958,11 @@ th {
 .iooi-stage ul {
   padding-left: 16px;
   margin: 0;
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   color: var(--ink);
-  line-height: 1.6;
+  line-height: 1.7;
 }
-.iooi-stage ul li { margin-bottom: 6px; }
+.iooi-stage ul li { margin-bottom: 8px; }
 .iooi-arrow {
   display: flex;
   align-items: center;
@@ -996,15 +996,15 @@ th {
 }
 .peili-name {
   font-family: "Noto Serif TC", serif;
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: var(--ink);
-  margin: 4px 0 2px;
+  margin: 4px 0 4px;
 }
 .peili-meaning {
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   color: var(--ink-mute);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 .peili-people {
   display: flex;
@@ -1742,14 +1742,16 @@ th {
 }
 .axis-num {
   font-family: 'Noto Serif TC', serif;
-  font-size: 1.15rem;
+  font-size: 1.55rem;
   font-weight: 600;
   display: inline-block;
-  padding: 8px 22px;
-  margin: 0 auto 12px;
-  border-radius: 22px;
+  padding: 10px 32px;
+  margin: 0 auto 16px;
+  border-radius: 999px;
   color: white;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.22em;
+  white-space: nowrap;
+  text-indent: 0.22em;
 }
 .axis-people .axis-num { background: linear-gradient(135deg, #B8860B, #D4A847); }
 .axis-work .axis-num { background: linear-gradient(135deg, #2E7D5B, #4FA67D); }
@@ -1761,15 +1763,15 @@ th {
 
 .axis-name {
   font-family: 'Noto Serif TC', serif;
-  font-size: 1.1rem;
+  font-size: 1.35rem;
   color: var(--ink);
   font-weight: 600;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
 }
 .axis-desc {
-  font-size: 0.88rem;
+  font-size: 1rem;
   color: var(--ink-mute);
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 /* 框架色標籤 */
@@ -1829,35 +1831,35 @@ th {
 .prof-name {
   font-weight: 600;
   color: var(--ink);
-  font-size: 0.95rem;
+  font-size: 1.05rem;
 }
 .prof-role {
   display: block;
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   color: var(--ink-mute);
   font-weight: 400;
-  margin-top: 2px;
+  margin-top: 4px;
   letter-spacing: 0.04em;
 }
 .prof-prof {
-  font-size: 0.92rem;
+  font-size: 1rem;
   color: var(--ink);
-  line-height: 1.5;
+  line-height: 1.6;
 }
 .prof-arrow {
   text-align: center;
   color: var(--gold);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 600;
 }
 .prof-value {
-  font-size: 0.92rem;
+  font-size: 1rem;
   color: var(--ink);
   font-weight: 500;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 .prof-plan {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   color: var(--gold);
   font-weight: 500;
 }
@@ -1919,12 +1921,12 @@ th {
 
 /* 陪力卡每階段加一行白話解釋 */
 .peili-explain {
-  font-size: 0.78rem;
-  color: var(--ink-mute);
-  line-height: 1.55;
-  margin: 6px 0 10px;
-  padding: 6px 8px;
-  background: rgba(184, 134, 11, 0.06);
-  border-radius: 4px;
-  border-left: 2px solid rgba(184, 134, 11, 0.3);
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin: 8px 0 12px;
+  padding: 8px 10px;
+  background: rgba(184, 134, 11, 0.07);
+  border-radius: 5px;
+  border-left: 3px solid rgba(184, 134, 11, 0.4);
 }
