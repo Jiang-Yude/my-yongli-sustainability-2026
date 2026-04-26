@@ -1180,3 +1180,483 @@ th {
 }
 .sroi-callout p:last-child { margin-bottom: 0; }
 .sroi-callout strong { color: var(--gold-soft); }
+
+/* ======================== 多框架分析頁 analysis.html 專用 ======================== */
+
+/* 子框架小標 */
+.sub-frame-title {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1.15rem;
+  color: var(--ink);
+  margin: 28px 0 6px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+.sub-frame-desc {
+  font-size: 0.92rem;
+  color: var(--ink-mute);
+  margin: 0 0 16px;
+}
+
+/* IOOI 方法說明摺疊區 */
+.iooi-method-toggle {
+  margin: 12px 0 20px;
+  background: #FBF8F2;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 16px;
+}
+.iooi-method-toggle summary {
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--gold);
+  font-weight: 600;
+  padding: 4px 0;
+}
+.iooi-method-content {
+  padding-top: 12px;
+}
+.iooi-def-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+.iooi-def-table th,
+.iooi-def-table td {
+  border: 1px solid var(--line);
+  padding: 8px 10px;
+  text-align: left;
+}
+.iooi-def-table th {
+  background: #F5EFE3;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* IOOI 深化版 — ul 內每條的歸因標籤 */
+.iooi-flow-detail .iooi-stage ul li .attr {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 6px;
+  font-size: 0.72rem;
+  background: var(--gold);
+  color: white;
+  border-radius: 3px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.iooi-flow-detail .iooi-stage ul li em {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.78rem;
+  color: #B89A5C;
+  font-style: normal;
+  background: #FAF3E0;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+/* 7 計畫切換器 */
+.plan-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 18px 0 14px;
+}
+.plan-tab {
+  padding: 8px 14px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-size: 0.88rem;
+  color: var(--ink-mute);
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s;
+}
+.plan-tab:hover {
+  background: #FBF8F2;
+  color: var(--ink);
+}
+.plan-tab.active {
+  background: var(--gold);
+  color: white;
+  border-color: var(--gold);
+  font-weight: 600;
+}
+
+.plan-iooi {
+  display: none;
+  background: #FBF8F2;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px 20px;
+  margin-top: 6px;
+}
+.plan-iooi.active { display: block; }
+
+.plan-iooi-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.plan-iooi-title {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1.1rem;
+  color: var(--ink);
+  font-weight: 600;
+}
+.plan-iooi-meta {
+  font-size: 0.82rem;
+  color: var(--ink-mute);
+  margin-top: 4px;
+}
+.completeness {
+  font-size: 0.82rem;
+  background: white;
+  padding: 5px 10px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  color: var(--ink);
+  font-weight: 500;
+  white-space: nowrap;
+}
+.completeness-top {
+  background: linear-gradient(135deg, #B8860B, #C49E60);
+  color: white;
+  border-color: transparent;
+}
+
+.plan-iooi-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.plan-iooi-table td {
+  border: 1px solid var(--line);
+  padding: 8px 10px;
+  vertical-align: top;
+  background: white;
+}
+.plan-iooi-table .layer {
+  width: 90px;
+  background: #F5EFE3;
+  font-weight: 600;
+  color: var(--gold);
+}
+.plan-iooi-table .metric {
+  width: 180px;
+  font-size: 0.84rem;
+  color: var(--ink-mute);
+}
+.plan-iooi-table .metric em {
+  font-style: normal;
+  color: #B89A5C;
+  background: #FAF3E0;
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+.plan-iooi-note {
+  margin-top: 14px;
+  padding: 12px 14px;
+  background: white;
+  border-left: 3px solid var(--gold);
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--ink);
+  border-radius: 0 6px 6px 0;
+}
+
+/* 跨計畫比較表 */
+.plan-compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  margin-top: 8px;
+}
+.plan-compare-table th,
+.plan-compare-table td {
+  border: 1px solid var(--line);
+  padding: 8px 10px;
+  text-align: center;
+}
+.plan-compare-table th {
+  background: #F5EFE3;
+  color: var(--ink);
+  font-weight: 600;
+}
+.plan-compare-table td:first-child {
+  text-align: left;
+  font-weight: 600;
+  color: var(--ink);
+}
+.plan-compare-table .star {
+  color: var(--gold);
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* 四階段循環 */
+.four-stage {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+  align-items: stretch;
+  gap: 6px;
+  margin: 16px 0 8px;
+}
+@media (max-width: 920px) {
+  .four-stage {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .stage-arrow { transform: rotate(90deg); justify-self: center; }
+}
+.stage-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px 12px;
+  text-align: center;
+  position: relative;
+}
+.stage-card.stage-active {
+  background: linear-gradient(135deg, #FAF3E0, #F5EFE3);
+  border-color: var(--gold);
+  box-shadow: 0 2px 8px rgba(184,134,11,0.12);
+}
+.stage-num {
+  font-size: 0.78rem;
+  color: var(--ink-mute);
+  letter-spacing: 1px;
+}
+.stage-name {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1.1rem;
+  color: var(--ink);
+  font-weight: 600;
+  margin: 4px 0 8px;
+}
+.stage-desc {
+  font-size: 0.82rem;
+  color: var(--ink-mute);
+  line-height: 1.55;
+}
+.stage-status {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.75rem;
+  background: var(--gold);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+.stage-card:not(.stage-active) .stage-status {
+  background: #C9C2B0;
+  color: white;
+}
+.stage-arrow {
+  align-self: center;
+  font-size: 1.3rem;
+  color: var(--gold);
+  font-weight: 600;
+  padding: 0 4px;
+}
+
+/* 十題評分表 */
+.ten-q-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.ten-q-table th,
+.ten-q-table td {
+  border: 1px solid var(--line);
+  padding: 8px 10px;
+  text-align: center;
+}
+.ten-q-table th {
+  background: #F5EFE3;
+  color: var(--ink);
+  font-weight: 600;
+}
+.ten-q-table td:nth-child(2),
+.ten-q-table td:nth-child(3) {
+  text-align: left;
+}
+.ten-q-table .grade {
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+.grade-a { background: #2E7D5B; color: white; }
+.grade-b { background: #5B8DB8; color: white; }
+.grade-c { background: #C49E60; color: white; }
+.grade-d { background: #C76A4D; color: white; }
+.ten-q-table .prio {
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+.prio-low { color: #5C7A6B; }
+.prio-mid { color: #B89A5C; }
+.prio-high { color: #C76A4D; }
+.prio-top { background: #C76A4D; color: white; }
+
+/* 風險評估區 */
+.risk-section {
+  background: linear-gradient(135deg, #FAF6EC, #F5EFE3);
+  border-color: var(--gold);
+  border-width: 1.5px;
+}
+.risk-label {
+  background: var(--gold) !important;
+  color: white !important;
+}
+.risk-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 18px;
+}
+@media (max-width: 820px) {
+  .risk-grid { grid-template-columns: 1fr; }
+}
+.risk-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px 18px 16px;
+  position: relative;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.risk-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(184,134,11,0.1);
+}
+.risk-num {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1.6rem;
+  color: var(--gold);
+  font-weight: 600;
+  opacity: 0.4;
+}
+.risk-title {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1.05rem;
+  color: var(--ink);
+  font-weight: 600;
+  padding-right: 36px;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.risk-block {
+  margin-bottom: 10px;
+}
+.risk-block:last-child { margin-bottom: 0; }
+.risk-block-label {
+  font-size: 0.74rem;
+  color: var(--ink-mute);
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.risk-block p {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: var(--ink);
+  margin: 0;
+}
+.risk-block-action {
+  background: #FAF3E0;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border-left: 3px solid var(--gold);
+}
+.risk-block-action .risk-block-label {
+  color: var(--gold);
+}
+
+.risk-footer {
+  margin-top: 20px;
+  padding: 16px 20px;
+  background: white;
+  border: 1px dashed var(--gold);
+  border-radius: 8px;
+}
+.risk-footer p {
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: var(--ink);
+  margin: 0;
+}
+.risk-footer strong { color: var(--gold); }
+
+/* 首頁第 3 節入口卡片 */
+.analysis-entry-card {
+  background: linear-gradient(135deg, #FAF6EC, #F5EFE3);
+  border: 1.5px solid var(--gold);
+  border-radius: 12px;
+  padding: 26px 28px;
+  margin-top: 14px;
+  position: relative;
+  overflow: hidden;
+}
+.analysis-entry-card h3 {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1.25rem;
+  color: var(--ink);
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+.analysis-entry-card p {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--ink);
+  margin: 0 0 14px;
+}
+.entry-frames {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 14px 0 18px;
+}
+.entry-frame-chip {
+  background: white;
+  border: 1px solid var(--line);
+  padding: 5px 10px;
+  border-radius: 14px;
+  font-size: 0.82rem;
+  color: var(--ink);
+}
+.entry-frame-chip strong {
+  color: var(--gold);
+  font-weight: 600;
+}
+.entry-btn {
+  display: inline-block;
+  background: var(--gold);
+  color: white !important;
+  padding: 11px 22px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+.entry-btn:hover {
+  background: #9c7409;
+  transform: translateX(2px);
+}
