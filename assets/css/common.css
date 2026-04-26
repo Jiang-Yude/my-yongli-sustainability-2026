@@ -1930,3 +1930,25 @@ th {
   border-radius: 5px;
   border-left: 3px solid rgba(184, 134, 11, 0.4);
 }
+
+/* 框架標題旁的外部連結（陪力卡完整框架等） */
+.ext-link {
+  display: inline-block;
+  margin-left: 14px;
+  padding: 4px 12px;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--gold);
+  background: rgba(184, 134, 11, 0.08);
+  border: 1px solid rgba(184, 134, 11, 0.3);
+  border-radius: 999px;
+  vertical-align: middle;
+  letter-spacing: 0.04em;
+  transition: all 0.15s;
+}
+.ext-link:hover {
+  background: var(--gold);
+  color: white;
+  border-color: var(--gold);
+}
