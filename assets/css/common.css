@@ -1715,3 +1715,204 @@ th {
     grid-template-columns: 1fr;
   }
 }
+
+/* ======================== analysis.html v2 — 三框架簡化版 ======================== */
+
+/* 三軸卡片（人/事/法） */
+.three-axis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 18px;
+}
+@media (max-width: 720px) {
+  .three-axis { grid-template-columns: 1fr; }
+}
+.axis-card {
+  background: white;
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  padding: 18px 18px 16px;
+  text-align: center;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.axis-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(184,134,11,0.12);
+}
+.axis-num {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  width: 56px;
+  height: 56px;
+  line-height: 56px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  color: white;
+}
+.axis-people .axis-num { background: linear-gradient(135deg, #B8860B, #D4A847); }
+.axis-work .axis-num { background: linear-gradient(135deg, #2E7D5B, #4FA67D); }
+.axis-method .axis-num { background: linear-gradient(135deg, #5B6B8C, #7B8FB0); }
+
+.axis-people { border-color: #D4A847; }
+.axis-work { border-color: #4FA67D; }
+.axis-method { border-color: #7B8FB0; }
+
+.axis-name {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1.1rem;
+  color: var(--ink);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.axis-desc {
+  font-size: 0.88rem;
+  color: var(--ink-mute);
+  line-height: 1.6;
+}
+
+/* 框架色標籤 */
+.overview-label { background: #888 !important; color: white !important; }
+.label-people { background: #B8860B !important; color: white !important; }
+.label-work { background: #2E7D5B !important; color: white !important; }
+.label-method { background: #5B6B8C !important; color: white !important; }
+
+.frame-people { border-left: 4px solid #D4A847; padding-left: 22px; }
+.frame-work { border-left: 4px solid #4FA67D; padding-left: 22px; }
+.frame-method { border-left: 4px solid #7B8FB0; padding-left: 22px; }
+@media (max-width: 600px) {
+  .frame-people, .frame-work, .frame-method {
+    border-left-width: 3px;
+    padding-left: 14px;
+  }
+}
+
+/* 職業即服務 — 9 條線 row */
+.prof-flow {
+  margin-top: 16px;
+  background: #FBF8F2;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.prof-flow-head {
+  display: grid;
+  grid-template-columns: 1.4fr 1.6fr 40px 1.8fr 1.4fr;
+  gap: 10px;
+  padding: 12px 18px;
+  background: #F5EFE3;
+  font-size: 0.78rem;
+  color: var(--ink-mute);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid var(--line);
+}
+.prof-row {
+  display: grid;
+  grid-template-columns: 1.4fr 1.6fr 40px 1.8fr 1.4fr;
+  gap: 10px;
+  padding: 14px 18px;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  background: white;
+  transition: background 0.15s;
+}
+.prof-row:last-child { border-bottom: none; }
+.prof-row:hover { background: #FAF6EC; }
+
+.prof-row[data-role="found"] { border-left: 4px solid var(--role-found); }
+.prof-row[data-role="guard"] { border-left: 4px solid var(--role-guard); }
+.prof-row[data-role="act"] { border-left: 4px solid var(--role-act); }
+.prof-row[data-role="cont"] { border-left: 4px solid var(--role-cont); }
+
+.prof-name {
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 0.95rem;
+}
+.prof-role {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--ink-mute);
+  font-weight: 400;
+  margin-top: 2px;
+  letter-spacing: 0.04em;
+}
+.prof-prof {
+  font-size: 0.92rem;
+  color: var(--ink);
+  line-height: 1.5;
+}
+.prof-arrow {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.prof-value {
+  font-size: 0.92rem;
+  color: var(--ink);
+  font-weight: 500;
+  line-height: 1.5;
+}
+.prof-plan {
+  font-size: 0.85rem;
+  color: var(--gold);
+  font-weight: 500;
+}
+.prof-empty {
+  color: #B8AB8A;
+  font-style: italic;
+  font-size: 0.82rem;
+  font-weight: 400;
+}
+.prof-row-pending {
+  background: #FCFAF4;
+}
+
+@media (max-width: 820px) {
+  .prof-flow-head { display: none; }
+  .prof-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 14px 16px;
+  }
+  .prof-arrow { display: none; }
+  .prof-name { font-size: 1rem; padding-bottom: 4px; border-bottom: 1px dashed var(--line); }
+  .prof-prof::before { content: "職業：" ; font-size: 0.74rem; color: var(--ink-mute); margin-right: 4px; }
+  .prof-value::before { content: "價值：" ; font-size: 0.74rem; color: var(--ink-mute); margin-right: 4px; }
+  .prof-plan::before { content: "計畫：" ; font-size: 0.74rem; color: var(--ink-mute); margin-right: 4px; }
+  .prof-plan { color: var(--ink); }
+}
+
+/* 下一步精進章節（原風險評估，前向語氣版）*/
+.next-section {
+  background: linear-gradient(135deg, #F0F7F2, #E8F0EA);
+  border-color: #4FA67D;
+  border-width: 1.5px;
+}
+.next-label {
+  background: #2E7D5B !important;
+  color: white !important;
+}
+/* 沿用 .risk-grid / .risk-card 樣式但調色 */
+.next-section .risk-card {
+  border-left: 3px solid #4FA67D;
+}
+.next-section .risk-num {
+  color: #2E7D5B;
+}
+.next-section .risk-block-action {
+  background: #F0F7F2;
+  border-left-color: #4FA67D;
+}
+.next-section .risk-block-action .risk-block-label {
+  color: #2E7D5B;
+}
+.next-section .risk-footer {
+  border-color: #4FA67D;
+}
+.next-section .risk-footer strong {
+  color: #2E7D5B;
+}
