@@ -581,204 +581,12 @@
   color: var(--ink-soft);
 }
 
-/* ====== V2.1 新增樣式 ====== */
-
-/* §04 七大焦點領域可點擊版 */
-.focus-areas-clickable {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 12px;
-  margin-top: 6px;
-}
-.focus-areas-clickable .focus-area {
-  text-decoration: none;
-  cursor: pointer;
-  padding: 14px 8px;
-  border-radius: 12px;
-  transition: transform .15s, background .15s, box-shadow .15s;
-  background: #fff;
-  border: 1px solid var(--line);
-}
-.focus-areas-clickable .focus-area:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-hover);
-  background: var(--bg-soft);
-}
-.focus-areas-clickable .name {
-  font-size: 0.78rem;
-  margin-top: 6px;
-}
-
-/* 七大焦點領域篩選 bar 配色 */
-.focus-filter .filter-btn { transition: all .15s; }
-.focus-filter .focus-btn-1.active { background: #1976D2; color: #fff; border-color: #1976D2; }
-.focus-filter .focus-btn-2.active { background: #C62828; color: #fff; border-color: #C62828; }
-.focus-filter .focus-btn-3.active { background: #0097A7; color: #fff; border-color: #0097A7; }
-.focus-filter .focus-btn-4.active { background: #6A1B9A; color: #fff; border-color: #6A1B9A; }
-.focus-filter .focus-btn-5.active { background: #EF6C00; color: #fff; border-color: #EF6C00; }
-.focus-filter .focus-btn-6.active { background: #00897B; color: #fff; border-color: #00897B; }
-.focus-filter .focus-btn-7.active { background: #2E7D32; color: #fff; border-color: #2E7D32; }
-.focus-filter .focus-btn-1:hover { background: rgba(25,118,210,0.12); }
-.focus-filter .focus-btn-2:hover { background: rgba(198,40,40,0.12); }
-.focus-filter .focus-btn-3:hover { background: rgba(0,151,167,0.12); }
-.focus-filter .focus-btn-4:hover { background: rgba(106,27,154,0.12); }
-.focus-filter .focus-btn-5:hover { background: rgba(239,108,0,0.12); }
-.focus-filter .focus-btn-6:hover { background: rgba(0,137,123,0.12); }
-.focus-filter .focus-btn-7:hover { background: rgba(46,125,50,0.12); }
-
-/* 焦點領域 chip（七色） */
-.focus-chip {
-  display: inline-block;
-  padding: 3px 10px;
-  border-radius: 999px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  margin-right: 4px;
-  margin-bottom: 4px;
-}
-.focus-chip-1 { background: rgba(25,118,210,0.12); color: #1565C0; }
-.focus-chip-2 { background: rgba(198,40,40,0.12); color: #B71C1C; }
-.focus-chip-3 { background: rgba(0,151,167,0.12); color: #00838F; }
-.focus-chip-4 { background: rgba(106,27,154,0.12); color: #4A148C; }
-.focus-chip-5 { background: rgba(239,108,0,0.12); color: #E65100; }
-.focus-chip-6 { background: rgba(0,137,123,0.12); color: #00695C; }
-.focus-chip-7 { background: rgba(46,125,50,0.12); color: #1B5E20; }
-.focus-tag-pending {
-  display: inline-block;
-  padding: 3px 10px;
-  border-radius: 999px;
-  font-size: 0.72rem;
-  background: var(--bg-soft);
-  color: var(--ink-mute);
-  font-style: italic;
-}
-
-/* member-card 結構（合併社友 + 計畫鏈結） */
-.member-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-}
-.member-card {
-  background: var(--bg-card);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: box-shadow .15s, transform .15s;
-}
-.member-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
-.member-head {
-  display: flex; align-items: center; gap: 12px;
-  padding: 18px 20px 14px;
-  text-decoration: none;
-  color: inherit;
-  border-bottom: 1px solid var(--line-soft);
-}
-.member-head .avatar {
-  width: 48px; height: 48px;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.2rem; font-weight: 700;
-  flex-shrink: 0;
-  border: 2px solid;
-}
-.member-head .avatar.role-found { color: var(--role-found); background: #EFE3DA; border-color: var(--role-found); }
-.member-head .avatar.role-guard { color: var(--role-guard); background: #DDE5EE; border-color: var(--role-guard); }
-.member-head .avatar.role-act { color: var(--role-act); background: #F3DCD2; border-color: var(--role-act); }
-.member-head .avatar.role-cont { color: var(--role-cont); background: #D8E5DD; border-color: var(--role-cont); }
-.member-head .name {
-  font-size: 1.05rem; font-weight: 700; color: var(--ink);
-  margin-bottom: 2px;
-}
-.member-head .role {
-  font-size: 0.82rem; color: var(--ink-soft);
-}
-.member-body {
-  padding: 14px 20px 16px;
-  flex: 1;
-}
-.member-body .theme-line {
-  font-size: 0.88rem;
-  color: var(--ink-soft);
-  line-height: 1.65;
-  margin: 0 0 12px;
-}
-.member-body .focus-row {
-  display: flex; flex-wrap: wrap;
-}
-.member-service-link {
-  display: block;
-  padding: 14px 20px;
-  background: linear-gradient(90deg, rgba(184,134,11,0.06), rgba(46,125,91,0.06));
-  border-top: 1px solid var(--line-soft);
-  text-decoration: none;
-  transition: background .15s;
-}
-.member-service-link:hover {
-  background: linear-gradient(90deg, rgba(184,134,11,0.14), rgba(46,125,91,0.12));
-}
-.member-service-link .link-meta {
-  font-size: 0.72rem;
-  color: var(--ink-mute);
-  letter-spacing: 0.04em;
-  margin-bottom: 4px;
-}
-.member-service-link .link-name {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--gold);
-}
-
-/* 永力社共同支持的服務計畫 */
-.external-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-}
-.external-card {
-  display: block;
-  padding: 22px;
-  background: var(--bg-card);
-  border: 1px dashed var(--line);
-  border-radius: var(--radius);
-  text-decoration: none;
-  color: inherit;
-  transition: border .15s, box-shadow .15s;
-}
-.external-card:hover {
-  border-style: solid;
-  box-shadow: var(--shadow-hover);
-}
-.external-card .grant {
-  display: inline-block;
-  padding: 3px 10px;
-  background: var(--gold);
-  color: #fff;
-  border-radius: 999px;
-  font-size: 0.72rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-.external-card h4 {
-  margin: 0 0 8px;
-  font-size: 1.05rem;
-  color: var(--ink);
-}
-.external-card .by {
-  font-size: 0.85rem;
-  color: var(--ink-mute);
-  margin: 0 0 10px;
-}
-
 /* RWD */
 @media (max-width: 960px) {
   .iooi-index { grid-template-columns: repeat(2, 1fr); }
   .stage-cycle .cycle-row { grid-template-columns: repeat(2, 1fr); }
   .rotary-core { grid-template-columns: 1fr; }
   .focus-areas { grid-template-columns: repeat(3, 1fr); }
-  .focus-areas-clickable { grid-template-columns: repeat(3, 1fr); }
   .standards-grid { grid-template-columns: 1fr; }
   .iooi-detail { grid-template-columns: 1fr; }
   .iooi-arrow-mini { transform: rotate(90deg); padding: 8px 0; }
@@ -787,11 +595,6 @@
   .event-chain-grid { grid-template-columns: 1fr; }
   .mapping-row { grid-template-columns: 1fr; gap: 4px; padding: 12px 10px; }
   .mapping-row .arrow { display: none; }
-  .member-grid { grid-template-columns: 1fr; }
-  .external-grid { grid-template-columns: 1fr; }
-}
-@media (max-width: 660px) {
-  .focus-areas-clickable { grid-template-columns: repeat(2, 1fr); }
 }
 </style>
 </head>
@@ -803,10 +606,11 @@
     <nav>
       <a href="#intro">關於永力社</a>
       <a href="#stage">影響力進程</a>
-      <a href="#rotary-frame">七大焦點領域</a>
+      <a href="#rotary-frame">扶輪七大領域</a>
       <a href="#methods">影響力衡量</a>
       <a href="#practice">三框架分析</a>
-      <a href="#impact-hub">社友與服務計畫</a>
+      <a href="#people">社友影響力</a>
+      <a href="#services">服務計畫</a>
     </nav>
   </div>
 </header>
@@ -941,43 +745,176 @@
   <div class="container">
     <div class="section-head">
       <span class="num">04</span>
-      <h2>扶輪七大焦點領域</h2>
-      <span class="meta">點任一領域，看見永力社對應的社友與服務計畫</span>
+      <h2>扶輪精神 × 永續行動</h2>
+      <span class="meta">七大焦點領域 · 五大服務 · 四大永續挑戰</span>
     </div>
 
-    <div class="intro" style="margin-bottom: 18px;">
-      <p>永力社的服務行動，以<strong>扶輪七大焦點領域</strong>為架構。每一項服務計畫、每一位社友的職業實踐，都對應到一個或多個焦點領域。點下方任一領域，立刻看到永力社在這個議題上做了什麼、由誰推動。</p>
+    <div class="intro" style="margin-bottom: 24px;">
+      <p>扶輪有自己看待永續的方式——<strong>七大焦點領域、五大服務、四大永續挑戰</strong>。這些是國際扶輪累積百年的服務語言，也是社友們在每一場服務、每一次例會裡熟悉的詞彙。我們的服務行動以這個架構為本，並對接 SDGs、GRI、ESG 等國際永續準則，讓社友的服務既扎根於扶輪精神，也能被世界讀懂。</p>
     </div>
 
-    <div class="focus-areas focus-areas-clickable">
-      <a class="focus-area focus-1" href="#impact-hub" data-focus="peace">
-        <div class="circle">和</div>
-        <div class="name">和平締造與衝突預防</div>
-      </a>
-      <a class="focus-area focus-2" href="#impact-hub" data-focus="health">
-        <div class="circle">疾</div>
-        <div class="name">疾病預防與治療</div>
-      </a>
-      <a class="focus-area focus-3" href="#impact-hub" data-focus="water">
-        <div class="circle">水</div>
-        <div class="name">水資源與用水衛生</div>
-      </a>
-      <a class="focus-area focus-4" href="#impact-hub" data-focus="maternal">
-        <div class="circle">母</div>
-        <div class="name">母親與兒童健康</div>
-      </a>
-      <a class="focus-area focus-5" href="#impact-hub" data-focus="edu">
-        <div class="circle">教</div>
-        <div class="name">基礎教育與識字</div>
-      </a>
-      <a class="focus-area focus-6" href="#impact-hub" data-focus="economy">
-        <div class="circle">經</div>
-        <div class="name">社區經濟發展</div>
-      </a>
-      <a class="focus-area focus-7" href="#impact-hub" data-focus="env">
-        <div class="circle">境</div>
-        <div class="name">環境保護</div>
-      </a>
+    <!-- §03-1 扶輪三大核心 -->
+    <div class="rotary-core">
+      <div class="rotary-core-card">
+        <h3>七大焦點領域</h3>
+        <span class="en">Areas of Focus</span>
+        <div class="focus-areas">
+          <div class="focus-area focus-1">
+            <div class="circle">和</div>
+            <div class="name">和平締造與衝突預防</div>
+            <div class="name-en">Peacebuilding</div>
+          </div>
+          <div class="focus-area focus-2">
+            <div class="circle">疾</div>
+            <div class="name">疾病預防與治療</div>
+            <div class="name-en">Disease Prevention</div>
+          </div>
+          <div class="focus-area focus-3">
+            <div class="circle">水</div>
+            <div class="name">水資源與用水衛生</div>
+            <div class="name-en">Water & Sanitation</div>
+          </div>
+          <div class="focus-area focus-4">
+            <div class="circle">母</div>
+            <div class="name">母親與兒童健康</div>
+            <div class="name-en">Maternal & Child Health</div>
+          </div>
+          <div class="focus-area focus-5">
+            <div class="circle">教</div>
+            <div class="name">基礎教育與識字</div>
+            <div class="name-en">Basic Education</div>
+          </div>
+          <div class="focus-area focus-6">
+            <div class="circle">經</div>
+            <div class="name">社區經濟發展</div>
+            <div class="name-en">Community Economic</div>
+          </div>
+          <div class="focus-area focus-7">
+            <div class="circle">境</div>
+            <div class="name">環境保護</div>
+            <div class="name-en">Environment</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rotary-core-card">
+        <h3>五大服務</h3>
+        <span class="en">Five Avenues of Service</span>
+        <ul class="service-list">
+          <li><strong>社員服務</strong>強化聯誼與扶輪社運作</li>
+          <li><strong>職業服務</strong>透過職業服務他人並實踐倫理</li>
+          <li><strong>社區服務</strong>改進本身社區的計畫與活動</li>
+          <li><strong>國際服務</strong>擴大扶輪在全球的人道服務</li>
+          <li><strong>青少年服務</strong>培育青少年領導與正向改變</li>
+        </ul>
+      </div>
+
+      <div class="rotary-core-card">
+        <h3>四大永續挑戰</h3>
+        <span class="en">Sustainability Challenges</span>
+        <ul class="challenge-list">
+          <li><strong>和平與人道危機</strong>區域衝突與難民議題</li>
+          <li><strong>公衛與健康不平等</strong>醫療資源不均</li>
+          <li><strong>環境氣候與資源匱乏</strong>氣候變遷與生態</li>
+          <li><strong>貧困、教育與就業弱勢</strong>機會公平議題</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 四大優先（簡化版，抓重點） -->
+    <div class="priorities-strip">
+      <h4>＋ 扶輪四大優先行動方向（2023 起的策略框架）</h4>
+      <div class="four-tags">
+        <span>增加影響力</span>
+        <span>擴展觸及範圍</span>
+        <span>增加參與投入</span>
+        <span>提升適應力</span>
+      </div>
+    </div>
+
+    <!-- §03-2 國際永續準則對接 -->
+    <div style="margin-top: 36px;">
+      <h3 style="margin-bottom:6px; font-size:1.3rem;">對接國際永續準則</h3>
+      <p style="color:var(--ink-soft); font-size:0.9rem;">扶輪三大核心 ↔ 四大國際永續準則的對應關係</p>
+
+      <div class="standards-grid">
+        <div class="standard-card">
+          <span class="label">SDGs</span>
+          <h3>聯合國永續發展目標</h3>
+          <p class="desc">17 項全球目標。扶輪七大焦點領域可清楚對應其中 9~12 項。</p>
+          <div class="sdgs-mapping">
+            <h4>七大領域 ↔ SDGs 主要對應</h4>
+            <div class="mapping-row">
+              <span class="from">和平與衝突</span>
+              <span class="arrow">→</span>
+              <span class="to">SDG 16 和平正義制度</span>
+            </div>
+            <div class="mapping-row">
+              <span class="from">疾病預防</span>
+              <span class="arrow">→</span>
+              <span class="to">SDG 3 良好健康</span>
+            </div>
+            <div class="mapping-row">
+              <span class="from">水資源衛生</span>
+              <span class="arrow">→</span>
+              <span class="to">SDG 6 潔淨水與衛生</span>
+            </div>
+            <div class="mapping-row">
+              <span class="from">母嬰健康</span>
+              <span class="arrow">→</span>
+              <span class="to">SDG 3、SDG 5</span>
+            </div>
+            <div class="mapping-row">
+              <span class="from">教育識字</span>
+              <span class="arrow">→</span>
+              <span class="to">SDG 4 優質教育</span>
+            </div>
+            <div class="mapping-row">
+              <span class="from">社區經濟</span>
+              <span class="arrow">→</span>
+              <span class="to">SDG 1、SDG 8</span>
+            </div>
+            <div class="mapping-row">
+              <span class="from">環境保護</span>
+              <span class="arrow">→</span>
+              <span class="to">SDG 13、14、15</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="standard-card gri">
+          <span class="label">GRI</span>
+          <h3>全球報告倡議組織標準</h3>
+          <p class="desc">國際最廣泛使用的永續報告書標準，分三大揭露模組：</p>
+          <ul>
+            <li><strong>經濟</strong>對應五大服務的職業／社區／國際服務</li>
+            <li><strong>社會</strong>對應七大領域的健康、教育、和平、母嬰</li>
+            <li><strong>環境</strong>對應七大領域的環境保護與淨水資源</li>
+          </ul>
+        </div>
+
+        <div class="standard-card esg">
+          <span class="label">ESG</span>
+          <h3>企業/組織永續三大構面</h3>
+          <p class="desc">ESG 三大面向也能直接對接扶輪內容：</p>
+          <ul>
+            <li><strong>E 環境</strong>七大領域環保、淨水、氣候對策</li>
+            <li><strong>S 社會</strong>五大服務全領域、扶弱、培育</li>
+            <li><strong>G 治理</strong>扶輪章程倫理、社員治理、職業倫理</li>
+          </ul>
+        </div>
+
+        <div class="standard-card iso">
+          <span class="label">ISO 26000</span>
+          <h3>社會責任指引</h3>
+          <p class="desc">非認證標準，作為社會責任的參照框架。</p>
+          <ul>
+            <li>七大核心議題：組織治理、人權、勞工、環境、公平運作、消費者議題、社區參與</li>
+            <li>扶輪五大服務基本上覆蓋其中 5~6 項</li>
+          </ul>
+          <p style="font-size:0.78rem; color:var(--ink-mute); margin-top:10px; font-style:italic;">註：ISO 26000 僅為社會責任指引，非可認證標準。</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1152,239 +1089,407 @@
   </div>
 </section>
 
-<!-- ============ §06 社友與服務計畫（合併）============ -->
-<section class="section" id="impact-hub">
+<!-- ============ §06 9 位社友（強調「這次有服務計畫」）============ -->
+<section class="section" id="people">
   <div class="container">
     <div class="section-head">
       <span class="num">07</span>
-      <h2>社友與服務計畫</h2>
-      <span class="meta">用扶輪七大焦點領域檢索，一鍵看見對應的人與行動</span>
+      <h2>社友影響力</h2>
+      <span class="meta">2025-2026 年度提案推動服務計畫的九位社友</span>
     </div>
 
     <div class="intro" style="margin-bottom: 18px;">
-      <p>本年度九位社友以各自的職業專業推動服務行動。點下方任一焦點領域，立刻看到對應的社友與服務計畫——從環境保護到基礎教育，從社區經濟到疾病預防，每個議題都看得見實際在做的人。</p>
+      <p>本年度共有九位社友提案推動服務計畫，每位的職業專業、服務初衷與影響力故事，呈現於完整人物誌中。其他社友與衛星社員的介紹將陸續加入。</p>
     </div>
 
-    <!-- 七大焦點領域篩選 bar -->
-    <div class="filter-bar focus-filter">
-      <span class="filter-label">焦點領域：</span>
-      <button class="filter-btn active" data-focus="all">全部</button>
-      <button class="filter-btn focus-btn-1" data-focus="peace">和平</button>
-      <button class="filter-btn focus-btn-2" data-focus="health">疾病預防</button>
-      <button class="filter-btn focus-btn-3" data-focus="water">水資源</button>
-      <button class="filter-btn focus-btn-4" data-focus="maternal">母嬰健康</button>
-      <button class="filter-btn focus-btn-5" data-focus="edu">基礎教育</button>
-      <button class="filter-btn focus-btn-6" data-focus="economy">社區經濟</button>
-      <button class="filter-btn focus-btn-7" data-focus="env">環境保護</button>
+    <div class="filter-bar" data-filter-group="role">
+      <span class="filter-label">角色階段：</span>
+      <button class="filter-btn active" data-role="all">全部 <span class="count">9</span></button>
+      <button class="filter-btn" data-role="found"><span style="color:var(--role-found)">●</span> 創社／治理 <span class="count">1</span></button>
+      <button class="filter-btn" data-role="guard"><span style="color:var(--role-guard)">●</span> 守護／承接 <span class="count">2</span></button>
+      <button class="filter-btn" data-role="act"><span style="color:var(--role-act)">●</span> 行動／實踐 <span class="count">3</span></button>
+      <button class="filter-btn" data-role="cont"><span style="color:var(--role-cont)">●</span> 延續／擴散 <span class="count">3</span></button>
     </div>
 
-    <h3 style="margin: 36px 0 14px; font-size: 1.2rem; color: var(--ink);">本年度推動服務計畫的社友</h3>
-    <div class="member-grid">
+    <div class="card-grid" id="people-grid">
 
-      <article class="member-card filter-target" data-focus="env edu">
-        <a class="member-head" href="profiles/01-cp-lin.html">
-          <div class="avatar role-found">林</div>
-          <div class="info">
-            <div class="name">林學賢 CP Impact</div>
-            <div class="role">創社社長 · 價值場域建構者</div>
+      <a class="person-card" data-role="found" data-sdgs="4,11,17" href="profiles/01-cp-lin.html">
+        <span class="accent"></span>
+        <span class="review-chip pending">待校稿</span>
+        <div class="body">
+          <div class="head-row">
+            <div class="avatar role-found">林</div>
+            <div>
+              <div class="name">林學賢</div>
+              <div class="title-line">CP Impact · 創社社長</div>
+            </div>
           </div>
-        </a>
-        <div class="member-body">
-          <p class="theme-line">建立永力扶輪社，把「社友的職業服務被看見」變成這個社存在的核心目的。</p>
-          <div class="focus-row">
-            <span class="focus-chip focus-chip-7">環境保護</span>
-            <span class="focus-chip focus-chip-5">基礎教育與識字</span>
+          <div class="theme">價值場域建構者</div>
+          <div class="quote">建立永力扶輪社，把「社友的職業服務被看見」變成這個社存在的核心目的。</div>
+          <div class="sdg-row">
+            <span class="sdg-chip sdg-chip-4">4</span>
+            <span class="sdg-chip sdg-chip-11">11</span>
+            <span class="sdg-chip sdg-chip-17">17</span>
           </div>
-        </div>
-        <a class="member-service-link filter-target" data-focus="env edu" href="services/01-zhongyi.html">
-          <div class="link-meta">推動的服務計畫 · 扶輪地區獎助金</div>
-          <div class="link-name">忠義國小 小田園環境教育 →</div>
-        </a>
-      </article>
-
-      <article class="member-card filter-target" data-focus="env economy">
-        <a class="member-head" href="profiles/02-vicky-li.html">
-          <div class="avatar role-act">李</div>
-          <div class="info">
-            <div class="name">李琪 Vicky</div>
-            <div class="role">永力社理事 · 旅學女力</div>
-          </div>
-        </a>
-        <div class="member-body">
-          <p class="theme-line">把職業服務做好，就同時是社會服務——讓二度就業婦女成為導覽員。</p>
-          <div class="focus-row">
-            <span class="focus-chip focus-chip-7">環境保護</span>
-            <span class="focus-chip focus-chip-6">社區經濟發展</span>
-          </div>
-        </div>
-        <a class="member-service-link filter-target" data-focus="env economy" href="services/02-tamsui.html">
-          <div class="link-meta">推動的服務計畫 · 社內獎助金</div>
-          <div class="link-name">綠動淡水 輕軌文化永續共創 →</div>
-        </a>
-      </article>
-
-      <article class="member-card filter-target" data-focus="env">
-        <a class="member-head" href="profiles/05-lisa-lin.html">
-          <div class="avatar role-act">林</div>
-          <div class="info">
-            <div class="name">林映如 Lisa</div>
-            <div class="role">永續百家創辦人 · 零廢淨行動派</div>
-          </div>
-        </a>
-        <div class="member-body">
-          <p class="theme-line">把零廢棄、淨灘、海洋永續從理念變成日常行動，帶上百位志工換來真實改變。</p>
-          <div class="focus-row">
-            <span class="focus-chip focus-chip-7">環境保護</span>
-          </div>
-        </div>
-        <a class="member-service-link filter-target" data-focus="env" href="services/07-zero-waste-mazu.html">
-          <div class="link-meta">推動的服務計畫 · 扶輪社區服務團</div>
-          <div class="link-name">零廢敬媽祖 在地永續行動 →</div>
-        </a>
-      </article>
-
-      <article class="member-card filter-target" data-focus="edu">
-        <a class="member-head" href="profiles/06-james-gao.html">
-          <div class="avatar role-act">高</div>
-          <div class="info">
-            <div class="name">高清坊 James</div>
-            <div class="role">通信閣規劃者 · 以空間設計照護未來</div>
-          </div>
-        </a>
-        <div class="member-body">
-          <p class="theme-line">用空間設計回應高齡照顧、生命教育、創新教育訓練。</p>
-          <div class="focus-row">
-            <span class="focus-chip focus-chip-5">基礎教育與識字</span>
-          </div>
-        </div>
-        <a class="member-service-link filter-target" data-focus="edu" href="services/04-life-warrior.html">
-          <div class="link-meta">推動的服務計畫 · 社內獎助金</div>
-          <div class="link-name">永續的生命鬥士與傳承 創新教育訓練 →</div>
-        </a>
-      </article>
-
-      <article class="member-card filter-target" data-focus="economy env">
-        <a class="member-head" href="profiles/09-vincent-chen.html">
-          <div class="avatar role-cont">陳</div>
-          <div class="info">
-            <div class="name">陳明勇 Vincent</div>
-            <div class="role">引導師 · 報告書主筆</div>
-          </div>
-        </a>
-        <div class="member-body">
-          <p class="theme-line">用引導技術、SROI、ESG 的方法論，把社區、企業、社友之間的對話接起來。</p>
-          <div class="focus-row">
-            <span class="focus-chip focus-chip-6">社區經濟發展</span>
-            <span class="focus-chip focus-chip-7">環境保護</span>
-          </div>
-        </div>
-        <a class="member-service-link filter-target" data-focus="economy env" href="services/06-community.html">
-          <div class="link-meta">推動的服務計畫 · 社內獎助金</div>
-          <div class="link-name">社區永續支持計畫 共創在地 ESG 行動 →</div>
-        </a>
-      </article>
-
-    </div>
-
-    <h3 style="margin: 48px 0 14px; font-size: 1.2rem; color: var(--ink);">其他社友</h3>
-    <p style="color: var(--ink-soft); font-size:0.9rem; margin-bottom: 14px;">本年度雖未提案個人服務計畫，仍以各自的專業與身份持續支持永力社的服務行動。</p>
-    <div class="member-grid">
-
-      <article class="member-card filter-target" data-focus="health edu">
-        <a class="member-head" href="profiles/04-helen-lai.html">
-          <div class="avatar role-guard">賴</div>
-          <div class="info">
-            <div class="name">賴光蘭 PP Helen</div>
-            <div class="role">育成基金會執行長 · 用愛守護智青</div>
-          </div>
-        </a>
-        <div class="member-body">
-          <p class="theme-line">三十多年陪伴心智障礙青年走進職場、走進社區，讓他們有角色、有貢獻、有尊嚴。</p>
-          <div class="focus-row">
-            <span class="focus-chip focus-chip-2">疾病預防與治療</span>
-            <span class="focus-chip focus-chip-5">基礎教育與識字</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="member-card filter-target" data-focus="economy">
-        <a class="member-head" href="profiles/03-derek-huang.html">
-          <div class="avatar role-guard">黃</div>
-          <div class="info">
-            <div class="name">黃世祿 Derek</div>
-            <div class="role">資訊系統服務 · 用制度守住價值的人</div>
-          </div>
-        </a>
-        <div class="member-body">
-          <p class="theme-line">把社務、知識、服務計畫的資料，放進一套可被檢視、可被傳承的系統裡。</p>
-          <div class="focus-row">
-            <span class="focus-chip focus-chip-6">社區經濟發展</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="member-card filter-target" data-focus="economy">
-        <a class="member-head" href="profiles/07-nick-lin.html">
-          <div class="avatar role-cont">林</div>
-          <div class="info">
-            <div class="name">林秉鴻 PP Nick</div>
-            <div class="role">前社長 · 讓價值長久延續的人</div>
-          </div>
-        </a>
-        <div class="member-body">
-          <p class="theme-line">把短期成果變成可被印刷、可被收藏、可被反覆翻閱的形式。</p>
-          <div class="focus-row">
-            <span class="focus-chip focus-chip-6">社區經濟發展</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="member-card filter-target" data-focus="">
-        <a class="member-head" href="profiles/08-rich-huang.html">
-          <div class="avatar role-cont">黃</div>
-          <div class="info">
-            <div class="name">黃丞隆 PE Rich</div>
-            <div class="role">下屆社長 · 不畏挑戰，選擇承擔</div>
-          </div>
-        </a>
-        <div class="member-body">
-          <p class="theme-line">在創社初期承接下一棒，因為相信永力社的方向值得被推下去。</p>
-          <div class="focus-row">
-            <span class="focus-tag-pending">焦點領域對應將陸續確認</span>
-          </div>
-        </div>
-      </article>
-
-    </div>
-
-    <h3 style="margin: 48px 0 14px; font-size: 1.2rem; color: var(--ink);">永力社共同支持的服務計畫</h3>
-    <p style="color: var(--ink-soft); font-size:0.9rem; margin-bottom: 14px;">由扶輪夥伴提案、永力社共同支持的服務行動。</p>
-    <div class="external-grid">
-
-      <a class="external-card filter-target" data-focus="env" href="services/03-eco-edu.html">
-        <span class="grant">扶輪社區服務團</span>
-        <h4>落實環教永續力 推動淨零新生活計畫</h4>
-        <p class="by">提案 · <strong>夏萬浪里長</strong>（網溪里）</p>
-        <div class="focus-row">
-          <span class="focus-chip focus-chip-7">環境保護</span>
+          <span class="more">閱讀人物誌</span>
         </div>
       </a>
 
-      <a class="external-card filter-target" data-focus="health" href="services/05-dental.html">
-        <span class="grant">扶輪全球獎助金</span>
-        <h4>全民健康 由齒開始！服務計畫</h4>
-        <p class="by">提案 · <strong>鄭仲翔博士 Dr. Eric</strong>（共融衛星社）</p>
-        <div class="focus-row">
-          <span class="focus-chip focus-chip-2">疾病預防與治療</span>
+      <a class="person-card" data-role="guard" data-sdgs="4,9,16,17" href="profiles/03-derek-huang.html">
+        <span class="accent"></span>
+        <span class="review-chip pending">待校稿</span>
+        <div class="body">
+          <div class="head-row">
+            <div class="avatar role-guard">黃</div>
+            <div>
+              <div class="name">黃世祿 Derek</div>
+              <div class="title-line">資訊系統服務 · 制度守護者</div>
+            </div>
+          </div>
+          <div class="theme">用制度守住價值的人</div>
+          <div class="quote">把社務、知識、服務計畫的資料，放進一套可被檢視、可被傳承的系統裡。</div>
+          <div class="sdg-row">
+            <span class="sdg-chip sdg-chip-4">4</span>
+            <span class="sdg-chip sdg-chip-9">9</span>
+            <span class="sdg-chip sdg-chip-16">16</span>
+            <span class="sdg-chip sdg-chip-17">17</span>
+          </div>
+          <span class="more">閱讀人物誌</span>
+        </div>
+      </a>
+
+      <a class="person-card" data-role="guard" data-sdgs="3,4,10,17" href="profiles/04-helen-lai.html">
+        <span class="accent"></span>
+        <span class="review-chip pending">待校稿</span>
+        <div class="body">
+          <div class="head-row">
+            <div class="avatar role-guard">賴</div>
+            <div>
+              <div class="name">賴光蘭 PP Helen</div>
+              <div class="title-line">育成基金會執行長</div>
+            </div>
+          </div>
+          <div class="theme">用愛守護智青</div>
+          <div class="quote">三十多年陪伴心智障礙青年走進職場、走進社區，讓他們有角色、有貢獻、有尊嚴。</div>
+          <div class="sdg-row">
+            <span class="sdg-chip sdg-chip-3">3</span>
+            <span class="sdg-chip sdg-chip-4">4</span>
+            <span class="sdg-chip sdg-chip-10">10</span>
+            <span class="sdg-chip sdg-chip-17">17</span>
+          </div>
+          <span class="more">閱讀人物誌</span>
+        </div>
+      </a>
+
+      <a class="person-card" data-role="act" data-sdgs="4,5,8,11,17" href="profiles/02-vicky-li.html">
+        <span class="accent"></span>
+        <span class="review-chip pending">待校稿</span>
+        <div class="body">
+          <div class="head-row">
+            <div class="avatar role-act">李</div>
+            <div>
+              <div class="name">李琪 Vicky</div>
+              <div class="title-line">永力社理事 · 旅學堂創辦人</div>
+            </div>
+          </div>
+          <div class="theme">旅學女力</div>
+          <div class="quote">把職業服務做好，就同時是社會服務 — 讓二度就業婦女成為導覽員。</div>
+          <div class="sdg-row">
+            <span class="sdg-chip sdg-chip-4">4</span>
+            <span class="sdg-chip sdg-chip-5">5</span>
+            <span class="sdg-chip sdg-chip-8">8</span>
+            <span class="sdg-chip sdg-chip-11">11</span>
+            <span class="sdg-chip sdg-chip-17">17</span>
+          </div>
+          <span class="more">閱讀人物誌</span>
+        </div>
+      </a>
+
+      <a class="person-card" data-role="act" data-sdgs="11,12,13,14,15" href="profiles/05-lisa-lin.html">
+        <span class="accent"></span>
+        <span class="review-chip pending">待校稿</span>
+        <div class="body">
+          <div class="head-row">
+            <div class="avatar role-act">林</div>
+            <div>
+              <div class="name">林映如 Lisa</div>
+              <div class="title-line">永續百家創辦人</div>
+            </div>
+          </div>
+          <div class="theme">零廢淨行動派</div>
+          <div class="quote">把零廢棄、淨灘、海洋永續從理念變成日常行動，帶上百位志工換來真實改變。</div>
+          <div class="sdg-row">
+            <span class="sdg-chip sdg-chip-11">11</span>
+            <span class="sdg-chip sdg-chip-12">12</span>
+            <span class="sdg-chip sdg-chip-13">13</span>
+            <span class="sdg-chip sdg-chip-14">14</span>
+            <span class="sdg-chip sdg-chip-15">15</span>
+          </div>
+          <span class="more">閱讀人物誌</span>
+        </div>
+      </a>
+
+      <a class="person-card" data-role="act" data-sdgs="3,9,11,17" href="profiles/06-james-gao.html">
+        <span class="accent"></span>
+        <span class="review-chip pending">待校稿</span>
+        <div class="body">
+          <div class="head-row">
+            <div class="avatar role-act">高</div>
+            <div>
+              <div class="name">高清坊 James</div>
+              <div class="title-line">通信閣規劃者</div>
+            </div>
+          </div>
+          <div class="theme">以空間設計照護未來</div>
+          <div class="quote">用空間設計回應高齡照顧、生命教育、創新教育訓練。</div>
+          <div class="sdg-row">
+            <span class="sdg-chip sdg-chip-3">3</span>
+            <span class="sdg-chip sdg-chip-9">9</span>
+            <span class="sdg-chip sdg-chip-11">11</span>
+            <span class="sdg-chip sdg-chip-17">17</span>
+          </div>
+          <span class="more">閱讀人物誌</span>
+        </div>
+      </a>
+
+      <a class="person-card" data-role="cont" data-sdgs="9,12,13,17" href="profiles/07-nick-lin.html">
+        <span class="accent"></span>
+        <span class="review-chip pending">待校稿</span>
+        <div class="body">
+          <div class="head-row">
+            <div class="avatar role-cont">林</div>
+            <div>
+              <div class="name">林秉鴻 PP Nick</div>
+              <div class="title-line">前社長 · 印刷設計</div>
+            </div>
+          </div>
+          <div class="theme">讓價值長久延續的人</div>
+          <div class="quote">把短期成果變成可被印刷、可被收藏、可被反覆翻閱的形式。</div>
+          <div class="sdg-row">
+            <span class="sdg-chip sdg-chip-9">9</span>
+            <span class="sdg-chip sdg-chip-12">12</span>
+            <span class="sdg-chip sdg-chip-13">13</span>
+            <span class="sdg-chip sdg-chip-17">17</span>
+          </div>
+          <span class="more">閱讀人物誌</span>
+        </div>
+      </a>
+
+      <a class="person-card" data-role="cont" data-sdgs="8,11,17" href="profiles/08-rich-huang.html">
+        <span class="accent"></span>
+        <span class="review-chip pending">待校稿</span>
+        <div class="body">
+          <div class="head-row">
+            <div class="avatar role-cont">黃</div>
+            <div>
+              <div class="name">黃丞隆 PE Rich</div>
+              <div class="title-line">下屆社長</div>
+            </div>
+          </div>
+          <div class="theme">不畏挑戰，選擇承擔</div>
+          <div class="quote">在創社初期承接下一棒，因為相信永力社的方向值得被推下去。</div>
+          <div class="sdg-row">
+            <span class="sdg-chip sdg-chip-8">8</span>
+            <span class="sdg-chip sdg-chip-11">11</span>
+            <span class="sdg-chip sdg-chip-17">17</span>
+          </div>
+          <span class="more">閱讀人物誌</span>
+        </div>
+      </a>
+
+      <a class="person-card" data-role="cont" data-sdgs="3,4,11,16,17" href="profiles/09-vincent-chen.html">
+        <span class="accent"></span>
+        <span class="review-chip pending">待校稿</span>
+        <div class="body">
+          <div class="head-row">
+            <div class="avatar role-cont">陳</div>
+            <div>
+              <div class="name">陳明勇 Vincent</div>
+              <div class="title-line">引導師 · 報告書主筆</div>
+            </div>
+          </div>
+          <div class="theme">用對話促進社會正向改變</div>
+          <div class="quote">用引導技術、SROI、ESG 的方法論，把社區、企業、社友之間的對話接起來。</div>
+          <div class="sdg-row">
+            <span class="sdg-chip sdg-chip-3">3</span>
+            <span class="sdg-chip sdg-chip-4">4</span>
+            <span class="sdg-chip sdg-chip-11">11</span>
+            <span class="sdg-chip sdg-chip-16">16</span>
+            <span class="sdg-chip sdg-chip-17">17</span>
+          </div>
+          <span class="more">閱讀人物誌</span>
         </div>
       </a>
 
     </div>
 
     <!-- 預留位置卡 -->
-    <div class="placeholder-card" style="margin-top: 36px;">
+    <div class="placeholder-card" style="margin-top: 18px;">
       <strong>＋ 更多社友介紹陸續加入</strong><br>
       其他社友與衛星社員的故事，將陸續於本報告中呈現。
+    </div>
+  </div>
+</section>
+
+<!-- ============ §07 服務計畫 ============ -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head">
+      <span class="num">08</span>
+      <h2>服務計畫成果</h2>
+      <span class="meta">7 項計畫 · 每項用 IOOI 邏輯整理</span>
+    </div>
+
+    <div class="filter-bar" data-filter-group="service-grant">
+      <span class="filter-label">獎助金來源：</span>
+      <button class="filter-btn active" data-grant="all">全部 <span class="count">7</span></button>
+      <button class="filter-btn" data-grant="global">全球獎助金 <span class="count">1</span></button>
+      <button class="filter-btn" data-grant="district">地區獎助金 <span class="count">1</span></button>
+      <button class="filter-btn" data-grant="club">社內獎助金 <span class="count">3</span></button>
+      <button class="filter-btn" data-grant="community">社區服務團 <span class="count">2</span></button>
+    </div>
+
+    <div class="card-grid" id="services-grid">
+
+      <a class="service-card" data-grant="district" href="services/01-zhongyi.html">
+        <div class="thumb" style="background-image:url('assets/img/services/01-zhongyi.jpg')"></div>
+        <div class="body">
+          <span class="grant">地區獎助金</span>
+          <h3>台北忠義國小 小田園環境教育服務計畫</h3>
+          <p class="by">提案人 · <strong>林學賢 CP Impact</strong></p>
+          <div class="sdg-row">
+            <span class="sdg-chip sdg-chip-1">1</span>
+            <span class="sdg-chip sdg-chip-4">4</span>
+            <span class="sdg-chip sdg-chip-11">11</span>
+            <span class="sdg-chip sdg-chip-12">12</span>
+            <span class="sdg-chip sdg-chip-15">15</span>
+          </div>
+          <div class="iooi-line">
+            <strong>I</strong> 社友捐贈＋學校場地 · <strong>O</strong> 田園課程 → <strong>O</strong> 學童學習成效 · <strong>I</strong> 環境素養文化擴散
+          </div>
+          <span class="more">查看計畫</span>
+        </div>
+      </a>
+
+      <a class="service-card" data-grant="club" href="services/02-tamsui.html">
+        <div class="thumb" style="background-image:url('assets/img/services/02-tamsui.jpg')"></div>
+        <div class="body">
+          <span class="grant">社內獎助金</span>
+          <h3>綠動淡水 輕軌文化永續共創服務計畫</h3>
+          <p class="by">提案人 · <strong>李琪 Vicky</strong>（旅學堂工作室）</p>
+          <div class="sdg-row">
+            <span class="sdg-chip sdg-chip-4">4</span>
+            <span class="sdg-chip sdg-chip-5">5</span>
+            <span class="sdg-chip sdg-chip-8">8</span>
+            <span class="sdg-chip sdg-chip-11">11</span>
+            <span class="sdg-chip sdg-chip-17">17</span>
+          </div>
+          <div class="iooi-line">
+            <strong>I</strong> 二度就業婦女＋導覽訓練 · <strong>O</strong> 在地導覽團 → <strong>O</strong> 女力培育、低碳交通推廣 · <strong>I</strong> 在地永續經濟模式
+          </div>
+          <span class="more">查看計畫</span>
+        </div>
+      </a>
+
+      <a class="service-card" data-grant="community" href="services/03-eco-edu.html">
+        <div class="thumb" style="background-image:url('assets/img/services/03-eco-edu.jpg')"></div>
+        <div class="body">
+          <span class="grant">扶輪社區服務團</span>
+          <h3>落實環教永續力 推動淨零新生活計畫</h3>
+          <p class="by">提案人 · <strong>夏萬浪里長</strong>（網溪里）</p>
+          <div class="sdg-row">
+            <span class="sdg-chip sdg-chip-3">3</span>
+            <span class="sdg-chip sdg-chip-4">4</span>
+            <span class="sdg-chip sdg-chip-11">11</span>
+            <span class="sdg-chip sdg-chip-12">12</span>
+            <span class="sdg-chip sdg-chip-13">13</span>
+          </div>
+          <div class="iooi-line">
+            <strong>I</strong> 里民＋扶輪資源 · <strong>O</strong> 淨零生活推廣場次 → <strong>O</strong> 居民行為改變 · <strong>I</strong> 社區淨零文化
+          </div>
+          <span class="more">查看計畫</span>
+        </div>
+      </a>
+
+      <a class="service-card" data-grant="club" href="services/04-life-warrior.html">
+        <div class="thumb" style="background-image:url('assets/img/services/04-life-warrior.jpg')"></div>
+        <div class="body">
+          <span class="grant">社內獎助金</span>
+          <h3>永續的生命鬥士與傳承 創新教育訓練計畫</h3>
+          <p class="by">提案人 · <strong>高清坊 James</strong></p>
+          <div class="sdg-row">
+            <span class="sdg-chip sdg-chip-1">1</span>
+            <span class="sdg-chip sdg-chip-3">3</span>
+            <span class="sdg-chip sdg-chip-4">4</span>
+            <span class="sdg-chip sdg-chip-8">8</span>
+            <span class="sdg-chip sdg-chip-11">11</span>
+            <span class="sdg-chip sdg-chip-17">17</span>
+          </div>
+          <div class="iooi-line">
+            <strong>I</strong> 高齡學員＋空間設計＋師資 · <strong>O</strong> 教育訓練場次 → <strong>O</strong> 高齡者能力延續 · <strong>I</strong> 跨世代傳承機制
+          </div>
+          <span class="more">查看計畫</span>
+        </div>
+      </a>
+
+      <a class="service-card" data-grant="global" href="services/05-dental.html">
+        <div class="thumb" style="background-image:url('assets/img/services/05-dental.jpg')"></div>
+        <div class="body">
+          <span class="grant">扶輪全球獎助金</span>
+          <h3>全民健康 由齒開始！服務計畫</h3>
+          <p class="by">提案人 · <strong>鄭仲翔博士 Dr. Eric</strong>（共融衛星社）</p>
+          <div class="sdg-row">
+            <span class="sdg-chip sdg-chip-3">3</span>
+            <span class="sdg-chip sdg-chip-4">4</span>
+            <span class="sdg-chip sdg-chip-11">11</span>
+            <span class="sdg-chip sdg-chip-17">17</span>
+          </div>
+          <div class="iooi-line">
+            <strong>I</strong> 牙醫志工＋全球扶輪資金 · <strong>O</strong> 義診次數＋衛教場次 → <strong>O</strong> 偏鄉口腔健康提升 · <strong>I</strong> 健康不平等改善
+          </div>
+          <span class="more">查看計畫</span>
+        </div>
+      </a>
+
+      <a class="service-card" data-grant="club" href="services/06-community.html">
+        <div class="thumb" style="background-image:url('assets/img/services/06-community.jpg')"></div>
+        <div class="body">
+          <span class="grant">社內獎助金</span>
+          <h3>社區永續支持計畫 共創在地 ESG 行動</h3>
+          <p class="by">提案人 · <strong>陳明勇 Vincent</strong></p>
+          <div class="sdg-row">
+            <span class="sdg-chip sdg-chip-3">3</span>
+            <span class="sdg-chip sdg-chip-4">4</span>
+            <span class="sdg-chip sdg-chip-11">11</span>
+            <span class="sdg-chip sdg-chip-16">16</span>
+            <span class="sdg-chip sdg-chip-17">17</span>
+          </div>
+          <div class="iooi-line">
+            <strong>I</strong> 社區工作坊＋引導技術 · <strong>O</strong> 共創會議場次 → <strong>O</strong> 社區自主決策能量 · <strong>I</strong> 在地 ESG 文化
+          </div>
+          <span class="more">查看計畫</span>
+        </div>
+      </a>
+
+      <a class="service-card" data-grant="community" href="services/07-zero-waste-mazu.html">
+        <div class="thumb" style="background-image:url('assets/img/services/07-zero-waste-mazu.jpg')"></div>
+        <div class="body">
+          <span class="grant">扶輪社區服務團</span>
+          <h3>零廢敬媽祖 在地永續行動</h3>
+          <p class="by">提案人 · <strong>林映如 Lisa</strong>（永續百家）</p>
+          <div class="sdg-row">
+            <span class="sdg-chip sdg-chip-11">11</span>
+            <span class="sdg-chip sdg-chip-12">12</span>
+            <span class="sdg-chip sdg-chip-13">13</span>
+            <span class="sdg-chip sdg-chip-14">14</span>
+          </div>
+          <div class="iooi-line">
+            <strong>I</strong> 百位志工＋廟方合作 · <strong>O</strong> 淨灘＋零廢活動次數 → <strong>O</strong> 廟會減廢實踐 · <strong>I</strong> 信仰場域永續轉型
+          </div>
+          <span class="more">查看計畫</span>
+        </div>
+      </a>
+
     </div>
   </div>
 </section>
@@ -1393,7 +1498,7 @@
 <section class="section" id="governance">
   <div class="container">
     <div class="section-head">
-      <span class="num">08</span>
+      <span class="num">09</span>
       <h2>社務治理</h2>
       <span class="meta">以例會、委員會與社友分工推動服務</span>
     </div>
@@ -1430,10 +1535,11 @@
       <ul>
         <li><a href="#intro">關於永力社</a></li>
         <li><a href="#stage">影響力進程</a></li>
-        <li><a href="#rotary-frame">七大焦點領域</a></li>
+        <li><a href="#rotary-frame">扶輪七大領域</a></li>
         <li><a href="#methods">影響力衡量</a></li>
         <li><a href="#practice">三框架分析</a></li>
-        <li><a href="#impact-hub">社友與服務計畫</a></li>
+        <li><a href="#people">社友影響力</a></li>
+        <li><a href="#services">服務計畫</a></li>
       </ul>
     </div>
     <div>
@@ -1449,34 +1555,27 @@
 </footer>
 
 <script>
-// 七大焦點領域 — 點擊篩選 bar
-document.querySelectorAll('.focus-filter .filter-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const focus = btn.dataset.focus;
-    document.querySelectorAll('.focus-filter .filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+// 篩選邏輯（沿用 v1）
+document.querySelectorAll('.filter-bar').forEach(bar => {
+  const group = bar.dataset.filterGroup;
+  bar.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      bar.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
 
-    document.querySelectorAll('.filter-target').forEach(card => {
-      if (focus === 'all') {
-        card.style.display = '';
-        return;
+      if (group === 'role') {
+        const role = btn.dataset.role;
+        document.querySelectorAll('#people-grid .person-card').forEach(card => {
+          card.classList.toggle('hidden', !(role === 'all' || card.dataset.role === role));
+        });
       }
-      const cardFocus = (card.dataset.focus || '').split(/\s+/).filter(Boolean);
-      card.style.display = cardFocus.includes(focus) ? '' : 'none';
+      if (group === 'service-grant') {
+        const grant = btn.dataset.grant;
+        document.querySelectorAll('#services-grid .service-card').forEach(card => {
+          card.classList.toggle('hidden', !(grant === 'all' || card.dataset.grant === grant));
+        });
+      }
     });
-  });
-});
-
-// §04 七大圓圈快捷入口 — 點擊後滾動並 trigger 對應篩選
-document.querySelectorAll('.focus-areas-clickable .focus-area').forEach(link => {
-  link.addEventListener('click', e => {
-    const focus = link.dataset.focus;
-    const targetBtn = document.querySelector(`.focus-filter .filter-btn[data-focus="${focus}"]`);
-    if (targetBtn) {
-      // 不阻止預設錨點跳轉，讓瀏覽器先 scroll 到 #impact-hub
-      // 然後再 trigger 篩選
-      setTimeout(() => targetBtn.click(), 50);
-    }
   });
 });
 
