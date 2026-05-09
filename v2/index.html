@@ -731,6 +731,26 @@
   color: var(--gold);
 }
 
+/* 含計畫縮圖的 service-link（v1 風格） */
+.member-service-link.with-thumb {
+  padding: 0;
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  align-items: stretch;
+}
+.member-service-link.with-thumb .link-thumb {
+  background-size: cover;
+  background-position: center;
+  background-color: var(--bg-soft);
+  min-height: 90px;
+}
+.member-service-link.with-thumb .link-info {
+  padding: 14px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 /* 永力社共同支持的服務計畫 */
 .external-grid {
   display: grid;
@@ -1083,7 +1103,6 @@
       <button class="service-tag" data-svc="vocational">
         <span class="svc-name">職業服務</span>
         <span class="svc-en">Vocational</span>
-        <span class="svc-mark">主軸</span>
       </button>
       <button class="service-tag" data-svc="community">
         <span class="svc-name">社區服務</span>
@@ -1103,26 +1122,28 @@
     <div class="service-detail" data-svc-panel="club">
       <h3>社務服務 · Club Service</h3>
       <p class="svc-def">強化聯誼及確保扶輪社能有效運作。</p>
-      <div class="svc-stat">永力社目前 5 位社友以社務治理身份持續支持本社運作</div>
+      <div class="svc-stat">永力社目前 6 位社友以社務治理或專業協作身份持續支持本社運作</div>
       <ul class="svc-member-list">
         <li><strong>CP 林學賢</strong>　創社社長 · 價值場域建構者</li>
         <li><strong>Vincent 陳明勇</strong>　引導師 · 報告書主筆</li>
         <li><strong>Rich 黃丞隆</strong>　下屆社長</li>
         <li><strong>Derek 黃世祿</strong>　資訊系統服務 · 制度守護者</li>
         <li><strong>Nick 林秉鴻</strong>　前社長 · 印刷設計</li>
+        <li><strong>Albee 張艾筆</strong>　琢色映像工作室 · 報告書影像主力</li>
       </ul>
       <p class="svc-hint">↓ 往下滑看完整社友介紹</p>
     </div>
 
     <div class="service-detail" data-svc-panel="vocational">
-      <h3>職業服務 · Vocational Service <span class="svc-mark-inline">永力社主軸</span></h3>
+      <h3>職業服務 · Vocational Service</h3>
       <p class="svc-def">鼓勵扶輪社員透過自己的職業來服務他人，並實踐崇高的道德標準。</p>
-      <div class="svc-stat">永力社目前 5 位社友以自身職業專業推動社會服務</div>
+      <div class="svc-stat">永力社目前 6 位社友以自身職業專業推動社會服務</div>
       <ul class="svc-member-list">
         <li><strong>Vicky 李琪</strong>　旅學堂創辦人 → 二度就業女性導覽培育</li>
         <li><strong>Helen 賴光蘭</strong>　育成基金會執行長 → 心智障礙青年職前培訓</li>
         <li><strong>James 高清坊</strong>　通信閣規劃者 → 高齡與生命教育空間設計</li>
         <li><strong>Vincent 陳明勇</strong>　引導師 → 對話、SROI、ESG 推動社區改變</li>
+        <li><strong>Albee 張艾筆</strong>　琢色映像工作室 → 影像、媒體與 SDGs 策劃</li>
         <li><strong>Eric 鄭仲翔博士</strong>（共融衛星社）→ 全球牙醫義診與衛教</li>
       </ul>
       <p class="svc-hint">↓ 往下滑看完整社友與服務計畫</p>
@@ -1156,9 +1177,10 @@
     <div class="service-detail" data-svc-panel="youth">
       <h3>青少年服務 · Youth Service</h3>
       <p class="svc-def">透過培養領導技能活動、服務計畫及交換計畫，表彰青少年及年輕人實現的正向改變。</p>
-      <div class="svc-stat">永力社目前 3 位社友的服務涵蓋青少年與下一代</div>
+      <div class="svc-stat">永力社目前 4 位社友的服務涵蓋青少年與下一代</div>
       <ul class="svc-member-list">
         <li><strong>CP 林學賢</strong> → 忠義國小 小田園環境教育（學童培力）</li>
+        <li><strong>Vicky 李琪</strong> → 淡水國中 PBL 教案 / 淡江大學社會影響力評估（青年共學）</li>
         <li><strong>James 高清坊</strong> → 永續的生命鬥士與傳承 創新教育訓練（跨世代）</li>
         <li><strong>Helen 賴光蘭</strong> → 育成基金會 心智障礙青年職涯陪伴</li>
       </ul>
@@ -1210,13 +1232,16 @@
             <span class="focus-chip svc-chip-club">社務服務</span>
           </div>
         </div>
-        <a class="member-service-link filter-target" data-focus="community youth club" href="services/01-zhongyi.html">
-          <div class="link-meta">推動的服務計畫 · 扶輪地區獎助金</div>
-          <div class="link-name">忠義國小 小田園環境教育 →</div>
+        <a class="member-service-link with-thumb filter-target" data-focus="community youth club" href="services/01-zhongyi.html">
+          <div class="link-thumb" style="background-image:url('assets/img/services/01-zhongyi.jpg')"></div>
+          <div class="link-info">
+            <div class="link-meta">推動的服務計畫 · 扶輪地區獎助金</div>
+            <div class="link-name">忠義國小 小田園環境教育 →</div>
+          </div>
         </a>
       </article>
 
-      <article class="member-card filter-target" data-focus="vocational community">
+      <article class="member-card filter-target" data-focus="vocational community youth">
         <a class="member-head" href="profiles/02-vicky-li.html">
           <div class="avatar role-act">李</div>
           <div class="info">
@@ -1225,15 +1250,19 @@
           </div>
         </a>
         <div class="member-body">
-          <p class="theme-line">把職業服務做好，就同時是社會服務——讓二度就業婦女成為導覽員。</p>
+          <p class="theme-line">把職業服務做好，就同時是社會服務——讓二度就業婦女成為導覽員。同時與淡水國中合作 PBL 教案、與淡江大學合作社會影響力評估，把旅學的方法帶進校園。</p>
           <div class="focus-row">
             <span class="focus-chip svc-chip-vocational">職業服務</span>
             <span class="focus-chip svc-chip-community">社區服務</span>
+            <span class="focus-chip svc-chip-youth">青少年服務</span>
           </div>
         </div>
-        <a class="member-service-link filter-target" data-focus="vocational community" href="services/02-tamsui.html">
-          <div class="link-meta">推動的服務計畫 · 社內獎助金</div>
-          <div class="link-name">綠動淡水 輕軌文化永續共創 →</div>
+        <a class="member-service-link with-thumb filter-target" data-focus="vocational community youth" href="services/02-tamsui.html">
+          <div class="link-thumb" style="background-image:url('assets/img/services/02-tamsui.jpg')"></div>
+          <div class="link-info">
+            <div class="link-meta">推動的服務計畫 · 社內獎助金</div>
+            <div class="link-name">綠動淡水 輕軌文化永續共創 →</div>
+          </div>
         </a>
       </article>
 
@@ -1251,9 +1280,12 @@
             <span class="focus-chip svc-chip-community">社區服務</span>
           </div>
         </div>
-        <a class="member-service-link filter-target" data-focus="community" href="services/07-zero-waste-mazu.html">
-          <div class="link-meta">推動的服務計畫 · 扶輪社區服務團</div>
-          <div class="link-name">零廢敬媽祖 在地永續行動 →</div>
+        <a class="member-service-link with-thumb filter-target" data-focus="community" href="services/07-zero-waste-mazu.html">
+          <div class="link-thumb" style="background-image:url('assets/img/services/07-zero-waste-mazu.jpg')"></div>
+          <div class="link-info">
+            <div class="link-meta">推動的服務計畫 · 扶輪社區服務團</div>
+            <div class="link-name">零廢敬媽祖 在地永續行動 →</div>
+          </div>
         </a>
       </article>
 
@@ -1272,9 +1304,12 @@
             <span class="focus-chip svc-chip-youth">青少年服務</span>
           </div>
         </div>
-        <a class="member-service-link filter-target" data-focus="vocational youth" href="services/04-life-warrior.html">
-          <div class="link-meta">推動的服務計畫 · 社內獎助金</div>
-          <div class="link-name">永續的生命鬥士與傳承 創新教育訓練 →</div>
+        <a class="member-service-link with-thumb filter-target" data-focus="vocational youth" href="services/04-life-warrior.html">
+          <div class="link-thumb" style="background-image:url('assets/img/services/04-life-warrior.jpg')"></div>
+          <div class="link-info">
+            <div class="link-meta">推動的服務計畫 · 社內獎助金</div>
+            <div class="link-name">永續的生命鬥士與傳承 創新教育訓練 →</div>
+          </div>
         </a>
       </article>
 
@@ -1294,9 +1329,12 @@
             <span class="focus-chip svc-chip-club">社務服務</span>
           </div>
         </div>
-        <a class="member-service-link filter-target" data-focus="vocational community club" href="services/06-community.html">
-          <div class="link-meta">推動的服務計畫 · 社內獎助金</div>
-          <div class="link-name">社區永續支持計畫 共創在地 ESG 行動 →</div>
+        <a class="member-service-link with-thumb filter-target" data-focus="vocational community club" href="services/06-community.html">
+          <div class="link-thumb" style="background-image:url('assets/img/services/06-community.jpg')"></div>
+          <div class="link-info">
+            <div class="link-meta">推動的服務計畫 · 社內獎助金</div>
+            <div class="link-name">社區永續支持計畫 共創在地 ESG 行動 →</div>
+          </div>
         </a>
       </article>
 
@@ -1367,6 +1405,23 @@
         <div class="member-body">
           <p class="theme-line">在創社初期承接下一棒，因為相信永力社的方向值得被推下去。</p>
           <div class="focus-row">
+            <span class="focus-chip svc-chip-club">社務服務</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="member-card filter-target" data-focus="vocational club">
+        <a class="member-head" href="#">
+          <div class="avatar role-act">張</div>
+          <div class="info">
+            <div class="name">張艾筆 Albee</div>
+            <div class="role">琢色映像工作室 共同負責人 · 用影像轉譯善意</div>
+          </div>
+        </a>
+        <div class="member-body">
+          <p class="theme-line">透過影像、媒體、SDGs 策劃，協助各產業展現永續行動的深度。永力社報告書影像專訪與社員紀錄的核心夥伴。</p>
+          <div class="focus-row">
+            <span class="focus-chip svc-chip-vocational">職業服務</span>
             <span class="focus-chip svc-chip-club">社務服務</span>
           </div>
         </div>
