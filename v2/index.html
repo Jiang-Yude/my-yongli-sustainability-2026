@@ -800,6 +800,9 @@
 <header class="topbar">
   <div class="inner">
     <div class="brand"><span class="mark">永</span>永力扶輪社 2026 永續影響力報告書</div>
+    <button class="nav-toggle" aria-label="開啟選單" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
     <nav>
       <a href="#intro">關於永力社</a>
       <a href="#stage">影響力進程</a>
@@ -1479,6 +1482,25 @@ document.querySelectorAll('.focus-areas-clickable .focus-area').forEach(link => 
     }
   });
 });
+
+// 漢堡選單 toggle（手機版）
+const navToggle = document.querySelector('.nav-toggle');
+const topbarNav = document.querySelector('.topbar nav');
+if (navToggle && topbarNav) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = navToggle.classList.toggle('open');
+    topbarNav.classList.toggle('open', isOpen);
+    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  // 點選任一 nav 連結後自動收合（手機版）
+  topbarNav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navToggle.classList.remove('open');
+      topbarNav.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
 
 // 平滑捲動
 document.querySelectorAll('a[href^="#"]').forEach(a => {
