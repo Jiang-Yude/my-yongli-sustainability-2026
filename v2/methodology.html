@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>影響力衡量方法｜2026 永續影響力報告書</title>
+<meta name="description" content="永力社如何衡量影響力——IOOI 成果鏈、培力卡五階段、影響力指南四階段循環。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/common.css?v=8">
+<style>
+.method-section {
+  padding: 50px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+.method-section:last-of-type { border-bottom: none; }
+.method-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 6px;
+  color: var(--ink);
+  font-family: "Noto Serif TC", serif;
+}
+.method-section .lead {
+  font-size: 0.95rem;
+  color: var(--ink-mute);
+  margin: 0 0 24px;
+}
+.iooi-detail {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) auto;
+  gap: 0;
+  align-items: stretch;
+  margin-top: 12px;
+}
+.iooi-step-card {
+  padding: 18px 14px;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+.iooi-step-card:first-child { border-radius: 12px 0 0 12px; }
+.iooi-step-card:nth-of-type(4) { border-radius: 0 12px 12px 0; }
+.iooi-step-card .step-circle {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 8px;
+  font-family: "Noto Serif TC", serif;
+}
+.iooi-step-card.s1 .step-circle { background: #1976D2; }
+.iooi-step-card.s2 .step-circle { background: #00897B; }
+.iooi-step-card.s3 .step-circle { background: #EF6C00; }
+.iooi-step-card.s4 .step-circle { background: #C62828; }
+.iooi-step-card .step-title {
+  font-size: 1rem; font-weight: 700; color: var(--ink);
+  margin-bottom: 2px;
+}
+.iooi-step-card .step-en {
+  font-size: 0.72rem; color: var(--ink-mute); letter-spacing: 0.06em;
+  margin-bottom: 10px;
+}
+.iooi-step-card .step-desc {
+  font-size: 0.82rem; color: var(--ink-soft); line-height: 1.55;
+  margin: 0;
+}
+.iooi-arrow-mini {
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold);
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 0 4px;
+}
+.empower-five {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin-top: 14px;
+}
+.empower-stage {
+  padding: 14px 10px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  text-align: center;
+}
+.empower-stage .num {
+  display: inline-block;
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: 700;
+  line-height: 26px;
+  margin-bottom: 6px;
+}
+.empower-stage:nth-child(1) .num { background: #1976D2; }
+.empower-stage:nth-child(2) .num { background: #00897B; }
+.empower-stage:nth-child(3) .num { background: #EF6C00; }
+.empower-stage:nth-child(4) .num { background: #6A1B9A; }
+.empower-stage:nth-child(5) .num { background: #C62828; }
+.empower-stage .name {
+  font-size: 0.85rem; font-weight: 700; color: var(--ink);
+  margin-bottom: 3px;
+}
+.empower-stage .desc {
+  font-size: 0.72rem; color: var(--ink-mute);
+  line-height: 1.4;
+}
+.stage-cycle {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.stage-card {
+  position: relative;
+  padding: 16px 14px;
+  background: #fff;
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  text-align: center;
+}
+.stage-card.current {
+  border-color: var(--gold);
+  background: linear-gradient(180deg, #FFF7E5 0%, #fff 100%);
+  box-shadow: 0 4px 12px rgba(184,134,11,0.15);
+}
+.stage-card.future {
+  opacity: 0.6;
+  background: #FAFAF7;
+  border-style: dashed;
+}
+.stage-card .stage-num {
+  font-family: "Noto Serif TC", serif;
+  font-size: 0.78rem; color: var(--gold);
+  letter-spacing: 0.08em; font-weight: 700;
+  margin-bottom: 4px;
+}
+.stage-card .stage-name {
+  font-size: 1rem; font-weight: 700; color: var(--ink);
+  margin-bottom: 4px;
+}
+.stage-card .stage-name-en {
+  font-size: 0.72rem; color: var(--ink-mute); letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+.stage-card .stage-status {
+  display: inline-block;
+  padding: 3px 8px; border-radius: 999px;
+  font-size: 0.72rem; font-weight: 600;
+  margin-top: 4px;
+}
+.stage-card.current .stage-status { background: var(--gold); color: #fff; }
+.stage-card.future .stage-status { background: var(--line); color: var(--ink-soft); }
+.stage-source {
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: rgba(184,134,11,0.06);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 8px 8px 0;
+  font-size: 0.86rem; color: var(--ink-soft); line-height: 1.7;
+}
+.stage-source strong { color: var(--ink); }
+.framework-note {
+  margin-top: 24px;
+  padding: 14px 18px;
+  background: #fff;
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+.framework-note strong { color: var(--ink); }
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background .15s;
+}
+.back-link:hover { background: var(--gold); color: #fff; border-color: var(--gold); }
+@media (max-width: 920px) {
+  .iooi-detail { grid-template-columns: 1fr; }
+  .iooi-arrow-mini { transform: rotate(90deg); padding: 8px 0; }
+  .empower-five { grid-template-columns: repeat(2, 1fr); }
+  .stage-cycle { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="inner">
+    <div class="brand"><span class="mark">永</span>影響力衡量方法</div>
+    <a href="index.html" class="back-link">← 回主頁</a>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom: 24px;">
+  <div class="container">
+    <h1>影響力衡量方法</h1>
+    <p class="subtitle">永力社如何把每一場服務、每一筆捐贈、每一份專業時間，轉成可被看見、可被比較、可被累積的影響力。</p>
+    <div class="meta">
+      <span class="pill">IOOI 成果鏈</span>
+      <span class="pill">培力卡五階段</span>
+      <span class="pill">四階段循環</span>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+
+  <section class="method-section">
+    <h2>方法一 · IOOI 邏輯模型</h2>
+    <p class="lead">每個服務計畫的成果鏈：投入 → 產出 → 成效 → 影響</p>
+    <div class="iooi-detail">
+      <div class="iooi-step-card s1">
+        <div class="step-circle">I</div>
+        <div class="step-title">投入</div>
+        <div class="step-en">INPUT</div>
+        <p class="step-desc">社友職業時間、捐款、跨界資源、社務志工人力</p>
+      </div>
+      <div class="iooi-arrow-mini">→</div>
+      <div class="iooi-step-card s2">
+        <div class="step-circle">O</div>
+        <div class="step-title">產出</div>
+        <div class="step-en">OUTPUT</div>
+        <p class="step-desc">服務計畫場次、培訓人數、活動觸及、媒體曝光</p>
+      </div>
+      <div class="iooi-arrow-mini">→</div>
+      <div class="iooi-step-card s3">
+        <div class="step-circle">O</div>
+        <div class="step-title">成效</div>
+        <div class="step-en">OUTCOME</div>
+        <p class="step-desc">受益者能力提升、行為改變、組織能量增加</p>
+      </div>
+      <div class="iooi-arrow-mini">→</div>
+      <div class="iooi-step-card s4">
+        <div class="step-circle">I</div>
+        <div class="step-title">影響</div>
+        <div class="step-en">IMPACT</div>
+        <p class="step-desc">長期社會結構變化、永續性、政策／文化影響</p>
+      </div>
+    </div>
+    <div class="framework-note">
+      <strong>IOOI 不是扶輪原生框架</strong>，而是國際永續報告與社會影響力評估常用的邏輯模型。永力社引用它來描述每個服務計畫的因果路徑——從投入的資源到最終影響的社會改變。
+    </div>
+  </section>
+
+  <section class="method-section">
+    <h2>方法二 · 培力卡五階段</h2>
+    <p class="lead">由社友 Vicky 旅學堂提供 · 看一個人在系統中的成長階段</p>
+    <div class="empower-five">
+      <div class="empower-stage">
+        <span class="num">1</span>
+        <div class="name">參與者</div>
+        <div class="desc">第一次接觸、好奇、嘗試</div>
+      </div>
+      <div class="empower-stage">
+        <span class="num">2</span>
+        <div class="name">學習者</div>
+        <div class="desc">主動學技能、累積知識</div>
+      </div>
+      <div class="empower-stage">
+        <span class="num">3</span>
+        <div class="name">實踐者</div>
+        <div class="desc">獨立執行、累積成果</div>
+      </div>
+      <div class="empower-stage">
+        <span class="num">4</span>
+        <div class="name">引導者</div>
+        <div class="desc">能帶人、建系統、複製經驗</div>
+      </div>
+      <div class="empower-stage">
+        <span class="num">5</span>
+        <div class="name">擴散者</div>
+        <div class="desc">跨組織帶動、影響力外擴</div>
+      </div>
+    </div>
+    <div class="framework-note">
+      培力卡五階段由社友 Vicky 旅學堂提供，後續將陸續更新具體階段定義與永力社社友的當前位置。
+    </div>
+  </section>
+
+  <section class="method-section">
+    <h2>方法三 · 影響力指南評估四階段循環</h2>
+    <p class="lead">永力社現在在哪一階段？我們對自己的承諾。</p>
+    <div class="stage-cycle">
+      <div class="stage-card current">
+        <div class="stage-num">階段 一</div>
+        <div class="stage-name">規劃</div>
+        <div class="stage-name-en">PLAN</div>
+        <p style="font-size:0.78rem; color:var(--ink-soft); margin: 4px 0;">明確目的、設定影響力假設、選擇衡量框架</p>
+        <span class="stage-status">已達</span>
+      </div>
+      <div class="stage-card current">
+        <div class="stage-num">階段 二</div>
+        <div class="stage-name">執行記錄</div>
+        <div class="stage-name-en">DO</div>
+        <p style="font-size:0.78rem; color:var(--ink-soft); margin: 4px 0;">記錄 IOOI、累積服務計畫資料、整理事件鏈</p>
+        <span class="stage-status">進行中</span>
+      </div>
+      <div class="stage-card future">
+        <div class="stage-num">階段 三</div>
+        <div class="stage-name">衡量</div>
+        <div class="stage-name-en">MEASURE</div>
+        <p style="font-size:0.78rem; color:var(--ink-soft); margin: 4px 0;">量化成效、做社友間矩陣、第三方驗證</p>
+        <span class="stage-status">明年可做</span>
+      </div>
+      <div class="stage-card future">
+        <div class="stage-num">階段 四</div>
+        <div class="stage-name">學習</div>
+        <div class="stage-name-en">LEARN</div>
+        <p style="font-size:0.78rem; color:var(--ink-soft); margin: 4px 0;">回饋下一輪規劃、修正影響力假設、跨組織共學</p>
+        <span class="stage-status">後年可做</span>
+      </div>
+    </div>
+    <div class="stage-source">
+      <strong>依據來源：</strong>《Maximise Your Impact 影響力指南》一書，核心邏輯為「規劃 → 需求物證」的循環，並參考<strong>變革理論（Theory of Change）</strong>與 <strong>IOOI 邏輯模型</strong>。<br>
+      <strong>本社目前的位置：</strong>仍在影響力管理的初期，主要在規劃與執行記錄。保留階段三、階段四，是為了表達<strong>承諾</strong>——隨著資料持續累積，未來能走到具體的衡量與跨組織共學。
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="container">
+    <div>
+      <h4>台北永續影響力扶輪社</h4>
+      <p>Rotary Club of Taipei Sustainable Impact</p>
+      <p>以職業服務社會 · 用影響力衡量價值</p>
+    </div>
+    <div>
+      <h4>主要章節</h4>
+      <ul>
+        <li><a href="index.html">回主頁</a></li>
+        <li><a href="about-yongli.html">關於永力社</a></li>
+        <li><a href="analysis.html">三框架分析</a></li>
+      </ul>
+    </div>
+    <div class="copyright">© 2026 台北永續影響力扶輪社 · 內部分享版本（noindex / nofollow）</div>
+  </div>
+</footer>
+
+</body>
+</html>
