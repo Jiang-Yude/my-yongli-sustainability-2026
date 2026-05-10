@@ -531,109 +531,87 @@ img{max-width:100%;display:block}
   .service-detail{padding:24px 22px}
 }
 
-/* §03 Fathom 表格化（行式對應分布） */
+/* §03 五大服務行式表格（純資訊展示，不可點擊） */
 .svc-fathom-table{
   border-top:2px solid var(--ink);
   margin-bottom:24px;
 }
-.svc-row-link{
+.svc-stat-row{
   display:grid;
-  grid-template-columns:50px 1fr 1.5fr 1fr 110px;
+  grid-template-columns:50px 1fr 1.5fr 1fr 130px;
   gap:32px;
   padding:30px 0;
   border-bottom:1px solid var(--line);
-  text-decoration:none;
   color:var(--ink-2);
   align-items:start;
-  transition:padding 0.3s, background 0.3s;
 }
-.svc-row-link:hover{
-  background:var(--paper-2);
-  padding-left:18px;padding-right:18px;
-}
-.svc-row-link .row-num{
+.svc-stat-row .row-num{
   font-family:"Inter",sans-serif;
   font-size:16px;letter-spacing:0.16em;font-weight:700;
   color:var(--sage-deep);
   padding-top:6px;
 }
-.svc-row-link .row-name{
+.svc-stat-row .row-name{
   font-family:"Noto Serif TC",serif;
   font-size:25px;font-weight:600;
   color:var(--ink);line-height:1.35;
   letter-spacing:0.02em;
 }
-.svc-row-link .row-name small{
+.svc-stat-row .row-name small{
   display:block;
   font-family:"Inter",sans-serif;
   font-size:14px;letter-spacing:0.16em;
   color:var(--ink-3);font-weight:500;
   margin-top:8px;text-transform:uppercase;
 }
-.svc-row-link .row-desc{
+.svc-stat-row .row-desc{
   font-size:17px;color:var(--ink-2);
   line-height:1.75;
   padding-top:4px;
 }
-.svc-row-link .row-desc strong{
+.svc-stat-row .row-desc strong{
   color:var(--gold-deep);font-weight:700;
 }
-.svc-row-link .row-members{
+.svc-stat-row .row-members{
   font-size:17px;color:var(--ink-2);
   line-height:1.7;
   padding-top:4px;
 }
-.svc-row-link .row-members small{
+.svc-stat-row .row-members small{
   display:block;
   font-size:15px;color:var(--ink-3);
   margin-top:6px;
 }
-.svc-row-link .row-count{
+.svc-stat-row .row-count{
   text-align:right;
   font-family:"Noto Serif TC",serif;
-  font-size:48px;font-weight:600;
-  color:var(--ink);line-height:1;
-  padding-top:0;
-}
-.svc-row-link .row-count small{
-  display:block;
-  font-family:"Inter",sans-serif;
-  font-size:13px;letter-spacing:0.14em;
-  color:var(--ink-3);font-weight:500;
-  margin-top:10px;text-transform:uppercase;
-}
-.svc-row-link .row-count .arrow{
-  display:block;margin-top:14px;
-  color:var(--gold);font-size:22px;font-weight:300;
-  transition:transform 0.3s, color 0.3s;
-}
-.svc-row-link:hover .row-count .arrow{
-  transform:translateX(8px);color:var(--sage-deep);
+  font-size:20px;font-weight:600;
+  color:var(--ink);line-height:1.55;
+  padding-top:4px;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
 }
 
 /* 主軸列（職業服務）強調 */
-.svc-row-link.is-main{
+.svc-stat-row.is-main{
   background:var(--gold-bg);
   border-left:4px solid var(--gold);
   padding-left:18px;padding-right:18px;
 }
-.svc-row-link.is-main:hover{
-  background:var(--gold-soft);
-}
-.svc-row-link.is-main .row-num{color:var(--gold-deep)}
+.svc-stat-row.is-main .row-num{color:var(--gold-deep)}
 
 @media(max-width:900px){
-  .svc-row-link{
+  .svc-stat-row{
     grid-template-columns:40px 1fr;
     row-gap:10px;
     padding:24px 0;
   }
-  .svc-row-link.is-main{padding:24px 14px}
-  .svc-row-link .row-desc,
-  .svc-row-link .row-members,
-  .svc-row-link .row-count{grid-column:1/-1}
-  .svc-row-link .row-count{text-align:left;font-size:32px}
-  .svc-row-link .row-count .arrow{display:inline-block;margin-left:10px}
+  .svc-stat-row.is-main{padding:24px 14px}
+  .svc-stat-row .row-desc,
+  .svc-stat-row .row-members,
+  .svc-stat-row .row-count{grid-column:1/-1}
+  .svc-stat-row .row-count{text-align:left;font-size:18px}
 }
 
 /* ============ §04 社友與服務計畫 ============ */
@@ -990,45 +968,59 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
 
   <div class="svc-fathom-table">
 
-    <a class="svc-row-link" href="#impact-hub" data-svc="club">
+    <div class="svc-stat-row">
       <div class="row-num">01</div>
       <div class="row-name">社務服務<small>Club Service</small></div>
       <div class="row-desc">維持社內運作的基底工作。內部治理、活動籌備、社員照顧，是其他四大服務能成立的前提。</div>
       <div class="row-members">CP, Vincent, Rich,<br>Derek, Nick, 艾筆</div>
-      <div class="row-count">6<small>位社友</small><span class="arrow">→</span></div>
-    </a>
+      <div class="row-count">
+        <div>6 位社友</div>
+      </div>
+    </div>
 
-    <a class="svc-row-link is-main" href="#impact-hub" data-svc="vocational">
+    <div class="svc-stat-row is-main">
       <div class="row-num">02</div>
       <div class="row-name">職業服務<small>Vocational</small></div>
       <div class="row-desc"><strong>本社主軸。</strong>把每位社友的職業專業，轉化為可被衡量、可被傳遞的公共價值。「職業即服務」是永力社的核心命題。</div>
       <div class="row-members">Vicky, Helen, James,<br>Vincent, Eric, 艾筆</div>
-      <div class="row-count">6<small>位社友 / 4 案</small><span class="arrow">→</span></div>
-    </a>
+      <div class="row-count">
+        <div>6 位社友</div>
+        <div>4 案</div>
+      </div>
+    </div>
 
-    <a class="svc-row-link" href="#impact-hub" data-svc="community">
+    <div class="svc-stat-row">
       <div class="row-num">03</div>
       <div class="row-name">社區服務<small>Community</small></div>
       <div class="row-desc">在實體社區落地的行動。從在地教育、減塑、長者陪伴到地方創生，呼應 SDG 11 永續城鄉。</div>
       <div class="row-members">CP, Vicky, Lisa,<br>Vincent, 夏萬浪</div>
-      <div class="row-count">5<small>位社友 / 5 案</small><span class="arrow">→</span></div>
-    </a>
+      <div class="row-count">
+        <div>5 位社友</div>
+        <div>5 案</div>
+      </div>
+    </div>
 
-    <a class="svc-row-link" href="#impact-hub" data-svc="international">
+    <div class="svc-stat-row">
       <div class="row-num">04</div>
       <div class="row-name">國際服務<small>International</small></div>
       <div class="row-desc">透過全球獎助金與跨境合作展開。「由齒開始」是永力社走向國際扶輪網絡的第一個試點。</div>
       <div class="row-members">Helen, Eric</div>
-      <div class="row-count">2<small>位社友 / 1 案</small><span class="arrow">→</span></div>
-    </a>
+      <div class="row-count">
+        <div>2 位社友</div>
+        <div>1 案</div>
+      </div>
+    </div>
 
-    <a class="svc-row-link" href="#impact-hub" data-svc="youth">
+    <div class="svc-stat-row">
       <div class="row-num">05</div>
       <div class="row-name">青少年服務<small>Youth</small></div>
       <div class="row-desc">下一代的位置。忠義小田園、生命鬥士、智青，三條獨立路徑同時進行。</div>
       <div class="row-members">CP, James, Helen<small>+ Vicky 兼掛</small></div>
-      <div class="row-count">3<small>位社友 + 1 兼</small><span class="arrow">→</span></div>
-    </a>
+      <div class="row-count">
+        <div>3 位社友</div>
+        <div>1 位兼掛</div>
+      </div>
+    </div>
 
   </div>
 </section>
@@ -1257,14 +1249,7 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
 </footer>
 
 <script>
-// §03 行式表格點擊 → 跳到 §04 並 trigger 對應 filter
-document.querySelectorAll('.svc-row-link').forEach(link => {
-  link.addEventListener('click', () => {
-    const svc = link.dataset.svc;
-    const targetBtn = document.querySelector(`.focus-filter .filter-btn[data-focus="${svc}"]`);
-    if (targetBtn) setTimeout(() => targetBtn.click(), 80);
-  });
-});
+// §03 五大服務行式表格現為純資訊展示，不再觸發 §04 篩選
 
 // §04 篩選
 document.querySelectorAll('.focus-filter .filter-btn').forEach(btn => {
