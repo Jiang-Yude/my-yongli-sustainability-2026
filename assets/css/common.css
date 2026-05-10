@@ -129,16 +129,14 @@ p { margin: 0 0 1em; }
 }
 .topbar .brand .mark {
   display: inline-block;
-  width: 26px; height: 26px;
-  border-radius: 50%;
-  background: var(--gold);
-  color: #fff;
-  font-family: "Noto Serif TC", serif;
-  font-size: 0.85rem;
-  text-align: center;
-  line-height: 26px;
+  width: 28px; height: 28px;
+  background: url('../img/yongli-logo.png') center/contain no-repeat;
+  color: transparent;
+  font-size: 0;
   margin-right: 8px;
   vertical-align: middle;
+  overflow: hidden;
+  text-indent: -9999px;
 }
 .topbar nav { margin-left: auto; display: flex; gap: 20px; font-size: 0.9rem; }
 .topbar nav a { color: var(--ink-soft); }
