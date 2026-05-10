@@ -957,6 +957,21 @@
   text-align: center;
   font-style: italic;
 }
+.svc-hint-link {
+  display: block;
+  text-decoration: none;
+  margin-top: 12px;
+  padding: 12px;
+  background: rgba(184,134,11,0.08);
+  border-radius: 8px;
+  transition: background .2s;
+}
+.svc-hint-link:hover { background: rgba(184,134,11,0.18); }
+.svc-hint-link .svc-hint {
+  color: var(--gold);
+  font-weight: 600;
+  font-style: normal;
+}
 
 /* 五大服務 chip（出現在社友卡內） */
 .svc-chip-club { background: rgba(25,118,210,0.12); color: #1565C0; }
@@ -1169,7 +1184,7 @@
         <li><strong>Nick 林秉鴻</strong>　前社長 · 印刷設計</li>
         <li><strong>Albee 張艾筆</strong>　琢色映像工作室 · 報告書影像主力</li>
       </ul>
-      <p class="svc-hint">↓ 往下滑看完整社友介紹</p>
+      <a class="svc-hint-link" href="#impact-hub" data-svc="club"><p class="svc-hint">→ 看對應的服務計畫</p></a>
     </div>
 
     <div class="service-detail" data-svc-panel="vocational">
@@ -1184,7 +1199,7 @@
         <li><strong>Albee 張艾筆</strong>　琢色映像工作室 → 影像、媒體與 SDGs 策劃</li>
         <li><strong>Eric 鄭仲翔博士</strong>（共融衛星社）→ 全球牙醫義診與衛教</li>
       </ul>
-      <p class="svc-hint">↓ 往下滑看完整社友與服務計畫</p>
+      <a class="svc-hint-link" href="#impact-hub" data-svc="vocational"><p class="svc-hint">→ 看對應的服務計畫</p></a>
     </div>
 
     <div class="service-detail" data-svc-panel="community">
@@ -1198,7 +1213,7 @@
         <li><strong>Vincent 陳明勇</strong> → 社區永續支持計畫 共創在地 ESG 行動</li>
         <li><strong>夏萬浪里長</strong>（網溪里）→ 落實環教永續力 推動淨零新生活</li>
       </ul>
-      <p class="svc-hint">↓ 往下滑看完整服務計畫</p>
+      <a class="svc-hint-link" href="#impact-hub" data-svc="community"><p class="svc-hint">→ 看對應的服務計畫</p></a>
     </div>
 
     <div class="service-detail" data-svc-panel="international">
@@ -1209,7 +1224,7 @@
         <li><strong>Eric 鄭仲翔博士</strong>（共融衛星社）→ 全民健康 由齒開始（扶輪全球獎助金）</li>
         <li><strong>Helen 賴光蘭</strong> → 智青跨國交流與合作</li>
       </ul>
-      <p class="svc-hint">↓ 往下滑看完整服務計畫</p>
+      <a class="svc-hint-link" href="#impact-hub" data-svc="international"><p class="svc-hint">→ 看對應的服務計畫</p></a>
     </div>
 
     <div class="service-detail" data-svc-panel="youth">
@@ -1222,7 +1237,7 @@
         <li><strong>James 高清坊</strong> → 永續的生命鬥士與傳承 創新教育訓練（跨世代）</li>
         <li><strong>Helen 賴光蘭</strong> → 育成基金會 心智障礙青年職涯陪伴</li>
       </ul>
-      <p class="svc-hint">↓ 往下滑看完整社友介紹</p>
+      <a class="svc-hint-link" href="#impact-hub" data-svc="youth"><p class="svc-hint">→ 看對應的服務計畫</p></a>
     </div>
   </div>
 </section>
@@ -1416,8 +1431,9 @@
 <section class="manifesto">
   <h2>讓服務被看見、被學習、被延續</h2>
   <p>對永力社而言，報告書不只是回顧成果，更是一份對社友、對社區、對世界的承諾。</p>
-  <p>我們希望這份報告書能讓服務被看見——讓社友們的職業專業與付出，能被外界讀懂；能讓服務被學習——把每一場行動的經驗、方法與成果，留下可以傳承的軌跡；能讓服務被延續——使影響力不僅止於本年度，能在十年後仍能被讀到、被引用、被接續。</p>
+  <p>我們希望這份報告書能讓服務被看見，讓社友們的職業專業與付出能被外界讀懂；能讓服務被學習，把每一場行動的經驗、方法與成果留下可以傳承的軌跡；能讓服務被延續，使影響力不僅止於本年度，能在十年後仍能被讀到、被引用、被接續。</p>
   <p>以扶輪五大服務為框架，記錄社友們以職業推動社會服務的軌跡。我們希望這份報告書既扎根於扶輪精神，也能在更大的永續對話中發聲。</p>
+  <p style="margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,231,181,0.2);font-size:0.95rem;color:rgba(255,248,231,0.85);">永力社把整理的過程公開，也希望這份架構能成為其他扶輪社、商會、職業型社群推動服務揭露時的參考。讓更多以職業為起點的組織，都能把成員的影響力整理得更清楚、被看得更遠。</p>
   <div class="quote">Service Above Self ｜ 超我服務</div>
 </section>
 
@@ -1468,6 +1484,19 @@ document.querySelectorAll('.service-tag').forEach(tag => {
     if (!isOpen && panel) {
       tag.classList.add('active');
       panel.classList.add('open');
+    }
+  });
+});
+
+// §03 inline 展開的「→ 看對應計畫」連結，scroll 到 §04 並 trigger 對應 filter
+document.querySelectorAll('.svc-hint-link').forEach(link => {
+  link.addEventListener('click', e => {
+    const svc = link.dataset.svc;
+    const targetBtn = document.querySelector(`.focus-filter .filter-btn[data-focus="${svc}"]`);
+    if (targetBtn) {
+      // 不阻擋預設錨點跳轉，瀏覽器先 scroll 到 #impact-hub
+      // 然後 trigger 對應 filter button
+      setTimeout(() => targetBtn.click(), 80);
     }
   });
 });
