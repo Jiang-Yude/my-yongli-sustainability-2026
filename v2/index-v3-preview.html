@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>永力社 V3 預覽 · Fathom 版型 + Takram 配色 + 大字版</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============ V3：Fathom 版型 + Takram 配色 + 大字版 ============ */
+/* 設計約束：
+   1. 字級：body ≥ 17px, caption ≥ 14px, label ≥ 13px（五十歲眼睛友善）
+   2. 字重：body 400-500，標題 500-600（不用 300 細字）
+   3. 對比：body #3A3833 暖深褐（比 #5A5E68 更深）
+   4. 配色：Takram（米白 + 霧綠 + 軟金），不用 Fathom 海軍藍 + 橘
+   5. 版型：Fathom（期刊感、表格化、註腳、欄位對齊）
+   6. 區塊：跟 V2 一致（Hero + §01 + ...）
+*/
+:root{
+  --paper:#F4EFE6;
+  --paper-2:#FBF7EE;
+  --paper-3:#EFE8DA;
+  --ink:#2B2A26;
+  --ink-2:#3A3833;       /* body 主文字（深，對比高） */
+  --ink-3:#5A554C;       /* 次要文字（不能太淡） */
+  --ink-4:#7A746B;       /* caption 用，不再淡了 */
+  --sage:#6B8E7F;
+  --sage-deep:#4F6E61;   /* 深霧綠 + accent */
+  --gold:#C9A961;
+  --gold-deep:#A8884A;
+  --gold-soft:#E5D4A6;
+  --line:rgba(43,42,38,0.18);
+  --line-2:rgba(43,42,38,0.08);
+  --rule:rgba(43,42,38,0.35);  /* 期刊感重分隔線 */
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:"Noto Sans TC","PingFang TC",-apple-system,sans-serif;
+  background:var(--paper);
+  color:var(--ink-2);
+  font-size:17px;           /* body 基準 17px */
+  line-height:1.85;
+  font-feature-settings:"palt";
+  -webkit-font-smoothing:antialiased;
+}
+
+/* preview banner */
+.preview-banner{
+  background:var(--ink);color:var(--paper);
+  text-align:center;padding:12px 16px;
+  font-size:14px;letter-spacing:0.04em;
+}
+.preview-banner b{color:var(--gold-soft)}
+.preview-banner a{color:var(--paper);text-decoration:underline;margin-left:12px;opacity:0.85}
+
+/* ============ topbar（Fathom 期刊感 + Takram 暖色） ============ */
+.topbar{
+  border-bottom:2px solid var(--ink);
+  background:var(--paper);
+  position:sticky;top:0;z-index:50;
+}
+.topbar .inner{
+  max-width:1320px;margin:0 auto;
+  padding:18px 5vw;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+}
+.topbar .brand{
+  display:flex;align-items:center;gap:14px;
+  font-weight:600;font-size:16px;letter-spacing:0.02em;
+  color:var(--ink);
+}
+.topbar .brand .mark{
+  width:34px;height:34px;border-radius:50%;
+  background:var(--gold);color:var(--paper);
+  display:grid;place-items:center;
+  font-size:16px;font-weight:600;
+  font-family:"Noto Serif TC",serif;
+}
+.topbar nav{display:flex;gap:28px}
+.topbar nav a{
+  color:var(--ink-2);text-decoration:none;
+  font-size:15px;letter-spacing:0.02em;font-weight:500;
+  transition:color 0.2s;
+  padding-bottom:2px;border-bottom:1px solid transparent;
+}
+.topbar nav a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
+@media(max-width:900px){.topbar nav{display:none}}
+
+/* 期刊版誌條（Fathom 元素） */
+.journal-meta{
+  border-bottom:1px solid var(--line);
+  background:var(--paper-2);
+  padding:10px 5vw;
+  font-family:"Inter",sans-serif;
+  font-size:13px;letter-spacing:0.12em;
+  color:var(--ink-3);text-transform:uppercase;
+}
+.journal-meta .inner{
+  max-width:1320px;margin:0 auto;
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;
+}
+.journal-meta b{color:var(--ink);font-weight:600}
+
+/* ============ HERO（Fathom 雙欄 + 大字 + Takram 配色） ============ */
+.hero{
+  padding:90px 5vw 80px;
+  border-bottom:2px solid var(--ink);
+}
+.hero-grid{
+  max-width:1320px;margin:0 auto;
+  display:grid;grid-template-columns:2fr 1fr;gap:64px;align-items:end;
+}
+.hero .eyebrow{
+  font-family:"Inter",sans-serif;
+  font-size:14px;letter-spacing:0.24em;
+  color:var(--sage-deep);font-weight:600;
+  text-transform:uppercase;
+  margin:0 0 28px;
+  display:flex;align-items:center;gap:14px;
+}
+.hero .eyebrow::before{
+  content:"";width:36px;height:2px;background:var(--sage-deep);
+}
+.hero h1{
+  font-family:"Noto Serif TC",serif;
+  font-size:clamp(2.6rem, 5vw, 4rem);
+  font-weight:600;
+  line-height:1.28;
+  letter-spacing:0.01em;
+  margin:0 0 36px;
+  color:var(--ink);
+}
+.hero h1 em{
+  font-style:normal;
+  color:var(--sage-deep);
+  position:relative;
+}
+.hero h1 em::after{
+  content:"";position:absolute;
+  left:0;right:0;bottom:0.06em;height:0.32em;
+  background:var(--gold-soft);z-index:-1;
+}
+.hero .lead{
+  font-size:19px;          /* lead 比 body 大一階 */
+  color:var(--ink-2);
+  max-width:54ch;
+  margin:0;
+  line-height:1.85;
+}
+
+/* Fathom 風 hero stat（右側） */
+.hero-stat{
+  border-left:3px solid var(--ink);
+  padding:8px 0 8px 28px;
+}
+.hero-stat .cap{
+  font-family:"Inter",sans-serif;
+  font-size:13px;letter-spacing:0.18em;
+  color:var(--ink-3);font-weight:600;
+  text-transform:uppercase;
+  margin-bottom:14px;
+}
+.hero-stat .big{
+  font-family:"Noto Serif TC",serif;
+  font-size:clamp(3.4rem, 6vw, 5rem);
+  font-weight:600;
+  line-height:1;
+  color:var(--gold-deep);
+  letter-spacing:-0.02em;
+  margin-bottom:14px;
+}
+.hero-stat .note{
+  font-size:16px;color:var(--ink-2);
+  line-height:1.7;margin:0;
+}
+
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:48px}
+}
+
+/* meta strip（Fathom 期刊資料條） */
+.meta-strip{
+  background:var(--paper-2);
+  border-bottom:1px solid var(--line);
+  padding:18px 5vw;
+}
+.meta-strip .inner{
+  max-width:1320px;margin:0 auto;
+  display:flex;gap:40px;flex-wrap:wrap;
+  font-family:"Inter",sans-serif;
+  font-size:14px;letter-spacing:0.08em;
+}
+.meta-strip span{color:var(--ink-3);text-transform:uppercase}
+.meta-strip span b{
+  color:var(--ink);font-weight:700;
+  margin-left:8px;
+  letter-spacing:0;text-transform:none;
+  font-family:"Noto Sans TC",sans-serif;
+  font-size:15px;
+}
+
+/* ============ §01 關於永力社（Fathom 期刊版型 + 大字） ============ */
+.sec{
+  padding:80px 5vw 60px;
+  border-bottom:1px solid var(--line);
+}
+.sec-inner{max-width:1320px;margin:0 auto}
+
+/* Fathom 風 section head：figmark + 雙欄 */
+.sec-head{
+  display:grid;
+  grid-template-columns:180px 1fr 1fr;gap:40px;
+  padding-bottom:24px;
+  border-bottom:2px solid var(--ink);
+  margin-bottom:48px;
+  align-items:end;
+}
+.sec-head .figmark{
+  font-family:"Inter",sans-serif;
+  font-size:13px;letter-spacing:0.18em;
+  color:var(--sage-deep);
+  text-transform:uppercase;font-weight:600;
+}
+.sec-head .figmark .num{
+  display:block;
+  font-family:"Noto Serif TC",serif;
+  font-size:42px;
+  color:var(--ink);
+  letter-spacing:0;font-weight:600;
+  margin-top:6px;
+}
+.sec-head h2{
+  font-family:"Noto Serif TC",serif;
+  font-size:clamp(2rem, 3.4vw, 2.6rem);
+  font-weight:600;line-height:1.3;
+  margin:0;color:var(--ink);letter-spacing:0.01em;
+}
+.sec-head .desc{
+  font-size:16px;color:var(--ink-3);
+  line-height:1.85;margin:0;
+}
+
+@media(max-width:900px){
+  .sec-head{grid-template-columns:1fr;gap:18px}
+}
+
+/* intro 區（Fathom 編輯區塊：lead paragraph + dropcap-ish） */
+.intro-block{
+  display:grid;
+  grid-template-columns:1fr 2fr;gap:60px;
+  padding:32px 0;
+  border-bottom:1px solid var(--line);
+  margin-bottom:48px;
+}
+.intro-block .label-col{
+  font-family:"Inter",sans-serif;
+  font-size:13px;letter-spacing:0.18em;
+  color:var(--ink-3);text-transform:uppercase;font-weight:600;
+}
+.intro-block .label-col h3{
+  font-family:"Noto Serif TC",serif;
+  font-size:22px;
+  color:var(--sage-deep);
+  font-weight:600;
+  margin:8px 0 0;
+  letter-spacing:0.04em;
+  text-transform:none;
+}
+.intro-block .label-col .footnote-ref{
+  display:inline-block;
+  margin-top:14px;
+  font-family:"Inter",sans-serif;
+  font-size:13px;color:var(--ink-3);
+  letter-spacing:0.06em;
+  text-transform:none;
+}
+.intro-block .body-col p{
+  font-size:19px;            /* 主敘述加大 */
+  color:var(--ink-2);
+  line-height:1.9;
+  margin:0;
+}
+.intro-block .body-col p strong{
+  color:var(--ink);font-weight:600;
+  background:linear-gradient(transparent 60%, var(--gold-soft) 60%);
+  padding:0 3px;
+}
+.intro-block .body-col p sup{
+  color:var(--gold-deep);
+  font-weight:700;
+  margin-left:2px;
+}
+
+@media(max-width:900px){
+  .intro-block{grid-template-columns:1fr;gap:18px}
+}
+
+/* CTA 表格化（Fathom 風行式） */
+.cta-table{
+  border-top:2px solid var(--ink);
+}
+.cta-row{
+  display:grid;
+  grid-template-columns:80px 220px 1fr 60px;gap:40px;
+  padding:32px 0;
+  border-bottom:1px solid var(--line);
+  text-decoration:none;
+  color:var(--ink-2);
+  align-items:center;
+  transition:padding 0.3s, background 0.3s;
+}
+.cta-row:hover{
+  background:var(--paper-2);
+  padding-left:16px;padding-right:16px;
+}
+.cta-row .num{
+  font-family:"Inter",sans-serif;
+  font-size:14px;letter-spacing:0.16em;font-weight:700;
+  color:var(--gold-deep);
+}
+.cta-row .label{
+  font-family:"Noto Serif TC",serif;
+  font-size:24px;font-weight:600;
+  color:var(--ink);
+  line-height:1.3;
+}
+.cta-row .label small{
+  display:block;
+  font-family:"Inter",sans-serif;
+  font-size:13px;letter-spacing:0.16em;
+  color:var(--ink-3);font-weight:500;
+  margin-top:6px;text-transform:uppercase;
+}
+.cta-row .desc{
+  font-size:16px;color:var(--ink-2);
+  line-height:1.75;
+}
+.cta-row .arrow{
+  text-align:right;
+  font-size:24px;color:var(--gold);font-weight:300;
+  transition:transform 0.3s, color 0.3s;
+}
+.cta-row:hover .arrow{
+  color:var(--sage-deep);
+  transform:translateX(8px);
+}
+
+@media(max-width:900px){
+  .cta-row{grid-template-columns:auto 1fr;gap:14px;row-gap:8px}
+  .cta-row .desc{grid-column:1/-1}
+  .cta-row .arrow{grid-column:2;text-align:right}
+}
+
+/* footnote 區（Fathom 招牌） */
+.footnote-block{
+  margin-top:48px;
+  padding:24px 0 0;
+  border-top:1px solid var(--line);
+  display:grid;grid-template-columns:180px 1fr;gap:40px;
+  font-size:15px;color:var(--ink-3);
+  line-height:1.75;
+}
+.footnote-block .label{
+  font-family:"Inter",sans-serif;
+  font-size:13px;letter-spacing:0.18em;
+  color:var(--ink-3);text-transform:uppercase;font-weight:600;
+}
+.footnote-block ol{margin:0;padding-left:20px}
+.footnote-block li{margin-bottom:10px}
+.footnote-block li sup{
+  color:var(--gold-deep);font-weight:700;
+  margin-right:6px;
+}
+@media(max-width:900px){
+  .footnote-block{grid-template-columns:1fr;gap:14px}
+}
+
+/* below note */
+.below-note{
+  max-width:1320px;margin:60px auto 0;
+  padding:60px 5vw;
+  border-top:1px dashed var(--line);
+  text-align:center;
+}
+.below-note .badge{
+  display:inline-block;
+  font-family:"Inter",sans-serif;
+  font-size:13px;letter-spacing:0.16em;
+  color:var(--ink-3);font-weight:600;
+  text-transform:uppercase;
+  margin-bottom:18px;
+  border:1px solid var(--line);
+  padding:8px 16px;
+  background:var(--paper-2);
+}
+.below-note p{
+  font-size:16px;color:var(--ink-2);
+  margin:0 auto;max-width:54ch;line-height:1.85;
+}
+.below-note a{color:var(--sage-deep);font-weight:600;text-decoration:none;border-bottom:1px solid var(--sage)}
+
+</style>
+</head>
+<body>
+
+<div class="preview-banner">
+  <b>V3 預覽版</b> · Fathom 期刊版型 + Takram 配色 + 大字 · Hero + §01
+  <a href="index.html">看現行 V2</a>
+  <a href="index-takram-preview.html">看 Takram 純版</a>
+</div>
+
+<header class="topbar">
+  <div class="inner">
+    <div class="brand"><span class="mark">永</span>永力扶輪社 · 2026 永續影響力報告書</div>
+    <nav>
+      <a href="#intro">關於永力社</a>
+      <a href="#five-service">五大服務</a>
+      <a href="#methods">影響力衡量</a>
+      <a href="#impact-hub">社友與服務計畫</a>
+    </nav>
+  </div>
+</header>
+
+<!-- 期刊版誌條（Fathom 招牌） -->
+<div class="journal-meta">
+  <div class="inner">
+    <span><b>Volume 03</b> · 2026 Edition</span>
+    <span>Rotary Club of Taipei Sustainable Impact</span>
+    <span>RID 3481 · Internal Preview</span>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <p class="eyebrow">2026 Sustainability Report</p>
+      <h1>以<em>超我服務</em>為心，<br>讓職業成為永續的<em>力量</em>。</h1>
+      <p class="lead">永力社友從各自的職業出發，攜手推動服務、回應社區與世界的需要。這份年度報告書記錄我們在 2025-2026 年度的服務行動、夥伴關係，與我們對永續影響力的承諾。</p>
+    </div>
+    <aside class="hero-stat">
+      <div class="cap">SDGs Engaged</div>
+      <div class="big">11</div>
+      <p class="note">7 項服務計畫累計觸及聯合國永續發展目標 11 項，跨教育、減塑、青少年、社區韌性。</p>
+    </aside>
+  </div>
+</section>
+
+<!-- 期刊資料條 -->
+<div class="meta-strip">
+  <div class="inner">
+    <span>所屬地區<b>3481</b></span>
+    <span>創社年度<b>2024</b></span>
+    <span>本年度<b>2025–2026</b></span>
+    <span>服務計畫<b>7 案進行中</b></span>
+    <span>社友<b>9 位提案 + 4 位</b></span>
+  </div>
+</div>
+
+<!-- ============ §01 關於永力社 ============ -->
+<section class="sec" id="intro">
+  <div class="sec-inner">
+
+    <div class="sec-head">
+      <div class="figmark">
+        Section
+        <span class="num">§ 01</span>
+      </div>
+      <h2>關於永力社</h2>
+      <p class="desc">一個 2024 年成立的扶輪社，以「永續影響力」作為核心使命。社友來自不同產業，共同的起點是各自的職業。</p>
+    </div>
+
+    <div class="intro-block">
+      <div class="label-col">
+        Profile
+        <h3>台北永續影響力扶輪社</h3>
+        <span class="footnote-ref">→ See footnote 1</span>
+      </div>
+      <div class="body-col">
+        <p>2024 年成立於國際扶輪 3481 地區，是一個以「永續影響力」為核心使命的扶輪社<sup>1</sup>。社友來自不同產業，共同實踐扶輪「<strong>超我服務（Service Above Self）</strong>」的信念，以自身職業為起點，持續為社區、社會與環境帶來具體改變。</p>
+      </div>
+    </div>
+
+    <div class="cta-table">
+      <a class="cta-row" href="about-yongli.html">
+        <div class="num">01 / 02</div>
+        <div class="label">關於永力社<small>About Yongli</small></div>
+        <div class="desc">創社理念、社務治理、影響力的累積。包含創辦人 CP 的初衷、四個核心信念，以及我們如何把職業的價值留下來。</div>
+        <div class="arrow">→</div>
+      </a>
+      <a class="cta-row" href="methodology.html">
+        <div class="num">02 / 02</div>
+        <div class="label">影響力衡量方法<small>Methodology</small></div>
+        <div class="desc">IOOI 成果鏈、培力卡五階段、四階段循環，以及未來可延伸的 SROI、貢獻分析、MSC 等六種分析框架。</div>
+        <div class="arrow">→</div>
+      </a>
+    </div>
+
+    <div class="footnote-block">
+      <div class="label">Notes</div>
+      <ol>
+        <li><sup>1</sup>「永續影響力」對永力社的定義是：以扶輪五大服務（社務／職業／社區／國際／青少年）為架構，把每位社友的職業專業，整理成可被衡量、可被傳遞、可被延續的服務樣本。詳見 §05 影響力衡量方法。</li>
+      </ol>
+    </div>
+
+  </div>
+</section>
+
+<!-- 提示 -->
+<div class="below-note">
+  <div class="badge">Preview Ends Here</div>
+  <p>後續區塊（§02 影像版、§03 五大服務、§04 社友與服務計畫、Manifesto）目前還是 V2 版本。<br>確認 V3 整體方向 OK 後，<a href="index.html">回去看現行 V2</a> 對比，跟我說「OK 整套套」我就把整站順著做。</p>
+</div>
+
+</body>
+</html>
