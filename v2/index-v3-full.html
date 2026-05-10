@@ -540,10 +540,18 @@ img{max-width:100%;display:block}
   display:grid;
   grid-template-columns:50px 1fr 1.5fr 1fr 130px;
   gap:32px;
-  padding:30px 0;
+  padding:30px 18px;                 /* 預留 18px 內距，讓 transform 不貼邊 */
   border-bottom:1px solid var(--line);
   color:var(--ink-2);
   align-items:start;
+  /* transform 不會引發 reflow，整列以剛體位移，文字相對位置完全不動 */
+  transition:background-color 0.35s ease, transform 0.4s cubic-bezier(0.2, 0.8, 0.3, 1), box-shadow 0.4s ease;
+  border-radius:8px;
+}
+.svc-stat-row:hover{
+  background-color:var(--paper-2);
+  transform:translateX(8px) translateY(-2px);   /* 整列右滑 8px + 上浮 2px */
+  box-shadow:0 6px 18px rgba(43,42,38,0.06);
 }
 .svc-stat-row .row-num{
   font-family:"Inter",sans-serif;
