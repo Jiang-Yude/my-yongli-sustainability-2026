@@ -4,333 +4,521 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>影響力衡量方法｜2026 永續影響力報告書</title>
-<meta name="description" content="永力社如何衡量影響力——IOOI 成果鏈、培力卡五階段、影響力指南四階段循環。">
+<title>影響力衡量方法｜2026 永續影響力報告書 V2</title>
+<meta name="description" content="永力社如何把每一場服務、每一筆捐贈、每一份專業時間，轉成可被累積的影響力。三個切角閱讀本次有服務計畫的社友。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600&family=Noto+Serif+TC:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/common.css?v=8">
-<style>
-.method-section {
-  padding: 50px 0;
-  border-bottom: 1px solid var(--line-soft);
-}
-.method-section:last-of-type { border-bottom: none; }
-.method-section h2 {
-  font-size: 1.5rem;
-  margin-bottom: 6px;
-  color: var(--ink);
-  font-family: "Noto Serif TC", serif;
-}
-.method-section .lead {
-  font-size: 0.95rem;
-  color: var(--ink-mute);
-  margin: 0 0 24px;
-}
-.iooi-detail {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr) auto;
-  gap: 0;
-  align-items: stretch;
-  margin-top: 12px;
-}
-.iooi-step-card {
-  padding: 18px 14px;
-  background: #fff;
-  border: 1px solid var(--line);
-}
-.iooi-step-card:first-child { border-radius: 12px 0 0 12px; }
-.iooi-step-card:nth-of-type(4) { border-radius: 0 12px 12px 0; }
-.iooi-step-card .step-circle {
-  width: 32px; height: 32px;
-  border-radius: 50%;
-  color: #fff;
-  font-weight: 700;
-  display: flex; align-items: center; justify-content: center;
-  margin-bottom: 8px;
-  font-family: "Noto Serif TC", serif;
-}
-.iooi-step-card.s1 .step-circle { background: #1976D2; }
-.iooi-step-card.s2 .step-circle { background: #00897B; }
-.iooi-step-card.s3 .step-circle { background: #EF6C00; }
-.iooi-step-card.s4 .step-circle { background: #C62828; }
-.iooi-step-card .step-title {
-  font-size: 1rem; font-weight: 700; color: var(--ink);
-  margin-bottom: 2px;
-}
-.iooi-step-card .step-en {
-  font-size: 0.72rem; color: var(--ink-mute); letter-spacing: 0.06em;
-  margin-bottom: 10px;
-}
-.iooi-step-card .step-desc {
-  font-size: 0.82rem; color: var(--ink-soft); line-height: 1.55;
-  margin: 0;
-}
-.iooi-arrow-mini {
-  display: flex; align-items: center; justify-content: center;
-  color: var(--gold);
-  font-size: 1.2rem;
-  font-weight: 700;
-  padding: 0 4px;
-}
-.empower-five {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 8px;
-  margin-top: 14px;
-}
-.empower-stage {
-  padding: 14px 10px;
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  text-align: center;
-}
-.empower-stage .num {
-  display: inline-block;
-  width: 26px; height: 26px;
-  border-radius: 50%;
-  color: #fff;
-  font-weight: 700;
-  line-height: 26px;
-  margin-bottom: 6px;
-}
-.empower-stage:nth-child(1) .num { background: #1976D2; }
-.empower-stage:nth-child(2) .num { background: #00897B; }
-.empower-stage:nth-child(3) .num { background: #EF6C00; }
-.empower-stage:nth-child(4) .num { background: #6A1B9A; }
-.empower-stage:nth-child(5) .num { background: #C62828; }
-.empower-stage .name {
-  font-size: 0.85rem; font-weight: 700; color: var(--ink);
-  margin-bottom: 3px;
-}
-.empower-stage .desc {
-  font-size: 0.72rem; color: var(--ink-mute);
-  line-height: 1.4;
-}
-.stage-cycle {
-  margin-top: 14px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-}
-.stage-card {
-  position: relative;
-  padding: 16px 14px;
-  background: #fff;
-  border: 1.5px solid var(--line);
-  border-radius: 10px;
-  text-align: center;
-}
-.stage-card.current {
-  border-color: var(--gold);
-  background: linear-gradient(180deg, #FFF7E5 0%, #fff 100%);
-  box-shadow: 0 4px 12px rgba(184,134,11,0.15);
-}
-.stage-card.future {
-  opacity: 0.6;
-  background: #FAFAF7;
-  border-style: dashed;
-}
-.stage-card .stage-num {
-  font-family: "Noto Serif TC", serif;
-  font-size: 0.78rem; color: var(--gold);
-  letter-spacing: 0.08em; font-weight: 700;
-  margin-bottom: 4px;
-}
-.stage-card .stage-name {
-  font-size: 1rem; font-weight: 700; color: var(--ink);
-  margin-bottom: 4px;
-}
-.stage-card .stage-name-en {
-  font-size: 0.72rem; color: var(--ink-mute); letter-spacing: 0.06em;
-  margin-bottom: 8px;
-}
-.stage-card .stage-status {
-  display: inline-block;
-  padding: 3px 8px; border-radius: 999px;
-  font-size: 0.72rem; font-weight: 600;
-  margin-top: 4px;
-}
-.stage-card.current .stage-status { background: var(--gold); color: #fff; }
-.stage-card.future .stage-status { background: var(--line); color: var(--ink-soft); }
-.stage-source {
-  margin-top: 16px;
-  padding: 12px 16px;
-  background: rgba(184,134,11,0.06);
-  border-left: 3px solid var(--gold);
-  border-radius: 0 8px 8px 0;
-  font-size: 0.86rem; color: var(--ink-soft); line-height: 1.7;
-}
-.stage-source strong { color: var(--ink); }
-.framework-note {
-  margin-top: 24px;
-  padding: 14px 18px;
-  background: #fff;
-  border: 1px dashed var(--line);
-  border-radius: 10px;
-  font-size: 0.86rem;
-  color: var(--ink-soft);
-  line-height: 1.65;
-}
-.framework-note strong { color: var(--ink); }
-.back-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 10px 16px;
-  background: var(--bg-soft);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  color: var(--ink-soft);
-  font-size: 0.9rem;
-  text-decoration: none;
-  transition: background .15s;
-}
-.back-link:hover { background: var(--gold); color: #fff; border-color: var(--gold); }
-@media (max-width: 920px) {
-  .iooi-detail { grid-template-columns: 1fr; }
-  .iooi-arrow-mini { transform: rotate(90deg); padding: 8px 0; }
-  .empower-five { grid-template-columns: repeat(2, 1fr); }
-  .stage-cycle { grid-template-columns: repeat(2, 1fr); }
-}
-</style>
 </head>
 <body>
 
 <header class="topbar">
   <div class="inner">
-    <div class="brand"><span class="mark">永</span>影響力衡量方法</div>
-    <a href="index.html" class="back-link">← 回主頁</a>
+    <div class="brand"><span class="mark">永</span>永力扶輪社 2026 永續報告書</div>
+    <nav>
+      <a href="index.html">回首頁</a>
+      <a href="#overview">總覽</a>
+      <a href="#frame-people">人物 · 陪力卡</a>
+      <a href="#frame-work">價值 · 扶輪五大服務</a>
+      <a href="#frame-method">潛力 · 影響力指南</a>
+      <a href="#next">下一步精進</a>
+    </nav>
   </div>
 </header>
 
+<!-- ============ 頁面 Hero ============ -->
 <section class="hero" style="padding-bottom: 24px;">
   <div class="container">
     <h1>影響力衡量方法</h1>
-    <p class="subtitle">永力社如何把每一場服務、每一筆捐贈、每一份專業時間，轉成可被看見、可被比較、可被累積的影響力。</p>
+    <p class="subtitle">永力社如何把每一場服務、每一筆捐贈、每一份專業時間，轉成可被看見、可被比較、可被累積的影響力？本次先以提出服務計畫的社友為對象，從三個切角閱讀；把資料整理好，AI 就能從多個角度幫我們分析。</p>
     <div class="meta">
-      <span class="pill">IOOI 成果鏈</span>
-      <span class="pill">培力卡五階段</span>
-      <span class="pill">四階段循環</span>
+      <span class="pill">人物 · 角色定位</span>
+      <span class="pill">價值 · 五大服務</span>
+      <span class="pill">潛力 · 精進空間</span>
+      <span>v2.2 · 2026.05</span>
     </div>
   </div>
 </section>
 
-<div class="container">
+<!-- ============ 三框架說明 ============ -->
+<section class="section section-analysis" style="padding-top: 24px;">
+  <div class="container">
+    <div class="analysis-intro">
+      <p><strong>三種完全不同的分析方向。</strong>同一群人、同一份資料，從不同切角看會出現不同洞察。我們選了三個明顯互補的框架：</p>
+      <div class="three-axis">
+        <div class="axis-card axis-people">
+          <div class="axis-num">人物</div>
+          <div class="axis-name">陪力卡 5 階段</div>
+          <div class="axis-desc">9 個人在系統裡各扮演什麼角色</div>
+        </div>
+        <div class="axis-card axis-work">
+          <div class="axis-num">價值</div>
+          <div class="axis-name">扶輪五大服務</div>
+          <div class="axis-desc">以扶輪哲學基石看每位社友的職業專業如何變成公共價值</div>
+        </div>
+        <div class="axis-card axis-method">
+          <div class="axis-num">潛力</div>
+          <div class="axis-name">影響力指南評估</div>
+          <div class="axis-desc">我們對自己有什麼要求、下次哪裡可以更好</div>
+        </div>
+      </div>
+    </div>
 
-  <section class="method-section">
-    <h2>方法一 · IOOI 邏輯模型</h2>
-    <p class="lead">每個服務計畫的成果鏈：投入 → 產出 → 成效 → 影響</p>
-    <div class="iooi-detail">
-      <div class="iooi-step-card s1">
-        <div class="step-circle">I</div>
-        <div class="step-title">投入</div>
-        <div class="step-en">INPUT</div>
-        <p class="step-desc">社友職業時間、捐款、跨界資源、社務志工人力</p>
-      </div>
-      <div class="iooi-arrow-mini">→</div>
-      <div class="iooi-step-card s2">
-        <div class="step-circle">O</div>
-        <div class="step-title">產出</div>
-        <div class="step-en">OUTPUT</div>
-        <p class="step-desc">服務計畫場次、培訓人數、活動觸及、媒體曝光</p>
-      </div>
-      <div class="iooi-arrow-mini">→</div>
-      <div class="iooi-step-card s3">
-        <div class="step-circle">O</div>
-        <div class="step-title">成效</div>
-        <div class="step-en">OUTCOME</div>
-        <p class="step-desc">受益者能力提升、行為改變、組織能量增加</p>
-      </div>
-      <div class="iooi-arrow-mini">→</div>
-      <div class="iooi-step-card s4">
-        <div class="step-circle">I</div>
-        <div class="step-title">影響</div>
-        <div class="step-en">IMPACT</div>
-        <p class="step-desc">長期社會結構變化、永續性、政策／文化影響</p>
+    <!-- ============ 總覽：IOOI 簡版 ============ -->
+    <div class="framework-block" id="overview">
+      <span class="framework-label overview-label">總覽</span>
+      <h3>影響力事件鏈：投入 → 活動 → 產出 → 成效 → 影響</h3>
+      <p class="framework-desc">先用一張圖快速看永力社的整體影響力鏈條。下方三個框架會從不同切角再展開。</p>
+      <div class="iooi-flow">
+        <div class="iooi-stage" data-color="found">
+          <div class="iooi-step">I</div>
+          <div class="iooi-name">Input · 投入</div>
+          <ul>
+            <li><strong>9 位社友</strong>的職業專業</li>
+            <li>每月 2 次例會</li>
+            <li>4 種獎助金支持</li>
+          </ul>
+        </div>
+        <div class="iooi-arrow">→</div>
+        <div class="iooi-stage" data-color="guard">
+          <div class="iooi-step">A</div>
+          <div class="iooi-name">Activity · 活動</div>
+          <ul>
+            <li><strong>7 項</strong>服務計畫</li>
+            <li>共識會議與報告書共寫</li>
+            <li>跨界夥伴合作</li>
+          </ul>
+        </div>
+        <div class="iooi-arrow">→</div>
+        <div class="iooi-stage" data-color="act">
+          <div class="iooi-step">O</div>
+          <div class="iooi-name">Output · 產出</div>
+          <ul>
+            <li>直接受惠人次（依計畫分計）</li>
+            <li>媒體曝光（含估算）</li>
+            <li>涵蓋 <strong>12 項</strong> SDGs</li>
+          </ul>
+        </div>
+        <div class="iooi-arrow">→</div>
+        <div class="iooi-stage" data-color="cont">
+          <div class="iooi-step">O</div>
+          <div class="iooi-name">Outcome · 成效</div>
+          <ul>
+            <li>學童學習成效提升</li>
+            <li>女性走入公共講述</li>
+            <li>環保意識普及</li>
+          </ul>
+        </div>
+        <div class="iooi-arrow">→</div>
+        <div class="iooi-stage" data-color="gold">
+          <div class="iooi-step">I</div>
+          <div class="iooi-name">Impact · 影響</div>
+          <ul>
+            <li>跨域合作平台形成</li>
+            <li>「職業即服務」文化擴散</li>
+            <li>扶輪服務的新案例</li>
+          </ul>
+        </div>
       </div>
     </div>
-    <div class="framework-note">
-      <strong>IOOI 不是扶輪原生框架</strong>，而是國際永續報告與社會影響力評估常用的邏輯模型。永力社引用它來描述每個服務計畫的因果路徑——從投入的資源到最終影響的社會改變。
-    </div>
-  </section>
 
-  <section class="method-section">
-    <h2>方法二 · 培力卡五階段</h2>
-    <p class="lead">由社友 Vicky 旅學堂提供 · 看一個人在系統中的成長階段</p>
-    <div class="empower-five">
-      <div class="empower-stage">
-        <span class="num">1</span>
-        <div class="name">參與者</div>
-        <div class="desc">第一次接觸、好奇、嘗試</div>
+    <!-- ============ 框架 1 · 人物 — 陪力卡 5 階段 ============ -->
+    <div class="framework-block frame-people" id="frame-people">
+      <span class="framework-label label-people">框架 1 · 人物</span>
+      <h3>陪力卡 5 階段：9 人角色定位 <a href="https://jiang-yude.github.io/lxuetang-peili-v2/framework.html" target="_blank" rel="noopener" class="ext-link">陪力卡完整框架 ↗</a></h3>
+      <p class="framework-desc">借用 Vicky 李琪在<a href="https://jiang-yude.github.io/lxuetang-peili-v2/framework.html" target="_blank" rel="noopener"><strong>旅學堂陪力系統</strong></a>實踐多年的方法論。陪力卡把一個共創組織的人才生命週期拆成 5 個階段：先看價值是否對齊（<strong>接住</strong>），再一起學習沉澱（<strong>共學</strong>），然後付諸實踐（<strong>做事</strong>），把成熟者交付制度角色（<strong>給角色</strong>），最後讓影響力對外擴散（<strong>擴散</strong>）。把這套方法套到永力社的 9 位社友，可以看出每個人現在的階段定位、誰跨多階段、誰是讓系統運作的關鍵角色。</p>
+      <p class="framework-desc" style="margin-top:8px;"><strong>切角是「人物」</strong>：不看做了什麼事，先看誰在這個系統裡扮演什麼角色。</p>
+      <div class="peili-grid">
+        <div class="peili-stage">
+          <div class="peili-num">①</div>
+          <div class="peili-name">接住</div>
+          <div class="peili-meaning">價值對齊</div>
+          <div class="peili-explain">先確認彼此的價值觀對齊，才有後續合作的可能</div>
+          <div class="peili-people">
+            <span class="person-chip" data-role="found">CP 林學賢</span>
+            <span class="person-chip" data-role="cont">Vincent 陳明勇</span>
+          </div>
+        </div>
+        <div class="peili-stage">
+          <div class="peili-num">②</div>
+          <div class="peili-name">共學</div>
+          <div class="peili-meaning">集體沉澱</div>
+          <div class="peili-explain">一起讀書、一起討論、把概念內化成共同語言</div>
+          <div class="peili-people">
+            <span class="person-chip-all">全員 9 人</span>
+          </div>
+        </div>
+        <div class="peili-stage">
+          <div class="peili-num">③</div>
+          <div class="peili-name">做事</div>
+          <div class="peili-meaning">推動實踐</div>
+          <div class="peili-explain">不只是談，是實際把計畫推出去、把服務做出來</div>
+          <div class="peili-people">
+            <span class="person-chip" data-role="found">CP 林學賢</span>
+            <span class="person-chip" data-role="act">Vicky 李琪</span>
+            <span class="person-chip" data-role="act">Lisa 林映如</span>
+            <span class="person-chip" data-role="act">James 高淯坊</span>
+            <span class="person-chip" data-role="cont">Vincent 陳明勇</span>
+          </div>
+        </div>
+        <div class="peili-stage">
+          <div class="peili-num">④</div>
+          <div class="peili-name">給角色</div>
+          <div class="peili-meaning">制度守護</div>
+          <div class="peili-explain">把成熟者交付正式角色，讓系統不依賴個人魅力</div>
+          <div class="peili-people">
+            <span class="person-chip" data-role="guard">Derek 黃世祿</span>
+            <span class="person-chip" data-role="guard">Helen 賴光蘭</span>
+            <span class="person-chip" data-role="cont">Nick 林秉鴻</span>
+          </div>
+        </div>
+        <div class="peili-stage">
+          <div class="peili-num">⑤</div>
+          <div class="peili-name">擴散</div>
+          <div class="peili-meaning">影響外擴</div>
+          <div class="peili-explain">讓社內形成的價值與作法，被外部社群採用、傳承</div>
+          <div class="peili-people">
+            <span class="person-chip" data-role="cont">Rich 黃丞隆</span>
+            <span class="person-chip" data-role="cont">Vincent 陳明勇</span>
+          </div>
+        </div>
       </div>
-      <div class="empower-stage">
-        <span class="num">2</span>
-        <div class="name">學習者</div>
-        <div class="desc">主動學技能、累積知識</div>
-      </div>
-      <div class="empower-stage">
-        <span class="num">3</span>
-        <div class="name">實踐者</div>
-        <div class="desc">獨立執行、累積成果</div>
-      </div>
-      <div class="empower-stage">
-        <span class="num">4</span>
-        <div class="name">引導者</div>
-        <div class="desc">能帶人、建系統、複製經驗</div>
-      </div>
-      <div class="empower-stage">
-        <span class="num">5</span>
-        <div class="name">擴散者</div>
-        <div class="desc">跨組織帶動、影響力外擴</div>
+      <div class="framework-insight">
+        <h4>結構洞察：永力社是「重做事 + 有制度」的健康雙軌</h4>
+        <ul>
+          <li><strong>5 人在「做事」階段，3 人在「給角色」階段</strong>：不是只有衝沒有撐。許多新創公益組織只有「做事」沒有「給角色」，一旦核心成員退場，制度就跟著消失。永力社剛起步就有制度守護層，是少見的健康結構。</li>
+          <li><strong>CP 跨「接住 + 做事」</strong>：創社者也親自推服務計畫（忠義國小），不只當召集人。</li>
+          <li><strong>Vincent 跨「接住 + 做事 + 擴散」三階段</strong>：是貫穿型角色，從理念對齊（共識會議主持）、實際做事（社區永續計畫）、到對外溝通（永續報告書主筆）都在。</li>
+          <li><strong>Derek / Helen / Nick 是制度守護層</strong>：他們不主導服務計畫，但撐住這個社的制度與文化，讓做事的人有可以靠的後盾。</li>
+        </ul>
       </div>
     </div>
-    <div class="framework-note">
-      培力卡五階段由社友 Vicky 旅學堂提供，後續將陸續更新具體階段定義與永力社社友的當前位置。
-    </div>
-  </section>
 
-  <section class="method-section">
-    <h2>方法三 · 影響力指南評估四階段循環</h2>
-    <p class="lead">永力社現在在哪一階段？我們對自己的承諾。</p>
-    <div class="stage-cycle">
-      <div class="stage-card current">
-        <div class="stage-num">階段 一</div>
-        <div class="stage-name">規劃</div>
-        <div class="stage-name-en">PLAN</div>
-        <p style="font-size:0.78rem; color:var(--ink-soft); margin: 4px 0;">明確目的、設定影響力假設、選擇衡量框架</p>
-        <span class="stage-status">已達</span>
-      </div>
-      <div class="stage-card current">
-        <div class="stage-num">階段 二</div>
-        <div class="stage-name">執行記錄</div>
-        <div class="stage-name-en">DO</div>
-        <p style="font-size:0.78rem; color:var(--ink-soft); margin: 4px 0;">記錄 IOOI、累積服務計畫資料、整理事件鏈</p>
-        <span class="stage-status">進行中</span>
-      </div>
-      <div class="stage-card future">
-        <div class="stage-num">階段 三</div>
-        <div class="stage-name">衡量</div>
-        <div class="stage-name-en">MEASURE</div>
-        <p style="font-size:0.78rem; color:var(--ink-soft); margin: 4px 0;">量化成效、做社友間矩陣、第三方驗證</p>
-        <span class="stage-status">明年可做</span>
-      </div>
-      <div class="stage-card future">
-        <div class="stage-num">階段 四</div>
-        <div class="stage-name">學習</div>
-        <div class="stage-name-en">LEARN</div>
-        <p style="font-size:0.78rem; color:var(--ink-soft); margin: 4px 0;">回饋下一輪規劃、修正影響力假設、跨組織共學</p>
-        <span class="stage-status">後年可做</span>
-      </div>
-    </div>
-    <div class="stage-source">
-      <strong>依據來源：</strong>《Maximise Your Impact 影響力指南》一書，核心邏輯為「規劃 → 需求物證」的循環，並參考<strong>變革理論（Theory of Change）</strong>與 <strong>IOOI 邏輯模型</strong>。<br>
-      <strong>本社目前的位置：</strong>仍在影響力管理的初期，主要在規劃與執行記錄。保留階段三、階段四，是為了表達<strong>承諾</strong>——隨著資料持續累積，未來能走到具體的衡量與跨組織共學。
-    </div>
-  </section>
+    <!-- ============ 框架 2 · 價值 — 扶輪以五大服務為哲學基石 ============ -->
+    <div class="framework-block frame-work" id="frame-work">
+      <span class="framework-label label-work">框架 2 · 價值</span>
+      <h3>扶輪以五大服務為哲學基石：每位社友的職業如何變成公共價值</h3>
+      <p class="framework-desc">扶輪以五大服務（社務／職業／社區／國際／青少年）作為哲學基石。永力社最特別的定位，是把<strong>「職業服務」</strong>放到核心——不只是出時間出錢，而是把每個人的職業專業，轉化為具體的公共價值。<strong>切角是「價值」</strong>：什麼專業、帶到什麼議題、變成什麼可被社會看見的貢獻。</p>
 
-</div>
+      <div class="prof-flow">
+        <div class="prof-flow-head">
+          <div class="prof-col-name">社友</div>
+          <div class="prof-col-prof">職業專業</div>
+          <div class="prof-col-arrow"></div>
+          <div class="prof-col-value">公共價值</div>
+          <div class="prof-col-plan">對應計畫</div>
+        </div>
+
+        <div class="prof-row" data-role="found">
+          <div class="prof-name">CP 林學賢<span class="prof-role">創社／治理</span></div>
+          <div class="prof-prof">教育創投／資源連結</div>
+          <div class="prof-arrow">→</div>
+          <div class="prof-value">弱勢教育平權 + 環境教育</div>
+          <div class="prof-plan">忠義國小 小田園</div>
+        </div>
+
+        <div class="prof-row" data-role="act">
+          <div class="prof-name">Vicky 李琪<span class="prof-role">行動／實踐</span></div>
+          <div class="prof-prof">旅學堂／在地文化策劃</div>
+          <div class="prof-arrow">→</div>
+          <div class="prof-value">性別平權 + 永續觀光</div>
+          <div class="prof-plan">綠動淡水 輕軌共創</div>
+        </div>
+
+        <div class="prof-row" data-role="act">
+          <div class="prof-name">Lisa 林映如<span class="prof-role">行動／實踐</span></div>
+          <div class="prof-prof">永續百行／企業 ESG</div>
+          <div class="prof-arrow">→</div>
+          <div class="prof-value">宗教 × 永續轉型</div>
+          <div class="prof-plan">零廢敬媽祖</div>
+        </div>
+
+        <div class="prof-row" data-role="act">
+          <div class="prof-name">James 高淯坊<span class="prof-role">行動／實踐</span></div>
+          <div class="prof-prof">身障創新教育</div>
+          <div class="prof-arrow">→</div>
+          <div class="prof-value">身心障礙者自立</div>
+          <div class="prof-plan">永續的生命鬥士</div>
+        </div>
+
+        <div class="prof-row" data-role="cont">
+          <div class="prof-name">Vincent 陳明勇<span class="prof-role">延續／擴散</span></div>
+          <div class="prof-prof">SROI／引導技術／ESG</div>
+          <div class="prof-arrow">→</div>
+          <div class="prof-value">社區永續治理能力</div>
+          <div class="prof-plan">社區永續 ESG 行動</div>
+        </div>
+
+        <div class="prof-row prof-row-pending" data-role="guard">
+          <div class="prof-name">Derek 黃世祿<span class="prof-role">守護／承接</span></div>
+          <div class="prof-prof prof-empty">（待社友交稿）</div>
+          <div class="prof-arrow">→</div>
+          <div class="prof-value">制度與文化守護</div>
+          <div class="prof-plan">—</div>
+        </div>
+
+        <div class="prof-row prof-row-pending" data-role="guard">
+          <div class="prof-name">Helen 賴光蘭<span class="prof-role">守護／承接</span></div>
+          <div class="prof-prof prof-empty">（待社友交稿）</div>
+          <div class="prof-arrow">→</div>
+          <div class="prof-value prof-empty">（待社友交稿）</div>
+          <div class="prof-plan">—</div>
+        </div>
+
+        <div class="prof-row prof-row-pending" data-role="cont">
+          <div class="prof-name">Rich 黃丞隆<span class="prof-role">延續／擴散</span></div>
+          <div class="prof-prof prof-empty">（待社友交稿）</div>
+          <div class="prof-arrow">→</div>
+          <div class="prof-value prof-empty">（待社友交稿）</div>
+          <div class="prof-plan">—</div>
+        </div>
+
+        <div class="prof-row prof-row-pending" data-role="cont">
+          <div class="prof-name">Nick 林秉鴻<span class="prof-role">延續／擴散</span></div>
+          <div class="prof-prof prof-empty">（待社友交稿）</div>
+          <div class="prof-arrow">→</div>
+          <div class="prof-value">制度延續</div>
+          <div class="prof-plan">—</div>
+        </div>
+      </div>
+
+      <div class="framework-insight">
+        <h4>三層價值（仿 Skills-Based Volunteering 評估方式）</h4>
+        <ul>
+          <li><strong>對受益者貢獻</strong>：弱勢學童、女性、身障者、信眾、社區居民等族群，獲得專業導入的服務</li>
+          <li><strong>對合作組織補強</strong>：學校、公部門、宮廟、企業、衛星社、社區團體，被永力社的職業專業補上能力缺口</li>
+          <li><strong>對社友自己活出</strong>：把職業從「賺錢工具」轉化為「公共價值」，重新連結個人專業與社會貢獻</li>
+        </ul>
+      </div>
+
+      <!-- 資源支撐：原獎助金結構併入此處 -->
+      <h4 class="sub-frame-title" style="margin-top:28px;">資源支撐：4 種獎助金層級</h4>
+      <p class="sub-frame-desc">7 項計畫的資源來源組合，4 種層級互補。</p>
+      <div class="grant-structure">
+        <div class="grant-row">
+          <div class="grant-tier-tag" data-tier="global">扶輪全球獎助金</div>
+          <div class="grant-count">1 項</div>
+          <div class="grant-list">由齒開始（鄭仲翔博士 · 共融衛星社）</div>
+        </div>
+        <div class="grant-row">
+          <div class="grant-tier-tag" data-tier="district">扶輪地區獎助金</div>
+          <div class="grant-count">1 項</div>
+          <div class="grant-list">忠義國小 小田園（CP 林學賢）</div>
+        </div>
+        <div class="grant-row">
+          <div class="grant-tier-tag" data-tier="club">社內獎助金</div>
+          <div class="grant-count">3 項</div>
+          <div class="grant-list">綠動淡水（Vicky）· 生命鬥士（James）· 社區永續 ESG（Vincent）</div>
+        </div>
+        <div class="grant-row">
+          <div class="grant-tier-tag" data-tier="community">扶輪社區服務團</div>
+          <div class="grant-count">2 項</div>
+          <div class="grant-list">環教永續（夏萬浪里長 · 網溪里）· 零廢敬媽祖（Lisa 林映如）</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 框架 3 · 潛力 — 影響力指南評估 ============ -->
+    <div class="framework-block frame-method" id="frame-method">
+      <span class="framework-label label-method">框架 3 · 潛力</span>
+      <h3>影響力指南評估：四階段循環</h3>
+      <p class="framework-desc">採用《Maximise Your Impact: A Guide for Social Entrepreneurs》的方法論，把社會影響力評估拆成「規劃 → 執行 → 評估 → 修正」四個階段，循環推進。<strong>切角是「潛力」</strong>：不是看現在做了多少，而是看評估流程做到哪、下一輪可以更精準的方向在哪、永力社還有什麼可以發揮的空間。</p>
+
+      <div class="four-stage">
+        <div class="stage-card stage-active">
+          <div class="stage-num">階段 1</div>
+          <div class="stage-name">規劃 Plan</div>
+          <div class="stage-desc">回答 5 個質性問題：要解決什麼、解決方案、誰會改變、會有什麼改變、哪些最重要</div>
+          <div class="stage-status">永力社目前位置</div>
+        </div>
+        <div class="stage-arrow">→</div>
+        <div class="stage-card stage-active">
+          <div class="stage-num">階段 2</div>
+          <div class="stage-name">執行 Do</div>
+          <div class="stage-desc">回答 5 個量化問題：規模、歸因、時間、持續性、權重</div>
+          <div class="stage-status">部分啟動</div>
+        </div>
+        <div class="stage-arrow">→</div>
+        <div class="stage-card">
+          <div class="stage-num">階段 3</div>
+          <div class="stage-name">評估 Assess</div>
+          <div class="stage-desc">用十大問題重新檢視所有數據，整理對外報告</div>
+          <div class="stage-status">v2.0 啟動</div>
+        </div>
+        <div class="stage-arrow">→</div>
+        <div class="stage-card">
+          <div class="stage-num">階段 4</div>
+          <div class="stage-name">修正 Revise</div>
+          <div class="stage-desc">根據結果決定：擴大、改變、還是停止</div>
+          <div class="stage-status">下個循環</div>
+        </div>
+      </div>
+
+      <div class="framework-insight">
+        <h4>永力社目前的位置</h4>
+        <ul>
+          <li><strong>階段 1 後段</strong>：7 計畫的提案書都已完成，等於回答了大部分質性問題</li>
+          <li><strong>階段 2 初期</strong>：v1.0 報告書是事後整理，量化測量還在建設中</li>
+          <li><strong>v2.0 的方向</strong>：從「事後整理」進化到「事前設計」，把十大問題嵌入新計畫的提案流程</li>
+          <li><strong>最該補的</strong>：把「夥伴角色」與「永力社的貢獻」分清楚，讓共同促成的成果被誠實看見</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ============ 下一步精進方向（原風險評估，語氣全前向）============ -->
+    <div class="framework-block next-section" id="next">
+      <span class="framework-label next-label">下一步精進</span>
+      <h3>v2.0 可以更好的地方</h3>
+      <p class="framework-desc">成熟的永續報告書不只展示「做了什麼」，也誠實點出「下一步可以更好的方向」。這不是檢討，而是讓未來的我們有清楚的精進路徑。以下 7 個方向，是 v1.0 完成後我們認知到、想在 v2.0 一起努力的事。</p>
+
+      <div class="risk-grid">
+
+        <div class="risk-card">
+          <div class="risk-num">01</div>
+          <div class="risk-title">讓每個計畫的貢獻被分開看見</div>
+          <div class="risk-block">
+            <div class="risk-block-label">目前狀態</div>
+            <p>v1.0 把 7 計畫的成果合計呈現，總人次與媒體觸及來源較集中。</p>
+          </div>
+          <div class="risk-block risk-block-action">
+            <div class="risk-block-label">下一步可以做的事</div>
+            <p>對外數字分計畫呈現，明確區分「服務人次／互動人次／媒體觸及估算」，讓每個計畫獨特的貢獻被看見。</p>
+          </div>
+        </div>
+
+        <div class="risk-card">
+          <div class="risk-num">02</div>
+          <div class="risk-title">為下一輪計畫先設好基線</div>
+          <div class="risk-block">
+            <div class="risk-block-label">目前狀態</div>
+            <p>多數成效屬於預期目標。部分計畫有歷史執行經驗，但尚未做系統性的學員前後對照。</p>
+          </div>
+          <div class="risk-block risk-block-action">
+            <div class="risk-block-label">下一步可以做的事</div>
+            <p>新一輪計畫設計事前基線與事後追蹤，2026 年至少 2 個重點計畫完成「介入後 6 個月」回測。</p>
+          </div>
+        </div>
+
+        <div class="risk-card">
+          <div class="risk-num">03</div>
+          <div class="risk-title">為計畫設計接力與延續機制</div>
+          <div class="risk-block">
+            <div class="risk-block-label">目前狀態</div>
+            <p>計畫補助結束後的延續路徑，目前主要靠夥伴自主推動。</p>
+          </div>
+          <div class="risk-block risk-block-action">
+            <div class="risk-block-label">下一步可以做的事</div>
+            <p>新計畫提案書加入「接力與延續計畫」一節，明確標出誰接手、後續資源從哪來；建立年度回訪機制。</p>
+          </div>
+        </div>
+
+        <div class="risk-card">
+          <div class="risk-num">04</div>
+          <div class="risk-title">用過程式語言，讓進展被誠實看見</div>
+          <div class="risk-block">
+            <div class="risk-block-label">目前狀態</div>
+            <p>v1.0 中部分論述（如「典範」「新模式」）走在實際進展前面一些。</p>
+          </div>
+          <div class="risk-block risk-block-action">
+            <div class="risk-block-label">下一步可以做的事</div>
+            <p>論述用語改為過程式（「正在嘗試」「初步看到」「期待逐步累積」），每個強論述加上「目前進度」標示。</p>
+          </div>
+        </div>
+
+        <div class="risk-card">
+          <div class="risk-num">05</div>
+          <div class="risk-title">從事後整理進化到事前設計</div>
+          <div class="risk-block">
+            <div class="risk-block-label">目前狀態</div>
+            <p>v1.0 是對已執行計畫的事後整理。</p>
+          </div>
+          <div class="risk-block risk-block-action">
+            <div class="risk-block-label">下一步可以做的事</div>
+            <p>2026 下半年起，新提案計畫採用十大影響力問題框架做事前設計，把方法論示範本身視為永力社的核心貢獻。</p>
+          </div>
+        </div>
+
+        <div class="risk-card">
+          <div class="risk-num">06</div>
+          <div class="risk-title">讓夥伴的角色被一起看見</div>
+          <div class="risk-block">
+            <div class="risk-block-label">目前狀態</div>
+            <p>多項成果由學校、公部門、宮廟、企業、衛星社與社區團共同促成，目前夥伴的具體貢獻分述較少。</p>
+          </div>
+          <div class="risk-block risk-block-action">
+            <div class="risk-block-label">下一步可以做的事</div>
+            <p>v2.0 更清楚揭露永力社與夥伴各自的角色，把「共同促成」作為對外溝通的標準語言。</p>
+          </div>
+        </div>
+
+        <div class="risk-card">
+          <div class="risk-num">07</div>
+          <div class="risk-title">補上個資公開的清楚授權</div>
+          <div class="risk-block">
+            <div class="risk-block-label">目前狀態</div>
+            <p>v1.0 公開了 9 位社友的姓名、職業、人物誌與引言，作為「以職業服務社會」核心論述的具體展現。</p>
+          </div>
+          <div class="risk-block risk-block-action">
+            <div class="risk-block-label">下一步可以做的事</div>
+            <p>v2.0 上線前完成「個人資料公開授權書」，每位社友簽署並建立內容調整的標準流程。</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="risk-footer">
+        <p><strong>把「下一步可以更好的地方」主動寫出來，本身就是永力社對自己的要求。</strong>讓讀者知道我們有清楚的精進路徑、讓未來的我們有可以追蹤的目標、讓這份揭露成為其他扶輪社或社會團體的參考。</p>
+        <p style="font-size:0.88rem;color:var(--ink-mute);margin-top:10px;">v2.0 完整版預計於 2026 年 6 月發布，屆時會逐項對照本文件，分享每項精進的進度。</p>
+      </div>
+    </div>
+
+    <!-- ============ 未來可延伸的分析框架 ============ -->
+    <div class="framework-future">
+      <h3>未來可延伸的分析框架</h3>
+      <p class="future-intro">資料基座建好後，AI 還可以從以下角度做分析。隨資料完整度提升逐步補上，這也是「<strong>把資料收集好，就能多框架評估</strong>」的精神。</p>
+      <div class="future-grid">
+        <div class="future-card">
+          <span class="future-tag">規劃中</span>
+          <div class="future-title">SROI 利害關係人地圖</div>
+          <div class="future-desc">每位利害關係人的成果事件鏈，把社會價值貨幣化（參考 <a href="https://jiang-yude.github.io/lxuetang-peili-v2/events.html" target="_blank" rel="noopener">旅學堂陪力系統 17 位夥伴的做法 ↗</a>）。</div>
+        </div>
+        <div class="future-card">
+          <span class="future-tag">規劃中</span>
+          <div class="future-title">貢獻分析（Contribution Analysis）</div>
+          <div class="future-desc">把「我們造成」改成「我們合理貢獻」，加入夥伴角色與替代解釋，讓共同促成的成果被誠實看見。</div>
+        </div>
+        <div class="future-card">
+          <span class="future-tag">規劃中</span>
+          <div class="future-title">受益者改變故事（MSC）</div>
+          <div class="future-desc">每個計畫收 1-3 則最有意義的改變故事，由社友與利害關係人一起選出最有代表性的，補上量化指標看不到的真實面貌。</div>
+        </div>
+        <div class="future-card">
+          <span class="future-tag">規劃中</span>
+          <div class="future-title">ESG 三軸熱力圖</div>
+          <div class="future-desc">9 位社友在環境（E）／社會（S）／治理（G）三個維度的貢獻分佈，看出社內專業互補與覆蓋缺口。</div>
+        </div>
+        <div class="future-card">
+          <span class="future-tag">規劃中</span>
+          <div class="future-title">議題覆蓋網絡</div>
+          <div class="future-desc">12 項 SDGs 與 7 項服務計畫的覆蓋關係網絡，找出哪些 SDGs 互相強化、哪些是覆蓋缺口。</div>
+        </div>
+        <div class="future-card">
+          <span class="future-tag">規劃中</span>
+          <div class="future-title">夥伴關係矩陣</div>
+          <div class="future-desc">每個計畫的夥伴清單與互動關係：永力社提供什麼、夥伴提供什麼、關係狀態、是否可延續。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SROI-ready 結語 -->
+    <div class="sroi-callout">
+      <div class="sroi-label">SROI-READY 立場</div>
+      <p>本報告書 v1.0 為 <strong>SROI-ready 基座</strong>：先把「<strong>可追蹤、可驗證、可議合</strong>」的影響力結構建出來。v2.0（2026.06 完整版）會加入貨幣化計算與更多分析框架。</p>
+      <p style="font-size:0.85rem;color:#A89878;">— 呼應 Vincent（永力社報告書主筆 · 法鼓文理學院 SROI 研究背景）：「先建立 SROI-ready 基座，第一版不算金額。」</p>
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="container">
@@ -340,11 +528,22 @@
       <p>以職業服務社會 · 用影響力衡量價值</p>
     </div>
     <div>
-      <h4>主要章節</h4>
+      <h4>本頁章節</h4>
       <ul>
-        <li><a href="index.html">回主頁</a></li>
-        <li><a href="about-yongli.html">關於永力社</a></li>
-        <li><a href="analysis.html">三框架分析</a></li>
+        <li><a href="#overview">總覽：影響力事件鏈</a></li>
+        <li><a href="#frame-people">框架 1 · 人物 — 陪力卡 5 階段</a></li>
+        <li><a href="#frame-work">框架 2 · 價值 — 扶輪以五大服務為哲學基石</a></li>
+        <li><a href="#frame-method">框架 3 · 潛力 — 影響力指南評估</a></li>
+        <li><a href="#next">下一步精進方向</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>方法論依據</h4>
+      <ul>
+        <li>Maximise Your Impact</li>
+        <li>Vicky 旅學堂陪力卡</li>
+        <li>Skills-Based Volunteering</li>
+        <li>Rotary Path to Impact</li>
       </ul>
     </div>
     <div class="copyright">© 2026 台北永續影響力扶輪社 · 內部分享版本（noindex / nofollow）</div>
