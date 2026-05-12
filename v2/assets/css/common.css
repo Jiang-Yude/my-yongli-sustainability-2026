@@ -539,26 +539,32 @@ footer .copyright {
 }
 .profile-hero .layout {
   display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: 36px;
+  grid-template-columns: 200px 1fr;
+  gap: 40px;
   align-items: center;
 }
 @media (max-width: 600px) { .profile-hero .layout { grid-template-columns: 1fr; text-align: center; } }
+/* 個人頁大頭照：4:5 portrait（半身可見） */
 .profile-hero .avatar-lg {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
+  width: 200px;
+  height: 250px;                    /* 4:5 比例 */
+  border-radius: 16px;              /* 圓角矩形，不是圓 */
   border: 3px solid var(--gold);
-  background: var(--bg-soft);
+  background-color: var(--bg-soft);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: "Noto Serif TC", serif;
-  font-size: 3.6rem;
+  font-size: 4.2rem;
   color: var(--gold);
   background-size: cover;
-  background-position: center;
+  background-position: center top;  /* 對齊頂端：露出頭+肩+胸的半身 */
+  overflow: hidden;
   margin: 0 auto;
+}
+.profile-hero .avatar-lg[style*="background-image"] {
+  color: transparent;
+  font-size: 0;
 }
 .profile-hero h1 {
   margin: 0 0 8px;
