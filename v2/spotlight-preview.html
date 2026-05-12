@@ -95,12 +95,29 @@ h1{
 }
 
 /* aspect-ratio 各版本 */
-.v1 .thumb{aspect-ratio:2/1}        /* 1.78 不對，2/1 = 2.0 */
-.v2 .thumb{aspect-ratio:16/9}       /* 1.78 */
-.v3 .thumb{aspect-ratio:5/3}        /* 1.67 */
-.v4 .thumb{aspect-ratio:3/2}        /* 1.5 */
-.v5 .thumb{aspect-ratio:4/3}        /* 1.33 */
-.v6 .thumb{aspect-ratio:1/1}        /* 1.0（正方形）*/
+.v1 .thumb{aspect-ratio:2/1}
+.v2 .thumb{aspect-ratio:16/9}
+.v3 .thumb{aspect-ratio:5/3}
+.v4 .thumb{aspect-ratio:3/2}
+.v5 .thumb{aspect-ratio:4/3}
+.v6 .thumb{aspect-ratio:1/1}
+
+/* V1 三種垂直對齊 */
+.va-top    {align-items:start}
+.va-center {align-items:center}
+.va-bottom {align-items:end}
+.va-top .thumb,
+.va-center .thumb,
+.va-bottom .thumb{aspect-ratio:2/1}
+
+.section-divider{
+  font-family:"Noto Serif TC",serif;
+  font-size:1.6rem;font-weight:600;
+  color:var(--ink);
+  margin:48px 0 14px;
+  padding-top:36px;
+  border-top:2px solid var(--ink);
+}
 
 </style>
 </head>
@@ -176,8 +193,44 @@ h1{
   </div>
 </div>
 
+<h2 class="section-divider">V1（2:1）的三種垂直對齊 ←  你要看的</h2>
+<p class="intro" style="margin-bottom:32px;">同樣 aspect-ratio 2:1，只變垂直對齊方式。挑哪個對。</p>
+
+<div class="spotlight va-top">
+  <div class="thumb"></div>
+  <div class="info">
+    <span class="label-tag">A · 偏上</span>
+    <span class="grant-tag">扶輪地區獎助金</span>
+    <h3>台北忠義國小 小田園環境教育服務計畫</h3>
+    <p class="lead">將永續農業實作融入新住民與弱勢學童的課外學習，以「觀摩→體驗→學習」打造一個微型永續系統，讓孩子學會合作、等待成果、為土地負責。</p>
+    <div class="specs">align-items: <code>start</code> （圖貼右邊文字頂端，下方留白）</div>
+  </div>
+</div>
+
+<div class="spotlight va-center">
+  <div class="thumb"></div>
+  <div class="info">
+    <span class="label-tag">B · 置中（目前主檔）</span>
+    <span class="grant-tag">扶輪地區獎助金</span>
+    <h3>台北忠義國小 小田園環境教育服務計畫</h3>
+    <p class="lead">將永續農業實作融入新住民與弱勢學童的課外學習，以「觀摩→體驗→學習」打造一個微型永續系統，讓孩子學會合作、等待成果、為土地負責。</p>
+    <div class="specs">align-items: <code>center</code> （圖垂直置中，上下留白平均）</div>
+  </div>
+</div>
+
+<div class="spotlight va-bottom">
+  <div class="thumb"></div>
+  <div class="info">
+    <span class="label-tag">C · 偏下</span>
+    <span class="grant-tag">扶輪地區獎助金</span>
+    <h3>台北忠義國小 小田園環境教育服務計畫</h3>
+    <p class="lead">將永續農業實作融入新住民與弱勢學童的課外學習，以「觀摩→體驗→學習」打造一個微型永續系統，讓孩子學會合作、等待成果、為土地負責。</p>
+    <div class="specs">align-items: <code>end</code> （圖貼右邊文字底端，上方留白）</div>
+  </div>
+</div>
+
 <p style="text-align:center;margin-top:60px;color:var(--ink-3);font-size:14px;">
-  挑好跟我說編號（V1~V6），我就把主檔 thumb 比例改成那個。
+  挑好跟我說「A」「B」「C」我就套主檔。
 </p>
 
 </body>
