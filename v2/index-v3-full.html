@@ -699,17 +699,59 @@ img{max-width:100%;display:block}
 }
 .svc-stat-row.is-main .row-num{color:var(--gold-deep)}
 
+/* 桌面：row-head 與 row-summary 是 display:contents，不影響 5 欄 grid */
+.svc-stat-row .row-head,
+.svc-stat-row .row-summary{display:contents}
+
 @media(max-width:900px){
   .svc-stat-row{
-    grid-template-columns:40px 1fr;
-    row-gap:10px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
     padding:24px 0;
   }
   .svc-stat-row.is-main{padding:24px 14px}
-  .svc-stat-row .row-desc,
-  .svc-stat-row .row-members,
-  .svc-stat-row .row-count{grid-column:1/-1}
-  .svc-stat-row .row-count{text-align:left;font-size:18px}
+  .svc-stat-row .row-head{
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+  }
+  .svc-stat-row .row-num{
+    background:var(--paper-3);
+    padding:6px 12px;
+    border-radius:99px;
+    flex-shrink:0;
+    align-self:flex-start;
+    padding-top:6px;
+  }
+  .svc-stat-row .row-desc{padding-top:0}
+  .svc-stat-row .row-summary{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:14px;
+    background:var(--paper-2);
+    padding:14px 16px;
+    border-radius:10px;
+  }
+  .svc-stat-row .row-summary .row-members{
+    flex:1;
+    font-size:15px;
+    line-height:1.55;
+    padding-top:0;
+  }
+  .svc-stat-row .row-summary .row-members small{margin-top:2px}
+  .svc-stat-row .row-summary .row-count{
+    text-align:right;
+    padding-top:0;
+    gap:2px;
+    flex-shrink:0;
+  }
+  .svc-stat-row .row-summary .row-count > div{
+    font-size:17px;
+    color:var(--sage-deep);
+    white-space:nowrap;
+  }
 }
 
 /* ============ §04 社友介紹 ============ */
@@ -1287,57 +1329,77 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
   <div class="svc-fathom-table">
 
     <div class="svc-stat-row">
-      <div class="row-num">01</div>
-      <div class="row-name">社務服務<small>Club Service</small></div>
+      <div class="row-head">
+        <div class="row-num">01</div>
+        <div class="row-name">社務服務<small>Club Service</small></div>
+      </div>
       <div class="row-desc">維持社內運作的基底工作。內部治理、活動籌備、社員照顧，是其他四大服務能成立的前提。</div>
-      <div class="row-members">CP, Vincent, Rich,<br>Derek, Nick, 艾筆</div>
-      <div class="row-count">
+      <div class="row-summary">
+        <div class="row-members">CP, Vincent, Rich,<br>Derek, Nick, 艾筆</div>
+        <div class="row-count">
         <div>6 位社友</div>
       </div>
     </div>
+    </div>
 
     <div class="svc-stat-row">
-      <div class="row-num">02</div>
-      <div class="row-name">職業服務<small>Vocational</small></div>
+      <div class="row-head">
+        <div class="row-num">02</div>
+        <div class="row-name">職業服務<small>Vocational</small></div>
+      </div>
       <div class="row-desc">把每位社友的職業專業，轉化為可被衡量、可被傳遞的公共價值。「職業即服務」是永力社的核心命題。</div>
-      <div class="row-members">Vicky, Helen, James,<br>Vincent, Eric, 艾筆</div>
-      <div class="row-count">
+      <div class="row-summary">
+        <div class="row-members">Vicky, Helen, James,<br>Vincent, Eric, 艾筆</div>
+        <div class="row-count">
         <div>6 位社友</div>
         <div>4 案</div>
       </div>
     </div>
+    </div>
 
     <div class="svc-stat-row">
-      <div class="row-num">03</div>
-      <div class="row-name">社區服務<small>Community</small></div>
+      <div class="row-head">
+        <div class="row-num">03</div>
+        <div class="row-name">社區服務<small>Community</small></div>
+      </div>
       <div class="row-desc">在實體社區落地的行動。從在地教育、減塑、長者陪伴到地方創生，呼應 SDG 11 永續城鄉。</div>
-      <div class="row-members">CP, Vicky, Lisa,<br>Vincent, 夏萬浪</div>
-      <div class="row-count">
+      <div class="row-summary">
+        <div class="row-members">CP, Vicky, Lisa,<br>Vincent, 夏萬浪</div>
+        <div class="row-count">
         <div>5 位社友</div>
         <div>5 案</div>
       </div>
     </div>
+    </div>
 
     <div class="svc-stat-row">
-      <div class="row-num">04</div>
-      <div class="row-name">國際服務<small>International</small></div>
+      <div class="row-head">
+        <div class="row-num">04</div>
+        <div class="row-name">國際服務<small>International</small></div>
+      </div>
       <div class="row-desc">透過全球獎助金與跨境合作展開。「由齒開始」是永力社走向國際扶輪網絡的第一個試點。</div>
-      <div class="row-members">Helen, Eric</div>
-      <div class="row-count">
+      <div class="row-summary">
+        <div class="row-members">Helen, Eric</div>
+        <div class="row-count">
         <div>2 位社友</div>
         <div>1 案</div>
       </div>
     </div>
+    </div>
 
     <div class="svc-stat-row">
-      <div class="row-num">05</div>
-      <div class="row-name">青少年服務<small>Youth</small></div>
+      <div class="row-head">
+        <div class="row-num">05</div>
+        <div class="row-name">青少年服務<small>Youth</small></div>
+      </div>
       <div class="row-desc">扶輪五大服務之一，永力社本年度尚無對應的提案服務計畫。</div>
-      <div class="row-members">—</div>
-      <div class="row-count">
+      <div class="row-summary">
+        <div class="row-members">—</div>
+        <div class="row-count">
         <div>0 位社友</div>
         <div>0 案</div>
       </div>
+    </div>
     </div>
 
   </div>
