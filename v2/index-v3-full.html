@@ -690,6 +690,25 @@ img{max-width:100%;display:block}
   gap:4px;
 }
 
+/* 本次為零（青少年服務）— 低調灰階 */
+.svc-stat-row-zero{
+  opacity:0.55;
+}
+.svc-stat-row-zero:hover{
+  opacity:0.8;
+}
+.svc-stat-row-zero .row-count .zero-label{
+  font-family:"Inter",sans-serif;
+  font-size:13px;letter-spacing:0.12em;
+  font-weight:600;
+  color:var(--ink-3);
+  text-transform:uppercase;
+  background:var(--paper-3);
+  padding:5px 12px;
+  border-radius:99px;
+  display:inline-block;
+}
+
 /* 主軸列（職業服務）強調 */
 .svc-stat-row.is-main{
   background:var(--gold-bg);
@@ -1319,6 +1338,16 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
       <div class="row-count">
         <div>2 位社友</div>
         <div>1 案</div>
+      </div>
+    </div>
+
+    <div class="svc-stat-row svc-stat-row-zero">
+      <div class="row-num">05</div>
+      <div class="row-name">青少年服務<small>Youth</small></div>
+      <div class="row-desc">扶輪五大服務之一，永力社本年度尚無對應的提案服務計畫。</div>
+      <div class="row-members">—</div>
+      <div class="row-count">
+        <div class="zero-label">本次為零</div>
       </div>
     </div>
 
