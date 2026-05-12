@@ -211,19 +211,21 @@ img{max-width:100%;display:block}
   border-top:1px solid var(--line);
 }
 .people-strip-grid{
-  display:grid;
-  grid-template-columns:repeat(9, 1fr);
-  gap:14px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;             /* 第二排 4 個自動置中 */
+  gap:24px 18px;                      /* 行間 24 / 欄間 18 */
   margin-bottom:20px;
 }
 .person-tile{
+  flex:0 0 calc(20% - 18px);          /* 一排 5 個 */
   text-decoration:none;
   color:inherit;
   text-align:center;
   display:flex;
   flex-direction:column;
   align-items:center;
-  gap:10px;
+  gap:12px;
   padding:14px 8px;
   border-radius:14px;
   transition:transform 0.35s cubic-bezier(0.2,0.8,0.3,1), background 0.3s, box-shadow 0.3s;
@@ -234,15 +236,15 @@ img{max-width:100%;display:block}
   box-shadow:0 6px 18px rgba(43,42,38,0.07);
 }
 .avatar-circle{
-  width:64px;height:64px;
+  width:108px;height:108px;           /* 兩排排版有更多空間，圓圈放大 */
   border-radius:50%;
   display:grid;place-items:center;
   font-family:"Noto Serif TC",serif;
-  font-size:28px;
+  font-size:36px;
   font-weight:600;
   color:var(--paper);
   background-color:var(--sage);
-  background-size:155%;               /* 適度 zoom，頭+肩+部分胸口 */
+  background-size:cover;              /* V1：完整 cover 不額外 zoom */
   background-position:center top;
   flex-shrink:0;
   letter-spacing:0;
@@ -281,12 +283,13 @@ img{max-width:100%;display:block}
 }
 
 @media(max-width:900px){
-  .people-strip-grid{grid-template-columns:repeat(5, 1fr); gap:18px 10px}
-  .avatar-circle{width:56px;height:56px;font-size:24px}
+  .person-tile{flex:0 0 calc(25% - 18px)}    /* tablet: 一排 4 個 */
+  .avatar-circle{width:88px;height:88px;font-size:30px}
 }
 @media(max-width:600px){
-  .people-strip-grid{grid-template-columns:repeat(3, 1fr); gap:20px 8px}
-  .avatar-circle{width:52px;height:52px;font-size:22px}
+  .person-tile{flex:0 0 calc(33.333% - 14px)} /* 手機: 一排 3 個 */
+  .people-strip-grid{gap:20px 10px}
+  .avatar-circle{width:72px;height:72px;font-size:26px}
   .person-tile .role-label{display:none}
 }
 
@@ -754,7 +757,7 @@ img{max-width:100%;display:block}
   font-size:24px;font-weight:600;
   color:var(--paper);
   background-color:var(--sage);
-  background-size:155%;
+  background-size:cover;              /* V1：完整 cover */
   background-position:center top;
   flex-shrink:0;
   overflow:hidden;
