@@ -242,8 +242,16 @@ img{max-width:100%;display:block}
   font-weight:600;
   color:var(--paper);
   background:var(--sage);
+  background-size:cover;
+  background-position:center 25%;     /* 對齊臉部 */
   flex-shrink:0;
   letter-spacing:0;
+  overflow:hidden;
+}
+/* 當有照片時，隱藏漢字 fallback */
+.avatar-circle[style*="background-image"]{
+  color:transparent;
+  font-size:0;
 }
 /* 角色色票（Takram 化） */
 .person-tile[data-role="cp"]     .avatar-circle{background:#7B5E3B}  /* 創社 深褐 */
@@ -746,7 +754,13 @@ img{max-width:100%;display:block}
   font-size:24px;font-weight:600;
   color:var(--paper);
   background:var(--sage);
+  background-size:cover;
+  background-position:center 25%;
   flex-shrink:0;
+  overflow:hidden;
+}
+.member-card .avatar[style*="background-image"]{
+  color:transparent;font-size:0;
 }
 .member-card[data-role="cp"]     .avatar{background:#7B5E3B}
 .member-card[data-role="pp"]     .avatar{background:#4F6E61}
@@ -1100,55 +1114,55 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
     <div class="people-strip-grid">
 
       <a class="person-tile" data-role="cp" href="profiles/01-cp-lin.html">
-        <div class="avatar-circle">林</div>
+        <div class="avatar-circle" style="background-image:url(\'assets/img/members/cp.jpg\')"></div>
         <div class="name-label">CP 林學賢</div>
         <div class="role-label">創社社長</div>
       </a>
 
       <a class="person-tile" data-role="pp" href="profiles/07-nick-lin.html">
-        <div class="avatar-circle">林</div>
+        <div class="avatar-circle" style="background-image:url(\'assets/img/members/nick.jpg\')"></div>
         <div class="name-label">Nick 林秉鴻</div>
         <div class="role-label">PP 前社長</div>
       </a>
 
       <a class="person-tile" data-role="pp" href="profiles/04-helen-lai.html">
-        <div class="avatar-circle">賴</div>
+        <div class="avatar-circle" style="background-image:url(\'assets/img/members/helen.jpg\')"></div>
         <div class="name-label">Helen 賴光蘭</div>
         <div class="role-label">PP 前社長</div>
       </a>
 
       <a class="person-tile" data-role="pe" href="profiles/08-rich-huang.html">
-        <div class="avatar-circle">黃</div>
+        <div class="avatar-circle" style="background-image:url(\'assets/img/members/rich.jpg\')"></div>
         <div class="name-label">Rich 黃丞隆</div>
         <div class="role-label">PE 下屆社長</div>
       </a>
 
       <a class="person-tile" data-role="member" href="profiles/02-vicky-li.html">
-        <div class="avatar-circle">李</div>
+        <div class="avatar-circle" style="background-image:url(\'assets/img/members/vicky.jpg\')"></div>
         <div class="name-label">Vicky 李琪</div>
         <div class="role-label">旅學堂創辦人</div>
       </a>
 
       <a class="person-tile" data-role="member" href="profiles/05-lisa-lin.html">
-        <div class="avatar-circle">林</div>
+        <div class="avatar-circle" style="background-image:url(\'assets/img/members/lisa.jpg\')"></div>
         <div class="name-label">Lisa 林映如</div>
         <div class="role-label">永續百家</div>
       </a>
 
       <a class="person-tile" data-role="member" href="profiles/06-james-gao.html">
-        <div class="avatar-circle">高</div>
+        <div class="avatar-circle" style="background-image:url(\'assets/img/members/james.jpg\')"></div>
         <div class="name-label">James 高清坊</div>
         <div class="role-label">通信閣規劃者</div>
       </a>
 
       <a class="person-tile" data-role="member" href="profiles/09-vincent-chen.html">
-        <div class="avatar-circle">陳</div>
+        <div class="avatar-circle" style="background-image:url(\'assets/img/members/vincent.jpg\')"></div>
         <div class="name-label">Vincent 陳明勇</div>
         <div class="role-label">引導師 · 報告書主筆</div>
       </a>
 
       <a class="person-tile" data-role="member" href="profiles/03-derek-huang.html">
-        <div class="avatar-circle">黃</div>
+        <div class="avatar-circle" style="background-image:url(\'assets/img/members/derek.jpg\')"></div>
         <div class="name-label">Derek 黃世祿</div>
         <div class="role-label">資訊系統服務</div>
       </a>
@@ -1286,7 +1300,7 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
 
     <article class="member-card" data-role="cp">
       <a class="member-head" href="profiles/01-cp-lin.html">
-        <div class="avatar">林</div>
+        <div class="avatar" style="background-image:url(\'assets/img/members/cp.jpg\')"></div>
         <div class="info">
           <div class="name">林學賢 CP</div>
           <div class="role">創社社長 · 價值場域建構者</div>
@@ -1307,7 +1321,7 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
 
     <article class="member-card" data-role="pp">
       <a class="member-head" href="profiles/07-nick-lin.html">
-        <div class="avatar">林</div>
+        <div class="avatar" style="background-image:url(\'assets/img/members/nick.jpg\')"></div>
         <div class="info">
           <div class="name">林秉鴻 Nick</div>
           <div class="role">PP 前社長 · 讓價值長久延續的人</div>
@@ -1323,7 +1337,7 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
 
     <article class="member-card" data-role="pp">
       <a class="member-head" href="profiles/04-helen-lai.html">
-        <div class="avatar">賴</div>
+        <div class="avatar" style="background-image:url(\'assets/img/members/helen.jpg\')"></div>
         <div class="info">
           <div class="name">賴光蘭 Helen</div>
           <div class="role">PP 前社長 · 育成基金會執行長</div>
@@ -1340,7 +1354,7 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
 
     <article class="member-card" data-role="pe">
       <a class="member-head" href="profiles/08-rich-huang.html">
-        <div class="avatar">黃</div>
+        <div class="avatar" style="background-image:url(\'assets/img/members/rich.jpg\')"></div>
         <div class="info">
           <div class="name">黃丞隆 Rich</div>
           <div class="role">PE 下屆社長 · 不畏挑戰，選擇承擔</div>
@@ -1363,7 +1377,7 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
 
     <article class="member-card" data-role="member">
       <a class="member-head" href="profiles/02-vicky-li.html">
-        <div class="avatar">李</div>
+        <div class="avatar" style="background-image:url(\'assets/img/members/vicky.jpg\')"></div>
         <div class="info">
           <div class="name">李琪 Vicky</div>
           <div class="role">永力社理事 · 旅學女力</div>
@@ -1384,7 +1398,7 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
 
     <article class="member-card" data-role="member">
       <a class="member-head" href="profiles/05-lisa-lin.html">
-        <div class="avatar">林</div>
+        <div class="avatar" style="background-image:url(\'assets/img/members/lisa.jpg\')"></div>
         <div class="info">
           <div class="name">林映如 Lisa</div>
           <div class="role">永續百家創辦人 · 零廢淨行動派</div>
@@ -1404,7 +1418,7 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
 
     <article class="member-card" data-role="member">
       <a class="member-head" href="profiles/06-james-gao.html">
-        <div class="avatar">高</div>
+        <div class="avatar" style="background-image:url(\'assets/img/members/james.jpg\')"></div>
         <div class="info">
           <div class="name">高清坊 James</div>
           <div class="role">通信閣規劃者 · 以空間設計照護未來</div>
@@ -1424,7 +1438,7 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
 
     <article class="member-card" data-role="member">
       <a class="member-head" href="profiles/09-vincent-chen.html">
-        <div class="avatar">陳</div>
+        <div class="avatar" style="background-image:url(\'assets/img/members/vincent.jpg\')"></div>
         <div class="info">
           <div class="name">陳明勇 Vincent</div>
           <div class="role">引導師 · 報告書主筆</div>
@@ -1446,7 +1460,7 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
 
     <article class="member-card" data-role="member">
       <a class="member-head" href="profiles/03-derek-huang.html">
-        <div class="avatar">黃</div>
+        <div class="avatar" style="background-image:url(\'assets/img/members/derek.jpg\')"></div>
         <div class="info">
           <div class="name">黃世祿 Derek</div>
           <div class="role">資訊系統服務 · 用制度守住價值的人</div>
