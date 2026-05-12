@@ -980,7 +980,7 @@ th {
   .service-spotlight { grid-template-columns: 1fr; gap: 18px; }
 }
 .service-spotlight .thumb {
-  aspect-ratio: 3/2;                    /* 顯示完整海報上半段（不像 2:1 那麼扁）*/
+  aspect-ratio: 16/9;                   /* 切到「扶輪地區獎助金 / 提案人」那條線，不露下方本文小字 */
   background-size: cover;
   background-position: top center;
   background-color: var(--bg-soft);
