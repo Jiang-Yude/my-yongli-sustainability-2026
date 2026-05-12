@@ -714,8 +714,8 @@ img{max-width:100%;display:block}
 /* ============ §04 社友介紹 ============ */
 .member-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fit, minmax(380px, 1fr));   /* 桌面 3 欄、平板 2 欄、手機 1 欄 */
+  gap:24px;
   margin-bottom:36px;
   align-items:start;                  /* 每張卡片用自己的高度 */
 }
@@ -733,6 +733,21 @@ img{max-width:100%;display:block}
   transform:translateY(-3px);
   box-shadow:var(--shadow-lg);
   border-color:var(--sage-soft);
+  cursor:pointer;                     /* 整張卡 cursor 變 pointer */
+}
+/* 「整張卡可點」用 stretched-link 技巧：
+   member-head 的 <a> 用 ::after pseudo-element 擴張到整張卡 */
+.member-card .member-head::after{
+  content:"";
+  position:absolute;
+  inset:0;                            /* 鋪滿整張 .member-card */
+  z-index:1;
+}
+.member-card .member-body,
+.member-card .annual-flag,
+.member-card .focus-chip{
+  position:relative;
+  z-index:2;                          /* 文字、chip 仍視覺可見（在連結之上但不影響點擊） */
 }
 .member-card .satellite-flag{
   position:absolute;top:14px;right:14px;
