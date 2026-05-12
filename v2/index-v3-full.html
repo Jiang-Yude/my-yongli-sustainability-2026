@@ -745,6 +745,33 @@ img{max-width:100%;display:block}
   border-radius:99px;
   text-transform:uppercase;
 }
+/* 年度服務計畫 flag（粗框 + 閃爍小星） */
+.member-card .annual-flag{
+  position:absolute;top:14px;right:14px;
+  background:#fff;
+  color:var(--gold-deep);
+  border:2px solid var(--gold);
+  font-family:"Noto Sans TC",sans-serif;
+  font-size:13px;letter-spacing:0.08em;
+  font-weight:700;
+  padding:5px 12px 5px 10px;
+  border-radius:99px;
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  box-shadow:0 1px 4px rgba(201,169,97,0.18);
+  z-index:2;
+}
+.member-card .annual-flag::before{
+  content:"★";
+  color:var(--gold);
+  font-size:12px;
+  animation:annual-twinkle 1.8s ease-in-out infinite;
+}
+@keyframes annual-twinkle{
+  0%, 100% { opacity:1; transform:scale(1) rotate(0deg); }
+  50% { opacity:0.55; transform:scale(1.25) rotate(15deg); }
+}
 .member-card .member-head{
   display:flex;align-items:center;gap:16px;
   padding:22px 22px 14px;
@@ -1294,7 +1321,7 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
     </div>
   </div>
 
-  <p class="lead-text">永力社目前有 9 位有完整介紹的社友，依職務（CP 社長 / PP 前社長 / PE 下屆社長）與筆畫排序。點任一張卡片進入完整人物誌。</p>
+  <p class="lead-text">永力社目前有 9 位有完整介紹的社友，依職務（CP 社長 / PP 前社長 / PE 下屆社長）與筆畫排序。<br>點任一張卡片進入完整人物誌。</p>
 
   <h3 class="member-section-sub">社長 · 前社長 · 下屆社長</h3>
   <p class="member-section-sub-desc">創社與承接的核心軸線。</p>
@@ -1302,6 +1329,7 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
   <div class="member-grid">
 
     <article class="member-card" data-role="cp">
+      <span class="annual-flag">年度服務計畫</span>
       <a class="member-head" href="profiles/01-cp-lin.html">
         <div class="avatar" style="background-image:url(assets/img/members/cp.jpg)"></div>
         <div class="info">
@@ -1316,10 +1344,6 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
           <span class="focus-chip svc-chip-club">社務服務</span>
         </div>
       </div>
-      <a class="member-service-link" href="services/01-zhongyi.html">
-        <div class="link-meta">推動的服務計畫 · 扶輪地區獎助金</div>
-        <div class="link-name">忠義國小 小田園環境教育 →</div>
-      </a>
     </article>
 
     <article class="member-card" data-role="pp">
@@ -1379,6 +1403,7 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
   <div class="member-grid">
 
     <article class="member-card" data-role="member">
+      <span class="annual-flag">年度服務計畫</span>
       <a class="member-head" href="profiles/02-vicky-li.html">
         <div class="avatar" style="background-image:url(assets/img/members/vicky.jpg)"></div>
         <div class="info">
@@ -1393,13 +1418,10 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
           <span class="focus-chip svc-chip-community">社區服務</span>
         </div>
       </div>
-      <a class="member-service-link" href="services/02-tamsui.html">
-        <div class="link-meta">推動的服務計畫 · 社內獎助金</div>
-        <div class="link-name">綠動淡水 輕軌文化永續共創 →</div>
-      </a>
     </article>
 
     <article class="member-card" data-role="member">
+      <span class="annual-flag">年度服務計畫</span>
       <a class="member-head" href="profiles/05-lisa-lin.html">
         <div class="avatar" style="background-image:url(assets/img/members/lisa.jpg)"></div>
         <div class="info">
@@ -1413,13 +1435,10 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
           <span class="focus-chip svc-chip-community">社區服務</span>
         </div>
       </div>
-      <a class="member-service-link" href="services/07-zero-waste-mazu.html">
-        <div class="link-meta">推動的服務計畫 · 扶輪社區服務團</div>
-        <div class="link-name">零廢敬媽祖 在地永續行動 →</div>
-      </a>
     </article>
 
     <article class="member-card" data-role="member">
+      <span class="annual-flag">年度服務計畫</span>
       <a class="member-head" href="profiles/06-james-gao.html">
         <div class="avatar" style="background-image:url(assets/img/members/james.jpg)"></div>
         <div class="info">
@@ -1433,13 +1452,10 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
           <span class="focus-chip svc-chip-vocational">職業服務</span>
         </div>
       </div>
-      <a class="member-service-link" href="services/04-life-warrior.html">
-        <div class="link-meta">推動的服務計畫 · 社內獎助金</div>
-        <div class="link-name">永續的生命鬥士與傳承 創新教育訓練 →</div>
-      </a>
     </article>
 
     <article class="member-card" data-role="member">
+      <span class="annual-flag">年度服務計畫</span>
       <a class="member-head" href="profiles/09-vincent-chen.html">
         <div class="avatar" style="background-image:url(assets/img/members/vincent.jpg)"></div>
         <div class="info">
@@ -1455,10 +1471,6 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
           <span class="focus-chip svc-chip-club">社務服務</span>
         </div>
       </div>
-      <a class="member-service-link" href="services/06-community.html">
-        <div class="link-meta">推動的服務計畫 · 社內獎助金</div>
-        <div class="link-name">社區永續支持計畫 共創在地 ESG 行動 →</div>
-      </a>
     </article>
 
     <article class="member-card" data-role="member">
