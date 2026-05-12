@@ -548,8 +548,7 @@ footer .copyright {
 .profile-hero .avatar-lg {
   width: 200px;
   height: 250px;                    /* 4:5 比例 */
-  border-radius: 16px;              /* 圓角矩形，不是圓 */
-  border: 3px solid var(--gold);
+  border-radius: 16px;              /* 圓角矩形 */
   background-color: var(--bg-soft);
   display: flex;
   align-items: center;
