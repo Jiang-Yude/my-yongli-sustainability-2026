@@ -774,6 +774,86 @@ footer .copyright {
   border-bottom-color: var(--green);
 }
 
+/* 服務計畫頁的提案人卡（mini member-card 樣式） */
+.service-hero .proposer-card {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 18px;
+  align-items: start;
+  margin: 14px 0 22px;
+  padding: 18px 22px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  text-decoration: none;
+  color: inherit;
+  max-width: 680px;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.service-hero .proposer-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  border-color: var(--gold);
+}
+.proposer-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--bg-soft);
+  background-size: 155%;
+  background-position: center 5%;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.proposer-info { display: flex; flex-direction: column; }
+.proposer-label {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  color: var(--ink-mute);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.proposer-name {
+  font-family: "Noto Serif TC", serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.35;
+}
+.proposer-role {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  margin-top: 2px;
+}
+.proposer-theme {
+  font-size: 15px;
+  color: var(--ink);
+  line-height: 1.7;
+  margin: 10px 0 8px;
+}
+.proposer-link {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 14px;
+  color: var(--gold);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin-top: 2px;
+}
+.service-hero .proposer-card:hover .proposer-link {
+  color: var(--green);
+}
+@media (max-width: 600px) {
+  .service-hero .proposer-card {
+    grid-template-columns: 60px 1fr;
+    padding: 16px 18px;
+    gap: 14px;
+  }
+  .proposer-avatar { width: 60px; height: 60px; }
+}
+
 .placeholder-banner {
   background: rgba(184, 134, 11, 0.08);
   border: 1px dashed var(--gold);
