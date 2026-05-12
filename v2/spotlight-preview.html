@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>服務計畫 thumb 比例對比預覽</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4EFE6;
+  --paper-2:#FBF7EE;
+  --ink:#2B2A26;
+  --ink-2:#3A3833;
+  --ink-3:#5A554C;
+  --sage:#6B8E7F;
+  --sage-deep:#4F6E61;
+  --gold:#C9A961;
+  --green:#2E7D5B;
+  --line:rgba(43,42,38,0.14);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:"Noto Sans TC",sans-serif;
+  background:linear-gradient(135deg, #FCF7E9 0%, #F5EFD8 100%);
+  color:var(--ink-2);
+  padding:48px 5vw;
+  font-size:16px;
+  line-height:1.7;
+}
+h1{
+  font-family:"Noto Serif TC",serif;
+  font-size:2rem;font-weight:600;color:var(--ink);margin-bottom:14px;
+}
+.intro{max-width:780px;color:var(--ink-3);font-size:15px;margin-bottom:48px}
+
+/* 仿真 service-spotlight 樣式 */
+.spotlight{
+  display:grid;
+  grid-template-columns:minmax(280px, 380px) 1fr;
+  gap:36px;
+  align-items:start;
+  margin-bottom:64px;
+  text-decoration:none;
+  color:inherit;
+  max-width:1100px;
+}
+.spotlight .thumb{
+  background-image:url('assets/img/services/01-zhongyi.jpg');
+  background-size:cover;
+  background-position:top center;
+  background-color:#F8F5EE;
+  border-radius:12px;
+  box-shadow:0 4px 16px rgba(43,42,38,0.10);
+}
+.spotlight .info{padding:4px 0}
+.spotlight .grant-tag{
+  display:inline-block;
+  padding:5px 16px;
+  background:var(--green);color:#fff;
+  border-radius:999px;font-size:0.95rem;
+  font-weight:500;letter-spacing:0.04em;
+  margin-bottom:16px;
+}
+.spotlight h3{
+  font-family:"Noto Serif TC",serif;
+  font-size:1.5rem;font-weight:600;
+  color:var(--ink);line-height:1.4;
+  margin-bottom:14px;
+}
+.spotlight .lead{
+  font-size:1.05rem;color:var(--ink-3);
+  line-height:1.75;margin-bottom:18px;
+}
+.label-tag{
+  display:inline-block;
+  background:var(--ink);color:#fff;
+  font-family:"Inter",sans-serif;
+  font-size:13px;letter-spacing:0.16em;font-weight:700;
+  padding:6px 16px;border-radius:6px;
+  margin-bottom:20px;
+  text-transform:uppercase;
+}
+.specs{
+  font-family:"Inter",monospace;
+  font-size:14px;color:var(--ink);
+  background:rgba(255,255,255,0.6);
+  padding:8px 14px;border-radius:6px;
+  margin-top:14px;display:inline-block;
+}
+.specs code{color:var(--gold);font-weight:700}
+
+@media(max-width:720px){
+  .spotlight{grid-template-columns:1fr;gap:18px}
+}
+
+/* aspect-ratio 各版本 */
+.v1 .thumb{aspect-ratio:2/1}        /* 1.78 不對，2/1 = 2.0 */
+.v2 .thumb{aspect-ratio:16/9}       /* 1.78 */
+.v3 .thumb{aspect-ratio:5/3}        /* 1.67 */
+.v4 .thumb{aspect-ratio:3/2}        /* 1.5 */
+.v5 .thumb{aspect-ratio:4/3}        /* 1.33 */
+.v6 .thumb{aspect-ratio:1/1}        /* 1.0（正方形）*/
+
+</style>
+</head>
+<body>
+
+<h1>服務計畫 thumb 比例 6 種對比</h1>
+<p class="intro">同樣的版型、同樣的圖、同樣的文字。只改 <code>aspect-ratio</code>。挑哪個比例對。
+<br>每個下面標了精確值，挑好跟我說「V3」「V5」等編號就套上去。</p>
+
+<div class="spotlight v1">
+  <div class="thumb"></div>
+  <div class="info">
+    <span class="label-tag">V1 · 2 : 1（最扁）</span>
+    <span class="grant-tag">扶輪地區獎助金</span>
+    <h3>台北忠義國小 小田園環境教育服務計畫</h3>
+    <p class="lead">將永續農業實作融入新住民與弱勢學童的課外學習，以「觀摩→體驗→學習」打造一個微型永續系統，讓孩子學會合作、等待成果、為土地負責。</p>
+    <div class="specs">aspect-ratio: <code>2/1</code> （1.50 × 寬高比 2.0）</div>
+  </div>
+</div>
+
+<div class="spotlight v2">
+  <div class="thumb"></div>
+  <div class="info">
+    <span class="label-tag">V2 · 16 : 9（目前主檔）</span>
+    <span class="grant-tag">扶輪地區獎助金</span>
+    <h3>台北忠義國小 小田園環境教育服務計畫</h3>
+    <p class="lead">將永續農業實作融入新住民與弱勢學童的課外學習，以「觀摩→體驗→學習」打造一個微型永續系統，讓孩子學會合作、等待成果、為土地負責。</p>
+    <div class="specs">aspect-ratio: <code>16/9</code> （比 2:1 高一點）</div>
+  </div>
+</div>
+
+<div class="spotlight v3">
+  <div class="thumb"></div>
+  <div class="info">
+    <span class="label-tag">V3 · 5 : 3</span>
+    <span class="grant-tag">扶輪地區獎助金</span>
+    <h3>台北忠義國小 小田園環境教育服務計畫</h3>
+    <p class="lead">將永續農業實作融入新住民與弱勢學童的課外學習，以「觀摩→體驗→學習」打造一個微型永續系統，讓孩子學會合作、等待成果、為土地負責。</p>
+    <div class="specs">aspect-ratio: <code>5/3</code> （介於 16:9 和 3:2 之間）</div>
+  </div>
+</div>
+
+<div class="spotlight v4">
+  <div class="thumb"></div>
+  <div class="info">
+    <span class="label-tag">V4 · 3 : 2</span>
+    <span class="grant-tag">扶輪地區獎助金</span>
+    <h3>台北忠義國小 小田園環境教育服務計畫</h3>
+    <p class="lead">將永續農業實作融入新住民與弱勢學童的課外學習，以「觀摩→體驗→學習」打造一個微型永續系統，讓孩子學會合作、等待成果、為土地負責。</p>
+    <div class="specs">aspect-ratio: <code>3/2</code> （顯示更多海報內容）</div>
+  </div>
+</div>
+
+<div class="spotlight v5">
+  <div class="thumb"></div>
+  <div class="info">
+    <span class="label-tag">V5 · 4 : 3</span>
+    <span class="grant-tag">扶輪地區獎助金</span>
+    <h3>台北忠義國小 小田園環境教育服務計畫</h3>
+    <p class="lead">將永續農業實作融入新住民與弱勢學童的課外學習，以「觀摩→體驗→學習」打造一個微型永續系統，讓孩子學會合作、等待成果、為土地負責。</p>
+    <div class="specs">aspect-ratio: <code>4/3</code> （傳統照片比例）</div>
+  </div>
+</div>
+
+<div class="spotlight v6">
+  <div class="thumb"></div>
+  <div class="info">
+    <span class="label-tag">V6 · 1 : 1（正方）</span>
+    <span class="grant-tag">扶輪地區獎助金</span>
+    <h3>台北忠義國小 小田園環境教育服務計畫</h3>
+    <p class="lead">將永續農業實作融入新住民與弱勢學童的課外學習，以「觀摩→體驗→學習」打造一個微型永續系統，讓孩子學會合作、等待成果、為土地負責。</p>
+    <div class="specs">aspect-ratio: <code>1/1</code> （正方形，全海報幾乎都進來）</div>
+  </div>
+</div>
+
+<p style="text-align:center;margin-top:60px;color:var(--ink-3);font-size:14px;">
+  挑好跟我說編號（V1~V6），我就把主檔 thumb 比例改成那個。
+</p>
+
+</body>
+</html>
