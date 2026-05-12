@@ -241,7 +241,7 @@ img{max-width:100%;display:block}
   font-size:28px;
   font-weight:600;
   color:var(--paper);
-  background:var(--sage);
+  background-color:var(--sage);       /* 用 background-color 避免 reset background-image */
   background-size:cover;
   background-position:center 25%;     /* 對齊臉部 */
   flex-shrink:0;
@@ -253,11 +253,11 @@ img{max-width:100%;display:block}
   color:transparent;
   font-size:0;
 }
-/* 角色色票（Takram 化） */
-.person-tile[data-role="cp"]     .avatar-circle{background:#7B5E3B}  /* 創社 深褐 */
-.person-tile[data-role="pp"]     .avatar-circle{background:#4F6E61}  /* PP 深霧綠 */
-.person-tile[data-role="pe"]     .avatar-circle{background:#A8884A}  /* PE 深軟金 */
-.person-tile[data-role="member"] .avatar-circle{background:#6B8E7F}  /* 其他 霧綠 */
+/* 角色色票（用 background-color 不用 shorthand） */
+.person-tile[data-role="cp"]     .avatar-circle{background-color:#7B5E3B}
+.person-tile[data-role="pp"]     .avatar-circle{background-color:#4F6E61}
+.person-tile[data-role="pe"]     .avatar-circle{background-color:#A8884A}
+.person-tile[data-role="member"] .avatar-circle{background-color:#6B8E7F}
 
 .person-tile .name-label{
   font-size:13px;
@@ -753,7 +753,7 @@ img{max-width:100%;display:block}
   font-family:"Noto Serif TC",serif;
   font-size:24px;font-weight:600;
   color:var(--paper);
-  background:var(--sage);
+  background-color:var(--sage);
   background-size:cover;
   background-position:center 25%;
   flex-shrink:0;
@@ -762,10 +762,10 @@ img{max-width:100%;display:block}
 .member-card .avatar[style*="background-image"]{
   color:transparent;font-size:0;
 }
-.member-card[data-role="cp"]     .avatar{background:#7B5E3B}
-.member-card[data-role="pp"]     .avatar{background:#4F6E61}
-.member-card[data-role="pe"]     .avatar{background:#A8884A}
-.member-card[data-role="member"] .avatar{background:#6B8E7F}
+.member-card[data-role="cp"]     .avatar{background-color:#7B5E3B}
+.member-card[data-role="pp"]     .avatar{background-color:#4F6E61}
+.member-card[data-role="pe"]     .avatar{background-color:#A8884A}
+.member-card[data-role="member"] .avatar{background-color:#6B8E7F}
 .member-card .info .name{
   font-family:"Noto Serif TC",serif;
   font-size:1.15rem;font-weight:600;
