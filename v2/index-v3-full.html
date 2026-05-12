@@ -717,6 +717,7 @@ img{max-width:100%;display:block}
   grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
   gap:20px;
   margin-bottom:36px;
+  align-items:start;                  /* 每張卡片用自己的高度 */
 }
 .member-card{
   background:var(--paper-2);
@@ -745,22 +746,20 @@ img{max-width:100%;display:block}
   border-radius:99px;
   text-transform:uppercase;
 }
-/* 年度服務計畫 flag（粗框 + 閃爍小星） */
+/* 年度服務計畫 flag（粗框 + 閃爍小星，inline 與 chip 同排） */
 .member-card .annual-flag{
-  position:absolute;top:14px;right:14px;
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
   background:#fff;
   color:var(--gold-deep);
   border:2px solid var(--gold);
   font-family:"Noto Sans TC",sans-serif;
   font-size:13px;letter-spacing:0.08em;
   font-weight:700;
-  padding:5px 12px 5px 10px;
+  padding:4px 12px 4px 10px;
   border-radius:99px;
-  display:inline-flex;
-  align-items:center;
-  gap:5px;
   box-shadow:0 1px 4px rgba(201,169,97,0.18);
-  z-index:2;
 }
 .member-card .annual-flag::before{
   content:"★";
@@ -1329,7 +1328,6 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
   <div class="member-grid">
 
     <article class="member-card" data-role="cp">
-      <span class="annual-flag">年度服務計畫</span>
       <a class="member-head" href="profiles/01-cp-lin.html">
         <div class="avatar" style="background-image:url(assets/img/members/cp.jpg)"></div>
         <div class="info">
@@ -1340,6 +1338,11 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
       <div class="member-body">
         <p class="theme-line">建立永力扶輪社，把「社友的職業服務被看見」變成這個社存在的核心目的。</p>
         <div class="focus-row">
+          <span class="annual-flag">年度服務計畫</span>
+          <span class="annual-flag">年度服務計畫</span>
+          <span class="annual-flag">年度服務計畫</span>
+          <span class="annual-flag">年度服務計畫</span>
+          <span class="annual-flag">年度服務計畫</span>
           <span class="focus-chip svc-chip-community">社區服務</span>
           <span class="focus-chip svc-chip-club">社務服務</span>
         </div>
@@ -1403,7 +1406,6 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
   <div class="member-grid">
 
     <article class="member-card" data-role="member">
-      <span class="annual-flag">年度服務計畫</span>
       <a class="member-head" href="profiles/02-vicky-li.html">
         <div class="avatar" style="background-image:url(assets/img/members/vicky.jpg)"></div>
         <div class="info">
@@ -1421,7 +1423,6 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
     </article>
 
     <article class="member-card" data-role="member">
-      <span class="annual-flag">年度服務計畫</span>
       <a class="member-head" href="profiles/05-lisa-lin.html">
         <div class="avatar" style="background-image:url(assets/img/members/lisa.jpg)"></div>
         <div class="info">
@@ -1438,7 +1439,6 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
     </article>
 
     <article class="member-card" data-role="member">
-      <span class="annual-flag">年度服務計畫</span>
       <a class="member-head" href="profiles/06-james-gao.html">
         <div class="avatar" style="background-image:url(assets/img/members/james.jpg)"></div>
         <div class="info">
@@ -1455,7 +1455,6 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
     </article>
 
     <article class="member-card" data-role="member">
-      <span class="annual-flag">年度服務計畫</span>
       <a class="member-head" href="profiles/09-vincent-chen.html">
         <div class="avatar" style="background-image:url(assets/img/members/vincent.jpg)"></div>
         <div class="info">
