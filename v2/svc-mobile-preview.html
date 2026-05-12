@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>§03 五大服務手機版對比預覽</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4EFE6;
+  --paper-2:#FBF7EE;
+  --paper-3:#EFE8DA;
+  --ink:#2B2A26;
+  --ink-2:#3A3833;
+  --ink-3:#5A554C;
+  --ink-4:#7A746B;
+  --sage:#6B8E7F;
+  --sage-deep:#4F6E61;
+  --gold:#C9A961;
+  --gold-deep:#A8884A;
+  --gold-bg:#F5EDD7;
+  --line:rgba(43,42,38,0.14);
+  --line-2:rgba(43,42,38,0.06);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:"Noto Sans TC",sans-serif;
+  background:var(--paper);
+  color:var(--ink-2);
+  padding:24px 20px;
+  font-size:17px;
+  line-height:1.75;
+}
+h1{
+  font-family:"Noto Serif TC",serif;
+  font-size:1.6rem;font-weight:600;color:var(--ink);margin-bottom:8px;
+}
+.intro{color:var(--ink-3);font-size:14px;margin-bottom:32px}
+.label-tag{
+  display:inline-block;
+  background:var(--ink);color:var(--paper);
+  font-family:"Inter",sans-serif;
+  font-size:12px;letter-spacing:0.18em;font-weight:700;
+  padding:5px 12px;border-radius:6px;
+  margin-bottom:14px;text-transform:uppercase;
+}
+.section-divider{
+  font-family:"Noto Serif TC",serif;
+  font-size:1.2rem;font-weight:600;color:var(--ink);
+  margin:48px 0 16px;padding-top:28px;border-top:2px solid var(--ink);
+}
+
+/* ============ A: 目前主檔版（線性堆疊） ============ */
+.A .svc-stat-row{
+  display:grid;
+  grid-template-columns:40px 1fr;
+  row-gap:10px;
+  padding:24px 0;
+  border-bottom:1px solid var(--line);
+}
+.A .row-num{font-family:"Inter",sans-serif;font-size:16px;font-weight:700;color:var(--sage-deep);padding-top:6px;letter-spacing:0.16em}
+.A .row-name{font-family:"Noto Serif TC",serif;font-size:25px;font-weight:600;color:var(--ink);line-height:1.35}
+.A .row-name small{display:block;font-family:"Inter",sans-serif;font-size:14px;letter-spacing:0.16em;color:var(--ink-3);font-weight:500;margin-top:8px;text-transform:uppercase}
+.A .row-desc{grid-column:1/-1;font-size:17px;color:var(--ink-2);line-height:1.75}
+.A .row-members{grid-column:1/-1;font-size:17px;color:var(--ink-2);line-height:1.7}
+.A .row-members small{display:block;font-size:15px;color:var(--ink-3);margin-top:6px}
+.A .row-count{grid-column:1/-1;font-family:"Noto Serif TC",serif;font-size:18px;font-weight:600;color:var(--ink);line-height:1.55;display:flex;flex-direction:column;gap:4px}
+
+/* ============ B: 加分組標題 + 強調數字 ============ */
+.B .svc-stat-row{
+  display:grid;
+  grid-template-columns:40px 1fr;
+  row-gap:14px;
+  padding:24px 0;
+  border-bottom:1px solid var(--line);
+}
+.B .row-num{font-family:"Inter",sans-serif;font-size:16px;font-weight:700;color:var(--sage-deep);padding-top:6px;letter-spacing:0.16em}
+.B .row-name{font-family:"Noto Serif TC",serif;font-size:25px;font-weight:600;color:var(--ink);line-height:1.35}
+.B .row-name small{display:block;font-family:"Inter",sans-serif;font-size:14px;letter-spacing:0.16em;color:var(--ink-3);font-weight:500;margin-top:8px;text-transform:uppercase}
+.B .row-desc{grid-column:1/-1;font-size:17px;color:var(--ink-2);line-height:1.75}
+.B .row-members{grid-column:1/-1;font-size:16px;color:var(--ink-2);line-height:1.7;border-left:3px solid var(--sage);padding:4px 0 4px 14px}
+.B .row-members::before{
+  content:"對應社友";
+  display:block;font-family:"Inter",sans-serif;
+  font-size:11px;letter-spacing:0.18em;color:var(--sage-deep);font-weight:600;
+  text-transform:uppercase;margin-bottom:6px;
+}
+.B .row-count{
+  grid-column:1/-1;
+  display:flex;gap:18px;
+  padding-top:12px;border-top:1px solid var(--line-2);
+}
+.B .row-count > div{
+  flex:1;text-align:center;
+  background:var(--paper-2);
+  padding:10px 8px;border-radius:8px;
+  font-family:"Noto Serif TC",serif;
+  font-size:18px;font-weight:600;
+  color:var(--ink);
+}
+
+/* ============ C: 卡片化（每行一張卡）============ */
+.C .svc-stat-row{
+  background:var(--paper-2);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:22px 20px;
+  margin-bottom:14px;
+  display:flex;flex-direction:column;gap:14px;
+}
+.C .row-head{display:flex;align-items:baseline;gap:14px}
+.C .row-num{font-family:"Inter",sans-serif;font-size:14px;font-weight:700;color:var(--sage-deep);letter-spacing:0.16em}
+.C .row-name{font-family:"Noto Serif TC",serif;font-size:24px;font-weight:600;color:var(--ink);line-height:1.35;flex:1}
+.C .row-name small{display:block;font-family:"Inter",sans-serif;font-size:13px;letter-spacing:0.16em;color:var(--ink-3);font-weight:500;margin-top:4px;text-transform:uppercase}
+.C .row-desc{font-size:16px;color:var(--ink-2);line-height:1.7}
+.C .row-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding-top:10px;border-top:1px solid var(--line-2)}
+.C .row-stats > div{display:flex;flex-direction:column;gap:2px}
+.C .row-stats .label{font-family:"Inter",sans-serif;font-size:11px;letter-spacing:0.16em;color:var(--ink-3);font-weight:600;text-transform:uppercase}
+.C .row-stats .val{font-family:"Noto Serif TC",serif;font-size:17px;font-weight:600;color:var(--ink)}
+
+/* ============ D: 名片風 — 數字優先 ============ */
+.D .svc-stat-row{
+  padding:24px 0;border-bottom:1px solid var(--line);
+  display:flex;flex-direction:column;gap:12px;
+}
+.D .row-head{display:flex;align-items:flex-start;gap:14px}
+.D .row-num{
+  font-family:"Inter",sans-serif;font-size:13px;font-weight:700;
+  color:var(--sage-deep);letter-spacing:0.16em;
+  background:var(--paper-3);padding:6px 12px;border-radius:99px;flex-shrink:0;
+}
+.D .row-name{font-family:"Noto Serif TC",serif;font-size:24px;font-weight:600;color:var(--ink);line-height:1.35;flex:1}
+.D .row-name small{display:block;font-family:"Inter",sans-serif;font-size:13px;letter-spacing:0.16em;color:var(--ink-3);font-weight:500;margin-top:4px;text-transform:uppercase}
+.D .row-desc{font-size:16px;color:var(--ink-2);line-height:1.7}
+.D .row-summary{
+  display:flex;justify-content:space-between;align-items:center;
+  background:var(--paper-2);padding:14px 16px;border-radius:10px;
+}
+.D .row-summary .members{font-size:15px;color:var(--ink-2);line-height:1.55;flex:1;margin-right:14px}
+.D .row-summary .count{
+  font-family:"Noto Serif TC",serif;font-size:22px;font-weight:600;
+  color:var(--sage-deep);text-align:right;
+  white-space:nowrap;
+}
+.D .row-summary .count small{display:block;font-family:"Inter",sans-serif;font-size:11px;letter-spacing:0.14em;color:var(--ink-3);font-weight:500;margin-top:2px;text-transform:uppercase}
+
+</style>
+</head>
+<body>
+
+<h1>§03 五大服務手機版 4 種對比</h1>
+<p class="intro">同樣的資料、4 種手機版排法。挑哪個清楚。<br>挑好跟我說「A / B / C / D」我就套到主檔。</p>
+
+<!-- ====== A ====== -->
+<span class="label-tag">A · 線性堆疊（目前主檔）</span>
+<div class="A">
+<div class="svc-stat-row">
+  <div class="row-num">01</div>
+  <div class="row-name">社務服務<small>Club Service</small></div>
+  <div class="row-desc">維持社內運作的基底工作。內部治理、活動籌備、社員照顧，是其他四大服務能成立的前提。</div>
+  <div class="row-members">CP, Vincent, Rich,<br>Derek, Nick, 艾筆</div>
+  <div class="row-count"><div>6 位社友</div></div>
+</div>
+<div class="svc-stat-row">
+  <div class="row-num">02</div>
+  <div class="row-name">職業服務<small>Vocational</small></div>
+  <div class="row-desc">把每位社友的職業專業，轉化為可被衡量、可被傳遞的公共價值。</div>
+  <div class="row-members">Vicky, Helen, James,<br>Vincent, Eric, 艾筆</div>
+  <div class="row-count"><div>6 位社友</div><div>4 案</div></div>
+</div>
+</div>
+
+<!-- ====== B ====== -->
+<h2 class="section-divider">B · 加分組標題 + 數字格化</h2>
+<div class="B">
+<div class="svc-stat-row">
+  <div class="row-num">01</div>
+  <div class="row-name">社務服務<small>Club Service</small></div>
+  <div class="row-desc">維持社內運作的基底工作。內部治理、活動籌備、社員照顧，是其他四大服務能成立的前提。</div>
+  <div class="row-members">CP, Vincent, Rich, Derek, Nick, 艾筆</div>
+  <div class="row-count"><div>6 位社友</div></div>
+</div>
+<div class="svc-stat-row">
+  <div class="row-num">02</div>
+  <div class="row-name">職業服務<small>Vocational</small></div>
+  <div class="row-desc">把每位社友的職業專業，轉化為可被衡量、可被傳遞的公共價值。</div>
+  <div class="row-members">Vicky, Helen, James, Vincent, Eric, 艾筆</div>
+  <div class="row-count"><div>6 位社友</div><div>4 案</div></div>
+</div>
+</div>
+
+<!-- ====== C ====== -->
+<h2 class="section-divider">C · 卡片化（每行一張卡）</h2>
+<div class="C">
+<div class="svc-stat-row">
+  <div class="row-head"><div class="row-num">01</div><div class="row-name">社務服務<small>Club Service</small></div></div>
+  <div class="row-desc">維持社內運作的基底工作。內部治理、活動籌備、社員照顧，是其他四大服務能成立的前提。</div>
+  <div class="row-stats">
+    <div><span class="label">社友</span><span class="val">CP, Vincent, Rich, Derek, Nick, 艾筆</span></div>
+    <div><span class="label">總數</span><span class="val">6 位</span></div>
+  </div>
+</div>
+<div class="svc-stat-row">
+  <div class="row-head"><div class="row-num">02</div><div class="row-name">職業服務<small>Vocational</small></div></div>
+  <div class="row-desc">把每位社友的職業專業，轉化為可被衡量、可被傳遞的公共價值。</div>
+  <div class="row-stats">
+    <div><span class="label">社友</span><span class="val">Vicky, Helen, James, Vincent, Eric, 艾筆</span></div>
+    <div><span class="label">案數</span><span class="val">6 位 / 4 案</span></div>
+  </div>
+</div>
+</div>
+
+<!-- ====== D ====== -->
+<h2 class="section-divider">D · 數字優先（社友＋計數同列在 box 內）</h2>
+<div class="D">
+<div class="svc-stat-row">
+  <div class="row-head"><span class="row-num">01</span><div class="row-name">社務服務<small>Club Service</small></div></div>
+  <div class="row-desc">維持社內運作的基底工作。內部治理、活動籌備、社員照顧，是其他四大服務能成立的前提。</div>
+  <div class="row-summary">
+    <div class="members">CP, Vincent, Rich,<br>Derek, Nick, 艾筆</div>
+    <div class="count">6 <small>位社友</small></div>
+  </div>
+</div>
+<div class="svc-stat-row">
+  <div class="row-head"><span class="row-num">02</span><div class="row-name">職業服務<small>Vocational</small></div></div>
+  <div class="row-desc">把每位社友的職業專業，轉化為可被衡量、可被傳遞的公共價值。</div>
+  <div class="row-summary">
+    <div class="members">Vicky, Helen, James,<br>Vincent, Eric, 艾筆</div>
+    <div class="count">6 / 4 <small>位社友 / 案</small></div>
+  </div>
+</div>
+</div>
+
+<p style="text-align:center;margin-top:60px;color:var(--ink-3);font-size:14px;">
+  挑好跟我說「A / B / C / D」<br>
+  或「混搭：A 的框架 + C 的 stats」這種也可以
+</p>
+
+</body>
+</html>

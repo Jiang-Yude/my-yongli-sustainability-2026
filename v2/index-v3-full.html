@@ -715,7 +715,8 @@ img{max-width:100%;display:block}
 /* ============ §04 社友介紹 ============ */
 .member-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(500px, 1fr));   /* 桌面 2 欄（橫式寬卡）、平板 1 欄 */
+  grid-template-columns:repeat(auto-fit, minmax(min(100%, 500px), 1fr));
+  /* min(100%, 500px) 確保 mobile 時不撐爆 viewport，桌面仍 2 欄寬卡 */
   gap:24px;
   margin-bottom:36px;
   align-items:start;
