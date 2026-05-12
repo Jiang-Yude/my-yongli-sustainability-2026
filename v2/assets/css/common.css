@@ -968,7 +968,7 @@ th {
   color: inherit;
   transition: transform .25s, opacity .25s;
   margin-top: 18px;
-  align-items: start;
+  align-items: center;                  /* 圖跟右邊文字垂直置中（不再 start 貼頂端）*/
 }
 .service-spotlight:hover {
   color: inherit;
@@ -980,7 +980,7 @@ th {
   .service-spotlight { grid-template-columns: 1fr; gap: 18px; }
 }
 .service-spotlight .thumb {
-  aspect-ratio: 16/9;                   /* 切到「扶輪地區獎助金 / 提案人」那條線，不露下方本文小字 */
+  aspect-ratio: 2/1;                    /* V1：最扁，剛好露出海報頂端 */
   background-size: cover;
   background-position: top center;
   background-color: var(--bg-soft);
