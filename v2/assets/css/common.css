@@ -974,35 +974,33 @@ th {
 }
 .service-spotlight {
   display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 28px;
-  background: var(--bg-card);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  overflow: hidden;
+  grid-template-columns: minmax(280px, 380px) 1fr;
+  gap: 36px;
   text-decoration: none;
   color: inherit;
-  box-shadow: var(--shadow);
-  transition: transform .2s, box-shadow .2s;
+  transition: transform .25s, opacity .25s;
   margin-top: 18px;
+  align-items: start;
 }
 .service-spotlight:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-hover);
   color: inherit;
+  transform: translateY(-2px);
+  opacity: 0.95;
 }
+.service-spotlight:hover .thumb { box-shadow: var(--shadow-lg); }
 @media (max-width: 720px) {
-  .service-spotlight { grid-template-columns: 1fr; }
-  .service-spotlight .thumb { aspect-ratio: 2/1; min-height: 0; }
+  .service-spotlight { grid-template-columns: 1fr; gap: 18px; }
 }
 .service-spotlight .thumb {
-  aspect-ratio: 2/1;                    /* 跟首頁服務卡同款比例 */
+  aspect-ratio: 3/2;                    /* 顯示完整海報上半段（不像 2:1 那麼扁）*/
   background-size: cover;
   background-position: top center;
   background-color: var(--bg-soft);
-  min-height: 0;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: box-shadow .25s;
 }
-.service-spotlight .info { padding: 28px 32px; }
+.service-spotlight .info { padding: 4px 0; }
 .service-spotlight .info .grant-tag {
   display: inline-block;
   font-size: 0.85rem;
