@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>社友介紹｜2026 永續影響力報告書 V2</title>
+<meta name="description" content="永力社 9 位社友的職業專業、服務初衷與在系統中的角色定位。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/common.css?v=8">
+<style>
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+.member-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow .15s, transform .15s;
+}
+.member-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
+.member-head {
+  display: flex; align-items: center; gap: 12px;
+  padding: 18px 20px 14px;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid var(--line-soft);
+}
+.member-head .avatar {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem; font-weight: 700;
+  flex-shrink: 0;
+  border: 2px solid;
+}
+.member-head .avatar.role-found { color: var(--role-found); background: #EFE3DA; border-color: var(--role-found); }
+.member-head .avatar.role-guard { color: var(--role-guard); background: #DDE5EE; border-color: var(--role-guard); }
+.member-head .avatar.role-act { color: var(--role-act); background: #F3DCD2; border-color: var(--role-act); }
+.member-head .avatar.role-cont { color: var(--role-cont); background: #D8E5DD; border-color: var(--role-cont); }
+.member-head .name {
+  font-size: 1.05rem; font-weight: 700; color: var(--ink);
+  margin-bottom: 2px;
+}
+.member-head .role {
+  font-size: 0.82rem; color: var(--ink-soft);
+}
+.member-body {
+  padding: 14px 20px 16px;
+  flex: 1;
+}
+.member-body .theme-line {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin: 0 0 12px;
+}
+.member-body .focus-row {
+  display: flex; flex-wrap: wrap; gap: 4px;
+}
+.focus-chip {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.svc-chip-club { background: rgba(25,118,210,0.12); color: #1565C0; }
+.svc-chip-vocational { background: rgba(184,134,11,0.14); color: #8B6508; }
+.svc-chip-community { background: rgba(0,137,123,0.12); color: #00695C; }
+.svc-chip-international { background: rgba(106,27,154,0.12); color: #4A148C; }
+.svc-chip-youth { background: rgba(239,108,0,0.12); color: #E65100; }
+.member-service-link {
+  display: block;
+  padding: 14px 20px;
+  background: linear-gradient(90deg, rgba(184,134,11,0.06), rgba(46,125,91,0.06));
+  border-top: 1px solid var(--line-soft);
+  text-decoration: none;
+  transition: background .15s;
+}
+.member-service-link:hover {
+  background: linear-gradient(90deg, rgba(184,134,11,0.14), rgba(46,125,91,0.12));
+}
+.member-service-link .link-meta {
+  font-size: 0.72rem;
+  color: var(--ink-mute);
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+.member-service-link .link-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--gold);
+}
+.section-divider {
+  margin: 48px 0 14px;
+  font-size: 1.2rem;
+  color: var(--ink);
+  font-weight: 700;
+}
+.section-divider-desc {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  margin: 0 0 14px;
+}
+.placeholder-card {
+  padding: 24px;
+  background: var(--bg-soft);
+  border: 2px dashed var(--line);
+  border-radius: var(--radius);
+  text-align: center;
+  color: var(--ink-mute);
+  font-size: 0.9rem;
+  margin-top: 24px;
+}
+.placeholder-card strong { color: var(--ink-soft); }
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background .15s;
+}
+.back-link:hover { background: var(--gold); color: #fff; border-color: var(--gold); }
+@media (max-width: 720px) {
+  .member-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="inner">
+    <div class="brand"><span class="mark">永</span>社友介紹</div>
+    <a href="index.html" class="back-link">← 回主頁</a>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom: 24px;">
+  <div class="container">
+    <h1>社友介紹</h1>
+    <p class="subtitle">9 位社友的職業專業、服務初衷與在永力社的角色定位。本年度提案推動服務計畫的 5 位先列上方，其餘 4 位以社務或專業形式持續支持。</p>
+    <div class="meta">
+      <span class="pill">9 位社友</span>
+      <span class="pill">5 位提案計畫</span>
+      <span class="pill">4 位社務支持</span>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+
+  <h2 class="section-divider">本年度推動服務計畫的社友</h2>
+  <p class="section-divider-desc">5 位社友以各自的職業專業推動服務計畫。點卡片進入完整人物誌。</p>
+
+  <div class="member-grid">
+
+    <article class="member-card">
+      <a class="member-head" href="profiles/01-cp-lin.html">
+        <div class="avatar role-found">林</div>
+        <div class="info">
+          <div class="name">林學賢 CP Impact</div>
+          <div class="role">創社社長 · 價值場域建構者</div>
+        </div>
+      </a>
+      <div class="member-body">
+        <p class="theme-line">建立永力扶輪社，把「社友的職業服務被看見」變成這個社存在的核心目的。</p>
+        <div class="focus-row">
+          <span class="focus-chip svc-chip-community">社區服務</span>
+          <span class="focus-chip svc-chip-youth">青少年服務</span>
+          <span class="focus-chip svc-chip-club">社務服務</span>
+        </div>
+      </div>
+      <a class="member-service-link" href="services/01-zhongyi.html">
+        <div class="link-meta">推動的服務計畫 · 扶輪地區獎助金</div>
+        <div class="link-name">忠義國小 小田園環境教育 →</div>
+      </a>
+    </article>
+
+    <article class="member-card">
+      <a class="member-head" href="profiles/02-vicky-li.html">
+        <div class="avatar role-act">李</div>
+        <div class="info">
+          <div class="name">李琪 Vicky</div>
+          <div class="role">永力社理事 · 旅學女力</div>
+        </div>
+      </a>
+      <div class="member-body">
+        <p class="theme-line">把職業服務做好，就同時是社會服務——讓二度就業婦女成為導覽員；與淡水國中合作旅學 PBL 教案，與淡江大學合作帶領學生進行社會影響力評估。</p>
+        <div class="focus-row">
+          <span class="focus-chip svc-chip-vocational">職業服務</span>
+          <span class="focus-chip svc-chip-community">社區服務</span>
+          <span class="focus-chip svc-chip-youth">青少年服務</span>
+        </div>
+      </div>
+      <a class="member-service-link" href="services/02-tamsui.html">
+        <div class="link-meta">推動的服務計畫 · 社內獎助金</div>
+        <div class="link-name">綠動淡水 輕軌文化永續共創 →</div>
+      </a>
+    </article>
+
+    <article class="member-card">
+      <a class="member-head" href="profiles/05-lisa-lin.html">
+        <div class="avatar role-act">林</div>
+        <div class="info">
+          <div class="name">林映如 Lisa</div>
+          <div class="role">永續百家創辦人 · 零廢淨行動派</div>
+        </div>
+      </a>
+      <div class="member-body">
+        <p class="theme-line">把零廢棄、淨灘、海洋永續從理念變成日常行動，帶上百位志工換來真實改變。</p>
+        <div class="focus-row">
+          <span class="focus-chip svc-chip-community">社區服務</span>
+        </div>
+      </div>
+      <a class="member-service-link" href="services/07-zero-waste-mazu.html">
+        <div class="link-meta">推動的服務計畫 · 扶輪社區服務團</div>
+        <div class="link-name">零廢敬媽祖 在地永續行動 →</div>
+      </a>
+    </article>
+
+    <article class="member-card">
+      <a class="member-head" href="profiles/06-james-gao.html">
+        <div class="avatar role-act">高</div>
+        <div class="info">
+          <div class="name">高清坊 James</div>
+          <div class="role">通信閣規劃者 · 以空間設計照護未來</div>
+        </div>
+      </a>
+      <div class="member-body">
+        <p class="theme-line">用空間設計回應高齡照顧、生命教育、創新教育訓練。</p>
+        <div class="focus-row">
+          <span class="focus-chip svc-chip-vocational">職業服務</span>
+          <span class="focus-chip svc-chip-youth">青少年服務</span>
+        </div>
+      </div>
+      <a class="member-service-link" href="services/04-life-warrior.html">
+        <div class="link-meta">推動的服務計畫 · 社內獎助金</div>
+        <div class="link-name">永續的生命鬥士與傳承 創新教育訓練 →</div>
+      </a>
+    </article>
+
+    <article class="member-card">
+      <a class="member-head" href="profiles/09-vincent-chen.html">
+        <div class="avatar role-cont">陳</div>
+        <div class="info">
+          <div class="name">陳明勇 Vincent</div>
+          <div class="role">引導師 · 報告書主筆</div>
+        </div>
+      </a>
+      <div class="member-body">
+        <p class="theme-line">用引導技術、SROI、ESG 的方法論，把社區、企業、社友之間的對話接起來。</p>
+        <div class="focus-row">
+          <span class="focus-chip svc-chip-vocational">職業服務</span>
+          <span class="focus-chip svc-chip-community">社區服務</span>
+          <span class="focus-chip svc-chip-club">社務服務</span>
+        </div>
+      </div>
+      <a class="member-service-link" href="services/06-community.html">
+        <div class="link-meta">推動的服務計畫 · 社內獎助金</div>
+        <div class="link-name">社區永續支持計畫 共創在地 ESG 行動 →</div>
+      </a>
+    </article>
+
+  </div>
+
+  <h2 class="section-divider">其他社友</h2>
+  <p class="section-divider-desc">本年度雖未提案個人服務計畫，仍以各自的專業與身份持續支持永力社的服務行動。</p>
+
+  <div class="member-grid">
+
+    <article class="member-card">
+      <a class="member-head" href="profiles/04-helen-lai.html">
+        <div class="avatar role-guard">賴</div>
+        <div class="info">
+          <div class="name">賴光蘭 PP Helen</div>
+          <div class="role">育成基金會執行長 · 用愛守護智青</div>
+        </div>
+      </a>
+      <div class="member-body">
+        <p class="theme-line">三十多年陪伴心智障礙青年走進職場、走進社區，讓他們有角色、有貢獻、有尊嚴。</p>
+        <div class="focus-row">
+          <span class="focus-chip svc-chip-vocational">職業服務</span>
+          <span class="focus-chip svc-chip-international">國際服務</span>
+          <span class="focus-chip svc-chip-youth">青少年服務</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="member-card">
+      <a class="member-head" href="profiles/03-derek-huang.html">
+        <div class="avatar role-guard">黃</div>
+        <div class="info">
+          <div class="name">黃世祿 Derek</div>
+          <div class="role">資訊系統服務 · 用制度守住價值的人</div>
+        </div>
+      </a>
+      <div class="member-body">
+        <p class="theme-line">把社務、知識、服務計畫的資料，放進一套可被檢視、可被傳承的系統裡。</p>
+        <div class="focus-row">
+          <span class="focus-chip svc-chip-club">社務服務</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="member-card">
+      <a class="member-head" href="profiles/07-nick-lin.html">
+        <div class="avatar role-cont">林</div>
+        <div class="info">
+          <div class="name">林秉鴻 PP Nick</div>
+          <div class="role">前社長 · 讓價值長久延續的人</div>
+        </div>
+      </a>
+      <div class="member-body">
+        <p class="theme-line">把短期成果變成可被印刷、可被收藏、可被反覆翻閱的形式。</p>
+        <div class="focus-row">
+          <span class="focus-chip svc-chip-club">社務服務</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="member-card">
+      <a class="member-head" href="profiles/08-rich-huang.html">
+        <div class="avatar role-cont">黃</div>
+        <div class="info">
+          <div class="name">黃丞隆 PE Rich</div>
+          <div class="role">下屆社長 · 不畏挑戰，選擇承擔</div>
+        </div>
+      </a>
+      <div class="member-body">
+        <p class="theme-line">在創社初期承接下一棒，因為相信永力社的方向值得被推下去。</p>
+        <div class="focus-row">
+          <span class="focus-chip svc-chip-club">社務服務</span>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="placeholder-card">
+    <strong>＋ 更多社友介紹陸續加入</strong><br>
+    其他社友與衛星社員的故事，將陸續於本報告中呈現。
+  </div>
+
+</div>
+
+<footer>
+  <div class="container">
+    <div>
+      <h4>台北永續影響力扶輪社</h4>
+      <p>Rotary Club of Taipei Sustainable Impact</p>
+      <p>以職業服務社會 · 用影響力衡量價值</p>
+    </div>
+    <div>
+      <h4>主要章節</h4>
+      <ul>
+        <li><a href="index.html">回主頁</a></li>
+        <li><a href="about-yongli.html">關於永力社</a></li>
+        <li><a href="methodology.html">影響力衡量方法</a></li>
+      </ul>
+    </div>
+    <div class="copyright">© 2026 台北永續影響力扶輪社 · 內部分享版本（noindex / nofollow）</div>
+  </div>
+</footer>
+
+</body>
+</html>
