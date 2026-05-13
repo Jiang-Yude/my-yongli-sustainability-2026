@@ -1,0 +1,1551 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>台北永續影響力扶輪社｜2025-2026 年度永續影響力報告書</title>
+<meta name="description" content="以職業服務社會，用影響力衡量價值。以扶輪五大服務為框架，記錄永力社九位社友的永續影響力。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/common.css?v=7">
+<style>
+/* ============ V2 補充樣式 ============ */
+
+/* V2 標識 banner */
+.v2-banner {
+  background: linear-gradient(90deg, #B8860B, #2E7D5B);
+  color: #fff;
+  text-align: center;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+.v2-banner a { color: #fff; text-decoration: underline; opacity: 0.9; margin-left: 8px; }
+.v2-banner a:hover { opacity: 1; }
+
+/* IOOI 索引條（Hero 內） */
+.iooi-index {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 28px;
+  padding: 18px;
+  background: rgba(255,255,255,0.6);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+.iooi-index-item {
+  text-align: center;
+  padding: 10px 8px;
+  border-right: 1px dashed var(--line);
+}
+.iooi-index-item:last-child { border-right: none; }
+.iooi-index-item .step {
+  display: inline-block;
+  width: 28px; height: 28px; line-height: 28px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.iooi-index-item .label {
+  font-size: 0.92rem; font-weight: 700;
+  color: var(--ink); margin-bottom: 3px;
+}
+.iooi-index-item .label-en {
+  display: block; font-size: 0.72rem; color: var(--ink-mute); letter-spacing: 0.06em;
+}
+.iooi-index-item .desc {
+  font-size: 0.78rem; color: var(--ink-soft); line-height: 1.5;
+  margin-top: 5px;
+}
+
+/* 四階段循環位置圖 */
+.stage-cycle {
+  margin-top: 24px;
+  padding: 24px;
+  background: var(--bg-soft);
+  border-radius: 16px;
+  border: 1px solid var(--line);
+}
+.stage-cycle h4 {
+  margin: 0 0 14px;
+  font-size: 1.05rem;
+  color: var(--ink);
+}
+.stage-cycle .cycle-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.stage-card {
+  position: relative;
+  padding: 16px 14px;
+  background: #fff;
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  text-align: center;
+}
+.stage-card.current {
+  border-color: var(--gold);
+  background: linear-gradient(180deg, #FFF7E5 0%, #fff 100%);
+  box-shadow: 0 4px 12px rgba(184,134,11,0.15);
+}
+.stage-card.future {
+  opacity: 0.6;
+  background: #FAFAF7;
+  border-style: dashed;
+}
+.stage-card .stage-num {
+  font-family: "Noto Serif TC", serif;
+  font-size: 0.78rem; color: var(--gold);
+  letter-spacing: 0.08em; font-weight: 700;
+  margin-bottom: 4px;
+}
+.stage-card .stage-name {
+  font-size: 1rem; font-weight: 700; color: var(--ink);
+  margin-bottom: 4px;
+}
+.stage-card .stage-name-en {
+  font-size: 0.72rem; color: var(--ink-mute); letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+.stage-card .stage-status {
+  display: inline-block;
+  padding: 3px 8px; border-radius: 999px;
+  font-size: 0.72rem; font-weight: 600;
+  margin-top: 4px;
+}
+.stage-card.current .stage-status {
+  background: var(--gold); color: #fff;
+}
+.stage-card.future .stage-status {
+  background: var(--line); color: var(--ink-soft);
+}
+.stage-cycle .stage-source {
+  margin-top: 14px;
+  padding: 10px 14px;
+  background: rgba(184,134,11,0.06);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 8px 8px 0;
+  font-size: 0.83rem; color: var(--ink-soft); line-height: 1.6;
+}
+.stage-cycle .stage-source strong { color: var(--ink); }
+
+/* 扶輪三大核心區塊 */
+.rotary-core {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 18px;
+  margin-top: 14px;
+}
+.rotary-core-card {
+  padding: 22px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+.rotary-core-card h3 {
+  margin: 0 0 4px;
+  font-size: 1.15rem;
+  color: var(--ink);
+}
+.rotary-core-card .en {
+  font-size: 0.78rem;
+  color: var(--ink-mute);
+  letter-spacing: 0.04em;
+  margin-bottom: 14px;
+  display: block;
+}
+
+/* 七大領域圓圈網格 */
+.focus-areas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 6px;
+}
+.focus-area {
+  text-align: center;
+  padding: 10px 6px;
+}
+.focus-area .circle {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  margin: 0 auto 8px;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 1.4rem; font-weight: 700;
+  font-family: "Noto Serif TC", serif;
+}
+.focus-area .name {
+  font-size: 0.82rem; font-weight: 600; color: var(--ink);
+  line-height: 1.3;
+}
+.focus-area .name-en {
+  font-size: 0.65rem; color: var(--ink-mute);
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+  line-height: 1.2;
+}
+.focus-1 .circle { background: #1976D2; }
+.focus-2 .circle { background: #C62828; }
+.focus-3 .circle { background: #0097A7; }
+.focus-4 .circle { background: #6A1B9A; }
+.focus-5 .circle { background: #EF6C00; }
+.focus-6 .circle { background: #00897B; }
+.focus-7 .circle { background: #2E7D32; }
+
+/* 五大服務／四大挑戰列表 */
+.service-list, .challenge-list {
+  list-style: none; padding: 0; margin: 0;
+  display: grid; gap: 10px;
+}
+.service-list li, .challenge-list li {
+  padding: 12px 14px;
+  background: var(--bg);
+  border-radius: 10px;
+  border-left: 3px solid var(--gold);
+  font-size: 0.88rem;
+  color: var(--ink);
+  line-height: 1.55;
+}
+.service-list li strong, .challenge-list li strong {
+  display: block;
+  color: var(--ink);
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+}
+.challenge-list li { border-left-color: #C62828; }
+
+/* 國際準則對接表格 */
+.standards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+.standard-card {
+  padding: 22px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+.standard-card .label {
+  display: inline-block;
+  padding: 4px 10px;
+  background: var(--gold);
+  color: #fff;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+}
+.standard-card.gri .label { background: #1565C0; }
+.standard-card.esg .label { background: #2E7D5B; }
+.standard-card.iso .label { background: #6A1B9A; }
+.standard-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+  color: var(--ink);
+}
+.standard-card .desc {
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+.standard-card ul {
+  margin: 0; padding-left: 1.1rem;
+  display: grid; gap: 4px;
+}
+.standard-card li {
+  font-size: 0.82rem;
+  color: var(--ink);
+  line-height: 1.55;
+}
+
+/* SDGs ↔ 七大領域對照表 */
+.sdgs-mapping {
+  margin-top: 14px;
+  padding: 18px;
+  background: var(--bg-soft);
+  border-radius: 12px;
+}
+.sdgs-mapping h4 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+  color: var(--ink);
+}
+.mapping-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1.5fr;
+  gap: 12px;
+  align-items: center;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.86rem;
+}
+.mapping-row:last-child { border-bottom: none; }
+.mapping-row .from { font-weight: 600; color: var(--ink); }
+.mapping-row .arrow { color: var(--gold); font-weight: 700; }
+.mapping-row .to { color: var(--ink-soft); }
+
+/* IOOI 邏輯模型展開卡 */
+.iooi-detail {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) auto;
+  gap: 0;
+  align-items: stretch;
+  margin-top: 12px;
+}
+.iooi-step-card {
+  padding: 18px 14px;
+  background: #fff;
+  border: 1px solid var(--line);
+  position: relative;
+}
+.iooi-step-card:first-child { border-radius: 12px 0 0 12px; }
+.iooi-step-card:nth-of-type(4) { border-radius: 0 12px 12px 0; }
+.iooi-step-card .step-circle {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #fff;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 8px;
+  font-family: "Noto Serif TC", serif;
+}
+.iooi-step-card.s1 .step-circle { background: #1976D2; }
+.iooi-step-card.s2 .step-circle { background: #00897B; }
+.iooi-step-card.s3 .step-circle { background: #EF6C00; }
+.iooi-step-card.s4 .step-circle { background: #C62828; }
+.iooi-step-card .step-title {
+  font-size: 1rem; font-weight: 700; color: var(--ink);
+  margin-bottom: 2px;
+}
+.iooi-step-card .step-en {
+  font-size: 0.72rem; color: var(--ink-mute); letter-spacing: 0.06em;
+  margin-bottom: 10px;
+}
+.iooi-step-card .step-desc {
+  font-size: 0.82rem; color: var(--ink-soft); line-height: 1.55;
+}
+.iooi-arrow-mini {
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold);
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 0 4px;
+}
+
+.framework-note {
+  margin-top: 14px;
+  padding: 14px 18px;
+  background: #fff;
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+.framework-note strong { color: var(--ink); }
+
+/* 培力卡五階段 */
+.empower-five {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin-top: 14px;
+}
+.empower-stage {
+  padding: 14px 10px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  text-align: center;
+}
+.empower-stage .num {
+  display: inline-block;
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #fff;
+  font-weight: 700;
+  line-height: 26px;
+  margin-bottom: 6px;
+}
+.empower-stage:nth-child(1) .num { background: #1976D2; }
+.empower-stage:nth-child(2) .num { background: #00897B; }
+.empower-stage:nth-child(3) .num { background: #EF6C00; }
+.empower-stage:nth-child(4) .num { background: #6A1B9A; }
+.empower-stage:nth-child(5) .num { background: #C62828; }
+.empower-stage .name {
+  font-size: 0.85rem; font-weight: 700; color: var(--ink);
+  margin-bottom: 3px;
+}
+.empower-stage .desc {
+  font-size: 0.72rem; color: var(--ink-mute);
+  line-height: 1.4;
+}
+
+/* 三框架（人物／價值／潛力）卡片 — 沿用 v1 風格 */
+.three-axis-v2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 14px;
+}
+.axis-card-v2 {
+  padding: 22px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  position: relative;
+  transition: transform .15s, box-shadow .15s;
+}
+.axis-card-v2:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+.axis-card-v2 .axis-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.axis-people .axis-tag { background: #1976D2; }
+.axis-work .axis-tag { background: #2E7D5B; }
+.axis-method .axis-tag { background: #B8860B; }
+.axis-card-v2 h3 {
+  margin: 0 0 8px;
+  font-size: 1.15rem;
+  color: var(--ink);
+}
+.axis-card-v2 .axis-desc {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin-bottom: 12px;
+}
+.axis-card-v2 .axis-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 14px;
+  background: var(--bg-soft);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: var(--gold);
+  font-weight: 600;
+}
+.axis-card-v2 .axis-link:hover {
+  background: var(--gold);
+  color: #fff;
+}
+
+/* 三位社友事件鏈占位 */
+.event-chain-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 14px;
+}
+.event-chain-card {
+  padding: 20px;
+  background: #fff;
+  border: 1.5px dashed var(--line);
+  border-radius: 14px;
+  text-align: center;
+}
+.event-chain-card .who {
+  font-size: 1.1rem; font-weight: 700; color: var(--ink);
+  margin-bottom: 6px;
+}
+.event-chain-card .placeholder {
+  margin: 14px 0;
+  padding: 30px 14px;
+  background: var(--bg-soft);
+  border-radius: 10px;
+  color: var(--ink-mute);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+/* 校稿狀態 chip */
+.review-chip {
+  position: absolute;
+  top: 12px; right: 12px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.review-chip.pending {
+  background: #FFE0B2;
+  color: #E65100;
+}
+.review-chip.done {
+  background: #C8E6C9;
+  color: #1B5E20;
+}
+
+/* 預留位置卡 */
+.placeholder-card {
+  padding: 24px;
+  background: var(--bg-soft);
+  border: 2px dashed var(--line);
+  border-radius: var(--radius);
+  text-align: center;
+  color: var(--ink-mute);
+  font-size: 0.9rem;
+}
+.placeholder-card strong { color: var(--ink-soft); }
+
+/* 服務計畫 IOOI 一行 */
+.iooi-line {
+  margin-top: 10px;
+  padding: 8px 10px;
+  background: var(--bg-soft);
+  border-radius: 6px;
+  font-size: 0.74rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+.iooi-line strong { color: var(--ink); }
+
+/* Manifesto 區 */
+.manifesto {
+  margin: 60px auto 40px;
+  padding: 60px 40px;
+  max-width: 900px;
+  background: linear-gradient(135deg, #2A2620 0%, #5C544A 100%);
+  color: #FFF8E7;
+  border-radius: 24px;
+  text-align: center;
+}
+.manifesto h2 {
+  font-size: 1.8rem;
+  color: #FFE7B5;
+  margin-bottom: 16px;
+  font-family: "Noto Serif TC", serif;
+}
+.manifesto p {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: rgba(255,248,231,0.9);
+  max-width: 680px;
+  margin: 0 auto 14px;
+}
+.manifesto .quote {
+  font-style: italic;
+  font-size: 0.92rem;
+  color: rgba(255,231,181,0.85);
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,231,181,0.25);
+}
+
+/* 四大優先 — 簡單一條展示 */
+.priorities-strip {
+  margin-top: 14px;
+  padding: 14px 18px;
+  background: linear-gradient(90deg, #FFF7E5, #fff);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 10px 10px 0;
+}
+.priorities-strip h4 {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+.priorities-strip .four-tags {
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.priorities-strip .four-tags span {
+  padding: 4px 10px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+/* ====== V2.1 新增樣式 ====== */
+
+/* §04 七大焦點領域可點擊版 */
+.focus-areas-clickable {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 12px;
+  margin-top: 6px;
+}
+.focus-areas-clickable .focus-area {
+  text-decoration: none;
+  cursor: pointer;
+  padding: 14px 8px;
+  border-radius: 12px;
+  transition: transform .15s, background .15s, box-shadow .15s;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+.focus-areas-clickable .focus-area:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+  background: var(--bg-soft);
+}
+.focus-areas-clickable .name {
+  font-size: 0.78rem;
+  margin-top: 6px;
+}
+
+/* 七大焦點領域篩選 bar 配色 */
+.focus-filter .filter-btn { transition: all .15s; }
+.focus-filter .focus-btn-1.active { background: #1976D2; color: #fff; border-color: #1976D2; }
+.focus-filter .focus-btn-2.active { background: #C62828; color: #fff; border-color: #C62828; }
+.focus-filter .focus-btn-3.active { background: #0097A7; color: #fff; border-color: #0097A7; }
+.focus-filter .focus-btn-4.active { background: #6A1B9A; color: #fff; border-color: #6A1B9A; }
+.focus-filter .focus-btn-5.active { background: #EF6C00; color: #fff; border-color: #EF6C00; }
+.focus-filter .focus-btn-6.active { background: #00897B; color: #fff; border-color: #00897B; }
+.focus-filter .focus-btn-7.active { background: #2E7D32; color: #fff; border-color: #2E7D32; }
+.focus-filter .focus-btn-1:hover { background: rgba(25,118,210,0.12); }
+.focus-filter .focus-btn-2:hover { background: rgba(198,40,40,0.12); }
+.focus-filter .focus-btn-3:hover { background: rgba(0,151,167,0.12); }
+.focus-filter .focus-btn-4:hover { background: rgba(106,27,154,0.12); }
+.focus-filter .focus-btn-5:hover { background: rgba(239,108,0,0.12); }
+.focus-filter .focus-btn-6:hover { background: rgba(0,137,123,0.12); }
+.focus-filter .focus-btn-7:hover { background: rgba(46,125,50,0.12); }
+
+/* 焦點領域 chip（七色） */
+.focus-chip {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-right: 4px;
+  margin-bottom: 4px;
+}
+.focus-chip-1 { background: rgba(25,118,210,0.12); color: #1565C0; }
+.focus-chip-2 { background: rgba(198,40,40,0.12); color: #B71C1C; }
+.focus-chip-3 { background: rgba(0,151,167,0.12); color: #00838F; }
+.focus-chip-4 { background: rgba(106,27,154,0.12); color: #4A148C; }
+.focus-chip-5 { background: rgba(239,108,0,0.12); color: #E65100; }
+.focus-chip-6 { background: rgba(0,137,123,0.12); color: #00695C; }
+.focus-chip-7 { background: rgba(46,125,50,0.12); color: #1B5E20; }
+.focus-tag-pending {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  background: var(--bg-soft);
+  color: var(--ink-mute);
+  font-style: italic;
+}
+
+/* member-card 結構（合併社友 + 計畫鏈結） */
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.member-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow .15s, transform .15s;
+}
+.member-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
+.member-head {
+  display: flex; align-items: center; gap: 12px;
+  padding: 18px 20px 14px;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid var(--line-soft);
+}
+.member-head .avatar {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem; font-weight: 700;
+  flex-shrink: 0;
+  border: 2px solid;
+}
+.member-head .avatar.role-found { color: var(--role-found); background: #EFE3DA; border-color: var(--role-found); }
+.member-head .avatar.role-guard { color: var(--role-guard); background: #DDE5EE; border-color: var(--role-guard); }
+.member-head .avatar.role-act { color: var(--role-act); background: #F3DCD2; border-color: var(--role-act); }
+.member-head .avatar.role-cont { color: var(--role-cont); background: #D8E5DD; border-color: var(--role-cont); }
+.member-head .name {
+  font-size: 1.05rem; font-weight: 700; color: var(--ink);
+  margin-bottom: 2px;
+}
+.member-head .role {
+  font-size: 0.82rem; color: var(--ink-soft);
+}
+.member-body {
+  padding: 14px 20px 16px;
+  flex: 1;
+}
+.member-body .theme-line {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin: 0 0 12px;
+}
+.member-body .focus-row {
+  display: flex; flex-wrap: wrap;
+}
+.member-service-link {
+  display: block;
+  padding: 14px 20px;
+  background: linear-gradient(90deg, rgba(184,134,11,0.06), rgba(46,125,91,0.06));
+  border-top: 1px solid var(--line-soft);
+  text-decoration: none;
+  transition: background .15s;
+}
+.member-service-link:hover {
+  background: linear-gradient(90deg, rgba(184,134,11,0.14), rgba(46,125,91,0.12));
+}
+.member-service-link .link-meta {
+  font-size: 0.72rem;
+  color: var(--ink-mute);
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+.member-service-link .link-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+/* 含計畫縮圖的 service-link（v1 風格） */
+.member-service-link.with-thumb {
+  padding: 0;
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  align-items: stretch;
+}
+.member-service-link.with-thumb .link-thumb {
+  background-size: cover;
+  background-position: center;
+  background-color: var(--bg-soft);
+  min-height: 90px;
+}
+.member-service-link.with-thumb .link-info {
+  padding: 14px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* 永力社共同支持的服務計畫 */
+.external-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.external-card {
+  display: block;
+  padding: 22px;
+  background: var(--bg-card);
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: inherit;
+  transition: border .15s, box-shadow .15s;
+}
+.external-card:hover {
+  border-style: solid;
+  box-shadow: var(--shadow-hover);
+}
+.external-card .grant {
+  display: inline-block;
+  padding: 3px 10px;
+  background: var(--gold);
+  color: #fff;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.external-card h4 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+  color: var(--ink);
+}
+.external-card .by {
+  font-size: 0.85rem;
+  color: var(--ink-mute);
+  margin: 0 0 10px;
+}
+
+/* ============ V2.2 新增樣式 ============ */
+
+/* §01 入口按鈕 */
+.intro-cta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 24px;
+}
+.intro-cta {
+  display: block;
+  padding: 22px;
+  background: linear-gradient(135deg, rgba(184,134,11,0.06), rgba(46,125,91,0.04));
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: transform .15s, box-shadow .15s;
+}
+.intro-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+.intro-cta .cta-label {
+  font-size: 0.78rem;
+  color: var(--ink-mute);
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+.intro-cta .cta-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.intro-cta .cta-desc {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* §03 五大服務快速標籤 */
+.five-service-tags {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-top: 14px;
+}
+.service-tag {
+  position: relative;
+  padding: 18px 10px;
+  background: #fff;
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: all .2s;
+  font-family: inherit;
+}
+.service-tag:hover {
+  border-color: var(--gold);
+  background: var(--bg-soft);
+}
+.service-tag.active {
+  border-color: var(--gold);
+  background: linear-gradient(180deg, #FFF7E5 0%, #fff 100%);
+  box-shadow: 0 4px 12px rgba(184,134,11,0.18);
+}
+.service-tag .svc-name {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 3px;
+}
+.service-tag .svc-en {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--ink-mute);
+  letter-spacing: 0.06em;
+}
+.service-tag .svc-mark {
+  position: absolute;
+  top: -8px; right: -4px;
+  padding: 2px 8px;
+  background: var(--gold);
+  color: #fff;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+/* §03 inline 展開區 */
+.service-detail {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .35s ease, padding .25s ease, margin .25s ease;
+  margin-top: 0;
+  padding: 0 24px;
+  background: var(--bg-soft);
+  border-radius: 14px;
+  border-left: 4px solid var(--gold);
+}
+.service-detail.open {
+  max-height: 800px;
+  padding: 24px;
+  margin-top: 14px;
+}
+.service-detail h3 {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+  color: var(--ink);
+}
+.service-detail .svc-mark-inline {
+  display: inline-block;
+  padding: 3px 10px;
+  background: var(--gold);
+  color: #fff;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+.service-detail .svc-def {
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin: 0 0 14px;
+}
+.service-detail .svc-stat {
+  padding: 10px 14px;
+  background: #fff;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+.service-detail .svc-member-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 14px;
+  display: grid;
+  gap: 8px;
+}
+.service-detail .svc-member-list li {
+  padding: 10px 14px;
+  background: #fff;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+.service-detail .svc-member-list li strong {
+  color: var(--ink);
+  margin-right: 6px;
+}
+.service-detail .svc-hint {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--ink-mute);
+  text-align: center;
+  font-style: italic;
+}
+.svc-hint-link {
+  display: block;
+  text-decoration: none;
+  margin-top: 12px;
+  padding: 12px;
+  background: rgba(184,134,11,0.08);
+  border-radius: 8px;
+  transition: background .2s;
+}
+.svc-hint-link:hover { background: rgba(184,134,11,0.18); }
+.svc-hint-link .svc-hint {
+  color: var(--gold);
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* 五大服務 chip（出現在社友卡內） */
+.svc-chip-club { background: rgba(25,118,210,0.12); color: #1565C0; }
+.svc-chip-vocational { background: rgba(184,134,11,0.14); color: #8B6508; }
+.svc-chip-community { background: rgba(0,137,123,0.12); color: #00695C; }
+.svc-chip-international { background: rgba(106,27,154,0.12); color: #4A148C; }
+.svc-chip-youth { background: rgba(239,108,0,0.12); color: #E65100; }
+
+/* 服務計畫卡的雙標籤行 */
+.service-card .svc-row {
+  display: flex; flex-wrap: wrap; gap: 4px;
+  margin-bottom: 8px;
+}
+.service-card .sdg-row {
+  display: flex; flex-wrap: wrap; gap: 4px;
+  margin-bottom: 12px;
+}
+
+/* 「看更多社友」橫幅入口 */
+.more-members-banner {
+  display: block;
+  margin-top: 28px;
+  padding: 22px 28px;
+  background: linear-gradient(135deg, #FFF7E5 0%, #fff 100%);
+  border: 1.5px solid var(--gold);
+  border-radius: var(--radius);
+  text-decoration: none;
+  text-align: center;
+  transition: transform .15s, box-shadow .15s, background .15s;
+}
+.more-members-banner:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+  background: linear-gradient(135deg, #FFE7B5 0%, #FFF7E5 100%);
+}
+.more-members-banner .banner-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+.more-members-banner .banner-desc {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+/* 五大服務篩選 bar 按鈕配色 */
+.focus-filter .svc-btn-club.active { background: #1976D2; color: #fff; border-color: #1976D2; }
+.focus-filter .svc-btn-vocational.active { background: #B8860B; color: #fff; border-color: #B8860B; }
+.focus-filter .svc-btn-community.active { background: #00897B; color: #fff; border-color: #00897B; }
+.focus-filter .svc-btn-international.active { background: #6A1B9A; color: #fff; border-color: #6A1B9A; }
+.focus-filter .svc-btn-youth.active { background: #EF6C00; color: #fff; border-color: #EF6C00; }
+.focus-filter .svc-btn-club:hover { background: rgba(25,118,210,0.12); }
+.focus-filter .svc-btn-vocational:hover { background: rgba(184,134,11,0.14); }
+.focus-filter .svc-btn-community:hover { background: rgba(0,137,123,0.12); }
+.focus-filter .svc-btn-international:hover { background: rgba(106,27,154,0.12); }
+.focus-filter .svc-btn-youth:hover { background: rgba(239,108,0,0.12); }
+
+/* RWD */
+@media (max-width: 960px) {
+  .iooi-index { grid-template-columns: repeat(2, 1fr); }
+  .stage-cycle .cycle-row { grid-template-columns: repeat(2, 1fr); }
+  .rotary-core { grid-template-columns: 1fr; }
+  .focus-areas { grid-template-columns: repeat(3, 1fr); }
+  .focus-areas-clickable { grid-template-columns: repeat(3, 1fr); }
+  .standards-grid { grid-template-columns: 1fr; }
+  .iooi-detail { grid-template-columns: 1fr; }
+  .iooi-arrow-mini { transform: rotate(90deg); padding: 8px 0; }
+  .empower-five { grid-template-columns: repeat(2, 1fr); }
+  .three-axis-v2 { grid-template-columns: 1fr; }
+  .event-chain-grid { grid-template-columns: 1fr; }
+  .mapping-row { grid-template-columns: 1fr; gap: 4px; padding: 12px 10px; }
+  .mapping-row .arrow { display: none; }
+  .member-grid { grid-template-columns: 1fr; }
+  .external-grid { grid-template-columns: 1fr; }
+  .intro-cta-grid { grid-template-columns: 1fr; }
+  .five-service-tags { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 660px) {
+  .focus-areas-clickable { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="inner">
+    <div class="brand"><span class="mark">永</span>永力扶輪社 2025-2026 永續影響力報告書</div>
+    <button class="nav-toggle" aria-label="開啟選單" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav>
+      <a href="#intro">關於永力社</a>
+      <a href="#stage">影響力進程</a>
+      <a href="#five-service">五大服務</a>
+      <a href="#methods">影響力衡量</a>
+      <a href="#practice">三框架分析</a>
+      <a href="#impact-hub">社友與服務計畫</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container">
+    <h1>以超我服務為心，<br>讓職業成為永續的力量</h1>
+    <p class="subtitle">永力社友從各自的職業出發，攜手推動服務、回應社區與世界的需要。這份年度報告書記錄我們在 2025-2026 年度的服務行動、夥伴關係，與我們對永續影響力的承諾。</p>
+    <div class="meta">
+      <span class="pill">台北永續影響力扶輪社</span>
+      <span class="pill">3481 地區</span>
+      <span class="pill">2025-2026 年度</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ §01 永力社介紹 ============ -->
+<section class="section" id="intro">
+  <div class="container">
+    <div class="section-head">
+      <span class="num">01</span>
+      <h2>關於永力社</h2>
+      <span class="meta">Rotary Club of Taipei Sustainable Impact</span>
+    </div>
+    <div class="intro">
+      <h3>台北永續影響力扶輪社</h3>
+      <p>2024 年成立於國際扶輪 3481 地區，是一個以「永續影響力」為核心使命的扶輪社。社友來自不同產業，共同實踐扶輪「<strong>超我服務（Service Above Self）</strong>」的信念——以自身職業為起點，持續為社區、社會與環境帶來具體改變。</p>
+    </div>
+
+    <div class="intro-cta-grid">
+      <a class="intro-cta" href="about-yongli.html">
+        <div class="cta-label">→ 深入了解</div>
+        <div class="cta-name">關於永力社</div>
+        <p class="cta-desc">創社理念、社務治理、影響力的累積。</p>
+      </a>
+      <a class="intro-cta" href="methodology.html">
+        <div class="cta-label">→ 評估方法</div>
+        <div class="cta-name">影響力衡量方法</div>
+        <p class="cta-desc">IOOI 成果鏈、培力卡五階段、四階段循環。</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ §01.5 影像版 ============ -->
+<section class="section" id="video">
+  <div class="container">
+    <div class="section-head">
+      <span class="num">02</span>
+      <h2>影像版報告</h2>
+      <span class="meta">10 分鐘長片 · 製作中</span>
+    </div>
+    <div class="video-section">
+      <div class="placeholder">影像專訪 · 敬請期待</div>
+      <div>
+        <h3>從「我」到「我們」</h3>
+        <p>一支 10 分鐘的專訪長片，串連社友們以職業推動永續的故事——從個人專業出發，回到「服務社會」的扶輪本心。</p>
+        <div class="placeholder-banner"><strong>影像專訪正在製作中。</strong>完成後將於本頁同步上架。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ §03 扶輪五大服務一覽（快速標籤）============ -->
+<section class="section" id="five-service">
+  <div class="container">
+    <div class="section-head">
+      <span class="num">03</span>
+      <h2>扶輪五大服務 × 永力社一覽</h2>
+      <span class="meta">點任一服務看摘要，下方有完整介紹</span>
+    </div>
+
+    <div class="intro" style="margin-bottom: 18px;">
+      <p>扶輪以五大服務為哲學基石。其中<strong>職業服務</strong>是永力社最關注的——核心思考是「服務能否永續」。有些社友的本業就是社會服務（直接），也有社友的職業能間接創造社會價值。不論哪一種，當職業專業能持續為社會帶來價值，影響力就能不斷累積。永力社做的事，就是幫每位社友把這些職業服務統整起來，成為可被看見的社會貢獻。</p>
+    </div>
+
+    <div class="five-service-tags">
+      <button class="service-tag" data-svc="club">
+        <span class="svc-name">社務服務</span>
+        <span class="svc-en">Club Service</span>
+      </button>
+      <button class="service-tag" data-svc="vocational">
+        <span class="svc-name">職業服務</span>
+        <span class="svc-en">Vocational</span>
+      </button>
+      <button class="service-tag" data-svc="community">
+        <span class="svc-name">社區服務</span>
+        <span class="svc-en">Community</span>
+      </button>
+      <button class="service-tag" data-svc="international">
+        <span class="svc-name">國際服務</span>
+        <span class="svc-en">International</span>
+      </button>
+      <button class="service-tag" data-svc="youth">
+        <span class="svc-name">青少年服務</span>
+        <span class="svc-en">Youth</span>
+      </button>
+    </div>
+
+    <!-- Inline 展開區（點標籤後展開） -->
+    <div class="service-detail" data-svc-panel="club">
+      <h3>社務服務 · Club Service</h3>
+      <p class="svc-def">強化聯誼及確保扶輪社能有效運作。</p>
+      <div class="svc-stat">永力社目前 6 位社友以社務治理或專業協作身份持續支持本社運作</div>
+      <ul class="svc-member-list">
+        <li><strong>CP 林學賢</strong>　創社社長 · 價值場域建構者</li>
+        <li><strong>Vincent 陳明勇</strong>　引導師 · 報告書主筆</li>
+        <li><strong>Rich 黃丞隆</strong>　下屆社長</li>
+        <li><strong>Derek 黃世祿</strong>　資訊系統服務 · 制度守護者</li>
+        <li><strong>Nick 林秉鴻</strong>　前社長 · 印刷設計</li>
+        <li><strong>Albee 張艾筆</strong>　琢色映像工作室 · 報告書影像主力</li>
+      </ul>
+      <a class="svc-hint-link" href="#impact-hub" data-svc="club"><p class="svc-hint">→ 看對應的服務計畫</p></a>
+    </div>
+
+    <div class="service-detail" data-svc-panel="vocational">
+      <h3>職業服務 · Vocational Service</h3>
+      <p class="svc-def">鼓勵扶輪社員透過自己的職業來服務他人，並實踐崇高的道德標準。</p>
+      <div class="svc-stat">永力社目前 6 位社友以自身職業專業推動社會服務</div>
+      <ul class="svc-member-list">
+        <li><strong>Vicky 李琪</strong>　旅學堂創辦人 → 二度就業女性導覽培育</li>
+        <li><strong>Helen 賴光蘭</strong>　育成基金會執行長 → 心智障礙青年職前培訓</li>
+        <li><strong>James 高清坊</strong>　通信閣規劃者 → 高齡與生命教育空間設計</li>
+        <li><strong>Vincent 陳明勇</strong>　引導師 → 對話、SROI、ESG 推動社區改變</li>
+        <li><strong>Albee 張艾筆</strong>　琢色映像工作室 → 影像、媒體與 SDGs 策劃</li>
+        <li><strong>Eric 鄭仲翔博士</strong>（共融衛星社）→ 全球牙醫義診與衛教</li>
+      </ul>
+      <a class="svc-hint-link" href="#impact-hub" data-svc="vocational"><p class="svc-hint">→ 看對應的服務計畫</p></a>
+    </div>
+
+    <div class="service-detail" data-svc-panel="community">
+      <h3>社區服務 · Community Service</h3>
+      <p class="svc-def">扶輪社為改進本身社區所進行的計畫及活動。</p>
+      <div class="svc-stat">永力社目前 5 個服務計畫直接落在社區行動</div>
+      <ul class="svc-member-list">
+        <li><strong>CP 林學賢</strong> → 忠義國小 小田園環境教育</li>
+        <li><strong>Vicky 李琪</strong> → 綠動淡水 輕軌文化永續共創</li>
+        <li><strong>Lisa 林映如</strong> → 零廢敬媽祖 在地永續行動</li>
+        <li><strong>Vincent 陳明勇</strong> → 社區永續支持計畫 共創在地 ESG 行動</li>
+        <li><strong>夏萬浪里長</strong>（網溪里）→ 落實環教永續力 推動淨零新生活</li>
+      </ul>
+      <a class="svc-hint-link" href="#impact-hub" data-svc="community"><p class="svc-hint">→ 看對應的服務計畫</p></a>
+    </div>
+
+    <div class="service-detail" data-svc-panel="international">
+      <h3>國際服務 · International Service</h3>
+      <p class="svc-def">擴大扶輪在全球的人道服務範圍並推廣世界瞭解及和平的各種行動。</p>
+      <div class="svc-stat">永力社目前 1 個全球性服務計畫，2 位社友參與國際視野</div>
+      <ul class="svc-member-list">
+        <li><strong>Eric 鄭仲翔博士</strong>（共融衛星社）→ 全民健康 由齒開始（扶輪全球獎助金）</li>
+        <li><strong>Helen 賴光蘭</strong> → 智青跨國交流與合作</li>
+      </ul>
+      <a class="svc-hint-link" href="#impact-hub" data-svc="international"><p class="svc-hint">→ 看對應的服務計畫</p></a>
+    </div>
+
+    <div class="service-detail" data-svc-panel="youth">
+      <h3>青少年服務 · Youth Service</h3>
+      <p class="svc-def">透過培養領導技能活動、服務計畫及交換計畫，表彰青少年及年輕人實現的正向改變。</p>
+      <div class="svc-stat">永力社目前 4 位社友的服務涵蓋青少年與下一代</div>
+      <ul class="svc-member-list">
+        <li><strong>CP 林學賢</strong> → 忠義國小 小田園環境教育（學童培力）</li>
+        <li><strong>Vicky 李琪</strong> → 淡水國中 PBL 教案 / 淡江大學社會影響力評估（青年共學）</li>
+        <li><strong>James 高清坊</strong> → 永續的生命鬥士與傳承 創新教育訓練（跨世代）</li>
+        <li><strong>Helen 賴光蘭</strong> → 育成基金會 心智障礙青年職涯陪伴</li>
+      </ul>
+      <a class="svc-hint-link" href="#impact-hub" data-svc="youth"><p class="svc-hint">→ 看對應的服務計畫</p></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ §06 社友與服務計畫（合併）============ -->
+<section class="section" id="impact-hub">
+  <div class="container">
+    <div class="section-head">
+      <span class="num">07</span>
+      <h2>社友與服務計畫</h2>
+      <span class="meta">用扶輪五大服務檢索，看見對應的社友與行動</span>
+    </div>
+
+    <div class="intro" style="margin-bottom: 18px;">
+      <p>本年度共 7 項服務計畫，從教育、社區、健康到環境跨越多個議題。點下方任一服務分類，篩選出對應的計畫——以扶輪五大服務的角度，看見永力社的整體實踐。</p>
+    </div>
+
+    <!-- 五大服務篩選 bar -->
+    <div class="filter-bar focus-filter">
+      <span class="filter-label">五大服務：</span>
+      <button class="filter-btn active" data-focus="all">全部</button>
+      <button class="filter-btn svc-btn-club" data-focus="club">社務</button>
+      <button class="filter-btn svc-btn-vocational" data-focus="vocational">職業</button>
+      <button class="filter-btn svc-btn-community" data-focus="community">社區</button>
+      <button class="filter-btn svc-btn-international" data-focus="international">國際</button>
+      <button class="filter-btn svc-btn-youth" data-focus="youth">青少年</button>
+    </div>
+
+
+    <h3 style="margin: 36px 0 14px; font-size: 1.2rem; color: var(--ink);">2025-2026 年度服務計畫成果</h3>
+    <p style="color: var(--ink-soft); font-size:0.9rem; margin: 0 0 18px;">本年度共 7 項服務計畫，由社友與扶輪夥伴共同提案推動。每張卡片標示扶輪五大服務分類與 SDGs 對應指標。</p>
+
+    <div class="card-grid" id="services-grid">
+
+      <a class="service-card filter-target" data-focus="community youth" href="services/01-zhongyi.html">
+        <div class="thumb" style="background-image:url('assets/img/services/01-zhongyi.jpg')"></div>
+        <div class="body">
+          <span class="grant">扶輪地區獎助金</span>
+          <h3>忠義國小 小田園環境教育服務計畫</h3>
+          <p class="by">提案人 · <strong>林學賢 CP Impact</strong></p>
+          <div class="svc-row">
+            <span class="focus-chip svc-chip-community">社區服務</span>
+            <span class="focus-chip svc-chip-youth">青少年服務</span>
+          </div>
+          <div class="sdg-row">
+            <span class="sdg-chip sdg-chip-1">1</span>
+            <span class="sdg-chip sdg-chip-4">4</span>
+            <span class="sdg-chip sdg-chip-11">11</span>
+            <span class="sdg-chip sdg-chip-12">12</span>
+            <span class="sdg-chip sdg-chip-15">15</span>
+          </div>
+          <span class="more">查看計畫 →</span>
+        </div>
+      </a>
+
+      <a class="service-card filter-target" data-focus="vocational community" href="services/02-tamsui.html">
+        <div class="thumb" style="background-image:url('assets/img/services/02-tamsui.jpg')"></div>
+        <div class="body">
+          <span class="grant">社內獎助金</span>
+          <h3>綠動淡水 輕軌文化永續共創服務計畫</h3>
+          <p class="by">提案人 · <strong>李琪 Vicky</strong>（旅學堂工作室）</p>
+          <div class="svc-row">
+            <span class="focus-chip svc-chip-vocational">職業服務</span>
+            <span class="focus-chip svc-chip-community">社區服務</span>
+          </div>
+          <div class="sdg-row">
+            <span class="sdg-chip sdg-chip-4">4</span>
+            <span class="sdg-chip sdg-chip-5">5</span>
+            <span class="sdg-chip sdg-chip-8">8</span>
+            <span class="sdg-chip sdg-chip-11">11</span>
+            <span class="sdg-chip sdg-chip-17">17</span>
+          </div>
+          <span class="more">查看計畫 →</span>
+        </div>
+      </a>
+
+      <a class="service-card filter-target" data-focus="community" href="services/03-eco-edu.html">
+        <div class="thumb" style="background-image:url('assets/img/services/03-eco-edu.jpg')"></div>
+        <div class="body">
+          <span class="grant">扶輪社區服務團</span>
+          <h3>落實環教永續力 推動淨零新生活計畫</h3>
+          <p class="by">提案人 · <strong>夏萬浪里長</strong>（網溪里）</p>
+          <div class="svc-row">
+            <span class="focus-chip svc-chip-community">社區服務</span>
+          </div>
+          <div class="sdg-row">
+            <span class="sdg-chip sdg-chip-3">3</span>
+            <span class="sdg-chip sdg-chip-4">4</span>
+            <span class="sdg-chip sdg-chip-11">11</span>
+            <span class="sdg-chip sdg-chip-12">12</span>
+            <span class="sdg-chip sdg-chip-13">13</span>
+          </div>
+          <span class="more">查看計畫 →</span>
+        </div>
+      </a>
+
+      <a class="service-card filter-target" data-focus="vocational youth" href="services/04-life-warrior.html">
+        <div class="thumb" style="background-image:url('assets/img/services/04-life-warrior.jpg')"></div>
+        <div class="body">
+          <span class="grant">社內獎助金</span>
+          <h3>永續的生命鬥士與傳承 創新教育訓練計畫</h3>
+          <p class="by">提案人 · <strong>高清坊 James</strong></p>
+          <div class="svc-row">
+            <span class="focus-chip svc-chip-vocational">職業服務</span>
+            <span class="focus-chip svc-chip-youth">青少年服務</span>
+          </div>
+          <div class="sdg-row">
+            <span class="sdg-chip sdg-chip-1">1</span>
+            <span class="sdg-chip sdg-chip-3">3</span>
+            <span class="sdg-chip sdg-chip-4">4</span>
+            <span class="sdg-chip sdg-chip-8">8</span>
+            <span class="sdg-chip sdg-chip-11">11</span>
+            <span class="sdg-chip sdg-chip-17">17</span>
+          </div>
+          <span class="more">查看計畫 →</span>
+        </div>
+      </a>
+
+      <a class="service-card filter-target" data-focus="international vocational" href="services/05-dental.html">
+        <div class="thumb" style="background-image:url('assets/img/services/05-dental.jpg')"></div>
+        <div class="body">
+          <span class="grant">扶輪全球獎助金</span>
+          <h3>全民健康 由齒開始！服務計畫</h3>
+          <p class="by">提案人 · <strong>鄭仲翔博士 Dr. Eric</strong>（共融衛星社）</p>
+          <div class="svc-row">
+            <span class="focus-chip svc-chip-international">國際服務</span>
+            <span class="focus-chip svc-chip-vocational">職業服務</span>
+          </div>
+          <div class="sdg-row">
+            <span class="sdg-chip sdg-chip-3">3</span>
+            <span class="sdg-chip sdg-chip-4">4</span>
+            <span class="sdg-chip sdg-chip-11">11</span>
+            <span class="sdg-chip sdg-chip-17">17</span>
+          </div>
+          <span class="more">查看計畫 →</span>
+        </div>
+      </a>
+
+      <a class="service-card filter-target" data-focus="vocational community" href="services/06-community.html">
+        <div class="thumb" style="background-image:url('assets/img/services/06-community.jpg')"></div>
+        <div class="body">
+          <span class="grant">社內獎助金</span>
+          <h3>社區永續支持計畫 共創在地 ESG 行動</h3>
+          <p class="by">提案人 · <strong>陳明勇 Vincent</strong></p>
+          <div class="svc-row">
+            <span class="focus-chip svc-chip-vocational">職業服務</span>
+            <span class="focus-chip svc-chip-community">社區服務</span>
+          </div>
+          <div class="sdg-row">
+            <span class="sdg-chip sdg-chip-3">3</span>
+            <span class="sdg-chip sdg-chip-4">4</span>
+            <span class="sdg-chip sdg-chip-11">11</span>
+            <span class="sdg-chip sdg-chip-16">16</span>
+            <span class="sdg-chip sdg-chip-17">17</span>
+          </div>
+          <span class="more">查看計畫 →</span>
+        </div>
+      </a>
+
+      <a class="service-card filter-target" data-focus="community" href="services/07-zero-waste-mazu.html">
+        <div class="thumb" style="background-image:url('assets/img/services/07-zero-waste-mazu.jpg')"></div>
+        <div class="body">
+          <span class="grant">扶輪社區服務團</span>
+          <h3>零廢敬媽祖 在地永續行動</h3>
+          <p class="by">提案人 · <strong>林映如 Lisa</strong>（永續百家）</p>
+          <div class="svc-row">
+            <span class="focus-chip svc-chip-community">社區服務</span>
+          </div>
+          <div class="sdg-row">
+            <span class="sdg-chip sdg-chip-11">11</span>
+            <span class="sdg-chip sdg-chip-12">12</span>
+            <span class="sdg-chip sdg-chip-13">13</span>
+            <span class="sdg-chip sdg-chip-14">14</span>
+          </div>
+          <span class="more">查看計畫 →</span>
+        </div>
+      </a>
+
+    </div>
+
+    <a class="more-members-banner" href="members.html">
+      <div class="banner-content">
+        <div class="banner-title">→ 看更多社友介紹</div>
+        <div class="banner-desc">9 位社友的職業專業、服務初衷與完整人物誌</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ============ Manifesto ============ -->
+<section class="manifesto">
+  <h2>讓服務被看見、被學習、被延續</h2>
+  <p>對永力社而言，報告書不只是回顧成果，更是一份對社友、對社區、對世界的承諾。</p>
+  <p>我們希望這份報告書能讓服務被看見，讓社友們的職業專業與付出能被外界讀懂；能讓服務被學習，把每一場行動的經驗、方法與成果留下可以傳承的軌跡；能讓服務被延續，使影響力不僅止於本年度，能在十年後仍能被讀到、被引用、被接續。</p>
+  <p>以扶輪五大服務為框架，記錄社友們以職業推動社會服務的軌跡。我們希望這份報告書既扎根於扶輪精神，也能在更大的永續對話中發聲。</p>
+  <p style="margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,231,181,0.2);font-size:0.95rem;color:rgba(255,248,231,0.85);">永力社把整理的過程公開，也希望這份架構能成為其他扶輪社、商會、職業型社群推動服務揭露時的參考。讓更多以職業為起點的組織，都能把成員的影響力整理得更清楚、被看得更遠。</p>
+  <div class="quote">Service Above Self ｜ 超我服務</div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>
+      <h4>台北永續影響力扶輪社</h4>
+      <p>Rotary Club of Taipei Sustainable Impact</p>
+      <p>以職業服務社會 · 用影響力衡量價值</p>
+      <p style="margin-top:14px;font-size:0.78rem;color:#7A7468;">本報告書由永力社報告書工作小組製作<br>主筆：陳明勇 Vincent · 工作組：CP 林學賢、艾筆團隊<br>網頁設計：江昱德</p>
+    </div>
+    <div>
+      <h4>章節導覽</h4>
+      <ul>
+        <li><a href="#intro">關於永力社</a></li>
+        <li><a href="#stage">影響力進程</a></li>
+        <li><a href="#five-service">五大服務</a></li>
+        <li><a href="#methods">影響力衡量</a></li>
+        <li><a href="#practice">三框架分析</a></li>
+        <li><a href="#impact-hub">社友與服務計畫</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>版本資訊</h4>
+      <ul>
+        <li>2025-2026 年度報告書</li>
+        <li>2026 年 5 月發行</li>
+        <li>持續更新中</li>
+      </ul>
+    </div>
+    <div class="copyright">© 2025-2026 台北永續影響力扶輪社 3481 · 分享連結僅供持有者閱讀（noindex / nofollow）</div>
+  </div>
+</footer>
+
+<script>
+// §03 五大服務快速標籤 — 點擊 inline 展開
+document.querySelectorAll('.service-tag').forEach(tag => {
+  tag.addEventListener('click', () => {
+    const svc = tag.dataset.svc;
+    const panel = document.querySelector(`.service-detail[data-svc-panel="${svc}"]`);
+    const isOpen = tag.classList.contains('active');
+
+    // 全部收起
+    document.querySelectorAll('.service-tag').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.service-detail').forEach(p => p.classList.remove('open'));
+
+    // 點同一個再次收起；點不同的則展開新的
+    if (!isOpen && panel) {
+      tag.classList.add('active');
+      panel.classList.add('open');
+    }
+  });
+});
+
+// §03 inline 展開的「→ 看對應計畫」連結，scroll 到 §04 並 trigger 對應 filter
+document.querySelectorAll('.svc-hint-link').forEach(link => {
+  link.addEventListener('click', e => {
+    const svc = link.dataset.svc;
+    const targetBtn = document.querySelector(`.focus-filter .filter-btn[data-focus="${svc}"]`);
+    if (targetBtn) {
+      // 不阻擋預設錨點跳轉，瀏覽器先 scroll 到 #impact-hub
+      // 然後 trigger 對應 filter button
+      setTimeout(() => targetBtn.click(), 80);
+    }
+  });
+});
+
+// §06 五大服務篩選 bar
+document.querySelectorAll('.focus-filter .filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const focus = btn.dataset.focus;
+    document.querySelectorAll('.focus-filter .filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    document.querySelectorAll('.filter-target').forEach(card => {
+      if (focus === 'all') {
+        card.style.display = '';
+        return;
+      }
+      const cardFocus = (card.dataset.focus || '').split(/\s+/).filter(Boolean);
+      card.style.display = cardFocus.includes(focus) ? '' : 'none';
+    });
+  });
+});
+
+// 漢堡選單 toggle（手機版）
+const navToggle = document.querySelector('.nav-toggle');
+const topbarNav = document.querySelector('.topbar nav');
+if (navToggle && topbarNav) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = navToggle.classList.toggle('open');
+    topbarNav.classList.toggle('open', isOpen);
+    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  // 點選任一 nav 連結後自動收合（手機版）
+  topbarNav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navToggle.classList.remove('open');
+      topbarNav.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
+// 平滑捲動
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
+});
+</script>
+
+</body>
+</html>
