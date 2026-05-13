@@ -1,6 +1,11 @@
-# V2 預覽版 · 扶輪通用框架
+# V3 教稿版 · 排版優化（大字 · 行式表格 · 彩色 SDGs）
 
-部署於：https://jiang-yude.github.io/my-yongli-sustainability-2026/v2/
+部署於：https://jiang-yude.github.io/my-yongli-sustainability-2026/v3/
+
+> 本資料夾 2026-05-13 從 `v2/index-v3-full.html` 抽出來變獨立版本，
+> 目的是讓子頁返回鍵能正確跳回 v3 主檔（原本會跳回 v2）。
+> v2 內容仍保留在 `v2/` 資料夾，三版本各自獨立。
+> 下方 V2 相關說明為複製自 v2/README.md 的歷史資料，未針對 v3 重寫。
 
 ## V2 跟 v1 的差別
 
