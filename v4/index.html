@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>永力社 V3 完整主頁預覽 · Takram 風</title>
+<title>永力社｜2025-2026 永續影響力報告書</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -359,6 +359,55 @@ img{max-width:100%;display:block}
   color:var(--ink);font-weight:600;
   background:linear-gradient(transparent 60%, var(--gold-soft) 60%);
   padding:0 3px;
+}
+
+/* §01 閱讀完整介紹（精緻次要按鈕） */
+.intro-more{
+  margin:24px 0 0;
+  font-size:15px;
+}
+.intro-more a{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  color:var(--sage-deep);
+  text-decoration:none;
+  font-family:"Noto Serif TC",serif;
+  font-weight:500;
+  letter-spacing:0.1em;
+  padding:6px 0 8px;
+  position:relative;
+  transition:gap 0.35s cubic-bezier(0.4,0,0.2,1), color 0.3s;
+}
+.intro-more a::before{
+  content:"";
+  position:absolute;
+  left:0; right:0; bottom:0;
+  height:1px;
+  background:var(--sage-deep);
+  transform:scaleX(0.18);
+  transform-origin:left;
+  transition:transform 0.45s cubic-bezier(0.4,0,0.2,1);
+}
+.intro-more a::after{
+  content:"→";
+  font-family:"Inter",sans-serif;
+  font-size:0.95em;
+  color:var(--gold);
+  font-weight:300;
+  transition:transform 0.35s cubic-bezier(0.4,0,0.2,1), color 0.3s;
+}
+.intro-more a:hover{
+  color:var(--ink);
+  gap:18px;
+}
+.intro-more a:hover::before{
+  transform:scaleX(1);
+  background:var(--gold);
+}
+.intro-more a:hover::after{
+  color:var(--gold-deep);
+  transform:translateX(2px);
 }
 
 /* CTA 卡片（按鈕感） */
@@ -1264,7 +1313,7 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
     <h3>台北永續影響力扶輪社 3481</h3>
     <p>2024 年成立於國際扶輪 3481 地區，是一個以「永續影響力」為核心使命的扶輪社。社友來自不同產業，共同實踐扶輪「<strong>超我服務（Service Above Self）</strong>」的信念，以自身職業為起點，持續為社區、社會與環境帶來具體改變。</p>
     <p>從創辦人 CP 的初衷與四個核心信念出發，我們相信創社理念、社務治理與影響力的累積，是把每一份職業的價值留下來的關鍵。</p>
-    <p class="intro-more"><a href="about-yongli.html">閱讀完整介紹 →</a></p>
+    <p class="intro-more"><a href="about-yongli.html">閱讀完整介紹</a></p>
   </div>
 </section>
 
@@ -1297,6 +1346,8 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
       <p class="meta">我們怎麼分類、怎麼衡量</p>
     </div>
   </div>
+
+  <p class="lead-text">永力社不只記錄活動次數，而是說清楚每一份服務做了什麼、影響了誰、帶來什麼改變。本節呈現兩套對外揭露的方法論——一套是 2026 年 3 月共識營形成的<strong>分類骨架</strong>（5 條成果主鏈、10 個重大議題、8 類利害關係人、16 項指標），回答「我們怎麼分類影響力」；另一套是借用旅學堂陪力卡看 9 位社友的<strong>角色定位</strong>，回答「我們怎麼衡量影響力」。兩套互補，前者管廣度，後者管深度。</p>
 
   <div class="cta-grid">
     <a class="cta-card" href="disclosure-framework.html">
