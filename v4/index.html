@@ -361,53 +361,40 @@ img{max-width:100%;display:block}
   padding:0 3px;
 }
 
-/* §01 閱讀完整介紹（精緻次要按鈕） */
+/* §01 閱讀完整介紹（Gold Pill 軟金圓角實心） */
 .intro-more{
   margin:24px 0 0;
-  font-size:15px;
 }
 .intro-more a{
   display:inline-flex;
   align-items:center;
   gap:10px;
-  color:var(--sage-deep);
+  background:var(--gold-soft);
+  color:var(--ink);
   text-decoration:none;
+  padding:14px 32px;
+  border-radius:30px;
   font-family:"Noto Serif TC",serif;
-  font-weight:500;
+  font-size:15px;
   letter-spacing:0.1em;
-  padding:6px 0 8px;
-  position:relative;
-  transition:gap 0.35s cubic-bezier(0.4,0,0.2,1), color 0.3s;
-}
-.intro-more a::before{
-  content:"";
-  position:absolute;
-  left:0; right:0; bottom:0;
-  height:1px;
-  background:var(--sage-deep);
-  transform:scaleX(0.18);
-  transform-origin:left;
-  transition:transform 0.45s cubic-bezier(0.4,0,0.2,1);
+  font-weight:600;
+  transition:background 0.3s, gap 0.3s, color 0.3s, box-shadow 0.3s;
+  box-shadow:0 2px 8px rgba(168,136,74,0.18);
 }
 .intro-more a::after{
   content:"→";
   font-family:"Inter",sans-serif;
-  font-size:0.95em;
-  color:var(--gold);
-  font-weight:300;
-  transition:transform 0.35s cubic-bezier(0.4,0,0.2,1), color 0.3s;
+  font-size:1em;
+  transition:transform 0.3s;
 }
 .intro-more a:hover{
-  color:var(--ink);
-  gap:18px;
-}
-.intro-more a:hover::before{
-  transform:scaleX(1);
   background:var(--gold);
+  color:#fff;
+  gap:16px;
+  box-shadow:0 6px 18px rgba(168,136,74,0.32);
 }
 .intro-more a:hover::after{
-  color:var(--gold-deep);
-  transform:translateX(2px);
+  transform:translateX(3px);
 }
 
 /* CTA 卡片（按鈕感） */
@@ -1347,7 +1334,7 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
     </div>
   </div>
 
-  <p class="lead-text">永力社不只記錄活動次數，而是說清楚每一份服務做了什麼、影響了誰、帶來什麼改變。本節呈現兩套對外揭露的方法論——一套是 2026 年 3 月共識營形成的<strong>分類骨架</strong>（5 條成果主鏈、10 個重大議題、8 類利害關係人、16 項指標），回答「我們怎麼分類影響力」；另一套是借用旅學堂陪力卡看 9 位社友的<strong>角色定位</strong>，回答「我們怎麼衡量影響力」。兩套互補，前者管廣度，後者管深度。</p>
+  <p class="lead-text">我們關心的，是社友的職業專業如何回應社區、社會與環境的需要，以及這份回應隨著時間怎麼累積、被看見。本節呈現永力社目前對外揭露的兩個方法論：<strong>3/22 共識營盤點出的分類骨架</strong>，與<strong>借用旅學堂陪力卡所看見的社友角色定位</strong>。</p>
 
   <div class="cta-grid">
     <a class="cta-card" href="disclosure-framework.html">
@@ -1358,7 +1345,7 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
     <a class="cta-card" href="methodology.html">
       <div class="cta-label">評估方法</div>
       <div class="cta-name">影響力衡量方法</div>
-      <p class="cta-desc">借用旅學堂陪力卡 5 階段看 9 位社友的角色定位，並列出可以更好的方向。話不必說太滿，把過程紀錄好，AI 就能輔助分析。</p>
+      <p class="cta-desc">借用旅學堂陪力卡的 5 個階段，觀察 9 位社友在永力社系統中的角色與成長軌跡。每年回看一次，下一年可以走得更深的方向會自然浮現。</p>
     </a>
   </div>
 </section>
