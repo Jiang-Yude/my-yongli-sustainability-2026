@@ -400,7 +400,8 @@ img{max-width:100%;display:block}
 /* CTA 卡片（按鈕感） */
 .cta-grid{
   display:grid;
-  grid-template-columns:repeat(2,1fr);gap:20px;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
 }
 .cta-card{
   display:block;
@@ -467,7 +468,8 @@ img{max-width:100%;display:block}
   margin:0;
   line-height:1.75;
 }
-@media(max-width:820px){.cta-grid{grid-template-columns:1fr}}
+@media(max-width:1100px){.cta-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.cta-grid{grid-template-columns:1fr}}
 
 /* ============ §02 影像版 ============ */
 .video-section{
@@ -1334,13 +1336,18 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
     </div>
   </div>
 
-  <p class="lead-text">我們關心的，是社友的職業專業如何回應社區、社會與環境的需要，以及這份回應隨著時間怎麼累積、被看見。本節呈現永力社目前對外揭露的兩個方法論：<strong>3/22 共識營盤點出的分類骨架</strong>，與<strong>借用旅學堂陪力卡所看見的社友角色定位</strong>。</p>
+  <p class="lead-text">我們關心的，是社友的職業專業如何回應社區、社會與環境的需要，以及這份回應隨著時間怎麼累積、被看見。本節依序整理<strong>實際案例</strong>、<strong>揭露架構</strong>與<strong>評估方法</strong>，先看現場發生了什麼，再看永力社怎麼分類與衡量。</p>
 
   <div class="cta-grid">
+    <a class="cta-card" href="cases.html">
+      <div class="cta-label">實際案例</div>
+      <div class="cta-name">影響力落地現場</div>
+      <p class="cta-desc">新港崙子點心站一天的垃圾分類成果，約 2800 人次參與，回收 194.22 kg，可回收佔 63.7%。永力社示範的正式分類落到現場長什麼樣子。</p>
+    </a>
     <a class="cta-card" href="disclosure-framework.html">
       <div class="cta-label">揭露架構</div>
       <div class="cta-name">我們怎麼分類影響力</div>
-      <p class="cta-desc">2026 年 3 月共識營形成的四個分類：5 條成果主鏈、10 個重大議題、8 類利害關係人、16 項追蹤指標。永力社對外揭露的骨架。</p>
+      <p class="cta-desc">2026 年 3 月共識營形成的分類骨架，包含 5 條成果主鏈、10 個重大議題、8 類利害關係人與 16 項追蹤指標。這是永力社對外揭露的基礎。</p>
     </a>
     <a class="cta-card" href="methodology.html">
       <div class="cta-label">評估方法</div>
