@@ -9,6 +9,47 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600&family=Noto+Serif+TC:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/common.css?v=12">
+<style>
+.impact-map-section .section-meta{
+  color:var(--ink-3, #5A554C);
+  font-family:"Inter","Noto Sans TC",sans-serif;
+  font-size:13px;letter-spacing:0.18em;
+  margin:-8px 0 28px;
+  text-transform:uppercase;
+}
+.impact-map{
+  margin:0 auto;padding:0;
+  max-width:760px;
+}
+.impact-map a{
+  display:block;
+  position:relative;
+  overflow:hidden;
+  border-radius:10px;
+  background:#FBF7EE;
+  box-shadow:0 4px 24px rgba(0,0,0,0.08);
+  transition:transform 0.4s cubic-bezier(0.4,0,0.2,1), box-shadow 0.4s;
+}
+.impact-map a:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 32px rgba(0,0,0,0.14);
+}
+.impact-map img{
+  display:block;width:100%;height:auto;cursor:zoom-in;
+}
+.impact-map figcaption{
+  margin-top:18px;
+  color:var(--ink-3, #5A554C);
+  font-size:14px;line-height:1.8;
+  text-align:center;
+  font-family:"Noto Serif TC",serif;
+  letter-spacing:0.03em;
+}
+@media(max-width:640px){
+  .impact-map{max-width:100%}
+  .impact-map-section .section-meta{font-size:12px;letter-spacing:0.14em}
+}
+</style>
 </head>
 <body>
 
@@ -47,6 +88,20 @@
     </div>
   </div>
 </section>
+<!-- ============ 影響力地圖 ============ -->
+<section class="profile-section impact-map-section">
+  <div class="container">
+    <h2>影響力地圖</h2>
+    <p class="section-meta">高清坊 James · 永力扶輪社</p>
+    <figure class="impact-map">
+      <a href="../assets/img/impact-maps/james.png" target="_blank" rel="noopener" aria-label="點開原尺寸大圖">
+        <img src="../assets/img/impact-maps/james.png" alt="高清坊 James 影響力地圖">
+      </a>
+      <figcaption>用空間設計回應高齡照顧、生命教育與創新訓練，把好的場域留給未來。</figcaption>
+    </figure>
+  </div>
+</section>
+
 <section class="profile-section">
   <div class="container">
     <h2>核心信念</h2>
