@@ -26,7 +26,18 @@
   flex-direction: column;
   transition: box-shadow .15s, transform .15s;
 }
-.member-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
+/* 有子頁的卡片才浮動 + cursor pointer */
+.member-card:has(a.member-head) { cursor: pointer; }
+.member-card:has(a.member-head):hover {
+  box-shadow: 0 14px 36px rgba(43,42,38,0.20);
+  transform: translateY(-6px);
+  border-color: var(--gold-soft);
+}
+/* 無子頁的卡片：不浮動 */
+.member-card:not(:has(a.member-head)):hover {
+  transform: none;
+  box-shadow: var(--shadow);
+}
 .member-head {
   display: flex; align-items: center; gap: 12px;
   padding: 18px 20px 14px;
@@ -94,14 +105,29 @@
 .svc-chip-community { background: rgba(0,137,123,0.12); color: #00695C; }
 .svc-chip-international { background: rgba(106,27,154,0.12); color: #4A148C; }
 .svc-chip-youth { background: rgba(239,108,0,0.12); color: #E65100; }
-.member-card .annual-flag {
+/* 個人簡介按鈕（右上） */
+.member-card .profile-btn {
   position: absolute; top: 14px; right: 14px;
   display: inline-flex; align-items: center; gap: 4px;
-  background: #fff; color: #8B6508;
-  border: 2px solid #C9A961;
-  font-size: 12px; font-weight: 700; letter-spacing: 0.08em;
-  padding: 4px 10px; border-radius: 99px;
-  pointer-events: none;
+  background: linear-gradient(135deg, var(--gold-deep, #8B6508) 0%, var(--gold, #C9A961) 100%);
+  color: #fff;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.06em;
+  padding: 6px 14px; border-radius: 99px;
+  text-decoration: none;
+  box-shadow: 0 3px 10px rgba(168,136,74,0.32);
+  transition: all 0.25s cubic-bezier(0.2,0.8,0.3,1);
+  z-index: 2;
+}
+.member-card .profile-btn:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(168,136,74,0.45);
+}
+/* 年度服務計畫 chip */
+.focus-chip.svc-chip-annual {
+  background: rgba(201,169,97,0.16);
+  color: #8B6508;
+  border: 1px dashed rgba(201,169,97,0.5);
 }
 .member-card .satellite-flag {
   position: absolute; top: 14px; right: 14px;
@@ -211,6 +237,7 @@
   <div class="member-grid">
 
     <article class="member-card" data-role="cp">
+      <a class="profile-btn" href="profiles/01-cp-lin.html">個人簡介 →</a>
       <a class="member-head" href="profiles/01-cp-lin.html">
         <div class="avatar" style="background-image:url(assets/img/members/cp.jpg)"></div>
         <div class="info">
@@ -224,16 +251,13 @@
           <span class="focus-chip svc-chip-community">社區服務</span>
           <span class="focus-chip svc-chip-youth">青少年服務</span>
           <span class="focus-chip svc-chip-club">社務服務</span>
-        </div>
+        <span class="focus-chip svc-chip-annual">年度服務計畫</span></div>
       </div>
-      <a class="member-service-link" href="services/01-zhongyi.html">
-        <div class="link-meta">推動的服務計畫 · 扶輪地區獎助金</div>
-        <div class="link-name">忠義國小 小田園環境教育 →</div>
-      </a>
     </article>
 
     <!-- 林秉鴻 Nick（幹部） -->
     <article class="member-card" data-role="pp">
+      <a class="profile-btn" href="profiles/07-nick-lin.html">個人簡介 →</a>
       <a class="member-head" href="profiles/07-nick-lin.html">
         <div class="avatar" style="background-image:url(assets/img/members/nick.jpg)"></div>
         <div class="info">
@@ -251,6 +275,7 @@
 
     <!-- 賴光蘭 Helen（幹部） -->
     <article class="member-card" data-role="pp">
+      <a class="profile-btn" href="profiles/04-helen-lai.html">個人簡介 →</a>
       <a class="member-head" href="profiles/04-helen-lai.html">
         <div class="avatar" style="background-image:url(assets/img/members/helen.jpg)"></div>
         <div class="info">
@@ -270,6 +295,7 @@
 
     <!-- 黃丞隆 Rich（幹部） -->
     <article class="member-card" data-role="pe">
+      <a class="profile-btn" href="profiles/08-rich-huang.html">個人簡介 →</a>
       <a class="member-head" href="profiles/08-rich-huang.html">
         <div class="avatar" style="background-image:url(assets/img/members/rich.jpg)"></div>
         <div class="info">
@@ -295,7 +321,7 @@
 
     <!-- 李琪 Vicky -->
     <article class="member-card">
-      <span class="annual-flag">年度服務計畫</span>
+      <a class="profile-btn" href="profiles/02-vicky-lee.html">個人簡介 →</a>
       <a class="member-head" href="profiles/02-vicky-lee.html">
         <div class="avatar" style="background-image:url(assets/img/members/vicky.jpg)"></div>
         <div class="info">
@@ -308,7 +334,7 @@
         <div class="focus-row">
           <span class="focus-chip svc-chip-vocational">職業服務</span>
           <span class="focus-chip svc-chip-community">社區服務</span>
-        </div>
+        <span class="focus-chip svc-chip-annual">年度服務計畫</span></div>
       </div>
     </article>
 
@@ -331,7 +357,7 @@
 
     <!-- 林映如 Lisa -->
     <article class="member-card">
-      <span class="annual-flag">年度服務計畫</span>
+      <a class="profile-btn" href="profiles/05-lisa-lin.html">個人簡介 →</a>
       <a class="member-head" href="profiles/05-lisa-lin.html">
         <div class="avatar" style="background-image:url(assets/img/members/lisa.jpg)"></div>
         <div class="info">
@@ -343,12 +369,13 @@
         <p class="theme-line">把零廢棄、淨灘、海洋永續從理念變成日常行動，帶上百位志工換來真實改變。</p>
         <div class="focus-row">
           <span class="focus-chip svc-chip-community">社區服務</span>
-        </div>
+        <span class="focus-chip svc-chip-annual">年度服務計畫</span></div>
       </div>
     </article>
 
     <!-- 林修緯 Wayne -->
     <article class="member-card">
+      <a class="profile-btn" href="profiles/15-wayne-lin.html">個人簡介 →</a>
       <a class="member-head" href="profiles/15-wayne-lin.html">
         <div class="avatar avatar-placeholder">林</div>
         <div class="info">
@@ -366,6 +393,7 @@
 
     <!-- 姚曼菁 Teresa -->
     <article class="member-card">
+      <a class="profile-btn" href="profiles/13-teresa-yao.html">個人簡介 →</a>
       <a class="member-head" href="profiles/13-teresa-yao.html">
         <div class="avatar avatar-placeholder">姚</div>
         <div class="info">
@@ -383,7 +411,7 @@
 
     <!-- 高清坊 James -->
     <article class="member-card">
-      <span class="annual-flag">年度服務計畫</span>
+      <a class="profile-btn" href="profiles/06-james-gao.html">個人簡介 →</a>
       <a class="member-head" href="profiles/06-james-gao.html">
         <div class="avatar" style="background-image:url(assets/img/members/james.jpg)"></div>
         <div class="info">
@@ -395,12 +423,13 @@
         <p class="theme-line">用空間設計回應高齡照顧、生命教育、創新教育訓練。</p>
         <div class="focus-row">
           <span class="focus-chip svc-chip-vocational">職業服務</span>
-        </div>
+        <span class="focus-chip svc-chip-annual">年度服務計畫</span></div>
       </div>
     </article>
 
     <!-- 張艾筆 Albee -->
     <article class="member-card">
+      <a class="profile-btn" href="profiles/10-albee-chang.html">個人簡介 →</a>
       <a class="member-head" href="profiles/10-albee-chang.html">
         <div class="avatar avatar-placeholder">張</div>
         <div class="info">
@@ -435,7 +464,7 @@
 
     <!-- 陳明勇 Vincent -->
     <article class="member-card">
-      <span class="annual-flag">年度服務計畫</span>
+      <a class="profile-btn" href="profiles/09-vincent-chen.html">個人簡介 →</a>
       <a class="member-head" href="profiles/09-vincent-chen.html">
         <div class="avatar" style="background-image:url(assets/img/members/vincent.jpg)"></div>
         <div class="info">
@@ -449,12 +478,13 @@
           <span class="focus-chip svc-chip-vocational">職業服務</span>
           <span class="focus-chip svc-chip-community">社區服務</span>
           <span class="focus-chip svc-chip-club">社務服務</span>
-        </div>
+        <span class="focus-chip svc-chip-annual">年度服務計畫</span></div>
       </div>
     </article>
 
     <!-- 陳美華 Irene（衛星社） -->
     <article class="member-card">
+      <a class="profile-btn" href="profiles/19-irene-chen.html">個人簡介 →</a>
       <a class="member-head" href="profiles/19-irene-chen.html">
         <div class="avatar avatar-placeholder">陳</div>
         <div class="info">
@@ -473,6 +503,7 @@
 
     <!-- 黃世祿 Derek -->
     <article class="member-card">
+      <a class="profile-btn" href="profiles/03-derek-huang.html">個人簡介 →</a>
       <a class="member-head" href="profiles/03-derek-huang.html">
         <div class="avatar" style="background-image:url(assets/img/members/derek.jpg)"></div>
         <div class="info">
@@ -507,6 +538,7 @@
 
     <!-- 鄭仲翔 Eric -->
     <article class="member-card">
+      <a class="profile-btn" href="profiles/16-eric-cheng.html">個人簡介 →</a>
       <a class="member-head" href="profiles/16-eric-cheng.html">
         <div class="avatar avatar-placeholder">鄭</div>
         <div class="info">
@@ -524,6 +556,7 @@
 
     <!-- 鄭雯（媽芽） -->
     <article class="member-card">
+      <a class="profile-btn" href="profiles/18-meiya-cheng.html">個人簡介 →</a>
       <a class="member-head" href="profiles/18-meiya-cheng.html">
         <div class="avatar avatar-placeholder">鄭</div>
         <div class="info">
