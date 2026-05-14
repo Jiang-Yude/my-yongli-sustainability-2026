@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>「個人簡介」按鈕位置比較 · v5</title>
+<style>
+  :root{
+    --bg:#F6EFE2;--bg-card:#FFFFFF;--ink:#2B2A26;--ink-soft:#54514A;--ink-mute:#7A766C;
+    --line:#E0D6BF;--line-soft:#EDE4D2;
+    --gold:#C9A961;--gold-deep:#8B6508;--gold-bg:#FBF5E4;--gold-soft:#D4B97A;
+    --radius:14px;
+    --shadow-hover:0 14px 36px rgba(43,42,38,0.20);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;padding:48px 32px;
+    font-family:"Noto Sans TC","Helvetica Neue",sans-serif;
+    background:var(--bg);color:var(--ink);
+  }
+  h1{font-family:"Noto Serif TC",serif;font-size:1.8rem;margin:0 0 8px}
+  .sub{color:var(--ink-mute);font-size:15px;margin:0 0 36px}
+  .row{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(440px,1fr));
+    gap:32px;
+    max-width:1100px;margin:0 auto;
+  }
+  .option{margin-bottom:8px}
+  .option h2{
+    font-family:"Noto Serif TC",serif;
+    font-size:1.2rem;color:var(--gold-deep);
+    margin:0 0 8px;
+  }
+  .option .note{font-size:13px;color:var(--ink-mute);margin:0 0 12px}
+
+  /* ========= 共用卡片基礎樣式（取自 members.html） ========= */
+  .card{
+    background:var(--bg-card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+    display:flex;flex-direction:column;
+    transition:all .25s;
+    cursor:pointer;
+    position:relative;
+  }
+  .card:hover{
+    transform:translateY(-4px);
+    box-shadow:var(--shadow-hover);
+    border-color:var(--gold-soft);
+  }
+  .head{
+    display:flex;align-items:center;gap:14px;
+    padding:18px 20px 14px;
+    border-bottom:1px solid var(--line-soft);
+    text-decoration:none;color:inherit;
+  }
+  .avatar{
+    width:72px;height:72px;border-radius:50%;flex-shrink:0;
+    background-image:url(assets/img/members/cp.jpg);
+    background-size:cover;background-position:center top;
+    box-shadow:0 4px 12px rgba(43,42,38,0.12);
+  }
+  .name{font-size:1.05rem;font-weight:700;color:var(--ink);margin-bottom:2px}
+  .role{font-size:0.85rem;color:var(--ink-mute)}
+  .body{padding:14px 20px 16px;flex:1}
+  .theme{font-size:0.88rem;color:var(--ink-soft);line-height:1.65;margin:0 0 12px}
+  .chips{display:flex;flex-wrap:wrap;gap:4px}
+  .chip{display:inline-block;padding:3px 10px;border-radius:999px;font-size:0.75rem;font-weight:600}
+  .chip-c{background:rgba(0,137,123,0.12);color:#00695C}
+  .chip-y{background:rgba(239,108,0,0.12);color:#E65100}
+  .chip-k{background:rgba(25,118,210,0.12);color:#1565C0}
+  .chip-annual{background:rgba(201,169,97,0.16);color:#8B6508;border:1px dashed rgba(201,169,97,0.5)}
+
+  /* ========= A：現況 — 右上金色 pill 按鈕 ========= */
+  .a-btn{
+    position:absolute;top:14px;right:14px;
+    background:linear-gradient(135deg,var(--gold-deep),var(--gold));
+    color:#fff;font-size:12px;font-weight:600;letter-spacing:0.06em;
+    padding:6px 14px;border-radius:99px;text-decoration:none;
+    box-shadow:0 3px 10px rgba(168,136,74,0.32);
+  }
+
+  /* ========= B：整張卡可點 + 右下小箭頭 icon ========= */
+  .b-arrow{
+    position:absolute;bottom:14px;right:16px;
+    width:32px;height:32px;border-radius:50%;
+    background:var(--gold-bg);
+    border:1px solid var(--gold-soft);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--gold-deep);font-weight:700;
+    transition:all .25s;
+  }
+  .card:hover .b-arrow{
+    background:var(--gold);color:#fff;border-color:var(--gold);
+    transform:translateX(4px);
+  }
+
+  /* ========= C：底部 hover 才浮現的全寬連結 ========= */
+  .c-footer{
+    padding:12px 20px;
+    background:linear-gradient(90deg,rgba(201,169,97,0.06),rgba(201,169,97,0.12));
+    border-top:1px solid var(--line-soft);
+    text-decoration:none;
+    color:var(--gold-deep);
+    font-size:0.9rem;font-weight:600;
+    display:flex;justify-content:space-between;align-items:center;
+    transition:background .25s;
+  }
+  .card:hover .c-footer{background:linear-gradient(90deg,rgba(201,169,97,0.18),rgba(201,169,97,0.28))}
+  .c-footer .arrow{transition:transform .25s}
+  .card:hover .c-footer .arrow{transform:translateX(4px)}
+
+  /* ========= D：頭像右側、name 下方小連結文字 ========= */
+  .d-link{
+    display:inline-flex;align-items:center;gap:4px;
+    margin-top:4px;
+    color:var(--gold-deep);font-size:0.78rem;font-weight:600;
+    text-decoration:none;letter-spacing:0.04em;
+  }
+  .d-link:hover{text-decoration:underline}
+
+  /* ========= E：左下文字連結 跟 chip 並排 ========= */
+  .e-row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:4px}
+  .e-link{
+    color:var(--gold-deep);font-size:0.82rem;font-weight:600;
+    text-decoration:none;letter-spacing:0.04em;white-space:nowrap;
+  }
+  .e-link:hover{text-decoration:underline}
+
+  /* 通用 sample text */
+  .demo-name{font-weight:700}
+</style>
+</head>
+<body>
+
+<div style="max-width:1100px;margin:0 auto;">
+<h1>「完整人物誌」按鈕設計微調</h1>
+<p class="sub">右上角 4 種微調版本（離邊角更遠、樣式更精緻），下方再附原來 5 方案備查。</p>
+</div>
+
+<style>
+  /* ===== 4 種右上微調 ===== */
+  .v1-btn{
+    position:absolute;top:18px;right:18px;
+    background:linear-gradient(135deg,var(--gold-deep),var(--gold));
+    color:#fff;font-size:13px;font-weight:600;letter-spacing:0.06em;
+    padding:7px 16px;border-radius:99px;text-decoration:none;
+    box-shadow:0 4px 12px rgba(168,136,74,0.32);
+    transition:all .25s;
+  }
+  .v1-btn:hover{transform:translateY(-1px);filter:brightness(1.08);box-shadow:0 6px 18px rgba(168,136,74,0.45)}
+
+  .v2-btn{
+    position:absolute;top:20px;right:20px;
+    background:#fff;
+    color:var(--gold-deep);font-size:13px;font-weight:600;letter-spacing:0.06em;
+    padding:7px 16px;border-radius:99px;text-decoration:none;
+    border:1.5px solid var(--gold);
+    box-shadow:0 2px 8px rgba(168,136,74,0.18);
+    transition:all .25s;
+  }
+  .v2-btn:hover{background:var(--gold-bg);transform:translateY(-1px);box-shadow:0 4px 14px rgba(168,136,74,0.3)}
+
+  .v3-btn{
+    position:absolute;top:18px;right:18px;
+    background:var(--gold-bg);
+    color:var(--gold-deep);font-size:13px;font-weight:600;letter-spacing:0.06em;
+    padding:8px 18px;border-radius:8px;text-decoration:none;
+    border:1px solid var(--gold-soft);
+    display:inline-flex;align-items:center;gap:6px;
+    transition:all .25s;
+  }
+  .v3-btn:hover{background:var(--gold);color:#fff;border-color:var(--gold);box-shadow:0 4px 14px rgba(168,136,74,0.35)}
+  .v3-btn .arrow{transition:transform .25s}
+  .v3-btn:hover .arrow{transform:translateX(3px)}
+
+  .v4-btn{
+    position:absolute;top:20px;right:20px;
+    background:rgba(255,255,255,0.85);
+    color:var(--ink);font-size:12.5px;font-weight:600;letter-spacing:0.04em;
+    padding:6px 12px 6px 14px;border-radius:99px;text-decoration:none;
+    border:1px solid var(--line);
+    display:inline-flex;align-items:center;gap:6px;
+    backdrop-filter:blur(4px);
+    transition:all .25s;
+  }
+  .v4-btn::after{
+    content:"→";
+    width:20px;height:20px;border-radius:50%;
+    background:var(--gold);color:#fff;
+    display:inline-flex;align-items:center;justify-content:center;
+    font-size:11px;font-weight:700;
+    transition:transform .25s;
+  }
+  .v4-btn:hover{background:#fff;border-color:var(--gold-soft);box-shadow:0 4px 14px rgba(43,42,38,0.1)}
+  .v4-btn:hover::after{transform:translateX(2px)}
+</style>
+
+<div class="row" style="margin-bottom:48px">
+
+  <div class="option">
+    <h2>V1. 金色漸層 pill（離邊角拉開）</h2>
+    <p class="note">原版 A 改良：top/right 從 14px → 18px。一樣金色實心。</p>
+    <article class="card">
+      <a class="v1-btn" href="#">完整人物誌 →</a>
+      <a class="head" href="#">
+        <div class="avatar"></div>
+        <div>
+          <div class="name">林學賢 CP Impact</div>
+          <div class="role">創社社長 · 價值場域建構者</div>
+        </div>
+      </a>
+      <div class="body">
+        <p class="theme">建立永力扶輪社，把「社友的職業服務被看見」變成這個社存在的核心目的。</p>
+        <div class="chips">
+          <span class="chip chip-c">社區服務</span>
+          <span class="chip chip-y">青少年服務</span>
+          <span class="chip chip-k">社務服務</span>
+          <span class="chip chip-annual">年度服務計畫</span>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <div class="option">
+    <h2>V2. 白底金邊（更精緻）</h2>
+    <p class="note">白底 + 金邊 + 金字，hover 變奶茶底。低調但精緻，不搶頭像。</p>
+    <article class="card">
+      <a class="v2-btn" href="#">完整人物誌 →</a>
+      <a class="head" href="#">
+        <div class="avatar"></div>
+        <div>
+          <div class="name">林學賢 CP Impact</div>
+          <div class="role">創社社長 · 價值場域建構者</div>
+        </div>
+      </a>
+      <div class="body">
+        <p class="theme">建立永力扶輪社，把「社友的職業服務被看見」變成這個社存在的核心目的。</p>
+        <div class="chips">
+          <span class="chip chip-c">社區服務</span>
+          <span class="chip chip-y">青少年服務</span>
+          <span class="chip chip-k">社務服務</span>
+          <span class="chip chip-annual">年度服務計畫</span>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <div class="option">
+    <h2>V3. 奶茶底方角（圓角矩形）</h2>
+    <p class="note">圓角矩形（不是 pill），hover 變金色填充，箭頭往右走。</p>
+    <article class="card">
+      <a class="v3-btn" href="#">完整人物誌 <span class="arrow">→</span></a>
+      <a class="head" href="#">
+        <div class="avatar"></div>
+        <div>
+          <div class="name">林學賢 CP Impact</div>
+          <div class="role">創社社長 · 價值場域建構者</div>
+        </div>
+      </a>
+      <div class="body">
+        <p class="theme">建立永力扶輪社，把「社友的職業服務被看見」變成這個社存在的核心目的。</p>
+        <div class="chips">
+          <span class="chip chip-c">社區服務</span>
+          <span class="chip chip-y">青少年服務</span>
+          <span class="chip chip-k">社務服務</span>
+          <span class="chip chip-annual">年度服務計畫</span>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <div class="option">
+    <h2>V4. 雙層按鈕（文字 + 金色箭頭圈）</h2>
+    <p class="note">半透明白底 + 末端金色小圓圈內箭頭。最現代感。</p>
+    <article class="card">
+      <a class="v4-btn" href="#">完整人物誌</a>
+      <a class="head" href="#">
+        <div class="avatar"></div>
+        <div>
+          <div class="name">林學賢 CP Impact</div>
+          <div class="role">創社社長 · 價值場域建構者</div>
+        </div>
+      </a>
+      <div class="body">
+        <p class="theme">建立永力扶輪社，把「社友的職業服務被看見」變成這個社存在的核心目的。</p>
+        <div class="chips">
+          <span class="chip chip-c">社區服務</span>
+          <span class="chip chip-y">青少年服務</span>
+          <span class="chip chip-k">社務服務</span>
+          <span class="chip chip-annual">年度服務計畫</span>
+        </div>
+      </div>
+    </article>
+  </div>
+
+</div>
+
+<div style="max-width:1100px;margin:0 auto;border-top:1px dashed var(--line);padding-top:32px">
+<h2 style="font-family:'Noto Serif TC',serif;color:var(--ink-mute);font-size:1.2rem">↓ 備查：原 5 個方案 ↓</h2>
+</div>
+
+<div class="row">
+
+  <!-- A. 現況 -->
+  <div class="option">
+    <h2>A. 現況：右上金色 pill 按鈕</h2>
+    <p class="note">直覺、明顯，但有點搶頭像旁邊位置。</p>
+    <article class="card">
+      <a class="a-btn" href="#">個人簡介 →</a>
+      <a class="head" href="#">
+        <div class="avatar"></div>
+        <div>
+          <div class="name">林學賢 CP Impact</div>
+          <div class="role">創社社長 · 價值場域建構者</div>
+        </div>
+      </a>
+      <div class="body">
+        <p class="theme">建立永力扶輪社，把「社友的職業服務被看見」變成這個社存在的核心目的。</p>
+        <div class="chips">
+          <span class="chip chip-c">社區服務</span>
+          <span class="chip chip-y">青少年服務</span>
+          <span class="chip chip-k">社務服務</span>
+          <span class="chip chip-annual">年度服務計畫</span>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <!-- B. 右下小箭頭 -->
+  <div class="option">
+    <h2>B. 右下小箭頭 icon</h2>
+    <p class="note">最克制，hover 整張卡才有箭頭浮現提示「可點」。</p>
+    <article class="card">
+      <a class="head" href="#">
+        <div class="avatar"></div>
+        <div>
+          <div class="name">林學賢 CP Impact</div>
+          <div class="role">創社社長 · 價值場域建構者</div>
+        </div>
+      </a>
+      <div class="body">
+        <p class="theme">建立永力扶輪社，把「社友的職業服務被看見」變成這個社存在的核心目的。</p>
+        <div class="chips">
+          <span class="chip chip-c">社區服務</span>
+          <span class="chip chip-y">青少年服務</span>
+          <span class="chip chip-k">社務服務</span>
+          <span class="chip chip-annual">年度服務計畫</span>
+        </div>
+      </div>
+      <div class="b-arrow">→</div>
+    </article>
+  </div>
+
+  <!-- C. 底部全寬連結 -->
+  <div class="option">
+    <h2>C. 底部全寬連結</h2>
+    <p class="note">仿照 CP 原本「忠義國小」那個風格。明顯但融入整體。</p>
+    <article class="card">
+      <a class="head" href="#">
+        <div class="avatar"></div>
+        <div>
+          <div class="name">林學賢 CP Impact</div>
+          <div class="role">創社社長 · 價值場域建構者</div>
+        </div>
+      </a>
+      <div class="body">
+        <p class="theme">建立永力扶輪社，把「社友的職業服務被看見」變成這個社存在的核心目的。</p>
+        <div class="chips">
+          <span class="chip chip-c">社區服務</span>
+          <span class="chip chip-y">青少年服務</span>
+          <span class="chip chip-k">社務服務</span>
+          <span class="chip chip-annual">年度服務計畫</span>
+        </div>
+      </div>
+      <a class="c-footer" href="#">
+        <span>進入完整人物誌</span>
+        <span class="arrow">→</span>
+      </a>
+    </article>
+  </div>
+
+  <!-- D. 頭像旁邊 name 下方小連結 -->
+  <div class="option">
+    <h2>D. Name 下方小連結</h2>
+    <p class="note">小字、附在 role 副標下方。最低調。</p>
+    <article class="card">
+      <a class="head" href="#">
+        <div class="avatar"></div>
+        <div>
+          <div class="name">林學賢 CP Impact</div>
+          <div class="role">創社社長 · 價值場域建構者</div>
+          <a class="d-link" href="#">看完整人物誌 →</a>
+        </div>
+      </a>
+      <div class="body">
+        <p class="theme">建立永力扶輪社，把「社友的職業服務被看見」變成這個社存在的核心目的。</p>
+        <div class="chips">
+          <span class="chip chip-c">社區服務</span>
+          <span class="chip chip-y">青少年服務</span>
+          <span class="chip chip-k">社務服務</span>
+          <span class="chip chip-annual">年度服務計畫</span>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <!-- E. 左下文字連結 跟 chip 並排 -->
+  <div class="option">
+    <h2>E. Chips 右側文字連結</h2>
+    <p class="note">「年度服務計畫」chip 在左，連結在右。同一行平衡。</p>
+    <article class="card">
+      <a class="head" href="#">
+        <div class="avatar"></div>
+        <div>
+          <div class="name">林學賢 CP Impact</div>
+          <div class="role">創社社長 · 價值場域建構者</div>
+        </div>
+      </a>
+      <div class="body">
+        <p class="theme">建立永力扶輪社，把「社友的職業服務被看見」變成這個社存在的核心目的。</p>
+        <div class="e-row">
+          <div class="chips">
+            <span class="chip chip-c">社區服務</span>
+            <span class="chip chip-y">青少年服務</span>
+            <span class="chip chip-k">社務服務</span>
+            <span class="chip chip-annual">年度</span>
+          </div>
+          <a class="e-link" href="#">完整人物誌 →</a>
+        </div>
+      </div>
+    </article>
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -105,24 +105,27 @@
 .svc-chip-community { background: rgba(0,137,123,0.12); color: #00695C; }
 .svc-chip-international { background: rgba(106,27,154,0.12); color: #4A148C; }
 .svc-chip-youth { background: rgba(239,108,0,0.12); color: #E65100; }
-/* 個人簡介按鈕（右上） */
+/* 完整人物誌按鈕（右上，V3 奶茶底圓角） */
 .member-card .profile-btn {
-  position: absolute; top: 14px; right: 14px;
-  display: inline-flex; align-items: center; gap: 4px;
-  background: linear-gradient(135deg, var(--gold-deep, #8B6508) 0%, var(--gold, #C9A961) 100%);
-  color: #fff;
-  font-size: 12px; font-weight: 600; letter-spacing: 0.06em;
-  padding: 6px 14px; border-radius: 99px;
+  position: absolute; top: 18px; right: 18px;
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--gold-bg, #FBF5E4);
+  color: var(--gold-deep, #8B6508);
+  font-size: 13px; font-weight: 600; letter-spacing: 0.06em;
+  padding: 8px 18px; border-radius: 8px;
   text-decoration: none;
-  box-shadow: 0 3px 10px rgba(168,136,74,0.32);
+  border: 1px solid var(--gold-soft, #D4B97A);
   transition: all 0.25s cubic-bezier(0.2,0.8,0.3,1);
   z-index: 2;
 }
 .member-card .profile-btn:hover {
-  filter: brightness(1.08);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(168,136,74,0.45);
+  background: var(--gold, #C9A961);
+  color: #fff;
+  border-color: var(--gold, #C9A961);
+  box-shadow: 0 4px 14px rgba(168,136,74,0.35);
 }
+.member-card .profile-btn .arrow { transition: transform 0.25s; }
+.member-card .profile-btn:hover .arrow { transform: translateX(3px); }
 /* 年度服務計畫 chip */
 .focus-chip.svc-chip-annual {
   background: rgba(201,169,97,0.16);
@@ -232,12 +235,12 @@
 
 <div class="container">
 
-  <h3 class="member-section-sub">社長 · 前社長 · 下屆社長</h3>
+  <h3 class="member-section-sub" style="margin-top:48px;">社長 · 前社長 · 下屆社長</h3>
 
   <div class="member-grid">
 
     <article class="member-card" data-role="cp">
-      <a class="profile-btn" href="profiles/01-cp-lin.html">個人簡介 →</a>
+      <a class="profile-btn" href="profiles/01-cp-lin.html">完整人物誌 <span class="arrow">→</span></a>
       <a class="member-head" href="profiles/01-cp-lin.html">
         <div class="avatar" style="background-image:url(assets/img/members/cp.jpg)"></div>
         <div class="info">
@@ -257,7 +260,7 @@
 
     <!-- 林秉鴻 Nick（幹部） -->
     <article class="member-card" data-role="pp">
-      <a class="profile-btn" href="profiles/07-nick-lin.html">個人簡介 →</a>
+      <a class="profile-btn" href="profiles/07-nick-lin.html">完整人物誌 <span class="arrow">→</span></a>
       <a class="member-head" href="profiles/07-nick-lin.html">
         <div class="avatar" style="background-image:url(assets/img/members/nick.jpg)"></div>
         <div class="info">
@@ -275,7 +278,7 @@
 
     <!-- 賴光蘭 Helen（幹部） -->
     <article class="member-card" data-role="pp">
-      <a class="profile-btn" href="profiles/04-helen-lai.html">個人簡介 →</a>
+      <a class="profile-btn" href="profiles/04-helen-lai.html">完整人物誌 <span class="arrow">→</span></a>
       <a class="member-head" href="profiles/04-helen-lai.html">
         <div class="avatar" style="background-image:url(assets/img/members/helen.jpg)"></div>
         <div class="info">
@@ -295,7 +298,7 @@
 
     <!-- 黃丞隆 Rich（幹部） -->
     <article class="member-card" data-role="pe">
-      <a class="profile-btn" href="profiles/08-rich-huang.html">個人簡介 →</a>
+      <a class="profile-btn" href="profiles/08-rich-huang.html">完整人物誌 <span class="arrow">→</span></a>
       <a class="member-head" href="profiles/08-rich-huang.html">
         <div class="avatar" style="background-image:url(assets/img/members/rich.jpg)"></div>
         <div class="info">
@@ -321,7 +324,7 @@
 
 
     <article class="member-card">
-      <a class="profile-btn" href="profiles/02-vicky-lee.html">個人簡介 →</a>
+      <a class="profile-btn" href="profiles/02-vicky-lee.html">完整人物誌 <span class="arrow">→</span></a>
       <a class="member-head" href="profiles/02-vicky-lee.html">
         <div class="avatar" style="background-image:url(assets/img/members/vicky.jpg)"></div>
         <div class="info">
@@ -339,7 +342,7 @@
     </article>
 
     <article class="member-card">
-      <a class="profile-btn" href="profiles/05-lisa-lin.html">個人簡介 →</a>
+      <a class="profile-btn" href="profiles/05-lisa-lin.html">完整人物誌 <span class="arrow">→</span></a>
       <a class="member-head" href="profiles/05-lisa-lin.html">
         <div class="avatar" style="background-image:url(assets/img/members/lisa.jpg)"></div>
         <div class="info">
@@ -356,7 +359,7 @@
     </article>
 
     <article class="member-card">
-      <a class="profile-btn" href="profiles/15-wayne-lin.html">個人簡介 →</a>
+      <a class="profile-btn" href="profiles/15-wayne-lin.html">完整人物誌 <span class="arrow">→</span></a>
       <a class="member-head" href="profiles/15-wayne-lin.html">
         <div class="avatar" style="background-image:url(assets/img/members/wayne.jpg)"></div>
         <div class="info">
@@ -373,7 +376,7 @@
     </article>
 
     <article class="member-card">
-      <a class="profile-btn" href="profiles/06-james-gao.html">個人簡介 →</a>
+      <a class="profile-btn" href="profiles/06-james-gao.html">完整人物誌 <span class="arrow">→</span></a>
       <a class="member-head" href="profiles/06-james-gao.html">
         <div class="avatar" style="background-image:url(assets/img/members/james.jpg)"></div>
         <div class="info">
@@ -390,7 +393,7 @@
     </article>
 
     <article class="member-card">
-      <a class="profile-btn" href="profiles/09-vincent-chen.html">個人簡介 →</a>
+      <a class="profile-btn" href="profiles/09-vincent-chen.html">完整人物誌 <span class="arrow">→</span></a>
       <a class="member-head" href="profiles/09-vincent-chen.html">
         <div class="avatar" style="background-image:url(assets/img/members/vincent.jpg)"></div>
         <div class="info">
@@ -409,7 +412,7 @@
     </article>
 
     <article class="member-card">
-      <a class="profile-btn" href="profiles/03-derek-huang.html">個人簡介 →</a>
+      <a class="profile-btn" href="profiles/03-derek-huang.html">完整人物誌 <span class="arrow">→</span></a>
       <a class="member-head" href="profiles/03-derek-huang.html">
         <div class="avatar" style="background-image:url(assets/img/members/derek.jpg)"></div>
         <div class="info">
@@ -461,7 +464,7 @@
     </article>
 
     <article class="member-card">
-      <a class="profile-btn" href="profiles/13-teresa-yao.html">個人簡介 →</a>
+      <a class="profile-btn" href="profiles/13-teresa-yao.html">完整人物誌 <span class="arrow">→</span></a>
       <a class="member-head" href="profiles/13-teresa-yao.html">
         <div class="avatar" style="background-image:url(assets/img/members/teresa.jpg)"></div>
         <div class="info">
@@ -478,7 +481,7 @@
     </article>
 
     <article class="member-card">
-      <a class="profile-btn" href="profiles/10-albee-chang.html">個人簡介 →</a>
+      <a class="profile-btn" href="profiles/10-albee-chang.html">完整人物誌 <span class="arrow">→</span></a>
       <a class="member-head" href="profiles/10-albee-chang.html">
         <div class="avatar" style="background-image:url(assets/img/members/albee.jpg)"></div>
         <div class="info">
@@ -511,7 +514,7 @@
     </article>
 
     <article class="member-card">
-      <a class="profile-btn" href="profiles/19-irene-chen.html">個人簡介 →</a>
+      <a class="profile-btn" href="profiles/19-irene-chen.html">完整人物誌 <span class="arrow">→</span></a>
       <a class="member-head" href="profiles/19-irene-chen.html">
         <div class="avatar" style="background-image:url(assets/img/members/irene.jpg)"></div>
         <div class="info">
@@ -545,7 +548,7 @@
     </article>
 
     <article class="member-card">
-      <a class="profile-btn" href="profiles/16-eric-cheng.html">個人簡介 →</a>
+      <a class="profile-btn" href="profiles/16-eric-cheng.html">完整人物誌 <span class="arrow">→</span></a>
       <a class="member-head" href="profiles/16-eric-cheng.html">
         <div class="avatar" style="background-image:url(assets/img/members/eric.jpg)"></div>
         <div class="info">
@@ -562,7 +565,7 @@
     </article>
 
     <article class="member-card">
-      <a class="profile-btn" href="profiles/18-meiya-cheng.html">個人簡介 →</a>
+      <a class="profile-btn" href="profiles/18-meiya-cheng.html">完整人物誌 <span class="arrow">→</span></a>
       <a class="member-head" href="profiles/18-meiya-cheng.html">
         <div class="avatar" style="background-image:url(assets/img/members/meiya.jpg)"></div>
         <div class="info">
