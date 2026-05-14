@@ -432,6 +432,44 @@ img{max-width:100%;display:block}
   margin:0 0 14px;
 }
 .intro-block p:last-child{margin-bottom:0}
+/* §01 發行人的話：頂部標籤 + 底部簽名 */
+.intro-block .foreword-tag{
+  text-align:center;
+  margin:0 0 28px;
+  position:relative;
+}
+.intro-block .foreword-tag::before,
+.intro-block .foreword-tag::after{
+  content:"";
+  position:absolute;
+  top:50%;width:25%;height:1px;
+  background:var(--gold-soft);
+}
+.intro-block .foreword-tag::before{left:0}
+.intro-block .foreword-tag::after{right:0}
+.intro-block .foreword-tag span{
+  display:inline-block;
+  font-family:"Noto Serif TC",serif;
+  font-size:14px;letter-spacing:0.28em;
+  color:var(--gold-deep);
+  background:var(--paper-2);
+  padding:0 18px;
+  position:relative;z-index:1;
+}
+.intro-block .foreword-sig{
+  margin-top:28px;padding-top:20px;
+  border-top:1px dashed var(--gold-soft);
+  text-align:right;
+  font-family:"Noto Serif TC",serif;
+}
+.intro-block .foreword-sig .sig-name{
+  font-size:1.15rem;font-weight:600;
+  color:var(--gold-deep);
+  margin-bottom:4px;letter-spacing:0.04em;
+}
+.intro-block .foreword-sig .sig-role{
+  font-size:13px;color:var(--ink-3);letter-spacing:0.06em;
+}
 .intro-block p strong{
   color:var(--ink);font-weight:600;
   background:linear-gradient(transparent 60%, var(--gold-soft) 60%);
@@ -1524,6 +1562,7 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
   </div>
 
   <div class="intro-block">
+    <div class="foreword-tag"><span>發 行 人 的 話</span></div>
     <h3>永力社的核心使命</h3>
     <p>2024 年成立於國際扶輪 3481 地區，台北永續影響力扶輪社（簡稱永力社）是以創造永續影響力為核心使命的新創扶輪社。每位社友關注全球 ESG 趨勢，連結自己的產業發展目標，期盼落實在職業、社務、服務與生活實踐中，為社區、社會與世界累積持恆的影響力。</p>
 
@@ -1533,6 +1572,11 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
 
     <h3>方法論基礎</h3>
     <p>本報告書以扶輪五大服務為基礎，結合 SDGs、社會影響力、利害關係人觀點與影響力管理思維，建立一份行動揭露與學習文件，也是永力社在創社階段回應「<strong>超我服務</strong>」「<strong>團結行善</strong>」精神，所累積公共價值的共創紀錄。</p>
+
+    <div class="foreword-sig">
+      <div class="sig-name">林學賢 CP Impact</div>
+      <div class="sig-role">台北永續影響力扶輪社 · 創社社長</div>
+    </div>
 
     <p class="intro-more"><a href="about-yongli.html">閱讀完整介紹</a></p>
   </div>

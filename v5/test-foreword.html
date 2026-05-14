@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>「發行人的話」放置位置比較 · v5</title>
+<style>
+:root{
+  --paper:#F6EFE2;--paper-2:#EDE4D2;--paper-3:#E5DAC0;
+  --ink:#2B2A26;--ink-2:#54514A;--ink-3:#7A766C;--ink-4:#9F9988;
+  --line:#E0D6BF;
+  --gold:#C9A961;--gold-deep:#8B6508;--gold-soft:#D4B97A;--gold-bg:#FBF5E4;
+  --sage:#6B8E7F;--sage-deep:#4F6E61;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;padding:0;
+  background:var(--paper);color:var(--ink);
+  font-family:"Noto Sans TC",sans-serif;line-height:1.7;
+}
+.label-bar{
+  background:var(--gold-deep);color:#fff;
+  padding:14px 24px;
+  font-family:"Noto Serif TC",serif;font-size:1.1rem;letter-spacing:0.1em;
+  position:sticky;top:0;z-index:99;
+}
+.section{
+  padding:60px 5vw 50px;max-width:1320px;margin:0 auto;
+}
+
+/* ========= section-head 共通 ========= */
+.section-head{
+  display:grid;
+  grid-template-columns:140px 1fr;gap:48px;
+  margin-bottom:36px;
+  align-items:end;
+}
+.num-block{
+  font-family:"Inter",sans-serif;
+  text-align:center;color:var(--ink-3);
+}
+.num-block .label{font-size:12px;letter-spacing:0.32em;display:block;margin-bottom:6px}
+.num-block .num{font-size:3.5rem;font-weight:300;color:var(--ink);font-family:"Noto Serif TC",serif}
+.section-head h2{
+  font-family:"Noto Serif TC",serif;
+  font-size:2.4rem;font-weight:600;margin:0;color:var(--ink);
+  letter-spacing:0.04em;
+}
+.section-head .meta{
+  font-size:14px;color:var(--ink-3);margin-top:10px;letter-spacing:0.06em;
+}
+
+/* ========= intro-block 共通 ========= */
+.intro-block{
+  background:var(--paper-2);
+  border:1px solid var(--line);
+  border-left:4px solid var(--sage);
+  padding:36px 40px;
+  margin-bottom:36px;
+  border-radius:0 12px 12px 0;
+  position:relative;
+}
+.intro-block h3{
+  font-family:"Noto Serif TC",serif;
+  font-size:1.25rem;font-weight:600;
+  margin:36px 0 14px;
+  color:var(--sage-deep);
+  letter-spacing:0.04em;
+}
+.intro-block h3:first-child,
+.intro-block h3.first-h3{margin-top:0}
+.intro-block p{font-size:18px;color:var(--ink);line-height:1.9;margin:0 0 14px}
+.intro-block p strong{
+  color:var(--ink);font-weight:600;
+  background:linear-gradient(transparent 60%, var(--gold-soft) 60%);
+  padding:0 3px;
+}
+
+/* ========= 方案 X：發行人的話小標 + 簽名 ========= */
+.x-tag{
+  text-align:center;
+  margin:0 0 28px;
+  position:relative;
+}
+.x-tag::before,.x-tag::after{
+  content:"";
+  position:absolute;
+  top:50%;width:25%;height:1px;
+  background:var(--gold-soft);
+}
+.x-tag::before{left:0}
+.x-tag::after{right:0}
+.x-tag span{
+  display:inline-block;
+  font-family:"Noto Serif TC",serif;
+  font-size:14px;letter-spacing:0.28em;
+  color:var(--gold-deep);
+  background:var(--paper-2);
+  padding:0 18px;
+  position:relative;z-index:1;
+}
+.x-sig{
+  margin-top:28px;padding-top:20px;
+  border-top:1px dashed var(--gold-soft);
+  text-align:right;
+  font-family:"Noto Serif TC",serif;
+}
+.x-sig .sig-name{
+  font-size:1.15rem;font-weight:600;
+  color:var(--gold-deep);margin-bottom:4px;letter-spacing:0.04em;
+}
+.x-sig .sig-role{font-size:13px;color:var(--ink-3);letter-spacing:0.06em}
+
+/* ========= 方案 Y：主標雙層 ========= */
+.y-h2-sub{
+  font-size:1rem;color:var(--gold-deep);
+  font-weight:600;letter-spacing:0.12em;
+  margin-top:6px;
+  font-family:"Noto Serif TC",serif;
+}
+</style>
+</head>
+<body>
+
+<div class="label-bar">方案 X：副標「發行人的話」 + 簽名（推薦）</div>
+
+<section class="section">
+  <div class="section-head">
+    <div class="num-block"><span class="label">SECTION</span><span class="num">01</span></div>
+    <div>
+      <h2>關於永力社</h2>
+      <p class="meta">Rotary Club of Taipei Sustainable Impact</p>
+    </div>
+  </div>
+
+  <div class="intro-block">
+    <div class="x-tag"><span>發 行 人 的 話</span></div>
+
+    <h3 class="first-h3">永力社的核心使命</h3>
+    <p>2024 年成立於國際扶輪 3481 地區，台北永續影響力扶輪社（簡稱永力社）是以創造永續影響力為核心使命的新創扶輪社。每位社友關注全球 ESG 趨勢，連結自己的產業發展目標，期盼落實在職業、社務、服務與生活實踐中，為社區、社會與世界累積持恆的影響力。</p>
+
+    <h3>我們對這份報告書的態度</h3>
+    <p>我們願意用較謙卑的態度看待這份年度報告書，不刻意強調這是一份永續影響力報告書，而是作為永力社全體社友在 2024-2026 年度期間，社務參與及服務計畫執行過程中的忠實記錄呈現。</p>
+    <p>永力社並非企業組織，也不是以營運績效揭露為主體的 ESG 報告書；對永力社而言，這份報告書呈現的是：社友如何透過職業專業、扶輪服務與夥伴協作，持續回應社區、社會與環境的需要，並將服務成果、學習歷程與影響軌跡整理成可被看見、可被學習、可被延續的紀錄。</p>
+
+    <h3>方法論基礎</h3>
+    <p>本報告書以扶輪五大服務為基礎，結合 SDGs、社會影響力、利害關係人觀點與影響力管理思維，建立一份行動揭露與學習文件，也是永力社在創社階段回應「<strong>超我服務</strong>」「<strong>團結行善</strong>」精神，所累積公共價值的共創紀錄。</p>
+
+    <div class="x-sig">
+      <div class="sig-name">林學賢 CP Impact</div>
+      <div class="sig-role">台北永續影響力扶輪社 · 創社社長</div>
+    </div>
+  </div>
+</section>
+
+
+<div class="label-bar">方案 Y：主標雙層「關於永力社｜發行人的話」</div>
+
+<section class="section">
+  <div class="section-head">
+    <div class="num-block"><span class="label">SECTION</span><span class="num">01</span></div>
+    <div>
+      <h2>關於永力社</h2>
+      <div class="y-h2-sub">發 行 人 的 話</div>
+      <p class="meta" style="margin-top:14px">Rotary Club of Taipei Sustainable Impact</p>
+    </div>
+  </div>
+
+  <div class="intro-block">
+    <h3 class="first-h3">永力社的核心使命</h3>
+    <p>2024 年成立於國際扶輪 3481 地區，台北永續影響力扶輪社（簡稱永力社）是以創造永續影響力為核心使命的新創扶輪社。</p>
+
+    <h3>我們對這份報告書的態度</h3>
+    <p>我們願意用較謙卑的態度看待這份年度報告書⋯</p>
+
+    <h3>方法論基礎</h3>
+    <p>本報告書以扶輪五大服務為基礎，結合 SDGs⋯</p>
+  </div>
+</section>
+
+
+<div class="label-bar">方案 Z：取代主標「發行人的話」</div>
+
+<section class="section">
+  <div class="section-head">
+    <div class="num-block"><span class="label">SECTION</span><span class="num">01</span></div>
+    <div>
+      <h2>發行人的話</h2>
+      <p class="meta">Rotary Club of Taipei Sustainable Impact</p>
+    </div>
+  </div>
+
+  <div class="intro-block">
+    <h3 class="first-h3">永力社的核心使命</h3>
+    <p>2024 年成立於國際扶輪 3481 地區，台北永續影響力扶輪社（簡稱永力社）是以創造永續影響力為核心使命的新創扶輪社。</p>
+
+    <h3>我們對這份報告書的態度</h3>
+    <p>我們願意用較謙卑的態度看待這份年度報告書⋯</p>
+
+    <h3>方法論基礎</h3>
+    <p>本報告書以扶輪五大服務為基礎，結合 SDGs⋯</p>
+  </div>
+</section>
+
+</body>
+</html>
