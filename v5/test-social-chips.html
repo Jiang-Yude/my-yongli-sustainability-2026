@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>社群連結樣式比較 · Vicky 頁</title>
+<style>
+:root{
+  --paper:#F6EFE2;--paper-2:#EDE4D2;--paper-3:#FBF7EE;
+  --ink:#2B2A26;--ink-2:#54514A;--ink-3:#7A766C;--line:#E0D6BF;
+  --gold:#C9A961;--gold-deep:#8B6508;--gold-soft:#D4B97A;--gold-bg:#FBF5E4;
+  --fb:#1877F2;--ig:#E4405F;--threads:#000;--web:#10B981;--people:#7C3AED;
+}
+*{box-sizing:border-box}
+body{margin:0;padding:40px 32px;background:var(--paper);color:var(--ink);font-family:"Noto Sans TC",sans-serif}
+h1{font-family:"Noto Serif TC",serif;font-size:1.8rem;margin:0 0 8px}
+.sub{color:var(--ink-3);margin:0 0 32px}
+.option{
+  margin-bottom:48px;padding:28px 32px;
+  background:#fff;border-radius:14px;
+  border:1px solid var(--line);
+}
+.option h2{font-family:"Noto Serif TC",serif;font-size:1.25rem;color:var(--gold-deep);margin:0 0 6px}
+.option .note{font-size:13px;color:var(--ink-3);margin:0 0 18px}
+
+/* === A：現況（小 pill 灰圖） === */
+.social-chips-a{display:flex;flex-wrap:wrap;gap:10px}
+.chip-a{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:9px 16px;background:var(--paper-3);
+  border:1px solid var(--line);border-radius:22px;
+  color:var(--ink);text-decoration:none;font-size:13px;
+  transition:all .25s;
+}
+.chip-a:hover{background:#fff;border-color:var(--gold);transform:translateY(-2px);box-shadow:0 4px 12px rgba(168,136,74,0.18)}
+.chip-a .ico{width:16px;height:16px;display:inline-flex}
+.chip-a .ico svg{width:100%;height:100%;fill:var(--ink-3)}
+
+/* === B：品牌色彩 pill === */
+.social-chips-b{display:flex;flex-wrap:wrap;gap:10px}
+.chip-b{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:11px 20px;background:#fff;
+  border:2px solid var(--brand,#888);border-radius:99px;
+  color:var(--brand,var(--ink));text-decoration:none;
+  font-size:14px;font-weight:600;
+  transition:all .25s;
+}
+.chip-b:hover{background:var(--brand);color:#fff;transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,0.15)}
+.chip-b svg{width:18px;height:18px;fill:currentColor}
+
+/* === C：大橫條（圖+文字+箭頭） === */
+.social-chips-c{display:flex;flex-direction:column;gap:10px}
+.chip-c{
+  display:flex;align-items:center;gap:16px;
+  padding:14px 20px;background:#fff;
+  border:1px solid var(--line);border-radius:12px;
+  color:var(--ink);text-decoration:none;
+  transition:all .25s;
+}
+.chip-c:hover{border-color:var(--gold);transform:translateX(4px);box-shadow:0 4px 14px rgba(168,136,74,0.18)}
+.chip-c .ico-c{
+  width:44px;height:44px;border-radius:10px;
+  background:var(--brand,var(--gold-bg));color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.chip-c .ico-c svg{width:24px;height:24px;fill:#fff}
+.chip-c .label{flex:1;font-size:15px;font-weight:600}
+.chip-c .arr{font-size:18px;color:var(--gold-deep)}
+
+/* === D：金色實心 pill（跟「完整人物誌」按鈕一致） === */
+.social-chips-d{display:flex;flex-wrap:wrap;gap:12px}
+.chip-d{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:12px 22px;
+  background:linear-gradient(135deg,var(--gold-bg),#F2E0AA);
+  border:1.5px solid var(--gold-soft);
+  border-radius:99px;
+  color:var(--gold-deep);text-decoration:none;
+  font-size:14px;font-weight:600;letter-spacing:0.04em;
+  transition:all .25s;
+}
+.chip-d:hover{background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#fff;border-color:var(--gold-deep);transform:translateY(-2px);box-shadow:0 8px 20px rgba(168,136,74,0.35)}
+.chip-d svg{width:18px;height:18px;fill:currentColor}
+
+/* === E：彩色背景 pill（中間明亮） === */
+.social-chips-e{display:flex;flex-wrap:wrap;gap:10px}
+.chip-e{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:11px 20px;
+  background:var(--brand,#888);color:#fff;
+  border-radius:99px;text-decoration:none;
+  font-size:14px;font-weight:600;
+  box-shadow:0 4px 12px rgba(0,0,0,0.18);
+  transition:all .25s;
+}
+.chip-e:hover{transform:translateY(-2px);filter:brightness(1.1);box-shadow:0 8px 20px rgba(0,0,0,0.28)}
+.chip-e svg{width:18px;height:18px;fill:currentColor}
+
+/* SVG paths */
+.icon-web{fill:currentColor}
+</style>
+</head>
+<body>
+
+<h1>Vicky 頁社群連結樣式比較</h1>
+<p class="sub">當前 social-chips 4 個入口（旅學堂官網 / 旅學堂 FB / 新北社區旅學關懷協會 / Vicky 個人 FB）。下面 5 個方案 hover 試試。</p>
+
+<!-- A 現況 -->
+<div class="option">
+  <h2>A. 現況（小 pill + 灰圖）</h2>
+  <p class="note">低調精緻、跟整體配色融合。問題：太淡看不清。</p>
+  <div class="social-chips-a">
+    <a class="chip-a" href="#"><span class="ico"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 2c1.5 0 3 2 3.5 5H8.5c.5-3 2-5 3.5-5z"/></svg></span>旅學堂官網</a>
+    <a class="chip-a" href="#"><span class="ico"><svg viewBox="0 0 24 24"><path d="M14 13.5h2.5l1-4H14V7c0-1 .5-2 2-2h1.5V1.5c-1-.2-2-.3-3-.3-3 0-5 2-5 5v2.5H6v4h3.5V22h4.5v-8.5z"/></svg></span>旅學堂 FB</a>
+    <a class="chip-a" href="#"><span class="ico"><svg viewBox="0 0 24 24"><path d="M14 13.5h2.5l1-4H14V7c0-1 .5-2 2-2h1.5V1.5c-1-.2-2-.3-3-.3-3 0-5 2-5 5v2.5H6v4h3.5V22h4.5v-8.5z"/></svg></span>新北社區旅學關懷協會</a>
+    <a class="chip-a" href="#"><span class="ico"><svg viewBox="0 0 24 24"><path d="M12 12a5 5 0 100-10 5 5 0 000 10zm0 2c-4 0-8 2-8 6v2h16v-2c0-4-4-6-8-6z"/></svg></span>Vicky 個人 FB</a>
+  </div>
+</div>
+
+<!-- B 品牌色彩 pill -->
+<div class="option">
+  <h2>B. 品牌色彩 pill（白底 + 品牌色邊框與字）</h2>
+  <p class="note">FB 藍、IG 桃紅、Web 綠等。hover 變實心。明顯但仍精緻。</p>
+  <div class="social-chips-b">
+    <a class="chip-b" href="#" style="--brand:#10B981"><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm6.9 6h-3c-.3-1.2-.8-2.4-1.4-3.4 1.9.7 3.5 1.9 4.4 3.4zM12 4c.9 1.2 1.5 2.5 2 4H10c.5-1.5 1.1-2.8 2-4zM4.3 14C4.1 13.4 4 12.7 4 12s.1-1.4.3-2h3.4c-.1.7-.1 1.3-.1 2s0 1.3.1 2H4.3zm.8 2h3c.3 1.2.8 2.4 1.4 3.4-1.9-.7-3.5-1.9-4.4-3.4zm3-8h-3c.9-1.5 2.5-2.7 4.4-3.4-.6 1-1.1 2.2-1.4 3.4zm4 12c-.9-1.2-1.5-2.5-2-4h4c-.5 1.5-1.1 2.8-2 4zm2.4-6H9.5c-.1-.7-.2-1.3-.2-2s.1-1.3.2-2h4.9c.1.7.2 1.3.2 2s-.1 1.3-.1 2zm.2 5.4c.6-1 1.1-2.2 1.4-3.4h3c-.9 1.5-2.5 2.7-4.4 3.4zm1.7-5.4c.1-.7.1-1.3.1-2s0-1.3-.1-2h3.4c.2.6.3 1.3.3 2s-.1 1.4-.3 2h-3.4z"/></svg>旅學堂官網</a>
+    <a class="chip-b" href="#" style="--brand:#1877F2"><svg viewBox="0 0 24 24"><path d="M14 13.5h2.5l1-4H14V7c0-1 .5-2 2-2h1.5V1.5c-1-.2-2-.3-3-.3-3 0-5 2-5 5v2.5H6v4h3.5V22h4.5v-8.5z"/></svg>旅學堂 FB</a>
+    <a class="chip-b" href="#" style="--brand:#1877F2"><svg viewBox="0 0 24 24"><path d="M14 13.5h2.5l1-4H14V7c0-1 .5-2 2-2h1.5V1.5c-1-.2-2-.3-3-.3-3 0-5 2-5 5v2.5H6v4h3.5V22h4.5v-8.5z"/></svg>新北社區旅學關懷協會</a>
+    <a class="chip-b" href="#" style="--brand:#1877F2"><svg viewBox="0 0 24 24"><path d="M14 13.5h2.5l1-4H14V7c0-1 .5-2 2-2h1.5V1.5c-1-.2-2-.3-3-.3-3 0-5 2-5 5v2.5H6v4h3.5V22h4.5v-8.5z"/></svg>Vicky 個人 FB</a>
+  </div>
+</div>
+
+<!-- C 大橫條 -->
+<div class="option">
+  <h2>C. 大橫條卡（圖示方塊 + 標題 + 箭頭）</h2>
+  <p class="note">Linktree 風格但奶茶配色。一行一個，最容易點。適合手機。</p>
+  <div class="social-chips-c">
+    <a class="chip-c" href="#" style="--brand:#10B981"><span class="ico-c"><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm6.9 6h-3c-.3-1.2-.8-2.4-1.4-3.4 1.9.7 3.5 1.9 4.4 3.4zM12 4c.9 1.2 1.5 2.5 2 4H10c.5-1.5 1.1-2.8 2-4z"/></svg></span><span class="label">旅學堂官網</span><span class="arr">→</span></a>
+    <a class="chip-c" href="#" style="--brand:#1877F2"><span class="ico-c"><svg viewBox="0 0 24 24"><path d="M14 13.5h2.5l1-4H14V7c0-1 .5-2 2-2h1.5V1.5c-1-.2-2-.3-3-.3-3 0-5 2-5 5v2.5H6v4h3.5V22h4.5v-8.5z"/></svg></span><span class="label">旅學堂 FB</span><span class="arr">→</span></a>
+    <a class="chip-c" href="#" style="--brand:#1877F2"><span class="ico-c"><svg viewBox="0 0 24 24"><path d="M14 13.5h2.5l1-4H14V7c0-1 .5-2 2-2h1.5V1.5c-1-.2-2-.3-3-.3-3 0-5 2-5 5v2.5H6v4h3.5V22h4.5v-8.5z"/></svg></span><span class="label">新北社區旅學關懷協會</span><span class="arr">→</span></a>
+    <a class="chip-c" href="#" style="--brand:#1877F2"><span class="ico-c"><svg viewBox="0 0 24 24"><path d="M14 13.5h2.5l1-4H14V7c0-1 .5-2 2-2h1.5V1.5c-1-.2-2-.3-3-.3-3 0-5 2-5 5v2.5H6v4h3.5V22h4.5v-8.5z"/></svg></span><span class="label">Vicky 個人 FB</span><span class="arr">→</span></a>
+  </div>
+</div>
+
+<!-- D 金色 pill -->
+<div class="option">
+  <h2>D. 金色奶茶實心 pill（跟「完整人物誌」按鈕同風格）</h2>
+  <p class="note">統一網站視覺金色系，hover 變深金。最融入報告書整體 brand。</p>
+  <div class="social-chips-d">
+    <a class="chip-d" href="#"><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm6.9 6h-3c-.3-1.2-.8-2.4-1.4-3.4 1.9.7 3.5 1.9 4.4 3.4zM12 4c.9 1.2 1.5 2.5 2 4H10c.5-1.5 1.1-2.8 2-4z"/></svg>旅學堂官網</a>
+    <a class="chip-d" href="#"><svg viewBox="0 0 24 24"><path d="M14 13.5h2.5l1-4H14V7c0-1 .5-2 2-2h1.5V1.5c-1-.2-2-.3-3-.3-3 0-5 2-5 5v2.5H6v4h3.5V22h4.5v-8.5z"/></svg>旅學堂 FB</a>
+    <a class="chip-d" href="#"><svg viewBox="0 0 24 24"><path d="M14 13.5h2.5l1-4H14V7c0-1 .5-2 2-2h1.5V1.5c-1-.2-2-.3-3-.3-3 0-5 2-5 5v2.5H6v4h3.5V22h4.5v-8.5z"/></svg>新北社區旅學關懷協會</a>
+    <a class="chip-d" href="#"><svg viewBox="0 0 24 24"><path d="M14 13.5h2.5l1-4H14V7c0-1 .5-2 2-2h1.5V1.5c-1-.2-2-.3-3-.3-3 0-5 2-5 5v2.5H6v4h3.5V22h4.5v-8.5z"/></svg>Vicky 個人 FB</a>
+  </div>
+</div>
+
+<!-- E 彩色背景 pill -->
+<div class="option">
+  <h2>E. 品牌彩色實心 pill</h2>
+  <p class="note">每個 chip 用品牌主色填滿。最醒目但跟報告書奶茶色系有落差。</p>
+  <div class="social-chips-e">
+    <a class="chip-e" href="#" style="--brand:#10B981"><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm6.9 6h-3c-.3-1.2-.8-2.4-1.4-3.4 1.9.7 3.5 1.9 4.4 3.4zM12 4c.9 1.2 1.5 2.5 2 4H10c.5-1.5 1.1-2.8 2-4z"/></svg>旅學堂官網</a>
+    <a class="chip-e" href="#" style="--brand:#1877F2"><svg viewBox="0 0 24 24"><path d="M14 13.5h2.5l1-4H14V7c0-1 .5-2 2-2h1.5V1.5c-1-.2-2-.3-3-.3-3 0-5 2-5 5v2.5H6v4h3.5V22h4.5v-8.5z"/></svg>旅學堂 FB</a>
+    <a class="chip-e" href="#" style="--brand:#1877F2"><svg viewBox="0 0 24 24"><path d="M14 13.5h2.5l1-4H14V7c0-1 .5-2 2-2h1.5V1.5c-1-.2-2-.3-3-.3-3 0-5 2-5 5v2.5H6v4h3.5V22h4.5v-8.5z"/></svg>新北社區旅學關懷協會</a>
+    <a class="chip-e" href="#" style="--brand:#1877F2"><svg viewBox="0 0 24 24"><path d="M14 13.5h2.5l1-4H14V7c0-1 .5-2 2-2h1.5V1.5c-1-.2-2-.3-3-.3-3 0-5 2-5 5v2.5H6v4h3.5V22h4.5v-8.5z"/></svg>Vicky 個人 FB</a>
+  </div>
+</div>
+
+</body>
+</html>
