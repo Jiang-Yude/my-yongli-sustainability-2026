@@ -378,6 +378,55 @@
     line-height: 1.7;
   }
   .first-version-note strong { color: var(--gold); }
+
+  /* ===== 下一頁導引 ===== */
+  .case-next-section { padding: 24px 5vw 60px; max-width: 1320px; margin: 0 auto; }
+  .case-next-card {
+    display: flex; align-items: center; gap: 28px;
+    padding: 28px 32px;
+    background: linear-gradient(135deg, #FBF5E4 0%, #F4E7C5 100%);
+    border: 1.5px solid var(--gold, #C9A961);
+    border-radius: 16px;
+    text-decoration: none; color: var(--ink);
+    transition: all 0.3s cubic-bezier(0.2,0.8,0.3,1);
+    box-shadow: 0 4px 16px rgba(168,136,74,0.12);
+  }
+  .case-next-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(168,136,74,0.28);
+    border-color: var(--gold-deep, #8B6508);
+  }
+  .case-next-meta { flex: 1; }
+  .case-next-label {
+    font-size: 13px; letter-spacing: 0.18em;
+    color: var(--gold-deep, #8B6508); font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .case-next-name {
+    font-family: "Noto Serif TC", serif;
+    font-size: 1.6rem; font-weight: 600;
+    color: var(--ink); margin-bottom: 10px;
+    letter-spacing: 0.04em;
+  }
+  .case-next-desc {
+    font-size: 15px; color: var(--ink-soft, #54514A);
+    line-height: 1.75; margin: 0;
+  }
+  .case-next-arrow {
+    flex-shrink: 0;
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--gold, #C9A961); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.6rem; font-weight: 700;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 12px rgba(168,136,74,0.3);
+  }
+  .case-next-card:hover .case-next-arrow { transform: translateX(6px); background: var(--gold-deep, #8B6508); }
+  @media (max-width: 640px) {
+    .case-next-card { padding: 22px 20px; gap: 18px; }
+    .case-next-name { font-size: 1.25rem; }
+    .case-next-arrow { width: 44px; height: 44px; font-size: 1.3rem; }
+  }
 </style>
 </head>
 <body>
@@ -1189,6 +1238,20 @@
 
       <p class="source-note">3/22 共識會議「KPI 指標表初版」（首版以「優先追蹤」項目為主，其餘逐年導入）</p>
     </div>
+  </div>
+</section>
+
+<!-- ============ 下一頁導引 ============ -->
+<section class="case-next-section">
+  <div class="container">
+    <a href="methodology.html" class="case-next-card">
+      <div class="case-next-meta">
+        <div class="case-next-label">下一頁　評估方法</div>
+        <div class="case-next-name">影響力衡量方法</div>
+        <p class="case-next-desc">借用旅學堂陪力卡的 5 個階段，觀察 19 位社友在永力社系統中的角色與成長軌跡。每年回看一次，下一年的方向自然浮現。</p>
+      </div>
+      <div class="case-next-arrow">→</div>
+    </a>
   </div>
 </section>
 
