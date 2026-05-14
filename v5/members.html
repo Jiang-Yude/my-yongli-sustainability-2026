@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <title>社友介紹｜2025-2026 永續影響力報告書｜永力社</title>
-<meta name="description" content="永力社 9 位社友的職業專業、服務初衷與在系統中的角色定位。">
+<meta name="description" content="永力社 19 位社友的職業專業、服務初衷與在系統中的角色定位。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600;700&display=swap" rel="stylesheet">
@@ -78,6 +78,32 @@
 .svc-chip-community { background: rgba(0,137,123,0.12); color: #00695C; }
 .svc-chip-international { background: rgba(106,27,154,0.12); color: #4A148C; }
 .svc-chip-youth { background: rgba(239,108,0,0.12); color: #E65100; }
+.member-card .annual-flag {
+  position: absolute; top: 14px; right: 14px;
+  display: inline-flex; align-items: center; gap: 4px;
+  background: #fff; color: #8B6508;
+  border: 2px solid #C9A961;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.08em;
+  padding: 4px 10px; border-radius: 99px;
+  pointer-events: none;
+}
+.member-card .satellite-flag {
+  position: absolute; top: 14px; right: 14px;
+  background: #FFF8E6; color: #8B6508;
+  border: 1px solid #C9A961;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+  padding: 4px 10px; border-radius: 99px;
+  pointer-events: none;
+}
+.member-card .pending-flag {
+  position: absolute; top: 14px; right: 14px;
+  background: #F0E6D2; color: #8B7355;
+  border: 1px dashed #C8A878;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+  padding: 4px 10px; border-radius: 99px;
+  pointer-events: none;
+}
+.member-card { position: relative; }
 .member-service-link {
   display: block;
   padding: 14px 20px;
@@ -153,23 +179,22 @@
 <section class="hero" style="padding-bottom: 24px;">
   <div class="container">
     <h1>社友介紹</h1>
-    <p class="subtitle">9 位社友的職業專業、服務初衷與在永力社的角色定位。本年度提案推動服務計畫的 5 位先列上方，其餘 4 位以社務或專業形式持續支持。</p>
+    <p class="subtitle">19 位社友的職業專業、服務初衷與在永力社的角色定位。本年度提案推動服務計畫的社友先列上方，其餘以社務或專業形式持續支持。</p>
     <div class="meta">
-      <span class="pill">9 位社友</span>
-      <span class="pill">5 位提案計畫</span>
-      <span class="pill">4 位社務支持</span>
+      <span class="pill">19 位社友</span>
+      <span class="pill">15 位完整人物誌</span>
+      <span class="pill">4 位短卡片簡介</span>
     </div>
   </div>
 </section>
 
 <div class="container">
 
-  <h2 class="section-divider">本年度推動服務計畫的社友</h2>
-  <p class="section-divider-desc">5 位社友以各自的職業專業推動服務計畫。點卡片進入完整人物誌。</p>
+  <h3 class="member-section-sub">社長 · 前社長 · 下屆社長</h3>
 
   <div class="member-grid">
 
-    <article class="member-card">
+    <article class="member-card" data-role="cp">
       <a class="member-head" href="profiles/01-cp-lin.html">
         <div class="avatar role-found">林</div>
         <div class="info">
@@ -191,99 +216,25 @@
       </a>
     </article>
 
-    <article class="member-card">
-      <a class="member-head" href="profiles/02-vicky-li.html">
-        <div class="avatar role-act">李</div>
+    <!-- 林秉鴻 Nick（幹部） -->
+    <article class="member-card" data-role="pp">
+      <a class="member-head" href="profiles/07-nick-lin.html">
+        <div class="avatar role-cont">林</div>
         <div class="info">
-          <div class="name">李琪 Vicky</div>
-          <div class="role">永力社理事 · 旅學女力</div>
+          <div class="name">林秉鴻 PP Nick</div>
+          <div class="role">前社長 · 讓價值長久延續的人</div>
         </div>
       </a>
       <div class="member-body">
-        <p class="theme-line">把職業服務做好，就同時是社會服務——讓二度就業婦女成為導覽員；與淡水國中合作旅學 PBL 教案，與淡江大學合作帶領學生進行社會影響力評估。</p>
+        <p class="theme-line">把短期成果變成可被印刷、可被收藏、可被反覆翻閱的形式。</p>
         <div class="focus-row">
-          <span class="focus-chip svc-chip-vocational">職業服務</span>
-          <span class="focus-chip svc-chip-community">社區服務</span>
-          <span class="focus-chip svc-chip-youth">青少年服務</span>
-        </div>
-      </div>
-      <a class="member-service-link" href="services/02-tamsui.html">
-        <div class="link-meta">推動的服務計畫 · 社內獎助金</div>
-        <div class="link-name">綠動淡水 輕軌文化永續共創 →</div>
-      </a>
-    </article>
-
-    <article class="member-card">
-      <a class="member-head" href="profiles/05-lisa-lin.html">
-        <div class="avatar role-act">林</div>
-        <div class="info">
-          <div class="name">林映如 Lisa</div>
-          <div class="role">永續百家創辦人 · 零廢淨行動派</div>
-        </div>
-      </a>
-      <div class="member-body">
-        <p class="theme-line">把零廢棄、淨灘、海洋永續從理念變成日常行動，帶上百位志工換來真實改變。</p>
-        <div class="focus-row">
-          <span class="focus-chip svc-chip-community">社區服務</span>
-        </div>
-      </div>
-      <a class="member-service-link" href="services/07-zero-waste-mazu.html">
-        <div class="link-meta">推動的服務計畫 · 扶輪社區服務團</div>
-        <div class="link-name">零廢敬媽祖 在地永續行動 →</div>
-      </a>
-    </article>
-
-    <article class="member-card">
-      <a class="member-head" href="profiles/06-james-gao.html">
-        <div class="avatar role-act">高</div>
-        <div class="info">
-          <div class="name">高清坊 James</div>
-          <div class="role">通信閣規劃者 · 以空間設計照護未來</div>
-        </div>
-      </a>
-      <div class="member-body">
-        <p class="theme-line">用空間設計回應高齡照顧、生命教育、創新教育訓練。</p>
-        <div class="focus-row">
-          <span class="focus-chip svc-chip-vocational">職業服務</span>
-          <span class="focus-chip svc-chip-youth">青少年服務</span>
-        </div>
-      </div>
-      <a class="member-service-link" href="services/04-life-warrior.html">
-        <div class="link-meta">推動的服務計畫 · 社內獎助金</div>
-        <div class="link-name">永續的生命鬥士與傳承 創新教育訓練 →</div>
-      </a>
-    </article>
-
-    <article class="member-card">
-      <a class="member-head" href="profiles/09-vincent-chen.html">
-        <div class="avatar role-cont">陳</div>
-        <div class="info">
-          <div class="name">陳明勇 Vincent</div>
-          <div class="role">引導師 · 報告書主筆</div>
-        </div>
-      </a>
-      <div class="member-body">
-        <p class="theme-line">用引導技術、SROI、ESG 的方法論，把社區、企業、社友之間的對話接起來。</p>
-        <div class="focus-row">
-          <span class="focus-chip svc-chip-vocational">職業服務</span>
-          <span class="focus-chip svc-chip-community">社區服務</span>
           <span class="focus-chip svc-chip-club">社務服務</span>
         </div>
       </div>
-      <a class="member-service-link" href="services/06-community.html">
-        <div class="link-meta">推動的服務計畫 · 社內獎助金</div>
-        <div class="link-name">社區永續支持計畫 共創在地 ESG 行動 →</div>
-      </a>
     </article>
 
-  </div>
-
-  <h2 class="section-divider">其他社友</h2>
-  <p class="section-divider-desc">本年度雖未提案個人服務計畫，仍以各自的專業與身份持續支持永力社的服務行動。</p>
-
-  <div class="member-grid">
-
-    <article class="member-card">
+    <!-- 賴光蘭 Helen（幹部） -->
+    <article class="member-card" data-role="pp">
       <a class="member-head" href="profiles/04-helen-lai.html">
         <div class="avatar role-guard">賴</div>
         <div class="info">
@@ -301,39 +252,8 @@
       </div>
     </article>
 
-    <article class="member-card">
-      <a class="member-head" href="profiles/03-derek-huang.html">
-        <div class="avatar role-guard">黃</div>
-        <div class="info">
-          <div class="name">黃世祿 Derek</div>
-          <div class="role">資訊系統服務 · 用制度守住價值的人</div>
-        </div>
-      </a>
-      <div class="member-body">
-        <p class="theme-line">把社務、知識、服務計畫的資料，放進一套可被檢視、可被傳承的系統裡。</p>
-        <div class="focus-row">
-          <span class="focus-chip svc-chip-club">社務服務</span>
-        </div>
-      </div>
-    </article>
-
-    <article class="member-card">
-      <a class="member-head" href="profiles/07-nick-lin.html">
-        <div class="avatar role-cont">林</div>
-        <div class="info">
-          <div class="name">林秉鴻 PP Nick</div>
-          <div class="role">前社長 · 讓價值長久延續的人</div>
-        </div>
-      </a>
-      <div class="member-body">
-        <p class="theme-line">把短期成果變成可被印刷、可被收藏、可被反覆翻閱的形式。</p>
-        <div class="focus-row">
-          <span class="focus-chip svc-chip-club">社務服務</span>
-        </div>
-      </div>
-    </article>
-
-    <article class="member-card">
+    <!-- 黃丞隆 Rich（幹部） -->
+    <article class="member-card" data-role="pe">
       <a class="member-head" href="profiles/08-rich-huang.html">
         <div class="avatar role-cont">黃</div>
         <div class="info">
@@ -351,9 +271,277 @@
 
   </div>
 
-  <div class="placeholder-card">
-    <strong>＋ 更多社友介紹陸續加入</strong><br>
-    其他社友與衛星社員的故事，將陸續於本報告中呈現。
+  <h3 class="member-section-sub">社友（依姓氏筆畫）</h3>
+
+  <div class="member-grid">
+
+    <!-- 李琪 Vicky -->
+    <article class="member-card">
+      <span class="annual-flag">年度服務計畫</span>
+      <a class="member-head" href="profiles/02-vicky-lee.html">
+        <div class="avatar role-act">李</div>
+        <div class="info">
+          <div class="name">李琪 Vicky</div>
+          <div class="role">永力社理事 · 旅學女力</div>
+        </div>
+      </a>
+      <div class="member-body">
+        <p class="theme-line">把職業服務做好，就同時是社會服務。讓二度就業婦女成為導覽員；與淡水國中合作旅學 PBL 教案，與淡江大學合作帶領學生進行社會影響力評估。</p>
+        <div class="focus-row">
+          <span class="focus-chip svc-chip-vocational">職業服務</span>
+          <span class="focus-chip svc-chip-community">社區服務</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 周煐傑 Rick（短卡片） -->
+    <article class="member-card">
+      <span class="pending-flag">所屬社待確認</span>
+      <div class="member-head">
+        <div class="avatar" style="background:linear-gradient(135deg,#7B5E3B,#A8884A)"></div>
+        <div class="info">
+          <div class="name">周煐傑 Rick</div>
+          <div class="role">戲劇教育推動者</div>
+        </div>
+      </div>
+      <div class="member-body">
+        <p class="theme-line">以戲劇教育培訓提升人物質素，建立美好生命共榮圈。</p>
+        <div class="focus-row">
+          <span class="focus-chip svc-chip-vocational">職業服務</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 林映如 Lisa -->
+    <article class="member-card">
+      <span class="annual-flag">年度服務計畫</span>
+      <a class="member-head" href="profiles/05-lisa-lin.html">
+        <div class="avatar role-act">林</div>
+        <div class="info">
+          <div class="name">林映如 Lisa</div>
+          <div class="role">永續百行創辦人 · 零廢淨行動派</div>
+        </div>
+      </a>
+      <div class="member-body">
+        <p class="theme-line">把零廢棄、淨灘、海洋永續從理念變成日常行動，帶上百位志工換來真實改變。</p>
+        <div class="focus-row">
+          <span class="focus-chip svc-chip-community">社區服務</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 林修緯 Wayne -->
+    <article class="member-card">
+      <span class="pending-flag">所屬社待確認</span>
+      <a class="member-head" href="profiles/15-wayne-lin.html">
+        <div class="avatar" style="background:linear-gradient(135deg,#7B5E3B,#A8884A)"></div>
+        <div class="info">
+          <div class="name">林修緯 Wayne</div>
+          <div class="role">財商規劃師</div>
+        </div>
+      </a>
+      <div class="member-body">
+        <p class="theme-line">用財商思維，為家庭建立永續的防禦率。</p>
+        <div class="focus-row">
+          <span class="focus-chip svc-chip-vocational">職業服務</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 姚曼菁 Teresa -->
+    <article class="member-card">
+      <span class="pending-flag">所屬社待確認</span>
+      <a class="member-head" href="profiles/13-teresa-yao.html">
+        <div class="avatar" style="background:linear-gradient(135deg,#7B5E3B,#A8884A)"></div>
+        <div class="info">
+          <div class="name">姚曼菁 Teresa</div>
+          <div class="role">國際發展工作者</div>
+        </div>
+      </a>
+      <div class="member-body">
+        <p class="theme-line">在尼泊爾建立本地 NGO，讓教育、婦女培力、弱勢關懷成為永續運作的力量。</p>
+        <div class="focus-row">
+          <span class="focus-chip svc-chip-international">國際服務</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 高清坊 James -->
+    <article class="member-card">
+      <span class="annual-flag">年度服務計畫</span>
+      <a class="member-head" href="profiles/06-james-gao.html">
+        <div class="avatar role-act">高</div>
+        <div class="info">
+          <div class="name">高清坊 James</div>
+          <div class="role">通用閣規劃者 · 以空間設計照護未來</div>
+        </div>
+      </a>
+      <div class="member-body">
+        <p class="theme-line">用空間設計回應高齡照顧、生命教育、創新教育訓練。</p>
+        <div class="focus-row">
+          <span class="focus-chip svc-chip-vocational">職業服務</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 張艾筆 Albee -->
+    <article class="member-card">
+      <span class="pending-flag">所屬社待確認</span>
+      <a class="member-head" href="profiles/10-albee-chang.html">
+        <div class="avatar" style="background:linear-gradient(135deg,#7B5E3B,#A8884A)"></div>
+        <div class="info">
+          <div class="name">張艾筆 Albee</div>
+          <div class="role">媒體製作人 · 永續策劃者</div>
+        </div>
+      </a>
+      <div class="member-body">
+        <p class="theme-line">用媒體轉譯善的影響力，從廣告、MV、Podcast 到永續策劃。</p>
+        <div class="focus-row">
+          <span class="focus-chip svc-chip-vocational">職業服務</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 許崇禧 Chris（短卡片） -->
+    <article class="member-card">
+      <span class="pending-flag">所屬社待確認</span>
+      <div class="member-head">
+        <div class="avatar" style="background:linear-gradient(135deg,#7B5E3B,#A8884A)"></div>
+        <div class="info">
+          <div class="name">許崇禧 Chris</div>
+          <div class="role">HS-audio 純音工坊創辦人</div>
+        </div>
+      </div>
+      <div class="member-body">
+        <p class="theme-line">修隨身聽起家近 40 年，自創 HS-audio 純音工坊。</p>
+        <div class="focus-row">
+          <span class="focus-chip svc-chip-club">社務服務</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 陳明勇 Vincent -->
+    <article class="member-card">
+      <span class="annual-flag">年度服務計畫</span>
+      <a class="member-head" href="profiles/09-vincent-chen.html">
+        <div class="avatar role-cont">陳</div>
+        <div class="info">
+          <div class="name">陳明勇 Vincent</div>
+          <div class="role">引導師 · 報告書主筆</div>
+        </div>
+      </a>
+      <div class="member-body">
+        <p class="theme-line">用引導技術、SROI、ESG 的方法論，把社區、企業、社友之間的對話接起來。</p>
+        <div class="focus-row">
+          <span class="focus-chip svc-chip-vocational">職業服務</span>
+          <span class="focus-chip svc-chip-community">社區服務</span>
+          <span class="focus-chip svc-chip-club">社務服務</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 陳美華 Irene（衛星社） -->
+    <article class="member-card">
+      <span class="satellite-flag">衛星社</span>
+      <a class="member-head" href="profiles/19-irene-chen.html">
+        <div class="avatar" style="background:linear-gradient(135deg,#7B5E3B,#A8884A)"></div>
+        <div class="info">
+          <div class="name">陳美華 Irene</div>
+          <div class="role">敘事工作者 · 衛星社創社主席</div>
+        </div>
+      </a>
+      <div class="member-body">
+        <p class="theme-line">用敘事留住地方與信仰的歷史；永力社創社秘書、衛星社創社主席。</p>
+        <div class="focus-row">
+          <span class="focus-chip svc-chip-community">社區服務</span>
+          <span class="focus-chip svc-chip-club">社務服務</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 黃世祿 Derek -->
+    <article class="member-card">
+      <a class="member-head" href="profiles/03-derek-huang.html">
+        <div class="avatar role-guard">黃</div>
+        <div class="info">
+          <div class="name">黃世祿 Derek</div>
+          <div class="role">資訊系統服務 · 用制度守住價值的人</div>
+        </div>
+      </a>
+      <div class="member-body">
+        <p class="theme-line">把社務、知識、服務計畫的資料，放進一套可被檢視、可被傳承的系統裡。</p>
+        <div class="focus-row">
+          <span class="focus-chip svc-chip-club">社務服務</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 劉彥琳 Grace（短卡片） -->
+    <article class="member-card">
+      <span class="pending-flag">所屬社待確認</span>
+      <div class="member-head">
+        <div class="avatar" style="background:linear-gradient(135deg,#7B5E3B,#A8884A)"></div>
+        <div class="info">
+          <div class="name">劉彥琳 Grace</div>
+          <div class="role">保險輔導顧問 · 喜樂樂團創辦人</div>
+        </div>
+      </div>
+      <div class="member-body">
+        <p class="theme-line">保險業 30 年輔導夥伴，創立喜樂樂團讓音樂成為心靈支持。</p>
+        <div class="focus-row">
+          <span class="focus-chip svc-chip-vocational">職業服務</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 鄭仲翔 Eric -->
+    <article class="member-card">
+      <span class="pending-flag">所屬社待確認</span>
+      <a class="member-head" href="profiles/16-eric-cheng.html">
+        <div class="avatar" style="background:linear-gradient(135deg,#7B5E3B,#A8884A)"></div>
+        <div class="info">
+          <div class="name">鄭仲翔 Eric</div>
+          <div class="role">光機電整合工程師</div>
+        </div>
+      </a>
+      <div class="member-body">
+        <p class="theme-line">以光機電整合，推動國產醫材與檢測設備的自主化。</p>
+        <div class="focus-row">
+          <span class="focus-chip svc-chip-vocational">職業服務</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 鄭雯（媽芽） -->
+    <article class="member-card">
+      <span class="pending-flag">所屬社待確認</span>
+      <a class="member-head" href="profiles/18-meiya-cheng.html">
+        <div class="avatar" style="background:linear-gradient(135deg,#7B5E3B,#A8884A)"></div>
+        <div class="info">
+          <div class="name">鄭雯（媽芽）Mei-ya</div>
+          <div class="role">劇場工作者 · 生命教育推動者</div>
+        </div>
+      </a>
+      <div class="member-body">
+        <p class="theme-line">以戲劇喚起社會參與，把生命關懷從教育延伸到環境永續。</p>
+        <div class="focus-row">
+          <span class="focus-chip svc-chip-community">社區服務</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 蕭瑛瑱 Rita（名片） -->
+    <article class="member-card">
+      <span class="pending-flag">所屬社待確認</span>
+      <div class="member-head">
+        <div class="avatar" style="background:linear-gradient(135deg,#7B5E3B,#A8884A)"></div>
+        <div class="info">
+          <div class="name">蕭瑛瑱 Rita</div>
+          <div class="role">社友</div>
+        </div>
+      </div>
+    </article>
+
   </div>
 
 </div>
