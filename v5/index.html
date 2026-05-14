@@ -197,27 +197,28 @@ img{max-width:100%;display:block}
 
 /* ===== 9 位社友圓圈頭像橫排（CP→PP→PE→筆畫） ===== */
 .people-strip{
-  margin-top:64px;
-  padding-top:40px;
+  margin-top:40px;
+  padding-top:28px;
   border-top:1px solid var(--line);
 }
 .people-strip-grid{
   display:flex;
   flex-wrap:wrap;
-  justify-content:center;             /* 第二排 4 個自動置中 */
-  gap:24px 18px;                      /* 行間 24 / 欄間 18 */
-  margin-bottom:20px;
+  justify-content:center;
+  gap:18px 12px;
+  margin-bottom:16px;
 }
 .person-tile{
-  flex:0 0 calc(20% - 18px);          /* 一排 5 個 */
+  position:relative;
+  flex:0 0 calc(20% - 12px);
   text-decoration:none;
   color:inherit;
   text-align:center;
   display:flex;
   flex-direction:column;
   align-items:center;
-  gap:12px;
-  padding:14px 8px;
+  gap:10px;
+  padding:10px 6px;
   border-radius:14px;
   transition:transform 0.35s cubic-bezier(0.2,0.8,0.3,1), background 0.3s, box-shadow 0.3s;
 }
@@ -225,9 +226,10 @@ img{max-width:100%;display:block}
   background:var(--paper-2);
   transform:translateY(-4px);
   box-shadow:0 6px 18px rgba(43,42,38,0.07);
+  z-index:10;
 }
 .avatar-circle{
-  width:108px;height:108px;           /* 兩排排版有更多空間，圓圈放大 */
+  width:108px;height:108px;
   border-radius:50%;
   display:grid;place-items:center;
   font-family:"Noto Serif TC",serif;
@@ -235,34 +237,39 @@ img{max-width:100%;display:block}
   font-weight:600;
   color:var(--paper);
   background-color:var(--sage);
-  background-size:cover;              /* V1：完整 cover 不額外 zoom */
+  background-size:cover;
   background-position:center top;
   flex-shrink:0;
   letter-spacing:0;
   overflow:hidden;
+  transition:transform 0.35s cubic-bezier(0.2,0.8,0.3,1), box-shadow 0.35s;
+}
+.person-tile:hover .avatar-circle{
+  transform:scale(1.08);
+  box-shadow:0 0 0 3px var(--gold-soft), 0 8px 20px rgba(168,136,74,0.25);
 }
 /* 當有照片時，隱藏漢字 fallback */
 .avatar-circle[style*="background-image"]{
   color:transparent;
   font-size:0;
 }
-/* 角色色票（用 background-color 不用 shorthand） */
+/* 角色色票 */
 .person-tile[data-role="cp"]     .avatar-circle{background-color:#7B5E3B}
 .person-tile[data-role="pp"]     .avatar-circle{background-color:#4F6E61}
 .person-tile[data-role="pe"]     .avatar-circle{background-color:#A8884A}
 .person-tile[data-role="member"] .avatar-circle{background-color:#6B8E7F}
 
 .person-tile .name-label{
-  font-size:13px;
+  font-size:15px;
   font-weight:600;
   color:var(--ink);
-  line-height:1.35;
+  line-height:1.4;
   letter-spacing:0.02em;
 }
 .person-tile .role-label{
-  font-size:11px;
+  font-size:13px;
   color:var(--ink-3);
-  line-height:1.35;
+  line-height:1.4;
   letter-spacing:0.04em;
 }
 .people-strip-hint{
@@ -273,15 +280,68 @@ img{max-width:100%;display:block}
   letter-spacing:0.04em;
 }
 
+/* ===== Hover 金句對話泡泡 ===== */
+.person-tile[data-quote]::after{
+  content:attr(data-quote);
+  position:absolute;
+  bottom:calc(100% + 14px);
+  left:50%;
+  transform:translateX(-50%) translateY(8px);
+  background:linear-gradient(135deg, #FBF5E4 0%, #F4E7C5 100%);
+  color:var(--ink);
+  border:1.5px solid var(--gold);
+  border-radius:14px;
+  padding:14px 20px;
+  font-family:"Noto Serif TC",serif;
+  font-size:14px;
+  font-weight:500;
+  line-height:1.65;
+  letter-spacing:0.03em;
+  white-space:normal;
+  width:max-content;
+  max-width:280px;
+  text-align:center;
+  box-shadow:0 10px 28px rgba(168,136,74,0.22);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 0.35s cubic-bezier(0.4,0,0.2,1), transform 0.35s cubic-bezier(0.4,0,0.2,1);
+  z-index:50;
+}
+.person-tile[data-quote]::before{
+  content:"";
+  position:absolute;
+  bottom:calc(100% + 6px);
+  left:50%;
+  transform:translateX(-50%) translateY(8px);
+  border:8px solid transparent;
+  border-top-color:var(--gold);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 0.35s cubic-bezier(0.4,0,0.2,1), transform 0.35s cubic-bezier(0.4,0,0.2,1);
+  z-index:49;
+}
+.person-tile[data-quote]:hover::after,
+.person-tile[data-quote]:hover::before{
+  opacity:1;
+  transform:translateX(-50%) translateY(0);
+}
+
 @media(max-width:900px){
-  .person-tile{flex:0 0 calc(25% - 18px)}    /* tablet: 一排 4 個 */
+  .person-tile{flex:0 0 calc(25% - 12px)}
   .avatar-circle{width:88px;height:88px;font-size:30px}
+  .person-tile .name-label{font-size:14px}
+  .person-tile .role-label{font-size:12px}
 }
 @media(max-width:600px){
-  .person-tile{flex:0 0 calc(33.333% - 14px)} /* 手機: 一排 3 個 */
-  .people-strip-grid{gap:20px 10px}
-  .avatar-circle{width:72px;height:72px;font-size:26px}
+  .people-strip{margin-top:24px;padding-top:20px}
+  .people-strip-grid{gap:14px 8px;margin-bottom:12px}
+  .person-tile{flex:0 0 calc(33.333% - 10px);padding:8px 4px;gap:8px}
+  .avatar-circle{width:82px;height:82px;font-size:26px}
+  .person-tile .name-label{font-size:13px}
   .person-tile .role-label{display:none}
+  /* 手機沒 hover，泡泡關掉避免擋畫面 */
+  .person-tile[data-quote]::after,
+  .person-tile[data-quote]::before{display:none}
 }
 
 /* ============ section 通用 ============ */
@@ -1292,55 +1352,55 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
   <div class="people-strip">
     <div class="people-strip-grid">
 
-      <a class="person-tile" data-role="cp" href="profiles/01-cp-lin.html">
+      <a class="person-tile" data-role="cp" data-quote="把「做好事」推進為可長期運作的影響力系統。" href="profiles/01-cp-lin.html">
         <div class="avatar-circle" style="background-image:url(assets/img/members/cp.jpg)"></div>
         <div class="name-label">CP 林學賢</div>
         <div class="role-label">創社社長</div>
       </a>
 
-      <a class="person-tile" data-role="pp" href="profiles/07-nick-lin.html">
+      <a class="person-tile" data-role="pp" data-quote="讓短期成果變成可被收藏、可被反覆翻閱的形式。" href="profiles/07-nick-lin.html">
         <div class="avatar-circle" style="background-image:url(assets/img/members/nick.jpg)"></div>
         <div class="name-label">Nick 林秉鴻</div>
         <div class="role-label">PP 前社長</div>
       </a>
 
-      <a class="person-tile" data-role="pp" href="profiles/04-helen-lai.html">
+      <a class="person-tile" data-role="pp" data-quote="真正的愛，是建立能長久存在的結構。" href="profiles/04-helen-lai.html">
         <div class="avatar-circle" style="background-image:url(assets/img/members/helen.jpg)"></div>
         <div class="name-label">Helen 賴光蘭</div>
         <div class="role-label">PP 前社長</div>
       </a>
 
-      <a class="person-tile" data-role="pe" href="profiles/08-rich-huang.html">
+      <a class="person-tile" data-role="pe" data-quote="在創社初期接下下一棒，因為相信方向值得繼續推。" href="profiles/08-rich-huang.html">
         <div class="avatar-circle" style="background-image:url(assets/img/members/rich.jpg)"></div>
         <div class="name-label">Rich 黃丞隆</div>
         <div class="role-label">PE 下屆社長</div>
       </a>
 
-      <a class="person-tile" data-role="member" href="profiles/02-vicky-lee.html">
+      <a class="person-tile" data-role="member" data-quote="把職業服務做好，就同時是社會服務。" href="profiles/02-vicky-lee.html">
         <div class="avatar-circle" style="background-image:url(assets/img/members/vicky.jpg)"></div>
         <div class="name-label">Vicky 李琪</div>
         <div class="role-label">旅學堂創辦人</div>
       </a>
 
-      <a class="person-tile" data-role="member" href="profiles/05-lisa-lin.html">
+      <a class="person-tile" data-role="member" data-quote="把零廢棄從理念變成日常行動，帶上百位志工換來真實改變。" href="profiles/05-lisa-lin.html">
         <div class="avatar-circle" style="background-image:url(assets/img/members/lisa.jpg)"></div>
         <div class="name-label">Lisa 林映如</div>
         <div class="role-label">永續百行</div>
       </a>
 
-      <a class="person-tile" data-role="member" href="profiles/06-james-gao.html">
+      <a class="person-tile" data-role="member" data-quote="用空間設計，回應高齡照顧、生命教育與創新訓練。" href="profiles/06-james-gao.html">
         <div class="avatar-circle" style="background-image:url(assets/img/members/james.jpg)"></div>
         <div class="name-label">James 高清坊</div>
         <div class="role-label">通用閣規劃者</div>
       </a>
 
-      <a class="person-tile" data-role="member" href="profiles/09-vincent-chen.html">
+      <a class="person-tile" data-role="member" data-quote="用引導、SROI、ESG，把對話接起來，把影響力衡量出來。" href="profiles/09-vincent-chen.html">
         <div class="avatar-circle" style="background-image:url(assets/img/members/vincent.jpg)"></div>
         <div class="name-label">Vincent 陳明勇</div>
         <div class="role-label">引導師 · 報告書主筆</div>
       </a>
 
-      <a class="person-tile" data-role="member" href="profiles/03-derek-huang.html">
+      <a class="person-tile" data-role="member" data-quote="把每一份價值，放進可被檢視、可被傳承的系統裡。" href="profiles/03-derek-huang.html">
         <div class="avatar-circle" style="background-image:url(assets/img/members/derek.jpg)"></div>
         <div class="name-label">Derek 黃世祿</div>
         <div class="role-label">資訊系統服務</div>
