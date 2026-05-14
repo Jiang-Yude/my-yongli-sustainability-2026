@@ -340,11 +340,24 @@ img{max-width:100%;display:block}
 }
 @media(max-width:600px){
   .people-strip{margin-top:22px;padding-top:18px}
-  .people-strip-grid{gap:16px 10px;margin-bottom:12px}
-  .person-tile{flex:0 0 calc(33.333% - 10px);gap:8px}
+  .people-strip-grid{gap:18px 10px;margin-bottom:12px}
+  .person-tile{flex:0 0 calc(33.333% - 10px);gap:6px}
   .avatar-circle{width:84px;height:84px;font-size:26px}
   .person-tile .name-label{font-size:13px}
   .person-tile .role-label{display:none}
+  /* 手機沒 hover：金句改 inline 永遠顯示 */
+  .person-tile[data-quote]::after{
+    content:attr(data-quote);
+    display:block;
+    font-family:"Noto Serif TC",serif;
+    font-size:12px;
+    color:var(--ink-2);
+    line-height:1.6;
+    letter-spacing:0.02em;
+    max-width:170px;
+    margin:4px auto 0;
+    text-align:center;
+  }
 }
 
 /* ============ section 通用 ============ */
