@@ -46,6 +46,19 @@
 .member-head .avatar.role-guard { color: var(--role-guard); background: #DDE5EE; border-color: var(--role-guard); }
 .member-head .avatar.role-act { color: var(--role-act); background: #F3DCD2; border-color: var(--role-act); }
 .member-head .avatar.role-cont { color: var(--role-cont); background: #D8E5DD; border-color: var(--role-cont); }
+.member-head .avatar[style*="background-image"] {
+  background-size: cover;
+  background-position: center top;
+  color: transparent;
+  font-size: 0;
+  border-color: #D4B97A;
+}
+.member-head .avatar.avatar-placeholder {
+  background: linear-gradient(135deg, #7B5E3B, #A8884A);
+  color: #FBF5E4;
+  border-color: #8B7355;
+  font-family: "Noto Serif TC", serif;
+}
 .member-head .name {
   font-size: 1.05rem; font-weight: 700; color: var(--ink);
   margin-bottom: 2px;
@@ -196,7 +209,7 @@
 
     <article class="member-card" data-role="cp">
       <a class="member-head" href="profiles/01-cp-lin.html">
-        <div class="avatar role-found">林</div>
+        <div class="avatar" style="background-image:url(assets/img/members/cp.jpg)"></div>
         <div class="info">
           <div class="name">林學賢 CP Impact</div>
           <div class="role">創社社長 · 價值場域建構者</div>
@@ -219,7 +232,7 @@
     <!-- 林秉鴻 Nick（幹部） -->
     <article class="member-card" data-role="pp">
       <a class="member-head" href="profiles/07-nick-lin.html">
-        <div class="avatar role-cont">林</div>
+        <div class="avatar" style="background-image:url(assets/img/members/nick.jpg)"></div>
         <div class="info">
           <div class="name">林秉鴻 PP Nick</div>
           <div class="role">前社長 · 讓價值長久延續的人</div>
@@ -236,7 +249,7 @@
     <!-- 賴光蘭 Helen（幹部） -->
     <article class="member-card" data-role="pp">
       <a class="member-head" href="profiles/04-helen-lai.html">
-        <div class="avatar role-guard">賴</div>
+        <div class="avatar" style="background-image:url(assets/img/members/helen.jpg)"></div>
         <div class="info">
           <div class="name">賴光蘭 PP Helen</div>
           <div class="role">育成基金會執行長 · 用愛守護智青</div>
@@ -255,7 +268,7 @@
     <!-- 黃丞隆 Rich（幹部） -->
     <article class="member-card" data-role="pe">
       <a class="member-head" href="profiles/08-rich-huang.html">
-        <div class="avatar role-cont">黃</div>
+        <div class="avatar" style="background-image:url(assets/img/members/rich.jpg)"></div>
         <div class="info">
           <div class="name">黃丞隆 PE Rich</div>
           <div class="role">下屆社長 · 不畏挑戰，選擇承擔</div>
@@ -279,7 +292,7 @@
     <article class="member-card">
       <span class="annual-flag">年度服務計畫</span>
       <a class="member-head" href="profiles/02-vicky-lee.html">
-        <div class="avatar role-act">李</div>
+        <div class="avatar" style="background-image:url(assets/img/members/vicky.jpg)"></div>
         <div class="info">
           <div class="name">李琪 Vicky</div>
           <div class="role">永力社理事 · 旅學女力</div>
@@ -298,7 +311,7 @@
     <article class="member-card">
       <span class="pending-flag">所屬社待確認</span>
       <div class="member-head">
-        <div class="avatar" style="background:linear-gradient(135deg,#7B5E3B,#A8884A)"></div>
+        <div class="avatar avatar-placeholder">周</div>
         <div class="info">
           <div class="name">周煐傑 Rick</div>
           <div class="role">戲劇教育推動者</div>
@@ -316,7 +329,7 @@
     <article class="member-card">
       <span class="annual-flag">年度服務計畫</span>
       <a class="member-head" href="profiles/05-lisa-lin.html">
-        <div class="avatar role-act">林</div>
+        <div class="avatar" style="background-image:url(assets/img/members/lisa.jpg)"></div>
         <div class="info">
           <div class="name">林映如 Lisa</div>
           <div class="role">永續百行創辦人 · 零廢淨行動派</div>
@@ -334,7 +347,7 @@
     <article class="member-card">
       <span class="pending-flag">所屬社待確認</span>
       <a class="member-head" href="profiles/15-wayne-lin.html">
-        <div class="avatar" style="background:linear-gradient(135deg,#7B5E3B,#A8884A)"></div>
+        <div class="avatar avatar-placeholder">林</div>
         <div class="info">
           <div class="name">林修緯 Wayne</div>
           <div class="role">財商規劃師</div>
@@ -352,7 +365,7 @@
     <article class="member-card">
       <span class="pending-flag">所屬社待確認</span>
       <a class="member-head" href="profiles/13-teresa-yao.html">
-        <div class="avatar" style="background:linear-gradient(135deg,#7B5E3B,#A8884A)"></div>
+        <div class="avatar avatar-placeholder">姚</div>
         <div class="info">
           <div class="name">姚曼菁 Teresa</div>
           <div class="role">國際發展工作者</div>
@@ -370,7 +383,7 @@
     <article class="member-card">
       <span class="annual-flag">年度服務計畫</span>
       <a class="member-head" href="profiles/06-james-gao.html">
-        <div class="avatar role-act">高</div>
+        <div class="avatar" style="background-image:url(assets/img/members/james.jpg)"></div>
         <div class="info">
           <div class="name">高清坊 James</div>
           <div class="role">通用閣規劃者 · 以空間設計照護未來</div>
@@ -388,7 +401,7 @@
     <article class="member-card">
       <span class="pending-flag">所屬社待確認</span>
       <a class="member-head" href="profiles/10-albee-chang.html">
-        <div class="avatar" style="background:linear-gradient(135deg,#7B5E3B,#A8884A)"></div>
+        <div class="avatar avatar-placeholder">張</div>
         <div class="info">
           <div class="name">張艾筆 Albee</div>
           <div class="role">媒體製作人 · 永續策劃者</div>
@@ -406,7 +419,7 @@
     <article class="member-card">
       <span class="pending-flag">所屬社待確認</span>
       <div class="member-head">
-        <div class="avatar" style="background:linear-gradient(135deg,#7B5E3B,#A8884A)"></div>
+        <div class="avatar avatar-placeholder">許</div>
         <div class="info">
           <div class="name">許崇禧 Chris</div>
           <div class="role">HS-audio 純音工坊創辦人</div>
@@ -424,7 +437,7 @@
     <article class="member-card">
       <span class="annual-flag">年度服務計畫</span>
       <a class="member-head" href="profiles/09-vincent-chen.html">
-        <div class="avatar role-cont">陳</div>
+        <div class="avatar" style="background-image:url(assets/img/members/vincent.jpg)"></div>
         <div class="info">
           <div class="name">陳明勇 Vincent</div>
           <div class="role">引導師 · 報告書主筆</div>
@@ -444,7 +457,7 @@
     <article class="member-card">
       <span class="satellite-flag">衛星社</span>
       <a class="member-head" href="profiles/19-irene-chen.html">
-        <div class="avatar" style="background:linear-gradient(135deg,#7B5E3B,#A8884A)"></div>
+        <div class="avatar avatar-placeholder">陳</div>
         <div class="info">
           <div class="name">陳美華 Irene</div>
           <div class="role">敘事工作者 · 衛星社創社主席</div>
@@ -462,7 +475,7 @@
     <!-- 黃世祿 Derek -->
     <article class="member-card">
       <a class="member-head" href="profiles/03-derek-huang.html">
-        <div class="avatar role-guard">黃</div>
+        <div class="avatar" style="background-image:url(assets/img/members/derek.jpg)"></div>
         <div class="info">
           <div class="name">黃世祿 Derek</div>
           <div class="role">資訊系統服務 · 用制度守住價值的人</div>
@@ -480,7 +493,7 @@
     <article class="member-card">
       <span class="pending-flag">所屬社待確認</span>
       <div class="member-head">
-        <div class="avatar" style="background:linear-gradient(135deg,#7B5E3B,#A8884A)"></div>
+        <div class="avatar avatar-placeholder">劉</div>
         <div class="info">
           <div class="name">劉彥琳 Grace</div>
           <div class="role">保險輔導顧問 · 喜樂樂團創辦人</div>
@@ -498,7 +511,7 @@
     <article class="member-card">
       <span class="pending-flag">所屬社待確認</span>
       <a class="member-head" href="profiles/16-eric-cheng.html">
-        <div class="avatar" style="background:linear-gradient(135deg,#7B5E3B,#A8884A)"></div>
+        <div class="avatar avatar-placeholder">鄭</div>
         <div class="info">
           <div class="name">鄭仲翔 Eric</div>
           <div class="role">光機電整合工程師</div>
@@ -516,7 +529,7 @@
     <article class="member-card">
       <span class="pending-flag">所屬社待確認</span>
       <a class="member-head" href="profiles/18-meiya-cheng.html">
-        <div class="avatar" style="background:linear-gradient(135deg,#7B5E3B,#A8884A)"></div>
+        <div class="avatar avatar-placeholder">鄭</div>
         <div class="info">
           <div class="name">鄭雯（媽芽）Mei-ya</div>
           <div class="role">劇場工作者 · 生命教育推動者</div>
@@ -534,7 +547,7 @@
     <article class="member-card">
       <span class="pending-flag">所屬社待確認</span>
       <div class="member-head">
-        <div class="avatar" style="background:linear-gradient(135deg,#7B5E3B,#A8884A)"></div>
+        <div class="avatar avatar-placeholder">蕭</div>
         <div class="info">
           <div class="name">蕭瑛瑱 Rita</div>
           <div class="role">社友</div>
