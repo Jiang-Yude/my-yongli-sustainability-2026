@@ -188,12 +188,7 @@ img{max-width:100%;display:block}
   font-weight:500;
 }
 
-/* hero 底部裝飾 */
-.hero::after{
-  content:"";display:block;
-  margin-top:80px;
-  height:1px;background:var(--line);
-}
+/* hero 底部裝飾（已拿掉分隔線） */
 
 /* ===== 4 位幹部圓圈頭像（CP/Nick/Helen/Rich） ===== */
 .people-strip{
@@ -282,23 +277,27 @@ img{max-width:100%;display:block}
 .see-more-btn{
   display:inline-flex;
   align-items:center;
-  gap:8px;
-  padding:11px 24px;
-  border:1px solid var(--gold-soft);
+  gap:12px;
+  padding:20px 48px;
+  border:2px solid var(--gold-deep);
   border-radius:99px;
   font-family:"Noto Sans TC",sans-serif;
-  font-size:15px;
-  color:var(--gold-deep);
-  letter-spacing:0.06em;
+  font-size:18px;
+  font-weight:600;
+  color:#fff;
+  background:linear-gradient(135deg, var(--gold-deep) 0%, var(--gold) 100%);
+  letter-spacing:0.08em;
   text-decoration:none;
-  background:transparent;
+  box-shadow:0 8px 22px rgba(168,136,74,0.32);
   transition:all 0.3s cubic-bezier(0.2,0.8,0.3,1);
 }
 .see-more-btn:hover{
-  background:var(--gold-bg);
-  border-color:var(--gold);
-  transform:translateY(-2px);
-  box-shadow:0 6px 18px rgba(168,136,74,0.16);
+  transform:translateY(-3px);
+  box-shadow:0 14px 32px rgba(168,136,74,0.45);
+  filter:brightness(1.06);
+}
+@media(max-width:600px){
+  .see-more-btn{padding:16px 32px;font-size:16px}
 }
 /* 當有照片時，隱藏漢字 fallback */
 .avatar-circle[style*="background-image"]{
@@ -598,6 +597,83 @@ img{max-width:100%;display:block}
 /* 圓圈下緊接影片：壓縮上下 padding */
 .section.section-compact{padding-top:20px;padding-bottom:50px}
 @media(max-width:640px){.section.section-compact{padding-top:8px;padding-bottom:36px}}
+
+/* ============ 發行人的話（引言卡片） ============ */
+.foreword-section{padding-top:40px;padding-bottom:60px}
+.foreword-card{
+  max-width:860px;margin:0 auto;
+  background:linear-gradient(135deg, #FBF5E4 0%, #F4E7C5 100%);
+  border:1px solid var(--gold-soft);
+  border-radius:18px;
+  padding:56px 64px 48px;
+  position:relative;
+  box-shadow:0 10px 32px rgba(168,136,74,0.14);
+}
+.foreword-card::before{
+  content:"「";
+  position:absolute;
+  top:18px;left:34px;
+  font-family:"Noto Serif TC",serif;
+  font-size:5.5rem;
+  color:var(--gold);
+  line-height:1;opacity:0.32;
+  pointer-events:none;
+}
+.foreword-card h2{
+  font-family:"Noto Serif TC",serif;
+  font-size:1.9rem;
+  color:var(--gold-deep);
+  margin:0 0 32px;
+  letter-spacing:0.12em;
+  text-align:center;
+  position:relative;
+}
+.foreword-card h2::after{
+  content:"";
+  display:block;
+  width:48px;height:2px;
+  background:var(--gold);
+  margin:14px auto 0;
+}
+.foreword-card p{
+  font-family:"Noto Serif TC",serif;
+  font-size:16.5px;
+  color:var(--ink);
+  line-height:1.95;
+  letter-spacing:0.03em;
+  margin:0 0 18px;
+  text-align:justify;
+}
+.foreword-card .foreword-coda{
+  margin-top:24px;padding-top:20px;
+  border-top:1px dashed var(--gold-soft);
+  font-style:normal;
+  color:var(--ink-2);
+}
+.foreword-card .sig{
+  text-align:right;
+  margin-top:36px;padding-top:24px;
+  border-top:1px solid var(--gold-soft);
+  font-family:"Noto Serif TC",serif;
+}
+.foreword-card .sig-name{
+  font-size:1.25rem;font-weight:600;
+  color:var(--gold-deep);
+  margin-bottom:4px;
+  letter-spacing:0.04em;
+}
+.foreword-card .sig-role{
+  font-size:14px;color:var(--ink-3);
+  letter-spacing:0.06em;
+}
+@media(max-width:640px){
+  .foreword-section{padding-top:24px;padding-bottom:40px}
+  .foreword-card{padding:36px 22px 28px;border-radius:14px}
+  .foreword-card::before{font-size:3.5rem;top:12px;left:18px}
+  .foreword-card h2{font-size:1.45rem;margin-bottom:24px}
+  .foreword-card p{font-size:15px;line-height:1.85}
+  .foreword-card .sig-name{font-size:1.1rem}
+}
 
 /* ============ §01 影像大橫幅（置首） ============ */
 .video-banner{
@@ -1417,9 +1493,6 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
         <div class="role-label">資訊系統服務</div>      </a>
 
     </div>
-    <div class="see-more-wrap">
-      <a class="see-more-btn" href="#members">點我看更多社友（共 19 位）→</a>
-    </div>
   </div>
 </section>
 
@@ -1432,6 +1505,24 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
     <div class="video-meta">
       <h3>從「我」到「我們」</h3>
       <p>一支 10 分鐘的專訪長片，串連社友們以職業推動永續的故事，從個人專業出發，回到「服務社會」的扶輪本心。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 發行人的話（無編號，引言卡片） ============ -->
+<section class="section foreword-section" id="foreword">
+  <div class="foreword-card">
+    <h2>發行人的話</h2>
+    <p>國際扶輪 3481 地區 台北永續影響力扶輪社，簡稱「永力社」，是一個以創造「永續影響力」為核心使命的新創扶輪社。每一位社友都以關注全球 ESG 的趨勢，並連結自己的產業發展目標，期盼能落實在職業、社務、服務與生活實踐中，為社區、社會與世界累積持恆的影響力。</p>
+    <p>而這份「年度報告書」則是記錄永力社在 2024-2026 年度的服務行動、社友故事、夥伴關係與影響力探索。它不只是成果回顧，也是一份讓服務被看見、被學習、被延續的階段性共創紀錄。</p>
+    <p>所以，我們願意用較謙卑的態度來看這份年度報告書，我們不刻意強調它是一份永續影響力報告書，而是作為台北永續影響力扶輪社的成員，在 2024-2026 年度期間，全體社友在社務參與及服務計畫執行過程中的忠實記錄呈現。</p>
+    <p>由於永力社並非企業組織，也不是以營運績效揭露為主體的 ESG 報告書；同時，它也不完全等同於依循特定評估方法所編製的社會影響力報告書。</p>
+    <p>所以，對永力社而言，這份年度報告書，在「永續影響力」相關指標的呈現是：社友如何透過職業專業、扶輪服務與夥伴協作，持續回應社區、社會與環境的需要，並將服務成果、學習歷程與影響軌跡，整理成可被看見、可被學習、可被延續的紀錄。</p>
+    <p>因此，本報告書是永力社以扶輪五大服務為基礎，結合 SDGs、社會影響力、利害關係人觀點與影響力管理思維，所建立的一份行動揭露與學習文件；也是永力社在創社階段，回應「超我服務」「團結行善」精神，所累積公共價值的共創紀錄。</p>
+    <p class="foreword-coda">本報告此次分享 9 位社友的影響力故事，做為永力社年度耕耘的階段性紀錄。未來的報告書將繼續展現更多社友的足跡，邀請更多夥伴一起被看見、被分享、被延續。</p>
+    <div class="sig">
+      <div class="sig-name">林學賢 CP Impact</div>
+      <div class="sig-role">台北永續影響力扶輪社 · 創社社長</div>
     </div>
   </div>
 </section>

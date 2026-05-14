@@ -35,29 +35,32 @@
   border-bottom: 1px solid var(--line-soft);
 }
 .member-head .avatar {
-  width: 48px; height: 48px;
+  width: 88px; height: 88px;
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  font-size: 1.2rem; font-weight: 700;
+  font-size: 2rem; font-weight: 700;
   flex-shrink: 0;
-  border: 2px solid;
+  border: none;
+  box-shadow: 0 4px 14px rgba(43,42,38,0.12);
+  overflow: hidden;
 }
-.member-head .avatar.role-found { color: var(--role-found); background: #EFE3DA; border-color: var(--role-found); }
-.member-head .avatar.role-guard { color: var(--role-guard); background: #DDE5EE; border-color: var(--role-guard); }
-.member-head .avatar.role-act { color: var(--role-act); background: #F3DCD2; border-color: var(--role-act); }
-.member-head .avatar.role-cont { color: var(--role-cont); background: #D8E5DD; border-color: var(--role-cont); }
+.member-head .avatar.role-found { color: var(--role-found); background: #EFE3DA; }
+.member-head .avatar.role-guard { color: var(--role-guard); background: #DDE5EE; }
+.member-head .avatar.role-act { color: var(--role-act); background: #F3DCD2; }
+.member-head .avatar.role-cont { color: var(--role-cont); background: #D8E5DD; }
 .member-head .avatar[style*="background-image"] {
   background-size: cover;
   background-position: center top;
   color: transparent;
   font-size: 0;
-  border-color: #D4B97A;
 }
 .member-head .avatar.avatar-placeholder {
   background: linear-gradient(135deg, #7B5E3B, #A8884A);
   color: #FBF5E4;
-  border-color: #8B7355;
   font-family: "Noto Serif TC", serif;
+}
+@media (max-width: 600px) {
+  .member-head .avatar { width: 72px; height: 72px; font-size: 1.6rem; }
 }
 .member-head .name {
   font-size: 1.05rem; font-weight: 700; color: var(--ink);
@@ -284,7 +287,9 @@
 
   </div>
 
-  <h3 class="member-section-sub">社友（依姓氏筆畫）</h3>
+  <hr style="margin:56px 0 0;border:0;border-top:1px dashed var(--line);">
+
+  <h3 class="member-section-sub" style="margin-top:32px;">社友（依姓氏筆畫）</h3>
 
   <div class="member-grid">
 
@@ -309,7 +314,6 @@
 
     <!-- 周煐傑 Rick（短卡片） -->
     <article class="member-card">
-      <span class="pending-flag">所屬社待確認</span>
       <div class="member-head">
         <div class="avatar avatar-placeholder">周</div>
         <div class="info">
@@ -345,7 +349,6 @@
 
     <!-- 林修緯 Wayne -->
     <article class="member-card">
-      <span class="pending-flag">所屬社待確認</span>
       <a class="member-head" href="profiles/15-wayne-lin.html">
         <div class="avatar avatar-placeholder">林</div>
         <div class="info">
@@ -363,7 +366,6 @@
 
     <!-- 姚曼菁 Teresa -->
     <article class="member-card">
-      <span class="pending-flag">所屬社待確認</span>
       <a class="member-head" href="profiles/13-teresa-yao.html">
         <div class="avatar avatar-placeholder">姚</div>
         <div class="info">
@@ -399,7 +401,6 @@
 
     <!-- 張艾筆 Albee -->
     <article class="member-card">
-      <span class="pending-flag">所屬社待確認</span>
       <a class="member-head" href="profiles/10-albee-chang.html">
         <div class="avatar avatar-placeholder">張</div>
         <div class="info">
@@ -417,7 +418,6 @@
 
     <!-- 許崇禧 Chris（短卡片） -->
     <article class="member-card">
-      <span class="pending-flag">所屬社待確認</span>
       <div class="member-head">
         <div class="avatar avatar-placeholder">許</div>
         <div class="info">
@@ -455,7 +455,6 @@
 
     <!-- 陳美華 Irene（衛星社） -->
     <article class="member-card">
-      <span class="satellite-flag">衛星社</span>
       <a class="member-head" href="profiles/19-irene-chen.html">
         <div class="avatar avatar-placeholder">陳</div>
         <div class="info">
@@ -491,7 +490,6 @@
 
     <!-- 劉彥琳 Grace（短卡片） -->
     <article class="member-card">
-      <span class="pending-flag">所屬社待確認</span>
       <div class="member-head">
         <div class="avatar avatar-placeholder">劉</div>
         <div class="info">
@@ -509,7 +507,6 @@
 
     <!-- 鄭仲翔 Eric -->
     <article class="member-card">
-      <span class="pending-flag">所屬社待確認</span>
       <a class="member-head" href="profiles/16-eric-cheng.html">
         <div class="avatar avatar-placeholder">鄭</div>
         <div class="info">
@@ -527,7 +524,6 @@
 
     <!-- 鄭雯（媽芽） -->
     <article class="member-card">
-      <span class="pending-flag">所屬社待確認</span>
       <a class="member-head" href="profiles/18-meiya-cheng.html">
         <div class="avatar avatar-placeholder">鄭</div>
         <div class="info">
@@ -545,7 +541,6 @@
 
     <!-- 蕭瑛瑱 Rita（名片） -->
     <article class="member-card">
-      <span class="pending-flag">所屬社待確認</span>
       <div class="member-head">
         <div class="avatar avatar-placeholder">蕭</div>
         <div class="info">
