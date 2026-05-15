@@ -116,7 +116,7 @@ p { margin: 0 0 1em; }
 .topbar .inner {
   max-width: 1320px;
   margin: 0 auto;
-  padding: 18px 5vw;
+  padding: 11px 5vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -131,7 +131,11 @@ p { margin: 0 0 1em; }
   letter-spacing: 0.02em;
   color: var(--ink);
   font-family: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
 }
+.topbar .brand:hover { opacity: 0.7; }
 .topbar .brand .mark {
   width: 36px; height: 36px;
   border-radius: 50%;

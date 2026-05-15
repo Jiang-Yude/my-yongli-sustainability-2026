@@ -320,126 +320,69 @@
   color:var(--ink-4);
 }
 
-/* === Hero 兩欄（沿用 common.css 預設 200px 1fr），社群 chips 跨欄置中 === */
+/* === AI 分身連結（hero 右欄）===
+   common.css 原本 .profile-hero .layout 是 grid 2 欄（200px 1fr）。
+   這裡延伸成 3 欄（200px 1fr auto）+ 整體 max-width 收窄＋置中，避免左右兩塊分太開。 */
 .profile-hero .layout {
+  grid-template-columns: 200px 1fr auto;
   max-width: 920px;
   margin: 0 auto;
   gap: 28px;
   align-items: center;
+}
+.ai-avatar-col {
+  align-self: center;
 }
 .hero-tags {
   grid-column: 1 / -1;
   margin-top: 12px;
   text-align: center;
 }
+.hero-tags .tag-row {
+  margin-bottom: 14px;
+  justify-content: center;
+}
 .hero-tags .social-chips {
   justify-content: center;
 }
-
-/* === AI 分身對話區（accordion 下方獨立 section）=== */
-.ai-twin-section {
-  background: linear-gradient(180deg, #FBF7EE 0%, #F5EFE0 100%);
-}
-.ai-twin-section h2 {
-  text-align: center;
-}
-.ai-twin-section .section-meta {
-  text-align: center;
-  color: var(--ink-3, #5A554C);
-  font-family: "Inter","Noto Sans TC",sans-serif;
-  font-size: 13px;
-  letter-spacing: 0.18em;
-  margin: -8px 0 36px;
-  text-transform: uppercase;
-}
-.ai-twin-wrap {
-  display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 56px;
-  align-items: center;
-  max-width: 980px;
-  margin: 0 auto;
-}
-@media (max-width: 880px) {
-  .ai-twin-wrap {
-    grid-template-columns: 1fr;
-    gap: 32px;
-    text-align: center;
-  }
-}
-.ai-twin-avatar-col {
-  position: relative;
-  display: flex;
-  justify-content: center;
-}
-.ai-twin-link {
+.ai-avatar-link {
   position: relative;
   display: block;
-  width: 280px;
-  height: 280px;
+  width: 180px;
+  height: 180px;
   text-decoration: none;
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.ai-twin-link:hover {
-  transform: scale(1.05);
+.ai-avatar-link:hover {
+  transform: scale(1.08);
 }
-.ai-twin-link img {
+.ai-avatar-link img {
   width: 100%;
   height: 100%;
   border-radius: 50%;
   display: block;
-  box-shadow: 0 12px 36px rgba(230, 74, 142, 0.22);
+  box-shadow: 0 8px 24px rgba(230, 74, 142, 0.18);
 }
-.ai-twin-label {
+.ai-avatar-label {
   position: absolute;
-  top: -28px;
+  top: -36px;
   left: 50%;
   transform: translateX(-50%) rotate(-4deg);
   font-family: "Caveat", "Noto Sans TC", cursive;
   color: #E64A8E;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 600;
   white-space: nowrap;
   letter-spacing: 0.03em;
 }
-.ai-twin-hint {
-  position: absolute;
-  bottom: -18px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #E64A8E;
-  color: #fff;
-  font-family: "Noto Sans TC", sans-serif;
-  font-size: 13px;
-  font-weight: 500;
-  padding: 6px 16px;
-  border-radius: 999px;
-  white-space: nowrap;
-  letter-spacing: 0.04em;
-  box-shadow: 0 4px 12px rgba(230, 74, 142, 0.32);
-}
-.ai-twin-text {
-  font-family: "Noto Serif TC", serif;
-  color: var(--ink-2, #3A3833);
-  line-height: 1.95;
-  font-size: 17px;
-}
-.ai-twin-text .ai-twin-greet {
-  font-family: "Noto Serif TC", serif;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--ink, #2B2A26);
-  margin: 0 0 18px;
-  line-height: 1.4;
-}
-.ai-twin-text p {
-  margin: 0 0 16px;
-}
-.ai-twin-text p:last-child {
-  margin-bottom: 0;
-  color: var(--gold-deep, #A8884A);
-  font-weight: 500;
-  letter-spacing: 0.04em;
+@media (max-width: 768px) {
+  .profile-hero .layout {
+    grid-template-columns: 1fr;
+  }
+  .ai-avatar-col {
+    margin: 32px auto 0;
+    justify-self: center;
+  }
 }
 
 /* === Vicky 多重角色 accordion === */
@@ -611,7 +554,7 @@
 
 <header class="topbar">
   <div class="inner">
-    <a class="brand" href="../index.html" aria-label="回首頁"><span class="mark">永</span>永續影響力扶輪社年度報告書</a>
+    <div class="brand"><span class="mark">永</span>永續影響力扶輪社年度報告書</div>
     <nav>
       <a href="../index.html#intro">關於永力社</a>
       <a href="../index.html#impact-report">影響力報告</a>
@@ -643,7 +586,14 @@
           <span class="sdg-chip sdg-chip-17">17</span>
         </div>
       </div>
-      <!-- 標籤區（社群 chips 跨欄置中）-->
+      <!-- AI 分身連結（grid col 3）-->
+      <div class="ai-avatar-col">
+        <a class="ai-avatar-link" href="https://gemini.google.com/gem/d9ca58d0b9a3" target="_blank" rel="noopener" aria-label="跟 Vicky 的 AI 分身聊聊">
+          <span class="ai-avatar-label">跟 Vicky 的 AI 分身聊聊</span>
+          <img src="../assets/img/members/vicky-ai-avatar.png" alt="Vicky 的 AI 分身">
+        </a>
+      </div>
+      <!-- 標籤區（grid row 2，跨 3 欄，只放社群）-->
       <div class="hero-tags">
         <!-- V5 個人傳送門：社群連結 chip -->
         <div class="social-chips">
@@ -785,32 +735,6 @@
               <p class="stat-label">在淡水的時間</p>
               <p class="stat-detail">2019 創辦旅學堂、2021 啟動淡水女路，一年又一年，她在淡水默默深耕。</p>
             </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ============ AI 分身對話區 ============ -->
-<section class="profile-section ai-twin-section">
-  <div class="container">
-    <h2>跟 Vicky 的分身聊聊</h2>
-    <p class="section-meta">這是李琪的 AI 分身 · TALK WITH HER GEMINI</p>
-
-    <div class="ai-twin-wrap">
-      <div class="ai-twin-avatar-col">
-        <a class="ai-twin-link" href="https://gemini.google.com/gem/d9ca58d0b9a3" target="_blank" rel="noopener" aria-label="點開 Vicky 的 AI 分身，跳到 Gemini 對話視窗">
-          <span class="ai-twin-label">點我，跟我聊聊</span>
-          <img src="../assets/img/members/vicky-ai-avatar.png" alt="Vicky 的 AI 分身">
-          <span class="ai-twin-hint">前往 Gemini ↗</span>
-        </a>
-      </div>
-      <div class="ai-twin-text">
-        <p class="ai-twin-greet">你好，我是 Vicky。</p>
-        <p>這幾年，我和一群女性在淡水的街巷裡走路、說故事，慢慢長出了一條女路。118 位夥伴從這裡走過，每個人都帶著自己的力量回家。</p>
-        <p>這些故事跟一路上的心法，我們捨不得只放在自己腦袋裡。所以把它們整理進了 Gemini，做成一個可以陪你聊天的我。</p>
-        <p>點圖像，畫面會跳到 Gemini 的對話視窗。可以問陪力卡怎麼用、聊 SROI 怎麼變成對話工具，也可以單純跟我聊聊淡水故事。</p>
-        <p>來，一起共學、共玩、共好。</p>
       </div>
     </div>
   </div>

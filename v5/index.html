@@ -82,14 +82,17 @@ img{max-width:100%;display:block}
 }
 .topbar .inner{
   max-width:1320px;margin:0 auto;
-  padding:18px 5vw;
+  padding:11px 5vw;
   display:flex;align-items:center;justify-content:space-between;gap:24px;
 }
 .topbar .brand{
   display:flex;align-items:center;gap:14px;
   font-weight:600;font-size:17px;letter-spacing:0.02em;
   color:var(--ink);
+  text-decoration:none;cursor:pointer;
+  transition:opacity 0.2s;
 }
+.topbar .brand:hover{opacity:0.7;}
 .topbar .brand .mark{
   width:36px;height:36px;border-radius:50%;
   background-image:url('assets/img/yongli-logo.png');
@@ -744,7 +747,7 @@ img{max-width:100%;display:block}
 .video-banner .video-cover.has-image{background:#0a0a0a;border:none;}
 .video-banner .video-cover.has-image::before{display:none;}
 .video-banner .video-meta{
-  max-width:880px;margin:0 auto;text-align:center;
+  max-width:880px;margin:0 auto;text-align:left;
 }
 .video-banner .video-meta h3{
   font-family:"Noto Serif TC",serif;
@@ -754,7 +757,7 @@ img{max-width:100%;display:block}
 }
 .video-banner .video-meta p{
   font-size:18px;color:var(--ink-2);
-  line-height:1.85;margin:0 auto 20px;
+  line-height:1.85;margin:0 0 20px;
   max-width:780px;
 }
 .video-banner .video-meta .placeholder-banner{
@@ -1459,7 +1462,7 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
 
 <header class="topbar">
   <div class="inner">
-    <div class="brand"><span class="mark">永</span>永續影響力扶輪社年度報告書</div>
+    <a class="brand" href="#" aria-label="回首頁頂端" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"><span class="mark">永</span>永續影響力扶輪社年度報告書</a>
     <button class="nav-toggle" aria-label="開啟選單" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -1476,7 +1479,7 @@ footer li a:hover{color:var(--sage-deep);border-bottom-color:var(--sage)}
 <!-- ============ HERO ============ -->
 <section class="hero">
   <p class="eyebrow">2024-2026 Sustainability Report</p>
-  <h1>永續影響力扶輪社的<br><em>2024-2026 年度報告書</em></h1>
+  <h1>永續影響力扶輪社<br><em>2024-2026 年度報告書</em></h1>
   <p class="subtitle">國際扶輪 3481 地區 台北永續影響力扶輪社，簡稱「永力社」，是一個以創造「永續影響力」為核心使命的新創扶輪社。每一位社友都以關注全球 ESG 的趨勢，並連結自己的產業發展目標，期盼能落實在職業、社務、服務與生活實踐中，為社區、社會與世界累積持恆的影響力。</p>
   <p class="subtitle">而這份「年度報告書」則記錄永力社在 2024-2026 年度的服務行動、社友故事、夥伴關係與影響力探索。它不只是成果回顧，也是一份讓服務被看見、被學習、被延續的階段性共創紀錄。</p>
   <div class="meta">
