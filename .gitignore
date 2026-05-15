@@ -4,3 +4,15 @@
 node_modules/
 .vercel/
 .vercel
+
+# 垃圾桶（本地保留、不推 GitHub）
+_trash/
+
+# 設計過程 sandbox（本地保留、不推 GitHub）
+v5/_design/
+v5/_archive/
+*-V2.html
+*-V3.html
+
+# 測試頁不上正式 repo
+v5/test-*.html
