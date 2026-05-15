@@ -48,6 +48,66 @@
   .impact-map{max-width:100%}
   .impact-map-section .section-meta{font-size:12px;letter-spacing:0.14em}
 }
+
+/* 寶眷介紹卡片 */
+.spouse-section { padding: 28px 0 32px; }
+.spouse-card {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 28px;
+  background: var(--bg-card);
+  border: 1px solid var(--gold-soft);
+  border-radius: 14px;
+  max-width: 720px;
+  margin: 0 auto;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+}
+.spouse-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+.spouse-info { flex: 1; }
+.spouse-label {
+  display: inline-block;
+  padding: 4px 12px;
+  background: var(--bg-soft);
+  color: var(--gold);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+.spouse-name {
+  font-size: 1.5rem;
+  margin: 0 0 8px;
+  color: var(--ink);
+  font-family: "Noto Serif TC", serif;
+  letter-spacing: 0.02em;
+}
+.spouse-meta {
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin: 0;
+}
+.spouse-meta a {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 500;
+}
+.spouse-meta a:hover { color: #9a7009; }
+@media (max-width: 600px) {
+  .spouse-card { flex-direction: column; text-align: center; padding: 24px 20px; gap: 20px; }
+  .spouse-photo { width: 140px; height: 140px; }
+  .spouse-name { font-size: 1.3rem; }
+}
 </style>
 </head>
 <body>
@@ -181,7 +241,7 @@
       <p style="margin:0;font-size:1.05rem;">「沒問題，你去做！我支持你。」</p>
       <p style="margin:8px 0 0;font-size:0.88rem;color:var(--ink-mute);">—— 這不是口號，而是承擔。</p>
     </div>
-    <p>以 Lisa 的「媽祖零廢淨」計畫為例，為減少大甲鎮瀾宮遶境活動的廢棄物，他多次親自開車南下陪同協商。面對廟方與攤商，他提供策略補充與穩定支持。<strong>他不是舞台上的主角，而是背後的力量。</strong>這種支持文化，使永力社成為行動者的安全場域。</p>
+    <p>以 Lisa 的「零廢敬媽祖」計畫為例，為減少大甲鎮瀾宮遶境活動的廢棄物，他多次親自開車南下陪同協商。面對廟方與攤商，他提供策略補充與穩定支持。<strong>他不是舞台上的主角，而是背後的力量。</strong>這種支持文化，使永力社成為行動者的安全場域。</p>
   </div>
 </section>
 
@@ -227,6 +287,20 @@
     </div>
     <p>在永力社的光譜中，他不是制度工程師，而是<strong>動力源頭</strong>；不是單次行動者，而是<strong>影響力架構師</strong>。</p>
     <p>他不甘於只做一件好事。他選擇，讓好事成為一種<strong>可運作、可揭露、可延續的系統</strong>。</p>
+  </div>
+</section>
+
+<!-- ============ 寶眷介紹 ============ -->
+<section class="profile-section spouse-section">
+  <div class="container">
+    <div class="spouse-card">
+      <div class="spouse-photo" style="background-image:url('../assets/img/members/spouses/cp-family.jpg')"></div>
+      <div class="spouse-info">
+        <span class="spouse-label">CP 寶眷</span>
+        <h3 class="spouse-name">葉佳萍 Denise</h3>
+        <p class="spouse-meta">同時也是永力扶輪社社友 · <a href="../members.html">→ 詳見社友介紹</a></p>
+      </div>
+    </div>
   </div>
 </section>
 
