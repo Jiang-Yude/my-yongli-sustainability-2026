@@ -64,11 +64,11 @@
   box-shadow: 0 4px 14px rgba(0,0,0,0.04);
 }
 .spouse-photo {
-  width: 160px;
+  width: 200px;
   height: 160px;
   border-radius: 12px;
   background-size: cover;
-  background-position: center;
+  background-position: center top;
   flex-shrink: 0;
   box-shadow: 0 4px 14px rgba(0,0,0,0.08);
 }
@@ -105,7 +105,7 @@
 .spouse-meta a:hover { color: #9a7009; }
 @media (max-width: 600px) {
   .spouse-card { flex-direction: column; text-align: center; padding: 24px 20px; gap: 20px; }
-  .spouse-photo { width: 140px; height: 140px; }
+  .spouse-photo { width: 200px; height: 160px; }
   .spouse-name { font-size: 1.3rem; }
 }
 </style>
@@ -278,6 +278,19 @@
   </div>
 </section>
 
+<!-- ============ 寶眷介紹 ============ -->
+<section class="profile-section spouse-section">
+  <div class="container">
+    <div class="spouse-card">
+      <div class="spouse-photo" style="background-image:url('../assets/img/members/spouses/cp-family.jpg')"></div>
+      <div class="spouse-info">
+        <span class="spouse-label">CP 寶眷</span>
+        <h3 class="spouse-name">葉佳萍 Denise</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ 結語 ============ -->
 <section class="profile-section">
   <div class="container">
@@ -287,20 +300,6 @@
     </div>
     <p>在永力社的光譜中，他不是制度工程師，而是<strong>動力源頭</strong>；不是單次行動者，而是<strong>影響力架構師</strong>。</p>
     <p>他不甘於只做一件好事。他選擇，讓好事成為一種<strong>可運作、可揭露、可延續的系統</strong>。</p>
-  </div>
-</section>
-
-<!-- ============ 寶眷介紹 ============ -->
-<section class="profile-section spouse-section">
-  <div class="container">
-    <div class="spouse-card">
-      <div class="spouse-photo" style="background-image:url('../assets/img/members/spouses/cp-family.jpg')"></div>
-      <div class="spouse-info">
-        <span class="spouse-label">CP 寶眷</span>
-        <h3 class="spouse-name">葉佳萍 Denise</h3>
-        <p class="spouse-meta">同時也是永力扶輪社社友 · <a href="../members.html">→ 詳見社友介紹</a></p>
-      </div>
-    </div>
   </div>
 </section>
 
