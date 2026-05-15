@@ -6,8 +6,8 @@
 <title>李琪 Vicky｜旅學女力 — 永力扶輪社 2024-2026 永續報告</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600&family=Noto+Serif+TC:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/common.css?v=12">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Noto+Sans+TC:wght@400;500;600&family=Noto+Serif+TC:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/common.css?v=13">
 <style>
 .impact-map-section .section-meta{
   color:var(--ink-3, #5A554C);
@@ -49,18 +49,17 @@
   .impact-map-section .section-meta{font-size:12px;letter-spacing:0.14em}
 }
 
-/* === V5：個人名片頁傳送門 social chips（C 大橫條卡 顯眼版）=== */
+/* === V5：個人名片頁傳送門 social chips（橫向 pill 緊湊版）=== */
 .social-chips{
-  display:flex;flex-direction:column;gap:10px;
-  margin-top:20px;
-  max-width:560px;
+  display:flex;flex-direction:row;gap:10px;flex-wrap:wrap;
+  margin-top:18px;
 }
 .social-chip{
-  display:flex;align-items:center;gap:16px;
-  padding:14px 20px;
-  background:#fff;
+  display:inline-flex;align-items:center;gap:10px;
+  padding:8px 16px 8px 12px;
+  background:#FBF7EE;
   border:1px solid var(--line, #E0D8C7);
-  border-radius:12px;
+  border-radius:999px;
   color:var(--ink, #2B2A26);
   text-decoration:none;
   transition:all 0.25s cubic-bezier(0.2,0.8,0.3,1);
@@ -68,16 +67,16 @@
 }
 .social-chip:hover{
   border-color:var(--gold, #C9A961);
-  transform:translateX(4px);
+  background:#fff;
   box-shadow:0 4px 14px rgba(168,136,74,0.18);
 }
 .social-chip .ico{
-  width:44px;height:44px;border-radius:10px;
+  width:26px;height:26px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
   flex-shrink:0;color:#fff;
   background:var(--ink-3, #5A554C);
 }
-.social-chip .ico svg{width:22px;height:22px;fill:#fff}
+.social-chip .ico svg{width:14px;height:14px;fill:#fff}
 .social-chip[data-platform="web"]      .ico{background:#10B981}
 .social-chip[data-platform="fb"]       .ico{background:#1877F2}
 .social-chip[data-platform="ig"]       .ico{background:#E4405F}
@@ -86,15 +85,10 @@
 .social-chip[data-platform="line"]     .ico{background:#06C755}
 .social-chip[data-platform="linkedin"] .ico{background:#0A66C2}
 .social-chip .label{
-  flex:1;font-size:15px;font-weight:600;
+  font-size:13px;font-weight:500;
   letter-spacing:0.02em;
 }
-.social-chip .arr{
-  font-size:20px;color:var(--gold-deep, #A8884A);
-  transition:transform 0.25s;
-  flex-shrink:0;
-}
-.social-chip:hover .arr{transform:translateX(4px)}
+.social-chip .arr{display:none}
 
 /* === V5：影響力指標 儀表板（上：雷達 | 簡介，下：6 數字卡 3 欄）=== */
 .dashboard-section{margin-top:24px}
@@ -325,16 +319,304 @@
   background:#EFEAE0;
   color:var(--ink-4);
 }
+
+/* === Hero 兩欄（沿用 common.css 預設 200px 1fr），社群 chips 跨欄置中 === */
+.profile-hero .layout {
+  max-width: 920px;
+  margin: 0 auto;
+  gap: 28px;
+  align-items: center;
+}
+.hero-tags {
+  grid-column: 1 / -1;
+  margin-top: 12px;
+  text-align: center;
+}
+.hero-tags .social-chips {
+  justify-content: center;
+}
+
+/* === AI 分身對話區（accordion 下方獨立 section）=== */
+.ai-twin-section {
+  background: linear-gradient(180deg, #FBF7EE 0%, #F5EFE0 100%);
+}
+.ai-twin-section h2 {
+  text-align: center;
+}
+.ai-twin-section .section-meta {
+  text-align: center;
+  color: var(--ink-3, #5A554C);
+  font-family: "Inter","Noto Sans TC",sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  margin: -8px 0 36px;
+  text-transform: uppercase;
+}
+.ai-twin-wrap {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 56px;
+  align-items: center;
+  max-width: 980px;
+  margin: 0 auto;
+}
+@media (max-width: 880px) {
+  .ai-twin-wrap {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+}
+.ai-twin-avatar-col {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.ai-twin-link {
+  position: relative;
+  display: block;
+  width: 280px;
+  height: 280px;
+  text-decoration: none;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.ai-twin-link:hover {
+  transform: scale(1.05);
+}
+.ai-twin-link img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: block;
+  box-shadow: 0 12px 36px rgba(230, 74, 142, 0.22);
+}
+.ai-twin-label {
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-4deg);
+  font-family: "Caveat", "Noto Sans TC", cursive;
+  color: #E64A8E;
+  font-size: 22px;
+  font-weight: 600;
+  white-space: nowrap;
+  letter-spacing: 0.03em;
+}
+.ai-twin-hint {
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #E64A8E;
+  color: #fff;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px 16px;
+  border-radius: 999px;
+  white-space: nowrap;
+  letter-spacing: 0.04em;
+  box-shadow: 0 4px 12px rgba(230, 74, 142, 0.32);
+}
+.ai-twin-text {
+  font-family: "Noto Serif TC", serif;
+  color: var(--ink-2, #3A3833);
+  line-height: 1.95;
+  font-size: 17px;
+}
+.ai-twin-text .ai-twin-greet {
+  font-family: "Noto Serif TC", serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--ink, #2B2A26);
+  margin: 0 0 18px;
+  line-height: 1.4;
+}
+.ai-twin-text p {
+  margin: 0 0 16px;
+}
+.ai-twin-text p:last-child {
+  margin-bottom: 0;
+  color: var(--gold-deep, #A8884A);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+/* === Vicky 多重角色 accordion === */
+.vicky-identities-section .vk-accordion-wrapper {
+  max-width: 1200px;
+  margin: 32px auto 0;
+}
+.vicky-identities-section .vk-accordion {
+  display: flex;
+  gap: 8px;
+  height: 480px;
+}
+.vk-panel {
+  flex: 1.8;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: flex 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.vk-panel.active { flex: 4; }
+.vk-panel-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #2C2419;
+}
+.vk-panel-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.7) 100%);
+}
+.vk-panel-label {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 18px;
+  letter-spacing: 8px;
+  z-index: 3;
+  transition: bottom 0.4s, font-size 0.4s, letter-spacing 0.4s;
+}
+.vk-panel.active .vk-panel-label {
+  writing-mode: horizontal-tb;
+  font-size: 24px;
+  letter-spacing: 12px;
+  bottom: 92px;
+}
+.vk-panel-line {
+  position: absolute;
+  bottom: 78px;
+  left: 24px;
+  width: 0;
+  height: 1px;
+  background: #C9A961;
+  z-index: 3;
+  transition: width 0.6s ease 0.4s;
+}
+.vk-panel.active .vk-panel-line {
+  width: 40px;
+}
+.vk-panel-quote {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  color: rgba(255, 255, 255, 0.94);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.65;
+  margin: 0;
+  z-index: 3;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease 0.3s, transform 0.6s ease 0.3s;
+  pointer-events: none;
+}
+.vk-panel.active .vk-panel-quote {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === Desktop bg-position === */
+.vk-panel[data-id="creator"] .vk-panel-bg {
+  background-image: url('../assets/img/members/vicky-identities/vicky-01-creator.jpg');
+  background-position: 50% 50%;
+}
+.vk-panel[data-id="leader"] .vk-panel-bg {
+  background-image: url('../assets/img/members/vicky-identities/vicky-02-leader.jpg');
+  background-position: 50% 50%;
+}
+.vk-panel[data-id="railway"] .vk-panel-bg {
+  background-image: url('../assets/img/members/vicky-identities/vicky-03-railway.jpg');
+  background-position: 94% 38%;
+}
+.vk-panel[data-id="mother"] .vk-panel-bg {
+  background-image: url('../assets/img/members/vicky-identities/vicky-04-mother.jpg');
+  background-position: 56% 50%;
+}
+.vk-panel[data-id="wife"] .vk-panel-bg {
+  background-image: url('../assets/img/members/vicky-identities/vicky-05-wife.jpg');
+  background-position: 19% 49%;
+}
+
+/* === Mobile @media === */
+@media (max-width: 768px) {
+  .vicky-identities-section .vk-accordion {
+    flex-direction: column;
+    height: auto;
+    gap: 6px;
+  }
+  .vk-panel {
+    flex: none;
+    height: 80px;
+    transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .vk-panel.active {
+    flex: none;
+    height: 400px;
+  }
+  .vk-panel-label {
+    writing-mode: horizontal-tb;
+    font-size: 16px;
+    letter-spacing: 4px;
+    bottom: 16px;
+    left: 20px;
+  }
+  .vk-panel.active .vk-panel-label {
+    font-size: 22px;
+    letter-spacing: 10px;
+  }
+  .vk-panel[data-id="creator"] .vk-panel-bg {
+    background-position: 50% 30%;
+  }
+  .vk-panel[data-id="creator"].active .vk-panel-bg {
+    background-position: 50% 45%;
+  }
+  .vk-panel[data-id="leader"] .vk-panel-bg {
+    background-position: 50% 47%;
+  }
+  .vk-panel[data-id="leader"].active .vk-panel-bg {
+    background-position: 50% 30%;
+  }
+  .vk-panel[data-id="railway"] .vk-panel-bg {
+    background-position: 50% 11%;
+  }
+  .vk-panel[data-id="railway"].active .vk-panel-bg {
+    background-position: 50% 14%;
+  }
+  .vk-panel[data-id="mother"] .vk-panel-bg {
+    background-position: 50% 21%;
+  }
+  .vk-panel[data-id="mother"].active .vk-panel-bg {
+    background-position: 50% 28%;
+  }
+  .vk-panel[data-id="wife"] .vk-panel-bg {
+    background-position: 50% 27%;
+  }
+  .vk-panel[data-id="wife"].active .vk-panel-bg {
+    background-position: 50% 52%;
+  }
+}
 </style>
 </head>
 <body>
 
 <header class="topbar">
   <div class="inner">
-    <div class="brand"><span class="mark">永</span>永力扶輪社 2024-2026 永續報告書</div>
+    <div class="brand"><span class="mark">永</span>永續影響力扶輪社年度報告書</div>
     <nav>
-      <a href="../index.html">回首頁</a>
-      <a href="../index.html#members">社友影響力</a>
+      <a href="../index.html#intro">關於永力社</a>
+      <a href="../index.html#impact-report">影響力報告</a>
+      <a href="../index.html#five-service">五大服務</a>
+      <a href="../index.html#members">社友介紹</a>
       <a href="../index.html#impact-hub">服務計畫</a>
     </nav>
   </div>
@@ -360,7 +642,9 @@
           <span class="sdg-chip sdg-chip-11">11</span>
           <span class="sdg-chip sdg-chip-17">17</span>
         </div>
-
+      </div>
+      <!-- 標籤區（社群 chips 跨欄置中）-->
+      <div class="hero-tags">
         <!-- V5 個人傳送門：社群連結 chip -->
         <div class="social-chips">
           <a class="social-chip" data-platform="web" href="https://www.tamsuitraveler.com/" target="_blank" rel="noopener" aria-label="旅學堂官網">
@@ -383,6 +667,55 @@
             <span class="label">Vicky 個人 FB</span>
             <span class="arr">→</span>
           </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ Vicky 的多重角色 accordion ============ -->
+<section class="profile-section vicky-identities-section">
+  <div class="container">
+    <h2>看見 Vicky 的多重角色</h2>
+    <p class="section-meta">創業家 • 團長 • 輕軌 • 媽媽 • 太太</p>
+
+    <div class="vk-accordion-wrapper">
+      <div class="vk-accordion">
+        <div class="vk-panel active" data-id="creator">
+          <div class="vk-panel-bg"></div>
+          <div class="vk-panel-overlay"></div>
+          <span class="vk-panel-label">創業家</span>
+          <span class="vk-panel-line"></span>
+          <p class="vk-panel-quote">用旅學堂把淡水的故事，做成可以走進去的體驗。</p>
+        </div>
+        <div class="vk-panel" data-id="leader">
+          <div class="vk-panel-bg"></div>
+          <div class="vk-panel-overlay"></div>
+          <span class="vk-panel-label">團長</span>
+          <span class="vk-panel-line"></span>
+          <p class="vk-panel-quote">她們不只是學員，是一起把女力綻放出來的同行者。</p>
+        </div>
+        <div class="vk-panel" data-id="railway">
+          <div class="vk-panel-bg"></div>
+          <div class="vk-panel-overlay"></div>
+          <span class="vk-panel-label">輕軌</span>
+          <span class="vk-panel-line"></span>
+          <p class="vk-panel-quote">在淡海輕軌沿線，把每一站做成可以停下來的故事。</p>
+        </div>
+        <div class="vk-panel" data-id="mother">
+          <div class="vk-panel-bg"></div>
+          <div class="vk-panel-overlay"></div>
+          <span class="vk-panel-label">媽媽</span>
+          <span class="vk-panel-line"></span>
+          <p class="vk-panel-quote">陪女兒，走出她自己的路。</p>
+        </div>
+        <div class="vk-panel" data-id="wife">
+          <div class="vk-panel-bg"></div>
+          <div class="vk-panel-overlay"></div>
+          <span class="vk-panel-label">太太</span>
+          <span class="vk-panel-line"></span>
+          <p class="vk-panel-quote">並肩走過的人，是事業也是生活的共同創作者。</p>
         </div>
       </div>
     </div>
@@ -452,6 +785,32 @@
               <p class="stat-label">在淡水的時間</p>
               <p class="stat-detail">2019 創辦旅學堂、2021 啟動淡水女路，一年又一年，她在淡水默默深耕。</p>
             </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ AI 分身對話區 ============ -->
+<section class="profile-section ai-twin-section">
+  <div class="container">
+    <h2>跟 Vicky 的分身聊聊</h2>
+    <p class="section-meta">這是李琪的 AI 分身 · TALK WITH HER GEMINI</p>
+
+    <div class="ai-twin-wrap">
+      <div class="ai-twin-avatar-col">
+        <a class="ai-twin-link" href="https://gemini.google.com/gem/d9ca58d0b9a3" target="_blank" rel="noopener" aria-label="點開 Vicky 的 AI 分身，跳到 Gemini 對話視窗">
+          <span class="ai-twin-label">點我，跟我聊聊</span>
+          <img src="../assets/img/members/vicky-ai-avatar.png" alt="Vicky 的 AI 分身">
+          <span class="ai-twin-hint">前往 Gemini ↗</span>
+        </a>
+      </div>
+      <div class="ai-twin-text">
+        <p class="ai-twin-greet">你好，我是 Vicky。</p>
+        <p>這幾年，我和一群女性在淡水的街巷裡走路、說故事，慢慢長出了一條女路。118 位夥伴從這裡走過，每個人都帶著自己的力量回家。</p>
+        <p>這些故事跟一路上的心法，我們捨不得只放在自己腦袋裡。所以把它們整理進了 Gemini，做成一個可以陪你聊天的我。</p>
+        <p>點圖像，畫面會跳到 Gemini 的對話視窗。可以問陪力卡怎麼用、聊 SROI 怎麼變成對話工具，也可以單純跟我聊聊淡水故事。</p>
+        <p>來，一起共學、共玩、共好。</p>
       </div>
     </div>
   </div>
@@ -587,12 +946,16 @@
 
 
 <!-- ============ 延伸專案：旅學堂陪力系統 ============ -->
-<section class="profile-section service-spotlight-section">
+<section class="profile-section service-spotlight-section" style="background:#F5E8E0;">
   <div class="container">
     <h2>延伸專案：旅學堂陪力系統</h2>
     <p style="color:var(--ink-soft);margin-bottom:18px;">不只在永力社的服務計畫，Vicky 把旅學堂多年的女性培力工作系統化為一套可查、可學、可擴散的<strong>陪力卡架構</strong>，記錄 17 位夥伴從接住到擴散的完整影響力事件鏈。</p>
     <a class="service-spotlight" href="https://jiang-yude.github.io/lxuetang-peili-v2/" target="_blank" rel="noopener noreferrer">
-      <div class="thumb" style="background: linear-gradient(135deg, #5C7A6B 0%, #2C4A3D 100%); display:flex; align-items:center; justify-content:center; color:#FFE9A8; font-family:'Noto Serif TC',serif; font-size:1.5rem; line-height:1.5; text-align:center;">旅學堂<br>陪力系統<br><span style="font-size:0.85rem;opacity:0.75;">V2</span></div>
+      <div class="thumb" style="background: linear-gradient(135deg, #A0392E 0%, #5C1F1F 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; padding:24px; color:#F4E4C8; font-family:'Noto Serif TC',serif; text-align:center;">
+        <div style="font-size:1.6rem; font-weight:600; line-height:1.35; letter-spacing:0.08em;">旅學堂<br>陪力系統</div>
+        <div style="width:42px; height:1px; background:#F4E4C8; opacity:0.55;"></div>
+        <div style="font-size:0.98rem; opacity:0.92; line-height:1.65; letter-spacing:0.04em;">陪力 ＝ 陪伴<br>＋ 讓力量長出來</div>
+      </div>
       <div class="info">
         <span class="grant-tag" style="background:var(--ink-soft);">外部獨立網站</span>
         <h3>旅學堂陪力卡｜女性培力影響力事件鏈</h3>
@@ -655,5 +1018,23 @@
 
 <script src="../assets/js/lightbox.js"></script>
 <script src="../assets/js/radar-chart.js"></script>
+<script>
+(function() {
+  const panels = document.querySelectorAll('.vk-panel');
+  const isMobile = () => window.innerWidth <= 768;
+  panels.forEach(panel => {
+    panel.addEventListener('mouseenter', () => {
+      if (isMobile()) return;
+      panels.forEach(p => p.classList.remove('active'));
+      panel.classList.add('active');
+    });
+    panel.addEventListener('click', () => {
+      if (!isMobile()) return;
+      panels.forEach(p => p.classList.remove('active'));
+      panel.classList.add('active');
+    });
+  });
+})();
+</script>
 </body>
 </html>

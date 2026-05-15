@@ -104,42 +104,63 @@ p { margin: 0 0 1em; }
   font-size: 0.9rem;
 }
 
-/* === Top Nav === */
+/* === Top Nav（與 index.html 一致版型） === */
 .topbar {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(248, 245, 238, 0.94);
-  backdrop-filter: blur(8px);
+  background: rgba(244, 239, 230, 0.92);
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
 }
 .topbar .inner {
-  max-width: 1080px;
+  max-width: 1320px;
   margin: 0 auto;
-  padding: 14px 24px;
+  padding: 18px 5vw;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 24px;
 }
 .topbar .brand {
-  font-family: "Noto Serif TC", serif;
+  display: flex;
+  align-items: center;
+  gap: 14px;
   font-weight: 600;
-  font-size: 1.05rem;
+  font-size: 17px;
+  letter-spacing: 0.02em;
   color: var(--ink);
+  font-family: inherit;
 }
 .topbar .brand .mark {
-  display: inline-block;
-  width: 28px; height: 28px;
-  background: url('../img/yongli-logo.png') center/contain no-repeat;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background-image: url('../img/yongli-logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   color: transparent;
+  display: grid;
+  place-items: center;
   font-size: 0;
-  margin-right: 8px;
-  vertical-align: middle;
+  flex-shrink: 0;
   overflow: hidden;
-  text-indent: -9999px;
+  text-indent: 0;
 }
-.topbar nav { margin-left: auto; display: flex; gap: 20px; font-size: 0.9rem; }
-.topbar nav a { color: var(--ink-soft); }
+.topbar nav {
+  display: flex;
+  gap: 28px;
+}
+.topbar nav a {
+  color: var(--ink-2, var(--ink-soft));
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  padding: 6px 0;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
 .topbar nav a:hover { color: var(--gold); }
 
 /* 漢堡按鈕（桌面預設隱藏） */
