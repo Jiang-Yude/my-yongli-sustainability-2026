@@ -677,7 +677,108 @@
 
   </div>
 
-  <div style="margin: 56px 0 48px; text-align: center;">
+  <!-- 個人頁建置 onboarding 區 -->
+  <section class="member-onboarding">
+    <div class="onboard-inner">
+      <span class="tag">給永力社社員</span>
+      <h2>個人頁怎麼建？</h2>
+      <p class="sub">跟教稿 AI 助理對話 <strong>15 分鐘</strong>，把你的中文名、職稱、永續主題、社群連結聊一聊,最後把對話結果<strong>整段複製、貼到一張表單裡</strong>就完成了。<br>不會用 AI 也沒關係,整個過程像跟人聊天一樣。</p>
+      <div class="onboard-cta-row">
+        <a class="onboard-btn-ghost" href="member-guide.html">先看流程</a>
+        <a class="onboard-btn-gold" href="#" id="onboard-gem-link" target="_blank">立刻開始使用 教稿助理 →</a>
+        <a class="onboard-btn-ink" href="#" id="onboard-form-link" target="_blank">立即 打開永力社表單 →</a>
+      </div>
+    </div>
+  </section>
+
+  <style>
+  .member-onboarding {
+    margin: 64px 0 32px;
+    padding: 60px 32px;
+    background: linear-gradient(180deg, var(--bg-soft) 0%, #f0e7d2 100%);
+    border: 1px solid var(--gold-soft);
+    border-radius: 16px;
+    text-align: center;
+  }
+  .member-onboarding .onboard-inner { max-width: 720px; margin: 0 auto; }
+  .member-onboarding .tag {
+    display: inline-block;
+    padding: 6px 14px;
+    border: 1px solid var(--gold);
+    border-radius: 20px;
+    color: var(--gold);
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 20px;
+    background: var(--bg-card);
+  }
+  .member-onboarding h2 {
+    font-size: 2rem;
+    margin: 0 0 16px;
+    color: var(--ink);
+    font-family: "Noto Serif TC", serif;
+    letter-spacing: 0.02em;
+  }
+  .member-onboarding .sub {
+    font-size: 1rem;
+    color: var(--ink-soft);
+    line-height: 1.85;
+    margin: 0 auto 28px;
+    max-width: 600px;
+  }
+  .member-onboarding .onboard-cta-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .member-onboarding a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 22px;
+    border-radius: 28px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all .25s;
+  }
+  .onboard-btn-ghost {
+    background: var(--bg-card);
+    color: var(--ink);
+    border: 1px solid var(--line);
+  }
+  .onboard-btn-ghost:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+  .onboard-btn-gold {
+    background: var(--gold);
+    color: #fff;
+  }
+  .onboard-btn-gold:hover {
+    background: #9a7009;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(168,136,74,0.3);
+  }
+  .onboard-btn-ink {
+    background: #5C544A;
+    color: #fff;
+  }
+  .onboard-btn-ink:hover {
+    background: #3d362e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(60,52,46,0.3);
+  }
+  @media (max-width: 720px) {
+    .member-onboarding { padding: 40px 20px; margin: 40px -16px 24px; border-radius: 12px; }
+    .member-onboarding h2 { font-size: 1.5rem; }
+    .member-onboarding .sub { font-size: 0.95rem; }
+    .member-onboarding a { width: 100%; justify-content: center; }
+  }
+  </style>
+
+  <div style="margin: 40px 0 48px; text-align: center;">
     <a class="back-link" href="index.html#members">← 回首頁社友列表</a>
   </div>
 
