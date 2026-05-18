@@ -17,9 +17,14 @@ const { pathPrefix = '' } = Astro.props;
       <h4>{site.site_name}</h4>
       <p>{site.site_name_en}</p>
       <p>{site.tagline}</p>
+      <p style="margin-top:14px;font-size:14px;color:var(--ink-4);">
+        {site.credit.team}<br>
+        {site.credit.writer}<br>
+        {site.credit.design}
+      </p>
     </div>
     <div>
-      <h4>主要章節</h4>
+      <h4>章節導覽</h4>
       <ul>
         {nav.footer_chapters.map((item) => (
           <li><a href={`${pathPrefix}${item.href}`}>{item.label}</a></li>
