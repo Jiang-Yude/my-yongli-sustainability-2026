@@ -1,8 +1,14 @@
 ---
 // Footer component
 // 共用：跨所有頁面，含版本資訊 + CC BY-NC-ND 4.0 授權聲明
+// pathPrefix：主頁傳 ''、子頁（profiles/services）傳 '../'
 import site from '../data/site.json';
 import nav from '../data/nav.json';
+
+interface Props {
+  pathPrefix?: string;
+}
+const { pathPrefix = '' } = Astro.props;
 ---
 
 <footer>
@@ -16,7 +22,7 @@ import nav from '../data/nav.json';
       <h4>主要章節</h4>
       <ul>
         {nav.footer_chapters.map((item) => (
-          <li><a href={item.href}>{item.label}</a></li>
+          <li><a href={`${pathPrefix}${item.href}`}>{item.label}</a></li>
         ))}
       </ul>
     </div>
