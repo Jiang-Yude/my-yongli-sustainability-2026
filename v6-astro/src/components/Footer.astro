@@ -1,0 +1,38 @@
+---
+// Footer component
+// 共用：跨所有頁面，含版本資訊 + CC BY-NC-ND 4.0 授權聲明
+import site from '../data/site.json';
+import nav from '../data/nav.json';
+---
+
+<footer>
+  <div class="container">
+    <div>
+      <h4>{site.site_name}</h4>
+      <p>{site.site_name_en}</p>
+      <p>{site.tagline}</p>
+    </div>
+    <div>
+      <h4>主要章節</h4>
+      <ul>
+        {nav.footer_chapters.map((item) => (
+          <li><a href={item.href}>{item.label}</a></li>
+        ))}
+      </ul>
+    </div>
+    <div>
+      <h4>版本資訊</h4>
+      <ul>
+        <li>{site.report_full_name}</li>
+        <li>{site.publish_date}</li>
+        <li>{site.version_status}</li>
+        <li class="license-li">
+          <strong>{site.license.code}</strong> {site.license.label}<br>
+          <span class="license-rules">{site.license.rules}</span><br>
+          <a href={site.license.link} target="_blank" rel="noopener" class="license-link">詳細條款 →</a>
+        </li>
+      </ul>
+    </div>
+    <div class="copyright">{site.copyright}</div>
+  </div>
+</footer>

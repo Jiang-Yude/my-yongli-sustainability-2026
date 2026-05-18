@@ -1,0 +1,38 @@
+---
+// BaseLayout：跨所有頁面共用的 head + topbar + footer 殼
+// 各頁面只寫自己 unique 的 <slot /> 內容
+import Topbar from '../components/Topbar.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  extraHeadStyles?: string;  // 各頁面可注入自己的 inline <style>
+}
+
+const { title, description, extraHeadStyles } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{title}</title>
+{description && <meta name="description" content={description} />}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/common.css?v=8">
+{extraHeadStyles && <style set:html={extraHeadStyles}></style>}
+</head>
+<body>
+
+<Topbar />
+
+<slot />
+
+<Footer />
+
+</body>
+</html>

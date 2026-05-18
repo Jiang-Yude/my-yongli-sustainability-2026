@@ -1,0 +1,16 @@
+{
+  "main": [
+    { "label": "關於永力社", "href": "index.html#intro" },
+    { "label": "影響力報告", "href": "index.html#impact-report" },
+    { "label": "五大服務", "href": "index.html#five-service" },
+    { "label": "社友介紹", "href": "index.html#members" },
+    { "label": "服務計畫", "href": "index.html#impact-hub" }
+  ],
+  "footer_chapters": [
+    { "label": "回主頁", "href": "index.html" },
+    { "label": "實際案例", "href": "cases.html" },
+    { "label": "揭露架構", "href": "disclosure-framework.html" },
+    { "label": "評估方法", "href": "methodology.html" },
+    { "label": "社友介紹", "href": "members.html" }
+  ]
+}
