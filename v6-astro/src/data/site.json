@@ -10,9 +10,10 @@
   "district": "3481 地區",
   "founded": "2024 年成立",
   "license": {
+    "prefix": "本報告書採用",
     "code": "CC BY-NC-ND 4.0",
     "label": "授權",
-    "rules": "可分享 · 必須標示 · 不得商用 · 不得改作",
+    "rules": "可分享 · 必須標示來源 · 不得商用 · 不得改作",
     "link": "https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh_TW"
   },
   "credit": {

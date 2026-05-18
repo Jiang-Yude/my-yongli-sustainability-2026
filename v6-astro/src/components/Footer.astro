@@ -38,9 +38,8 @@ const { pathPrefix = '' } = Astro.props;
         <li>{site.publish_date}</li>
         <li>{site.version_status}</li>
         <li class="license-li">
-          <strong>{site.license.code}</strong> {site.license.label}<br>
-          <span class="license-rules">{site.license.rules}</span><br>
-          <a href={site.license.link} target="_blank" rel="noopener" class="license-link">詳細條款 →</a>
+          {site.license.prefix} <strong>{site.license.code}</strong> {site.license.label}<br>
+          <span class="license-rules">{site.license.rules}</span>
         </li>
       </ul>
     </div>
