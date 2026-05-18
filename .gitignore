@@ -9,10 +9,16 @@ node_modules/
 _trash/
 
 # 設計過程 sandbox（本地保留、不推 GitHub）
-v5/_design/
-v5/_archive/
+**/_design/
+**/_archive/
 *-V2.html
 *-V3.html
+*-legacy.html
 
 # 測試頁不上正式 repo
-v5/test-*.html
+**/test-*.html
+
+# Astro / Node build artifacts（v6 之後會用到）
+**/.astro/
+**/dist/
+**/.cache/
