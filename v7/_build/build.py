@@ -111,6 +111,14 @@ def head_block(lang, tree_rel, title_text):
         f'<meta property="og:url" content="{self_url}">',
         '<meta name="twitter:card" content="summary">',
         f'<script type="application/ld+json">{jsonld}</script>',
+        # ===== 流量追蹤（全站共用，每頁自動帶）=====
+        # GA4（property「永力社永續報告書官網」, Measurement ID G-1RCWR62S07, 帳戶 David a27882089）
+        '<!-- Google tag (gtag.js) -->',
+        '<script async src="https://www.googletagmanager.com/gtag/js?id=G-1RCWR62S07"></script>',
+        "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1RCWR62S07');</script>",
+        # Vercel Web Analytics + Speed Insights（需在 Vercel 專案後台開啟 Analytics 才會 serve script）
+        '<script defer src="/_vercel/insights/script.js"></script>',
+        '<script defer src="/_vercel/speed-insights/script.js"></script>',
         HEAD_MARK[1],
     ]
     return "\n".join(lines)
