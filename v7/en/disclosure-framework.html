@@ -1,0 +1,497 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Disclosure Framework｜2024-2026 Sustainability Impact Report｜Rotary Club of Taipei Sustainable Impact</title><meta name="description" content="The consensus-camp framework: five IOOI main chains, eight categories of stakeholders, ten material issues, and sixteen tracking indicators. The formal classification and results statistics demonstrated by the Club."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/css/common.css?v=8"><!--SITE-HEAD:START-->
+<link rel="canonical" href="https://3481rctsi.vercel.app/en/disclosure-framework.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://3481rctsi.vercel.app/disclosure-framework.html">
+<link rel="alternate" hreflang="en" href="https://3481rctsi.vercel.app/en/disclosure-framework.html">
+<link rel="alternate" hreflang="x-default" href="https://3481rctsi.vercel.app/disclosure-framework.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rotary Club of Taipei Sustainable Impact">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="zh_TW">
+<meta property="og:title" content="Disclosure Framework｜2024-2026 Sustainability Impact Report｜Rotary Club of Taipei Sustainable Impact">
+<meta property="og:url" content="https://3481rctsi.vercel.app/en/disclosure-framework.html">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rotary Club of Taipei Sustainable Impact","url":"https://3481rctsi.vercel.app/","inLanguage":"en","publisher":{"@type":"Organization","name":"Rotary Club of Taipei Sustainable Impact","url":"https://3481rctsi.vercel.app/"}}</script>
+<!--SITE-HEAD:END-->
+</head> <body> <!--SITE-HEADER:START-->
+<header class="topbar"> <div class="inner"> <a class="brand" href="index.html" aria-label="Home"> <span class="mark">永</span>Sustainable Impact Annual Report </a> <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"> <span></span><span></span><span></span> </button> <nav> <a href="index.html#intro">About</a><a href="index.html#impact-report">Impact Report</a><a href="index.html#five-service">Five Avenues</a><a href="index.html#members">Members</a><a href="index.html#impact-hub">Service Projects</a> </nav> <a class="lang-switch" href="../disclosure-framework.html" hreflang="zh-Hant" aria-label="切換中文">中</a> </div> </header>
+<!--SITE-HEADER:END-->  <style>
+/* === 揭露架構頁專用 === */
+
+  /* IOOI 五條主鏈：tabs 切換器 */
+  .chain-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 6px 0 18px;
+  }
+  .chain-tab {
+    padding: 9px 16px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s;
+  }
+  .chain-tab:hover { background: #FBF8F2; color: var(--ink); }
+  .chain-tab.active {
+    background: var(--gold);
+    color: #fff;
+    border-color: var(--gold);
+    font-weight: 600;
+  }
+  .chain-panel { display: none; }
+  .chain-panel.active { display: block; }
+  .chain-meta {
+    background: #FBF8F2;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    padding: 14px 18px;
+    margin: 12px 0 18px;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+  .chain-meta strong { color: var(--ink); font-weight: 600; }
+  .chain-next {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px dashed var(--line);
+    flex-wrap: wrap;
+  }
+  .chain-next-label {
+    font-size: 0.78rem;
+    color: var(--ink-mute);
+    letter-spacing: 0.04em;
+  }
+  .chain-next-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 20px;
+    background: #fff;
+    border: 1.5px solid var(--gold-soft);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--ink);
+    cursor: pointer;
+    transition: all 0.15s;
+    line-height: 1.3;
+  }
+  .chain-next-btn:hover {
+    background: var(--gold);
+    color: #fff;
+    border-color: var(--gold);
+    transform: translateY(-1px);
+  }
+  .chain-next-btn .arrow {
+    color: var(--gold);
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+  .chain-next-btn:hover .arrow { color: #fff; }
+  .chain-next-btn .name {
+    font-family: "Noto Serif TC", serif;
+    font-weight: 600;
+  }
+  @media (max-width: 600px) {
+    .chain-next { justify-content: stretch; }
+    .chain-next-btn { width: 100%; justify-content: center; padding: 13px 18px; }
+  }
+  .chain-meta .label {
+    display: inline-block;
+    font-size: 0.74rem;
+    color: var(--gold);
+    background: rgba(184,134,11,0.1);
+    padding: 2px 10px;
+    border-radius: 999px;
+    margin-right: 8px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+
+  /* 利害關係人 8 卡：4 欄 → 2 欄 → 1 欄 */
+  .stake-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-top: 18px;
+  }
+  @media (max-width: 920px) { .stake-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .stake-grid { grid-template-columns: 1fr; } }
+
+  .stake-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 18px 18px 16px;
+    position: relative;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .stake-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(184,134,11,0.08);
+  }
+  .stake-card[data-prio="high"]   { border-top: 4px solid var(--gold); }
+  .stake-card[data-prio="midhigh"]{ border-top: 4px solid #C49E60; }
+  .stake-card[data-prio="mid"]    { border-top: 4px solid #B8AB8A; }
+  .stake-card[data-prio="midlow"] { border-top: 4px solid #C9C2B0; }
+
+  .stake-prio-tag {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 999px;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+  .stake-prio-tag[data-prio="high"]    { background: var(--gold); }
+  .stake-prio-tag[data-prio="midhigh"] { background: #C49E60; }
+  .stake-prio-tag[data-prio="mid"]     { background: #B8AB8A; }
+  .stake-prio-tag[data-prio="midlow"]  { background: #C9C2B0; }
+
+  .stake-name {
+    font-family: "Noto Serif TC", serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0 60px 6px 0;
+    line-height: 1.4;
+  }
+  .stake-role {
+    font-size: 0.78rem;
+    color: var(--ink-mute);
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed var(--line);
+  }
+  .stake-block { margin-bottom: 8px; }
+  .stake-block:last-child { margin-bottom: 0; }
+  .stake-block-label {
+    font-size: 0.72rem;
+    color: var(--ink-mute);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin-bottom: 3px;
+  }
+  .stake-block p {
+    font-size: 0.86rem;
+    line-height: 1.6;
+    color: var(--ink);
+    margin: 0;
+  }
+  .stake-response {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: #FAF3E0;
+    border-left: 3px solid var(--gold);
+    border-radius: 0 6px 6px 0;
+    font-size: 0.84rem;
+    color: var(--ink);
+    line-height: 1.6;
+  }
+
+  /* 重大主題 10 項：優先排序橫條 */
+  .topic-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 18px;
+  }
+  .topic-row {
+    display: grid;
+    grid-template-columns: 60px 1.4fr 1fr 110px;
+    gap: 18px;
+    align-items: center;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    padding: 14px 18px;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .topic-row:hover { background: #FBF8F2; border-color: var(--gold-soft); }
+  .topic-row[data-rank="top3"] { border-left: 4px solid var(--gold); }
+  .topic-row[data-rank="mid"]  { border-left: 4px solid #C49E60; }
+  .topic-row[data-rank="low"]  { border-left: 4px solid #B8AB8A; }
+
+  .topic-rank {
+    font-family: "Noto Serif TC", serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-align: center;
+    line-height: 1;
+  }
+  .topic-rank-label {
+    display: block;
+    font-size: 0.66rem;
+    color: var(--ink-mute);
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 400;
+    margin-top: 4px;
+    letter-spacing: 0.06em;
+  }
+  .topic-main .topic-name {
+    font-family: "Noto Serif TC", serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .topic-main .topic-desc {
+    font-size: 0.86rem;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+  .topic-render {
+    font-size: 0.82rem;
+    color: var(--ink-mute);
+    line-height: 1.6;
+  }
+  .topic-render::before {
+    content: "Report presentation: ";
+    color: var(--ink-mute);
+    font-weight: 600;
+    margin-right: 2px;
+  }
+  .topic-importance {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.74rem;
+    color: var(--ink-mute);
+  }
+  .imp-row { display: flex; gap: 6px; align-items: center; }
+  .imp-row .imp-label { min-width: 60px; }
+  .imp-dot {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+  }
+  .imp-dot.high    { background: var(--gold); }
+  .imp-dot.midhigh { background: #C49E60; }
+  .imp-dot.mid     { background: #B8AB8A; }
+
+  @media (max-width: 820px) {
+    .topic-row {
+      grid-template-columns: 50px 1fr;
+      gap: 12px;
+      padding: 14px 14px;
+    }
+    .topic-render,
+    .topic-importance {
+      grid-column: 2 / -1;
+      margin-top: 4px;
+    }
+    .topic-importance { flex-direction: row; flex-wrap: wrap; gap: 12px; }
+  }
+
+  /* KPI 概覽：5 大類別 */
+  .kpi-cat-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin-top: 18px;
+  }
+  @media (max-width: 920px) { .kpi-cat-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .kpi-cat-grid { grid-template-columns: 1fr; } }
+
+  .kpi-cat {
+    background: var(--bg-soft);
+    border-radius: var(--radius-sm);
+    padding: 16px 14px;
+    text-align: center;
+    border-top: 3px solid var(--gold);
+  }
+  .kpi-cat-name {
+    font-family: "Noto Serif TC", serif;
+    font-size: 1.05rem;
+    color: var(--ink);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .kpi-cat-count {
+    font-family: "Noto Serif TC", serif;
+    font-size: 1.8rem;
+    color: var(--gold);
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .kpi-cat-count small {
+    font-size: 0.7rem;
+    color: var(--ink-mute);
+    font-weight: 400;
+    margin-left: 2px;
+  }
+  .kpi-cat-desc {
+    font-size: 0.78rem;
+    color: var(--ink-mute);
+    line-height: 1.5;
+    margin-top: 4px;
+  }
+
+  .kpi-link-card {
+    margin-top: 22px;
+    padding: 18px 22px;
+    background: linear-gradient(135deg, #FAF6EC, #F5EFE3);
+    border: 1.5px solid var(--gold);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+  .kpi-link-card .kpi-link-text {
+    flex: 1;
+    min-width: 240px;
+    font-size: 0.95rem;
+    color: var(--ink);
+    line-height: 1.65;
+  }
+  .kpi-link-card .kpi-link-text strong { color: var(--gold); }
+
+  /* 共識營來源說明 */
+  .source-note {
+    margin-top: 14px;
+    font-size: 0.82rem;
+    color: var(--ink-mute);
+    font-style: normal;
+  }
+  .source-note::before { content: "Source: "; font-weight: 600; }
+
+  /* 首版說明 */
+  .first-version-note {
+    background: rgba(184, 134, 11, 0.06);
+    border: 1px dashed var(--gold-soft);
+    border-radius: var(--radius-sm);
+    padding: 14px 18px;
+    margin: 18px 0 8px;
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+  .first-version-note strong { color: var(--gold); }
+
+  /* ===== 下一頁導引 ===== */
+  .case-next-section { padding: 24px 5vw 60px; max-width: 1320px; margin: 0 auto; }
+  .case-next-card {
+    display: flex; align-items: center; gap: 28px;
+    padding: 28px 32px;
+    background: linear-gradient(135deg, #FBF5E4 0%, #F4E7C5 100%);
+    border: 1.5px solid var(--gold, #C9A961);
+    border-radius: 16px;
+    text-decoration: none; color: var(--ink);
+    transition: all 0.3s cubic-bezier(0.2,0.8,0.3,1);
+    box-shadow: 0 4px 16px rgba(168,136,74,0.12);
+  }
+  .case-next-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(168,136,74,0.28);
+    border-color: var(--gold-deep, #8B6508);
+  }
+  .case-next-meta { flex: 1; }
+  .case-next-label {
+    font-size: 13px; letter-spacing: 0.18em;
+    color: var(--gold-deep, #8B6508); font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .case-next-name {
+    font-family: "Noto Serif TC", serif;
+    font-size: 1.6rem; font-weight: 600;
+    color: var(--ink); margin-bottom: 10px;
+    letter-spacing: 0.04em;
+  }
+  .case-next-desc {
+    font-size: 15px; color: var(--ink-soft, #54514A);
+    line-height: 1.75; margin: 0;
+  }
+  .case-next-arrow {
+    flex-shrink: 0;
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--gold, #C9A961); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.6rem; font-weight: 700;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 12px rgba(168,136,74,0.3);
+  }
+  .case-next-card:hover .case-next-arrow { transform: translateX(6px); background: var(--gold-deep, #8B6508); }
+  @media (max-width: 640px) {
+    .case-next-card { padding: 22px 20px; gap: 18px; }
+    .case-next-name { font-size: 1.25rem; }
+    .case-next-arrow { width: 44px; height: 44px; font-size: 1.3rem; }
+  }
+</style>  <section class="hero" style="padding-bottom: 32px;"> <div class="container"> <h1>Disclosure Framework</h1> <p class="subtitle">The formal classification and results statistics demonstrated by the Club. Four classification systems, serving as a disclosure example that other clubs, NPOs, and partners can refer to.</p> <div class="meta"> <span class="pill">IOOI · 5 main chains</span> <span class="pill">Stakeholders · 8 categories</span> <span class="pill">Material issues · 10</span> <span class="pill">Tracking indicators · 16</span> <span>v1.0 · 2026.05 · First consensus-camp edition</span> </div> </div> </section>  <section class="section" style="padding-top: 36px; padding-bottom: 24px;"> <div class="container"> <div class="intro"> <h3>The 3/22 Consensus Camp: From Activity-Oriented to Impact-Oriented</h3> <p>On March 22, 2026, the Rotary Club of Taipei Sustainable Impact, District 3481, held its 36th regular meeting and consensus meeting in the form of a "Sustainable Governance Cafe Dialogue," with Members and guests jointly taking stock of the current state of Club affairs and forging a direction for the future.</p> <p>The consensus of the meeting: the Club should not remain merely at holding events or routine gatherings, but should become a platform capable of integrating Members' expertise, driving the practice of service, clearly communicating value to the outside world, and continuously accumulating social impact. The report is the external language of this transformation.</p> </div> <div class="first-version-note"> <strong>This page is the first compiled version from the consensus camp.</strong> The following four classification systems support one another: IOOI describes the event chain, the stakeholders define to whom we are accountable, the material issues mark the priority directions, and the KPIs are the trackable quantitative indicators. These will be continuously recalibrated as service projects accumulate and through annual reviews.
+</div> </div> </section>  <section class="section section-analysis" id="chains"> <div class="container"> <div class="section-head"> <span class="num">01</span> <h2>The Five Main IOOI Outcome Chains</h2> <span class="meta">5 main chains｜Consensus camp "Outcome Event Chain Master Table"</span> </div> <div class="framework-block"> <span class="framework-label">Event-chain framework</span> <h3>From Input → Activities → Outputs → Outcomes → Long-Term Impact</h3> <p class="framework-desc">IOOI (Input – Activities – Outputs – Outcomes – Impact) is an impact event-chain framework commonly used by international NPOs. The consensus camp identified five main chains for the Club over the year, serving as the narrative backbone of the report. Click the tabs below to switch between each main chain.</p> <div class="chain-tabs" role="tablist"> <button class="chain-tab active" data-chain="c1">① Overall Transformation of the Club</button> <button class="chain-tab" data-chain="c2">② Consensus Building</button> <button class="chain-tab" data-chain="c3">③ Member Narrative</button> <button class="chain-tab" data-chain="c4">④ External Communication</button> <button class="chain-tab" data-chain="c5">⑤ Co-Creation Action</button> </div> <!-- 主鏈 1：社團整體轉型 --> <div class="chain-panel active" data-chain="c1"> <div class="chain-meta"> <span class="label">Chain positioning</span><strong>The main chain of the report's general-overview front page</strong>.
+<br><span class="label" style="margin-top:6px;">Stakeholders</span>Members, guests, partners, potential members
+</div> <div class="iooi-flow"> <div class="iooi-stage" data-color="found"> <div class="iooi-step">I</div> <div class="iooi-name">Input</div> <ul> <li>Members' diverse expertise</li> <li>Profile materials</li> <li>The mechanism of regular and consensus meetings</li> <li>Administrative support and external networks</li> <li>AI and digital organization capabilities</li> </ul> </div> <div class="iooi-arrow">→</div> <div class="iooi-stage" data-color="guard"> <div class="iooi-step">A</div> <div class="iooi-name">Activities</div> <ul> <li>Holding regular and consensus meetings</li> <li>Conducting profile interviews</li> <li>Taking stock of Members' expertise</li> <li>Advancing service projects</li> <li>Building the report structure and organizing the Club narrative</li> </ul> </div> <div class="iooi-arrow">→</div> <div class="iooi-stage" data-color="act"> <div class="iooi-step">O</div> <div class="iooi-name">Outputs</div> <ul> <li>Meeting minutes and profiles</li> <li>Issue conclusions</li> <li>Preliminary report chapters</li> <li>An inventory of Members' expertise</li> <li>External communication materials</li> </ul> </div> <div class="iooi-arrow">→</div> <div class="iooi-stage" data-color="cont"> <div class="iooi-step">O</div> <div class="iooi-name">Outcomes</div> <ul> <li>Members have a clearer sense of the Club's direction</li> <li>Guests find it easier to understand the Club</li> <li>The logic of recruitment and retention is clearer</li> <li>The Club begins to narrate by impact rather than by the number of events</li> </ul> </div> <div class="iooi-arrow">→</div> <div class="iooi-stage" data-color="gold"> <div class="iooi-step">I</div> <div class="iooi-name">Impact</div> <ul> <li>The Club gradually transforms from a networking-type club into a sustainable-impact platform</li> </ul> </div> </div> <div class="framework-insight"> <h4>Trackable indicators</h4> <ul> <li>Number of completed profiles</li> <li>Number of consensus meetings and themed dialogues</li> <li>Guest return rate</li> <li>Number of projects initiated through Member co-creation</li> </ul> </div> <div class="chain-next"> <span class="chain-next-label">Next main chain</span> <button class="chain-next-btn" data-next="c2"> <span class="name">② Consensus Building</span><span class="arrow">↓</span> </button> </div> </div> <!-- 主鏈 2：共識形成 --> <div class="chain-panel" data-chain="c2"> <div class="chain-meta"> <span class="label">Chain positioning</span><strong>A major annual event in the report</strong>.
+<br><span class="label" style="margin-top:6px;">Stakeholders</span>Members, guests
+</div> <div class="iooi-flow"> <div class="iooi-stage" data-color="found"> <div class="iooi-step">I</div> <div class="iooi-name">Input</div> <ul> <li>Five-table issue design</li> <li>Table-leader facilitation</li> <li>Profile interview materials</li> <li>Meeting process design</li> </ul> </div> <div class="iooi-arrow">→</div> <div class="iooi-stage" data-color="guard"> <div class="iooi-step">A</div> <div class="iooi-name">Activities</div> <ul> <li>Conducting profile interviews</li> <li>Three rounds of Cafe dialogue</li> <li>Reporting back from each table</li> <li>Converging on consensus and next steps</li> </ul> </div> <div class="iooi-arrow">→</div> <div class="iooi-stage" data-color="act"> <div class="iooi-step">O</div> <div class="iooi-name">Outputs</div> <ul> <li>Conclusions on five major issues</li> <li>Meeting consensus</li> <li>Subsequent directions for action</li> </ul> </div> <div class="iooi-arrow">→</div> <div class="iooi-stage" data-color="cont"> <div class="iooi-step">O</div> <div class="iooi-name">Outcomes</div> <ul> <li>Members form a shared language for the Club's positioning</li> <li>Each group moves from abstract ideas toward actionable directions</li> </ul> </div> <div class="iooi-arrow">→</div> <div class="iooi-stage" data-color="gold"> <div class="iooi-step">I</div> <div class="iooi-name">Impact</div> <ul> <li>The consensus meeting becomes a key node in the Club's shift from activity-oriented to strategy-oriented</li> </ul> </div> </div> <div class="framework-insight"> <h4>Trackable indicators</h4> <ul> <li>Number of reports from the five tables</li> <li>Number of action recommendations</li> <li>Number of follow-up items</li> </ul> </div> <div class="chain-next"> <span class="chain-next-label">Next main chain</span> <button class="chain-next-btn" data-next="c3"> <span class="name">③ Member Narrative</span><span class="arrow">↓</span> </button> </div> </div> <!-- 主鏈 3：人物敘事 --> <div class="chain-panel" data-chain="c3"> <div class="chain-meta"> <span class="label">Chain positioning</span><strong>Suitable as a dedicated report chapter</strong>.
+<br><span class="label" style="margin-top:6px;">Stakeholders</span>Members, guests, potential members
+</div> <div class="iooi-flow"> <div class="iooi-stage" data-color="found"> <div class="iooi-step">I</div> <div class="iooi-name">Input</div> <ul> <li>Members' life experiences and professional backgrounds</li> <li>Interviewing and writing capabilities</li> <li>Visual and textual materials</li> </ul> </div> <div class="iooi-arrow">→</div> <div class="iooi-stage" data-color="guard"> <div class="iooi-step">A</div> <div class="iooi-name">Activities</div> <ul> <li>Interviewing Members</li> <li>Writing profiles</li> <li>Using profiles as dialogue material in regular and consensus meetings</li> </ul> </div> <div class="iooi-arrow">→</div> <div class="iooi-stage" data-color="act"> <div class="iooi-step">O</div> <div class="iooi-name">Outputs</div> <ul> <li>Profile texts</li> <li>Representative stories</li> <li>Cases of Members' expertise and values</li> </ul> </div> <div class="iooi-arrow">→</div> <div class="iooi-stage" data-color="cont"> <div class="iooi-step">O</div> <div class="iooi-name">Outcomes</div> <ul> <li>Members understand one another better</li> <li>Guests find it easier to understand the Club through stories</li> <li>The Club narrative shifts from events to people and impact</li> </ul> </div> <div class="iooi-arrow">→</div> <div class="iooi-stage" data-color="gold"> <div class="iooi-step">I</div> <div class="iooi-name">Impact</div> <ul> <li>Forms a sustainability narrative style centered on personal stories, raising the Club's brand recognition</li> </ul> </div> </div> <div class="framework-insight"> <h4>Trackable indicators</h4> <ul> <li>Number of profiles</li> <li>Number of events citing profiles</li> <li>Guest feedback on understanding of the Club</li> </ul> </div> <div class="chain-next"> <span class="chain-next-label">Next main chain</span> <button class="chain-next-btn" data-next="c4"> <span class="name">④ External Communication</span><span class="arrow">↓</span> </button> </div> </div> <!-- 主鏈 4：對外溝通 --> <div class="chain-panel" data-chain="c4"> <div class="chain-meta"> <span class="label">Chain positioning</span><strong>The first edition centers on philosophy, profiles, and representative cases</strong>.
+<br><span class="label" style="margin-top:6px;">Stakeholders</span>Members, guests, potential members, partners
+</div> <div class="iooi-flow"> <div class="iooi-stage" data-color="found"> <div class="iooi-step">I</div> <div class="iooi-name">Input</div> <ul> <li>Consensus meeting discussions</li> <li>Profiles</li> <li>Service-project data</li> <li>Meeting minutes</li> <li>Design and editing capabilities</li> </ul> </div> <div class="iooi-arrow">→</div> <div class="iooi-stage" data-color="guard"> <div class="iooi-step">A</div> <div class="iooi-name">Activities</div> <ul> <li>Defining the purpose and readers of the report</li> <li>Taking stock of materials</li> <li>Building the chapter structure</li> <li>Writing and design</li> </ul> </div> <div class="iooi-arrow">→</div> <div class="iooi-stage" data-color="act"> <div class="iooi-step">O</div> <div class="iooi-name">Outputs</div> <ul> <li>Completion of the first report</li> <li>Planning for online and offline versions</li> <li>External presentation and introductory materials</li> </ul> </div> <div class="iooi-arrow">→</div> <div class="iooi-stage" data-color="cont"> <div class="iooi-step">O</div> <div class="iooi-name">Outcomes</div> <ul> <li>Outsiders find it easier to understand the Club</li> <li>Potential members more easily see the value of joining</li> <li>The consistency of external communication improves</li> </ul> </div> <div class="iooi-arrow">→</div> <div class="iooi-stage" data-color="gold"> <div class="iooi-step">I</div> <div class="iooi-name">Impact</div> <ul> <li>Establishes the Club's public image and social recognition as a sustainable-impact club</li> </ul> </div> </div> <div class="framework-insight"> <h4>Trackable indicators</h4> <ul> <li>Report completeness</li> <li>Number of external uses</li> <li>Number of collaboration discussions</li> <li>Number of potential-member conversions</li> </ul> </div> <div class="chain-next"> <span class="chain-next-label">Next main chain</span> <button class="chain-next-btn" data-next="c5"> <span class="name">⑤ Co-Creation Action</span><span class="arrow">↓</span> </button> </div> </div> <!-- 主鏈 5：共創行動 --> <div class="chain-panel" data-chain="c5"> <div class="chain-meta"> <span class="label">Chain positioning</span><strong>Must clearly define which outcomes belong to Club support and which belong to individual Members</strong>.
+<br><span class="label" style="margin-top:6px;">Stakeholders</span>Members, beneficiaries, partners
+</div> <div class="iooi-flow"> <div class="iooi-stage" data-color="found"> <div class="iooi-step">I</div> <div class="iooi-name">Input</div> <ul> <li>Members' competencies and networks</li> <li>The Club platform</li> <li>Networking opportunities</li> <li>External collaboration sites</li> </ul> </div> <div class="iooi-arrow">→</div> <div class="iooi-stage" data-color="guard"> <div class="iooi-step">A</div> <div class="iooi-name">Activities</div> <ul> <li>Taking stock of Members' expertise</li> <li>Identifying issues of common concern</li> <li>Connecting external organizations</li> <li>Forming collaboration and co-creation projects</li> </ul> </div> <div class="iooi-arrow">→</div> <div class="iooi-stage" data-color="act"> <div class="iooi-step">O</div> <div class="iooi-name">Outputs</div> <ul> <li>Service-project concepts</li> <li>Collaboration lists</li> <li>Cross-disciplinary collaboration networks</li> <li>Recordable cases</li> </ul> </div> <div class="iooi-arrow">→</div> <div class="iooi-stage" data-color="cont"> <div class="iooi-step">O</div> <div class="iooi-name">Outcomes</div> <ul> <li>Members move from networking to co-creation</li> <li>Service outcomes can be tracked and organized into the report</li> </ul> </div> <div class="iooi-arrow">→</div> <div class="iooi-stage" data-color="gold"> <div class="iooi-step">I</div> <div class="iooi-name">Impact</div> <ul> <li>The Club gradually becomes a club able to drive social innovation and sustainable collaboration in a platform manner</li> </ul> </div> </div> <div class="framework-insight"> <h4>Trackable indicators</h4> <ul> <li>Number of co-creation projects</li> <li>Number of cross-disciplinary participants</li> <li>Number of external collaborations</li> <li>Number of cases recorded</li> </ul> </div> <div class="chain-next"> <span class="chain-next-label">All five main chains viewed</span> <button class="chain-next-btn" data-next="c1"> <span class="arrow">↑</span><span class="name">Back to ① Overall Transformation of the Club</span> </button> </div> </div> <p class="source-note">3/22 consensus meeting "Sustainability Report Outcome Event Chain Master Table"</p> </div> </div> </section>  <section class="section" id="stakeholders"> <div class="container"> <div class="section-head"> <span class="num">02</span> <h2>Eight Categories of Stakeholders</h2> <span class="meta">8 roles｜Consensus camp "Stakeholder Inventory Table"</span> </div> <div class="framework-block"> <span class="framework-label">Relationship inventory</span> <h3>To Whom We Are Accountable, Who Provides Resources, and How the Report Responds</h3> <p class="framework-desc">The Club's impact comes from two-way relationships with eight categories of stakeholders. The consensus camp identified, for each role, their issues of concern, expectations, resources they can provide, and how the report should respond to them.</p> <div class="stake-grid"> <div class="stake-card" data-prio="high"> <span class="stake-prio-tag" data-prio="high">Priority High</span> <div class="stake-name">Members</div> <div class="stake-role">Core internal stakeholders</div> <div class="stake-block"> <div class="stake-block-label">Main needs</div> <p>Clear direction, roles to participate in, being seen, being connected, co-creation opportunities</p> </div> <div class="stake-block"> <div class="stake-block-label">Resources they can provide</div> <p>Professional capability, networks, time, cases, stories, service actions</p> </div> <div class="stake-response"> <strong>Report response: </strong>Clearly present the Club's mission, Members' roles, co-creation outcomes, and personal stories
+</div> </div> <div class="stake-card" data-prio="high"> <span class="stake-prio-tag" data-prio="high">Priority High</span> <div class="stake-name">Guests</div> <div class="stake-role">Potential joiners / external observers</div> <div class="stake-block"> <div class="stake-block-label">Main needs</div> <p>Quickly understand the Club's character, know how to participate, feel genuine exchange</p> </div> <div class="stake-block"> <div class="stake-block-label">Resources they can provide</div> <p>New perspectives, potential collaboration, future possibility of joining, network expansion</p> </div> <div class="stake-response"> <strong>Report response: </strong>Explain in plain terms who the Club is, what it does, and how to participate
+</div> </div> <div class="stake-card" data-prio="high"> <span class="stake-prio-tag" data-prio="high">Priority High</span> <div class="stake-name">Potential Members</div> <div class="stake-role">High-potential external stakeholders</div> <div class="stake-block"> <div class="stake-block-label">Main needs</div> <p>A clear path to join, seeing their own place, getting to know the Club's core members</p> </div> <div class="stake-block"> <div class="stake-block-label">Resources they can provide</div> <p>Expertise, long-term participation, co-creation energy</p> </div> <div class="stake-response"> <strong>Report response: </strong>Reasons to join, personal stories, ways to participate, the Club's support system
+</div> </div> <div class="stake-card" data-prio="high"> <span class="stake-prio-tag" data-prio="high">Priority High</span> <div class="stake-name">Partners</div> <div class="stake-role">External collaboration stakeholders</div> <div class="stake-block"> <div class="stake-block-label">Main needs</div> <p>Find a point of collaboration, understand what the Club can offer, reduce the uncertainty of collaboration</p> </div> <div class="stake-block"> <div class="stake-block-label">Resources they can provide</div> <p>Venues, funding, technology, expertise, amplification of impact</p> </div> <div class="stake-response"> <strong>Report response: </strong>Present the Club's positioning, cases, collaboration models, and deliverables
+</div> </div> <div class="stake-card" data-prio="high"> <span class="stake-prio-tag" data-prio="high">Priority High</span> <div class="stake-name">Service Recipients / Beneficiaries</div> <div class="stake-role">Those affected</div> <div class="stake-block"> <div class="stake-block-label">Main needs</div> <p>Being understood, being respected, actually benefiting, continued support</p> </div> <div class="stake-block"> <div class="stake-block-label">Resources they can provide</div> <p>Genuine feedback, change stories, insight into needs</p> </div> <div class="stake-response"> <strong>Report response: </strong>Present outcomes and change through real cases, not just the number of activities
+</div> </div> <div class="stake-card" data-prio="midhigh"> <span class="stake-prio-tag" data-prio="midhigh">Priority Medium-High</span> <div class="stake-name">The Rotary System / District</div> <div class="stake-role">Institutional and network stakeholders</div> <div class="stake-block"> <div class="stake-block-label">Main needs</div> <p>See the Club's character, outcomes, and exemplary value</p> </div> <div class="stake-block"> <div class="stake-block-label">Resources they can provide</div> <p>Institutional resources, awards, exposure, connection opportunities</p> </div> <div class="stake-response"> <strong>Report response: </strong>Present the Club's significance, methods, and replicability
+</div> </div> <div class="stake-card" data-prio="mid"> <span class="stake-prio-tag" data-prio="mid">Priority Medium</span> <div class="stake-name">The Community and General Public</div> <div class="stake-role">External public stakeholders</div> <div class="stake-block"> <div class="stake-block-label">Main needs</div> <p>Clear and easy to understand, trustworthy, able to generate social meaning</p> </div> <div class="stake-block"> <div class="stake-block-label">Resources they can provide</div> <p>Public recognition, reach, support</p> </div> <div class="stake-response"> <strong>Report response: </strong>Use stories and outcomes to explain the Club's public value
+</div> </div> <div class="stake-card" data-prio="midlow"> <span class="stake-prio-tag" data-prio="midlow">Priority Medium-Low</span> <div class="stake-name">Suppliers / Execution Support Units</div> <div class="stake-role">Execution collaboration stakeholders</div> <div class="stake-block"> <div class="stake-block-label">Main needs</div> <p>Clear requirements, efficient collaboration, reasonable planning</p> </div> <div class="stake-block"> <div class="stake-block-label">Resources they can provide</div> <p>Execution resources, production capabilities</p> </div> <div class="stake-response"> <strong>Report response: </strong>Not necessarily a main chapter, but can be listed under governance and collaboration mechanisms
+</div> </div> </div> <p class="source-note">3/22 consensus meeting "Stakeholder Inventory Table" (the Member and guest interview portions are not disclosed externally, per the meeting consensus)</p> </div> </div> </section>  <section class="section section-analysis" id="topics"> <div class="container"> <div class="section-head"> <span class="num">03</span> <h2>Ten Material Issues</h2> <span class="meta">Prioritized｜Consensus camp "First Edition of the Material Issues Matrix"</span> </div> <div class="framework-block"> <span class="framework-label">Priority matrix</span> <h3>Stakeholder Importance × Club Importance</h3> <p class="framework-desc">Materiality is the core of sustainability reporting: only disclose issues that are important to both the Club and its stakeholders. The table below presents the ten issues and their priority ranking identified by the consensus camp.</p> <div class="topic-list"> <div class="topic-row" data-rank="top3"> <div class="topic-rank">1<span class="topic-rank-label">Priority</span></div> <div class="topic-main"> <div class="topic-name">Sustainable Impact Positioning</div> <div class="topic-desc">How the Club defines its own sustainable impact and how to articulate it internally and externally</div> </div> <div class="topic-render">As the report's general overview and core narrative backbone</div> <div class="topic-importance"> <div class="imp-row"><span class="imp-label">External</span><span class="imp-dot high"></span>High</div> <div class="imp-row"><span class="imp-label">Internal</span><span class="imp-dot high"></span>High</div> </div> </div> <div class="topic-row" data-rank="top3"> <div class="topic-rank">2<span class="topic-rank-label">Priority</span></div> <div class="topic-main"> <div class="topic-name">Building the Sustainability Impact Report</div> <div class="topic-desc">Using a single report to integrate philosophy, people, cases, and outcomes</div> </div> <div class="topic-render">A standalone chapter presenting the purpose, structure, and first-edition results</div> <div class="topic-importance"> <div class="imp-row"><span class="imp-label">External</span><span class="imp-dot high"></span>High</div> <div class="imp-row"><span class="imp-label">Internal</span><span class="imp-dot high"></span>High</div> </div> </div> <div class="topic-row" data-rank="top3"> <div class="topic-rank">3<span class="topic-rank-label">Priority</span></div> <div class="topic-main"> <div class="topic-name">Member Profiles and Stories</div> <div class="topic-desc">Using personal stories to explain Members' expertise, values, and impact</div> </div> <div class="topic-render">A dedicated chapter on people plus representative cases</div> <div class="topic-importance"> <div class="imp-row"><span class="imp-label">External</span><span class="imp-dot high"></span>High</div> <div class="imp-row"><span class="imp-label">Internal</span><span class="imp-dot high"></span>High</div> </div> </div> <div class="topic-row" data-rank="mid"> <div class="topic-rank">4<span class="topic-rank-label">Priority</span></div> <div class="topic-main"> <div class="topic-name">Member Recruitment and Retention</div> <div class="topic-desc">How to help the right people understand and join, and keep participating</div> </div> <div class="topic-render">Present reasons to join, ways to participate, and the community culture</div> <div class="topic-importance"> <div class="imp-row"><span class="imp-label">External</span><span class="imp-dot high"></span>High</div> <div class="imp-row"><span class="imp-label">Internal</span><span class="imp-dot high"></span>High</div> </div> </div> <div class="topic-row" data-rank="mid"> <div class="topic-rank">5<span class="topic-rank-label">Priority</span></div> <div class="topic-main"> <div class="topic-name">Transformation of Meetings and Internal Learning</div> <div class="topic-desc">Meetings shifting from procedural to dialogue-based, co-creative, and learnable</div> </div> <div class="topic-render">Included in the governance / organizational culture chapter</div> <div class="topic-importance"> <div class="imp-row"><span class="imp-label">External</span><span class="imp-dot midhigh"></span>Medium-High</div> <div class="imp-row"><span class="imp-label">Internal</span><span class="imp-dot high"></span>High</div> </div> </div> <div class="topic-row" data-rank="mid"> <div class="topic-rank">6<span class="topic-rank-label">Priority</span></div> <div class="topic-main"> <div class="topic-name">Integration and Co-Creation of Members' Expertise</div> <div class="topic-desc">Connecting Members' strengths into service and action capabilities</div> </div> <div class="topic-render">Included in the platform value and co-creation case chapter</div> <div class="topic-importance"> <div class="imp-row"><span class="imp-label">External</span><span class="imp-dot high"></span>High</div> <div class="imp-row"><span class="imp-label">Internal</span><span class="imp-dot high"></span>High</div> </div> </div> <div class="topic-row" data-rank="mid"> <div class="topic-rank">7<span class="topic-rank-label">Priority</span></div> <div class="topic-main"> <div class="topic-name">Service Project Outcomes and Impact</div> <div class="topic-desc">Explaining what the service did, and more so the change it brought</div> </div> <div class="topic-render">Presented via IOOI or case studies</div> <div class="topic-importance"> <div class="imp-row"><span class="imp-label">External</span><span class="imp-dot high"></span>High</div> <div class="imp-row"><span class="imp-label">Internal</span><span class="imp-dot high"></span>High</div> </div> </div> <div class="topic-row" data-rank="mid"> <div class="topic-rank">8<span class="topic-rank-label">Priority</span></div> <div class="topic-main"> <div class="topic-name">Stakeholder Identification and Outcome Attribution</div> <div class="topic-desc">Clarifying which outcomes are Club-supported, which belong to individual Members, and which belong to partners</div> </div> <div class="topic-render">Addressed in the methodology chapter regarding scope and principles</div> <div class="topic-importance"> <div class="imp-row"><span class="imp-label">External</span><span class="imp-dot midhigh"></span>Medium-High</div> <div class="imp-row"><span class="imp-label">Internal</span><span class="imp-dot high"></span>High</div> </div> </div> <div class="topic-row" data-rank="low"> <div class="topic-rank">9<span class="topic-rank-label">Priority</span></div> <div class="topic-main"> <div class="topic-name">AI and Knowledge Systems</div> <div class="topic-desc">Using AI and digital tools to organize Club affairs, profiles, and cases</div> </div> <div class="topic-render">Included in the governance innovation and future development chapter</div> <div class="topic-importance"> <div class="imp-row"><span class="imp-label">External</span><span class="imp-dot midhigh"></span>Medium-High</div> <div class="imp-row"><span class="imp-label">Internal</span><span class="imp-dot midhigh"></span>Medium-High</div> </div> </div> <div class="topic-row" data-rank="low"> <div class="topic-rank">10<span class="topic-rank-label">Priority</span></div> <div class="topic-main"> <div class="topic-name">External Brand and Public Communication</div> <div class="topic-desc">Letting the outside world know what the Club does and why it is worth attention</div> </div> <div class="topic-render">Report preface, summary page, and external brief highlights</div> <div class="topic-importance"> <div class="imp-row"><span class="imp-label">External</span><span class="imp-dot high"></span>High</div> <div class="imp-row"><span class="imp-label">Internal</span><span class="imp-dot midhigh"></span>Medium-High</div> </div> </div> </div> <p class="source-note">3/22 consensus meeting "First Edition of the Material Issues Matrix" (first-edition ranking, to be continuously adjusted through annual reviews)</p> </div> </div> </section>  <section class="section" id="kpi"> <div class="container"> <div class="section-head"> <span class="num">04</span> <h2>Sixteen Tracking Indicators</h2> <span class="meta">5 categories｜Consensus camp "First Edition of the KPI Indicator Table"</span> </div> <div class="framework-block"> <span class="framework-label">Quantitative indicators</span> <h3>Turning Abstract Impact into Numbers Trackable Year After Year</h3> <p class="framework-desc">KPIs leave trackable evidence of our commitments to ourselves. The consensus camp proposed sixteen first-edition indicators across five dimensions. The table below is a category overview. For full indicator definitions, calculation methods, and tracking frequency, see the methodology page.</p> <div class="kpi-cat-grid"> <div class="kpi-cat"> <div class="kpi-cat-name">Organizational Governance</div> <div class="kpi-cat-count">3<small>items</small></div> <div class="kpi-cat-desc">Profiles, expertise inventory, consensus completeness</div> </div> <div class="kpi-cat"> <div class="kpi-cat-name">Participation and Interaction</div> <div class="kpi-cat-count">4<small>items</small></div> <div class="kpi-cat-desc">Number of regular meetings, guest participation, return rate, conversion count</div> </div> <div class="kpi-cat"> <div class="kpi-cat-name">Content Building</div> <div class="kpi-cat-count">3<small>items</small></div> <div class="kpi-cat-desc">Chapter completion, cases recorded, external materials</div> </div> <div class="kpi-cat"> <div class="kpi-cat-name">Impact Outcomes</div> <div class="kpi-cat-count">4<small>items</small></div> <div class="kpi-cat-desc">Co-creation projects, collaboration connections, feedback collection, Member identification</div> </div> <div class="kpi-cat"> <div class="kpi-cat-name">Digital Governance</div> <div class="kpi-cat-count">2<small>items</small></div> <div class="kpi-cat-desc">AI application scenarios, knowledge archiving</div> </div> </div> <div class="kpi-link-card"> <div class="kpi-link-text"> <strong>The full indicator list is on the methodology page.</strong> It includes the definition, calculation method, unit, data source, tracking frequency, corresponding material issue, and first-edition status of each indicator.
+</div> <a href="methodology.html" class="entry-btn">View the full methodology →</a> </div> <p class="source-note">3/22 consensus meeting "First Edition of the KPI Indicator Table" (the first edition focuses on "priority tracking" items, with the rest introduced year by year)</p> </div> </div> </section>  <section class="case-next-section"> <div class="container"> <a href="methodology.html" class="case-next-card"> <div class="case-next-meta"> <div class="case-next-label">Next Page　Assessment Methodology</div> <div class="case-next-name">Impact Measurement Methodology</div> <p class="case-next-desc">Drawing on the 5 stages of the Lxuetang Companionship Card, we observe the roles and growth trajectories of Members within the Club's system. Look back once a year, and the direction for the next year naturally emerges.</p> </div> <div class="case-next-arrow">→</div> </a> </div> </section>  <script>
+  // Topbar 漢堡選單
+  (function () {
+    const btn = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.topbar nav');
+    if (!btn || !nav) return;
+    btn.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      btn.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      nav.classList.remove('open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    }));
+  })();
+
+  // IOOI 五條主鏈 tab 切換
+  (function () {
+    const tabs = document.querySelectorAll('.chain-tab');
+    const panels = document.querySelectorAll('.chain-panel');
+    const tabsBar = document.querySelector('.chain-tabs');
+
+    function switchChain(target, scrollBack) {
+      tabs.forEach(t => t.classList.toggle('active', t.dataset.chain === target));
+      panels.forEach(p => p.classList.toggle('active', p.dataset.chain === target));
+      if (scrollBack && tabsBar) {
+        tabsBar.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => switchChain(tab.dataset.chain, false));
+    });
+
+    document.querySelectorAll('.chain-next-btn').forEach(btn => {
+      btn.addEventListener('click', () => switchChain(btn.dataset.next, true));
+    });
+  })();
+</script>  <!--SITE-FOOTER:START-->
+<footer> <div class="container"> <div> <h4>Rotary Club of Taipei Sustainable Impact</h4> <p>Rotary International District 3481</p> <p>Serving society through our professions · Measuring value by impact</p> <p style="margin-top:14px;font-size:14px;color:var(--ink-mute);"> Produced by the report working group of the Club<br> Lead author: Vincent Chen · Working group: CP Lin Hsueh-hsien, Aibi team<br> Information architecture and web design by Jiang Yu-de </p> </div> <div> <h4>Chapters</h4> <ul> <li><a href="index.html#intro">About</a></li><li><a href="index.html#impact-report">Impact Report</a></li><li><a href="index.html#five-service">Five Avenues</a></li><li><a href="index.html#members">Members</a></li><li><a href="index.html#impact-hub">Service Projects</a></li> </ul> </div> <div> <h4>Edition</h4> <ul> <li>2024-2026 Sustainability Impact Report</li> <li>Published May 2026</li> <li>Continuously updated</li> <li class="license-li"> Licensed under <strong>CC BY-NC-ND 4.0</strong><br> <span class="license-rules">Share · Attribute the source · Non-commercial · No derivatives</span> </li> </ul> </div> <div class="copyright">© 2024-2026 Rotary Club of Taipei Sustainable Impact, District 3481</div> </div> </footer>
+<!--SITE-FOOTER:END--> </body></html>
