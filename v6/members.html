@@ -1,0 +1,309 @@
+<!DOCTYPE html><html lang="zh-Hant"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>社友介紹｜2024-2026 永續影響力報告書｜永力社</title><meta name="description" content="永力社各位社友的職業專業、服務初衷與在系統中的角色定位。"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/css/common.css?v=8"><style>.member-onboarding[data-astro-cid-hu6ywz6e]{margin:64px 0 32px;padding:60px 32px;background:linear-gradient(180deg,var(--bg-soft) 0%,#f0e7d2 100%);border:1px solid var(--gold-soft);border-radius:16px;text-align:center}.member-onboarding[data-astro-cid-hu6ywz6e] .onboard-inner[data-astro-cid-hu6ywz6e]{max-width:720px;margin:0 auto}.member-onboarding[data-astro-cid-hu6ywz6e] .tag[data-astro-cid-hu6ywz6e]{display:inline-block;padding:6px 14px;border:1px solid var(--gold);border-radius:20px;color:var(--gold);font-size:.85rem;letter-spacing:.08em;margin-bottom:20px;background:var(--bg-card)}.member-onboarding[data-astro-cid-hu6ywz6e] h2[data-astro-cid-hu6ywz6e]{font-size:2rem;margin:0 0 16px;color:var(--ink);font-family:"Noto Serif TC",serif;letter-spacing:.02em}.member-onboarding[data-astro-cid-hu6ywz6e] .sub[data-astro-cid-hu6ywz6e]{font-size:1rem;color:var(--ink-soft);line-height:1.85;margin:0 auto 28px;max-width:600px}.member-onboarding[data-astro-cid-hu6ywz6e] .onboard-cta-row[data-astro-cid-hu6ywz6e]{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}.member-onboarding[data-astro-cid-hu6ywz6e] a[data-astro-cid-hu6ywz6e]{display:inline-flex;align-items:center;gap:6px;padding:12px 22px;border-radius:28px;font-weight:600;font-size:.95rem;text-decoration:none;transition:all .25s}.onboard-btn-ghost[data-astro-cid-hu6ywz6e]{background:var(--bg-card);color:var(--ink);border:1px solid var(--line)}.onboard-btn-ghost[data-astro-cid-hu6ywz6e]:hover{border-color:var(--gold);color:var(--gold)}.onboard-btn-gold[data-astro-cid-hu6ywz6e]{background:var(--gold);color:#fff}.onboard-btn-gold[data-astro-cid-hu6ywz6e]:hover{background:#9a7009;transform:translateY(-2px);box-shadow:0 4px 14px #a8884a4d}.onboard-btn-ink[data-astro-cid-hu6ywz6e]{background:#5c544a;color:#fff}.onboard-btn-ink[data-astro-cid-hu6ywz6e]:hover{background:#3d362e;transform:translateY(-2px);box-shadow:0 4px 14px #3c342e4d}@media(max-width:720px){.member-onboarding[data-astro-cid-hu6ywz6e]{padding:40px 20px;margin:40px -16px 24px;border-radius:12px}.member-onboarding[data-astro-cid-hu6ywz6e] h2[data-astro-cid-hu6ywz6e]{font-size:1.5rem}.member-onboarding[data-astro-cid-hu6ywz6e] .sub[data-astro-cid-hu6ywz6e]{font-size:.95rem}.member-onboarding[data-astro-cid-hu6ywz6e] a[data-astro-cid-hu6ywz6e]{width:100%;justify-content:center}}
+</style></head> <body> <header class="topbar"> <div class="inner"> <a class="brand" href="index.html" aria-label="回首頁"> <span class="mark">永</span>永續影響力扶輪社年度報告書 </a> <button class="nav-toggle" aria-label="開啟選單" aria-expanded="false"> <span></span><span></span><span></span> </button> <nav> <a href="index.html#intro">關於永力社</a><a href="index.html#impact-report">影響力報告</a><a href="index.html#five-service">五大服務</a><a href="index.html#members">社友介紹</a><a href="index.html#impact-hub">服務計畫</a> </nav> </div> </header>  <style>
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+.member-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow .15s, transform .15s;
+}
+/* 有子頁的卡片才浮動 + cursor pointer */
+.member-card:has(a.member-head) { cursor: pointer; }
+.member-card:has(a.member-head):hover {
+  box-shadow: 0 14px 36px rgba(43,42,38,0.20);
+  transform: translateY(-6px);
+  border-color: var(--gold-soft);
+}
+/* 無子頁的卡片：不浮動 */
+.member-card:not(:has(a.member-head)):hover {
+  transform: none;
+  box-shadow: var(--shadow);
+}
+.member-head {
+  display: flex; align-items: center; gap: 12px;
+  padding: 18px 20px 14px;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid var(--line-soft);
+}
+.member-head .avatar {
+  width: 88px; height: 88px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2rem; font-weight: 700;
+  flex-shrink: 0;
+  border: none;
+  box-shadow: 0 4px 14px rgba(43,42,38,0.12);
+  overflow: hidden;
+}
+.member-head .avatar.role-found { color: var(--role-found); background: #EFE3DA; }
+.member-head .avatar.role-guard { color: var(--role-guard); background: #DDE5EE; }
+.member-head .avatar.role-act { color: var(--role-act); background: #F3DCD2; }
+.member-head .avatar.role-cont { color: var(--role-cont); background: #D8E5DD; }
+.member-head .avatar[style*="background-image"] {
+  background-size: cover;
+  background-position: center top;
+  color: transparent;
+  font-size: 0;
+}
+.member-head .avatar.avatar-placeholder {
+  background: linear-gradient(135deg, #7B5E3B, #A8884A);
+  color: #FBF5E4;
+  font-family: "Noto Serif TC", serif;
+}
+@media (max-width: 600px) {
+  .member-head .avatar { width: 72px; height: 72px; font-size: 1.6rem; }
+}
+.member-head .name {
+  font-size: 1.05rem; font-weight: 700; color: var(--ink);
+  margin-bottom: 2px;
+}
+.member-head .role {
+  font-size: 0.82rem; color: var(--ink-soft);
+}
+.member-body {
+  padding: 14px 20px 16px;
+  flex: 1;
+}
+.member-body .theme-line {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin: 0 0 12px;
+}
+.member-body .focus-row {
+  display: flex; flex-wrap: wrap; gap: 4px;
+}
+.focus-chip {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.svc-chip-club { background: rgba(25,118,210,0.12); color: #1565C0; }
+.svc-chip-vocational { background: rgba(184,134,11,0.14); color: #8B6508; }
+.svc-chip-community { background: rgba(0,137,123,0.12); color: #00695C; }
+.svc-chip-international { background: rgba(106,27,154,0.12); color: #4A148C; }
+.svc-chip-youth { background: rgba(239,108,0,0.12); color: #E65100; }
+/* 完整人物誌按鈕（右上，V3 奶茶底圓角） */
+.member-card .profile-btn {
+  position: absolute; top: 18px; right: 18px;
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--gold-bg, #FBF5E4);
+  color: var(--gold-deep, #8B6508);
+  font-size: 13px; font-weight: 600; letter-spacing: 0.06em;
+  padding: 8px 18px; border-radius: 8px;
+  text-decoration: none;
+  border: 1px solid var(--gold-soft, #D4B97A);
+  transition: all 0.25s cubic-bezier(0.2,0.8,0.3,1);
+  z-index: 2;
+}
+.member-card .profile-btn:hover {
+  background: var(--gold, #C9A961);
+  color: #fff;
+  border-color: var(--gold, #C9A961);
+  box-shadow: 0 4px 14px rgba(168,136,74,0.35);
+}
+.member-card .profile-btn .arrow { transition: transform 0.25s; }
+.member-card .profile-btn:hover .arrow { transform: translateX(3px); }
+/* 年度服務計畫 chip */
+.focus-chip.svc-chip-annual {
+  background: rgba(201,169,97,0.16);
+  color: #8B6508;
+  border: 1px dashed rgba(201,169,97,0.5);
+}
+.member-card .satellite-flag {
+  position: absolute; top: 14px; right: 14px;
+  background: #FFF8E6; color: #8B6508;
+  border: 1px solid #C9A961;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+  padding: 4px 10px; border-radius: 99px;
+  pointer-events: none;
+}
+.member-card .pending-flag {
+  position: absolute; top: 14px; right: 14px;
+  background: #F0E6D2; color: #8B7355;
+  border: 1px dashed #C8A878;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+  padding: 4px 10px; border-radius: 99px;
+  pointer-events: none;
+}
+.member-card { position: relative; }
+.member-service-link {
+  display: block;
+  padding: 14px 20px;
+  background: linear-gradient(90deg, rgba(184,134,11,0.06), rgba(46,125,91,0.06));
+  border-top: 1px solid var(--line-soft);
+  text-decoration: none;
+  transition: background .15s;
+}
+.member-service-link:hover {
+  background: linear-gradient(90deg, rgba(184,134,11,0.14), rgba(46,125,91,0.12));
+}
+.member-service-link .link-meta {
+  font-size: 0.72rem;
+  color: var(--ink-mute);
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+.member-service-link .link-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--gold);
+}
+.section-divider {
+  margin: 48px 0 14px;
+  font-size: 1.2rem;
+  color: var(--ink);
+  font-weight: 700;
+}
+.section-divider-desc {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  margin: 0 0 14px;
+}
+.placeholder-card {
+  padding: 24px;
+  background: var(--bg-soft);
+  border: 2px dashed var(--line);
+  border-radius: var(--radius);
+  text-align: center;
+  color: var(--ink-mute);
+  font-size: 0.9rem;
+  margin-top: 24px;
+}
+.placeholder-card strong { color: var(--ink-soft); }
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background .15s;
+}
+.back-link:hover { background: var(--gold); color: #fff; border-color: var(--gold); }
+@media (max-width: 720px) {
+  .member-grid { grid-template-columns: 1fr; }
+}
+.member-onboarding {
+    margin: 64px 0 32px;
+    padding: 60px 32px;
+    background: linear-gradient(180deg, var(--bg-soft) 0%, #f0e7d2 100%);
+    border: 1px solid var(--gold-soft);
+    border-radius: 16px;
+    text-align: center;
+  }
+  .member-onboarding .onboard-inner { max-width: 720px; margin: 0 auto; }
+  .member-onboarding .tag {
+    display: inline-block;
+    padding: 6px 14px;
+    border: 1px solid var(--gold);
+    border-radius: 20px;
+    color: var(--gold);
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 20px;
+    background: var(--bg-card);
+  }
+  .member-onboarding h2 {
+    font-size: 2rem;
+    margin: 0 0 16px;
+    color: var(--ink);
+    font-family: "Noto Serif TC", serif;
+    letter-spacing: 0.02em;
+  }
+  .member-onboarding .sub {
+    font-size: 1rem;
+    color: var(--ink-soft);
+    line-height: 1.85;
+    margin: 0 auto 28px;
+    max-width: 600px;
+  }
+  .member-onboarding .onboard-cta-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .member-onboarding a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 22px;
+    border-radius: 28px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all .25s;
+  }
+  .onboard-btn-ghost {
+    background: var(--bg-card);
+    color: var(--ink);
+    border: 1px solid var(--line);
+  }
+  .onboard-btn-ghost:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+  .onboard-btn-gold {
+    background: var(--gold);
+    color: #fff;
+  }
+  .onboard-btn-gold:hover {
+    background: #9a7009;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(168,136,74,0.3);
+  }
+  .onboard-btn-ink {
+    background: #5C544A;
+    color: #fff;
+  }
+  .onboard-btn-ink:hover {
+    background: #3d362e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(60,52,46,0.3);
+  }
+  @media (max-width: 720px) {
+    .member-onboarding { padding: 40px 20px; margin: 40px -16px 24px; border-radius: 12px; }
+    .member-onboarding h2 { font-size: 1.5rem; }
+    .member-onboarding .sub { font-size: 0.95rem; }
+    .member-onboarding a { width: 100%; justify-content: center; }
+  }
+</style> <section class="hero" style="padding-bottom: 24px;" data-astro-cid-hu6ywz6e> <div class="container" data-astro-cid-hu6ywz6e> <h1 data-astro-cid-hu6ywz6e>各位社友的介紹</h1> <p class="subtitle" data-astro-cid-hu6ywz6e>各位社友的職業專業、服務初衷與在永力社的角色定位。本年度提案推動服務計畫的社友先列上方，其餘以社務或專業形式持續支持。</p> </div> </section> <div class="container" data-astro-cid-hu6ywz6e> <h3 class="member-section-sub" style="margin-top:48px;" data-astro-cid-hu6ywz6e>社長 · 前社長 · 下屆社長</h3> <div class="member-grid" data-astro-cid-hu6ywz6e> <!-- CP 林學賢 --> <article class="member-card" data-role="cp" data-astro-cid-hu6ywz6e> <a class="profile-btn" href="profiles/01-cp-lin.html" data-astro-cid-hu6ywz6e>完整人物誌 <span class="arrow" data-astro-cid-hu6ywz6e>→</span></a> <a class="member-head" href="profiles/01-cp-lin.html" data-astro-cid-hu6ywz6e> <div class="avatar" style="background-image:url(assets/img/members/cp.jpg)" data-astro-cid-hu6ywz6e></div> <div class="info" data-astro-cid-hu6ywz6e> <div class="name" data-astro-cid-hu6ywz6e>林學賢 CP Impact</div> <div class="role" data-astro-cid-hu6ywz6e>創社社長 · 社訓練師 · 新社員教育主委</div> </div> </a> <div class="member-body" data-astro-cid-hu6ywz6e> <p class="theme-line" data-astro-cid-hu6ywz6e>建立永力扶輪社，把「社友的職業服務被看見」變成這個社存在的核心目的。台灣好夥伴志業 執行長 / 樂農生活志業 創辦人兼執行長。</p> <div class="focus-row" data-astro-cid-hu6ywz6e> <span class="focus-chip svc-chip-community" data-astro-cid-hu6ywz6e>社區服務</span> <span class="focus-chip svc-chip-youth" data-astro-cid-hu6ywz6e>青少年服務</span> <span class="focus-chip svc-chip-club" data-astro-cid-hu6ywz6e>社務服務</span> <span class="focus-chip svc-chip-annual" data-astro-cid-hu6ywz6e>年度服務計畫</span> </div> </div> </article> <!-- 林秉鴻 PP Nick --> <article class="member-card" data-role="pp" data-astro-cid-hu6ywz6e> <a class="profile-btn" href="profiles/07-nick-lin.html" data-astro-cid-hu6ywz6e>完整人物誌 <span class="arrow" data-astro-cid-hu6ywz6e>→</span></a> <a class="member-head" href="profiles/07-nick-lin.html" data-astro-cid-hu6ywz6e> <div class="avatar" style="background-image:url(assets/img/members/nick.jpg)" data-astro-cid-hu6ywz6e></div> <div class="info" data-astro-cid-hu6ywz6e> <div class="name" data-astro-cid-hu6ywz6e>林秉鴻 PP Nick</div> <div class="role" data-astro-cid-hu6ywz6e>PP 前社長 · 副社長 · 社員主委</div> </div> </a> <div class="member-body" data-astro-cid-hu6ywz6e> <p class="theme-line" data-astro-cid-hu6ywz6e>把短期成果變成可被印刷、可被收藏、可被反覆翻閱的形式。奇桔數位行銷 執行長。</p> <div class="focus-row" data-astro-cid-hu6ywz6e> <span class="focus-chip svc-chip-club" data-astro-cid-hu6ywz6e>社務服務</span> </div> </div> </article> <!-- 蔡瑋蔓 PP Jennifer（升級為含 theme 短卡片） --> <article class="member-card" data-role="pp" data-astro-cid-hu6ywz6e> <div class="member-head" data-astro-cid-hu6ywz6e> <div class="avatar" style="background-image:url(assets/img/members/jennifer.jpg); background-size: 225% auto; background-position: 41.5% 9%" data-astro-cid-hu6ywz6e></div> <div class="info" data-astro-cid-hu6ywz6e> <div class="name" data-astro-cid-hu6ywz6e>蔡瑋蔓 Tsai, Wei-Man Jennifer</div> <div class="role" data-astro-cid-hu6ywz6e>PP 前社長 · 扶輪基金主委</div> </div> </div> <div class="member-body" data-astro-cid-hu6ywz6e> <p class="theme-line" data-astro-cid-hu6ywz6e>保險與風險管理｜國泰人壽 行銷總監｜財稅規劃。</p> </div> </article> <!-- 賴光蘭 PP Helen --> <article class="member-card" data-role="pp" data-astro-cid-hu6ywz6e> <a class="profile-btn" href="profiles/04-helen-lai.html" data-astro-cid-hu6ywz6e>完整人物誌 <span class="arrow" data-astro-cid-hu6ywz6e>→</span></a> <a class="member-head" href="profiles/04-helen-lai.html" data-astro-cid-hu6ywz6e> <div class="avatar" style="background-image:url(assets/img/members/helen.jpg)" data-astro-cid-hu6ywz6e></div> <div class="info" data-astro-cid-hu6ywz6e> <div class="name" data-astro-cid-hu6ywz6e>賴光蘭 PP Helen</div> <div class="role" data-astro-cid-hu6ywz6e>PP 前社長 · 財務長</div> </div> </a> <div class="member-body" data-astro-cid-hu6ywz6e> <p class="theme-line" data-astro-cid-hu6ywz6e>三十多年陪伴心智障礙青年走進職場、走進社區，讓他們有角色、有貢獻、有尊嚴。育成社會福利基金會 執行長。</p> <div class="focus-row" data-astro-cid-hu6ywz6e> <span class="focus-chip svc-chip-vocational" data-astro-cid-hu6ywz6e>職業服務</span> <span class="focus-chip svc-chip-international" data-astro-cid-hu6ywz6e>國際服務</span> <span class="focus-chip svc-chip-youth" data-astro-cid-hu6ywz6e>青少年服務</span> </div> </div> </article> <!-- 黃丞隆 PE Rich --> <article class="member-card" data-role="pe" data-astro-cid-hu6ywz6e> <a class="profile-btn" href="profiles/08-rich-huang.html" data-astro-cid-hu6ywz6e>完整人物誌 <span class="arrow" data-astro-cid-hu6ywz6e>→</span></a> <a class="member-head" href="profiles/08-rich-huang.html" data-astro-cid-hu6ywz6e> <div class="avatar" style="background-image:url(assets/img/members/rich.jpg)" data-astro-cid-hu6ywz6e></div> <div class="info" data-astro-cid-hu6ywz6e> <div class="name" data-astro-cid-hu6ywz6e>黃丞隆 PE Rich</div> <div class="role" data-astro-cid-hu6ywz6e>PE 社長當選人 · 代理秘書</div> </div> </a> <div class="member-body" data-astro-cid-hu6ywz6e> <p class="theme-line" data-astro-cid-hu6ywz6e>在創社初期承接下一棒，因為相信永力社的方向值得被推下去。全人健康&ESG 顧問服務 / 護全禪心國際 產品主任。</p> <div class="focus-row" data-astro-cid-hu6ywz6e> <span class="focus-chip svc-chip-club" data-astro-cid-hu6ywz6e>社務服務</span> </div> </div> </article> </div> <hr style="margin:56px 0 0;border:0;border-top:1px dashed var(--line);" data-astro-cid-hu6ywz6e> <h3 class="member-section-sub" style="margin-top:32px;" data-astro-cid-hu6ywz6e>社友（依姓氏筆畫）</h3> <div class="member-grid" data-astro-cid-hu6ywz6e> <!-- 李琪 Vicky --> <article class="member-card" data-astro-cid-hu6ywz6e> <a class="profile-btn" href="profiles/02-vicky-lee.html" data-astro-cid-hu6ywz6e>完整人物誌 <span class="arrow" data-astro-cid-hu6ywz6e>→</span></a> <a class="member-head" href="profiles/02-vicky-lee.html" data-astro-cid-hu6ywz6e> <div class="avatar" style="background-image:url(assets/img/members/vicky.jpg)" data-astro-cid-hu6ywz6e></div> <div class="info" data-astro-cid-hu6ywz6e> <div class="name" data-astro-cid-hu6ywz6e>李琪 Vicky</div> <div class="role" data-astro-cid-hu6ywz6e>社區服務主委 · 旅學女力</div> </div> </a> <div class="member-body" data-astro-cid-hu6ywz6e> <p class="theme-line" data-astro-cid-hu6ywz6e>把職業服務做好，就同時是社會服務。讓二度就業婦女成為導覽員；與淡水國中合作旅學 PBL 教案，與淡江大學合作帶領學生進行社會影響力評估。旅學堂工作室 創辦人 / 新北市社區旅學關懷協會 理事長。</p> <div class="focus-row" data-astro-cid-hu6ywz6e> <span class="focus-chip svc-chip-vocational" data-astro-cid-hu6ywz6e>職業服務</span> <span class="focus-chip svc-chip-community" data-astro-cid-hu6ywz6e>社區服務</span> <span class="focus-chip svc-chip-annual" data-astro-cid-hu6ywz6e>年度服務計畫</span> </div> </div> </article> <!-- 林映如 Lisa --> <article class="member-card" data-astro-cid-hu6ywz6e> <a class="profile-btn" href="profiles/05-lisa-lin.html" data-astro-cid-hu6ywz6e>完整人物誌 <span class="arrow" data-astro-cid-hu6ywz6e>→</span></a> <a class="member-head" href="profiles/05-lisa-lin.html" data-astro-cid-hu6ywz6e> <div class="avatar" style="background-image:url(assets/img/members/lisa.jpg)" data-astro-cid-hu6ywz6e></div> <div class="info" data-astro-cid-hu6ywz6e> <div class="name" data-astro-cid-hu6ywz6e>林映如 Lisa</div> <div class="role" data-astro-cid-hu6ywz6e>ESG 永續報告書推動小組 · 國際服務計畫主委</div> </div> </a> <div class="member-body" data-astro-cid-hu6ywz6e> <p class="theme-line" data-astro-cid-hu6ywz6e>把零廢棄、淨灘、海洋永續從理念變成日常行動，帶上百位志工換來真實改變。自由業 / 永續百行。</p> <div class="focus-row" data-astro-cid-hu6ywz6e> <span class="focus-chip svc-chip-community" data-astro-cid-hu6ywz6e>社區服務</span> <span class="focus-chip svc-chip-annual" data-astro-cid-hu6ywz6e>年度服務計畫</span> </div> </div> </article> <!-- 林修緯 Wayne --> <article class="member-card" data-astro-cid-hu6ywz6e> <a class="profile-btn" href="profiles/15-wayne-lin.html" data-astro-cid-hu6ywz6e>完整人物誌 <span class="arrow" data-astro-cid-hu6ywz6e>→</span></a> <a class="member-head" href="profiles/15-wayne-lin.html" data-astro-cid-hu6ywz6e> <div class="avatar" style="background-image:url(assets/img/members/wayne.jpg)" data-astro-cid-hu6ywz6e></div> <div class="info" data-astro-cid-hu6ywz6e> <div class="name" data-astro-cid-hu6ywz6e>林修緯 Wayne</div> <div class="role" data-astro-cid-hu6ywz6e>公勝保險經紀人 南安普敦事業部</div> </div> </a> <div class="member-body" data-astro-cid-hu6ywz6e> <p class="theme-line" data-astro-cid-hu6ywz6e>用財商思維，為家庭建立永續的防禦率。</p> <div class="focus-row" data-astro-cid-hu6ywz6e> <span class="focus-chip svc-chip-vocational" data-astro-cid-hu6ywz6e>職業服務</span> </div> </div> </article> <!-- 高清坊 James --> <article class="member-card" data-astro-cid-hu6ywz6e> <a class="profile-btn" href="profiles/06-james-gao.html" data-astro-cid-hu6ywz6e>完整人物誌 <span class="arrow" data-astro-cid-hu6ywz6e>→</span></a> <a class="member-head" href="profiles/06-james-gao.html" data-astro-cid-hu6ywz6e> <div class="avatar" style="background-image:url(assets/img/members/james.jpg)" data-astro-cid-hu6ywz6e></div> <div class="info" data-astro-cid-hu6ywz6e> <div class="name" data-astro-cid-hu6ywz6e>高清坊 James</div> <div class="role" data-astro-cid-hu6ywz6e>服務計畫主委 · 通用閣 閣主</div> </div> </a> <div class="member-body" data-astro-cid-hu6ywz6e> <p class="theme-line" data-astro-cid-hu6ywz6e>用空間設計回應高齡照顧、生命教育、創新教育訓練。通用閣室內裝修 閣主。</p> <div class="focus-row" data-astro-cid-hu6ywz6e> <span class="focus-chip svc-chip-vocational" data-astro-cid-hu6ywz6e>職業服務</span> <span class="focus-chip svc-chip-annual" data-astro-cid-hu6ywz6e>年度服務計畫</span> </div> </div> </article> <!-- 許崇禧 Chris（從衛星社移入） --> <article class="member-card" data-astro-cid-hu6ywz6e> <div class="member-head" data-astro-cid-hu6ywz6e> <div class="avatar" style="background-image:url(assets/img/members/chris.jpg)" data-astro-cid-hu6ywz6e></div> <div class="info" data-astro-cid-hu6ywz6e> <div class="name" data-astro-cid-hu6ywz6e>許崇禧 Chris</div> <div class="role" data-astro-cid-hu6ywz6e>世華音響視聽館 負責人</div> </div> </div> <div class="member-body" data-astro-cid-hu6ywz6e> <p class="theme-line" data-astro-cid-hu6ywz6e>修隨身聽起家近 40 年，自創 HS-audio 純音工坊。</p> <div class="focus-row" data-astro-cid-hu6ywz6e> <span class="focus-chip svc-chip-club" data-astro-cid-hu6ywz6e>社務服務</span> </div> </div> </article> <!-- 陳明勇 Vincent --> <article class="member-card" data-astro-cid-hu6ywz6e> <a class="profile-btn" href="profiles/09-vincent-chen.html" data-astro-cid-hu6ywz6e>完整人物誌 <span class="arrow" data-astro-cid-hu6ywz6e>→</span></a> <a class="member-head" href="profiles/09-vincent-chen.html" data-astro-cid-hu6ywz6e> <div class="avatar" style="background-image:url(assets/img/members/vincent.jpg)" data-astro-cid-hu6ywz6e></div> <div class="info" data-astro-cid-hu6ywz6e> <div class="name" data-astro-cid-hu6ywz6e>陳明勇 Vincent</div> <div class="role" data-astro-cid-hu6ywz6e>ESG 永續報告書推動小組 · 引導師</div> </div> </a> <div class="member-body" data-astro-cid-hu6ywz6e> <p class="theme-line" data-astro-cid-hu6ywz6e>用引導技術、SROI、ESG 的方法論，把社區、企業、社友之間的對話接起來。朝邦文教基金會 董事暨引導師。</p> <div class="focus-row" data-astro-cid-hu6ywz6e> <span class="focus-chip svc-chip-vocational" data-astro-cid-hu6ywz6e>職業服務</span> <span class="focus-chip svc-chip-community" data-astro-cid-hu6ywz6e>社區服務</span> <span class="focus-chip svc-chip-club" data-astro-cid-hu6ywz6e>社務服務</span> <span class="focus-chip svc-chip-annual" data-astro-cid-hu6ywz6e>年度服務計畫</span> </div> </div> </article> <!-- 黃世祿 Derek --> <article class="member-card" data-astro-cid-hu6ywz6e> <a class="profile-btn" href="profiles/03-derek-huang.html" data-astro-cid-hu6ywz6e>完整人物誌 <span class="arrow" data-astro-cid-hu6ywz6e>→</span></a> <a class="member-head" href="profiles/03-derek-huang.html" data-astro-cid-hu6ywz6e> <div class="avatar" style="background-image:url(assets/img/members/derek.jpg)" data-astro-cid-hu6ywz6e></div> <div class="info" data-astro-cid-hu6ywz6e> <div class="name" data-astro-cid-hu6ywz6e>黃世祿 Derek</div> <div class="role" data-astro-cid-hu6ywz6e>智信資訊 總經理</div> </div> </a> <div class="member-body" data-astro-cid-hu6ywz6e> <p class="theme-line" data-astro-cid-hu6ywz6e>把社務、知識、服務計畫的資料，放進一套可被檢視、可被傳承的系統裡。</p> <div class="focus-row" data-astro-cid-hu6ywz6e> <span class="focus-chip svc-chip-club" data-astro-cid-hu6ywz6e>社務服務</span> </div> </div> </article> <!-- 劉彥琳 Grace（從衛星社移入） --> <article class="member-card" data-astro-cid-hu6ywz6e> <div class="member-head" data-astro-cid-hu6ywz6e> <div class="avatar" style="background-image:url(assets/img/members/grace.jpg)" data-astro-cid-hu6ywz6e></div> <div class="info" data-astro-cid-hu6ywz6e> <div class="name" data-astro-cid-hu6ywz6e>劉彥琳 Grace</div> <div class="role" data-astro-cid-hu6ywz6e>聯誼活動主委 · 磐石保險業務協理</div> </div> </div> <div class="member-body" data-astro-cid-hu6ywz6e> <p class="theme-line" data-astro-cid-hu6ywz6e>保險業 30 年輔導夥伴，創立喜樂樂團讓音樂成為心靈支持。磐石保險經紀人 業務協理。</p> <div class="focus-row" data-astro-cid-hu6ywz6e> <span class="focus-chip svc-chip-vocational" data-astro-cid-hu6ywz6e>職業服務</span> </div> </div> </article> <!-- 蕭瑛瑱 Rita --> <article class="member-card" data-astro-cid-hu6ywz6e> <div class="member-head" data-astro-cid-hu6ywz6e> <div class="avatar" style="background-image:url(assets/img/members/rita.jpg)" data-astro-cid-hu6ywz6e></div> <div class="info" data-astro-cid-hu6ywz6e> <div class="name" data-astro-cid-hu6ywz6e>蕭瑛瑱 Rita</div> <div class="role" data-astro-cid-hu6ywz6e>通用閣室內裝修股份有限公司 / 行政</div> </div> </div> </article> </div> <hr style="margin:56px 0 0;border:0;border-top:1px dashed var(--line);" data-astro-cid-hu6ywz6e> <h3 class="member-section-sub" style="margin-top:32px;" data-astro-cid-hu6ywz6e>衛星社</h3> <p class="section-divider-desc" data-astro-cid-hu6ywz6e>台北永續影響力共融衛星社｜2025 年 11 月創社，Irene 擔任創社主席。</p> <div class="member-grid" data-astro-cid-hu6ywz6e> <!-- Irene 陳美華 --> <article class="member-card" data-astro-cid-hu6ywz6e> <a class="profile-btn" href="profiles/19-irene-chen.html" data-astro-cid-hu6ywz6e>完整人物誌 <span class="arrow" data-astro-cid-hu6ywz6e>→</span></a> <a class="member-head" href="profiles/19-irene-chen.html" data-astro-cid-hu6ywz6e> <div class="avatar" style="background-image:url(assets/img/members/irene.jpg)" data-astro-cid-hu6ywz6e></div> <div class="info" data-astro-cid-hu6ywz6e> <div class="name" data-astro-cid-hu6ywz6e>陳美華 Irene</div> <div class="role" data-astro-cid-hu6ywz6e>衛星社 主席 · 魚籃文化 執行長</div> </div> </a> <div class="member-body" data-astro-cid-hu6ywz6e> <p class="theme-line" data-astro-cid-hu6ywz6e>用敘事留住地方與信仰的歷史；永力社創社秘書、衛星社創社主席。</p> <div class="focus-row" data-astro-cid-hu6ywz6e> <span class="focus-chip svc-chip-community" data-astro-cid-hu6ywz6e>社區服務</span> <span class="focus-chip svc-chip-club" data-astro-cid-hu6ywz6e>社務服務</span> </div> </div> </article> <!-- S. Teresa 姚曼菁 --> <article class="member-card" data-astro-cid-hu6ywz6e> <a class="profile-btn" href="profiles/13-teresa-yao.html" data-astro-cid-hu6ywz6e>完整人物誌 <span class="arrow" data-astro-cid-hu6ywz6e>→</span></a> <a class="member-head" href="profiles/13-teresa-yao.html" data-astro-cid-hu6ywz6e> <div class="avatar" style="background-image:url(assets/img/members/teresa.jpg)" data-astro-cid-hu6ywz6e></div> <div class="info" data-astro-cid-hu6ywz6e> <div class="name" data-astro-cid-hu6ywz6e>姚曼菁 S. Teresa</div> <div class="role" data-astro-cid-hu6ywz6e>衛星社 秘書 · 台灣老母雞協會 秘書長</div> </div> </a> <div class="member-body" data-astro-cid-hu6ywz6e> <p class="theme-line" data-astro-cid-hu6ywz6e>在尼泊爾建立本地 NGO，讓教育、婦女培力、弱勢關懷成為永續運作的力量。</p> <div class="focus-row" data-astro-cid-hu6ywz6e> <span class="focus-chip svc-chip-international" data-astro-cid-hu6ywz6e>國際服務</span> </div> </div> </article> <!-- Rick 周煐傑 --> <article class="member-card" data-astro-cid-hu6ywz6e> <div class="member-head" data-astro-cid-hu6ywz6e> <div class="avatar" style="background-image:url(assets/img/members/rick.jpg)" data-astro-cid-hu6ywz6e></div> <div class="info" data-astro-cid-hu6ywz6e> <div class="name" data-astro-cid-hu6ywz6e>周煐傑 Rick</div> <div class="role" data-astro-cid-hu6ywz6e>Drama Action 執行長</div> </div> </div> <div class="member-body" data-astro-cid-hu6ywz6e> <p class="theme-line" data-astro-cid-hu6ywz6e>以戲劇教育培訓提升人物質素，建立美好生命共榮圈。</p> <div class="focus-row" data-astro-cid-hu6ywz6e> <span class="focus-chip svc-chip-vocational" data-astro-cid-hu6ywz6e>職業服務</span> </div> </div> </article> <!-- Albee 張艾筆 --> <article class="member-card" data-astro-cid-hu6ywz6e> <a class="profile-btn" href="profiles/10-albee-chang.html" data-astro-cid-hu6ywz6e>完整人物誌 <span class="arrow" data-astro-cid-hu6ywz6e>→</span></a> <a class="member-head" href="profiles/10-albee-chang.html" data-astro-cid-hu6ywz6e> <div class="avatar" style="background-image:url(assets/img/members/albee.jpg)" data-astro-cid-hu6ywz6e></div> <div class="info" data-astro-cid-hu6ywz6e> <div class="name" data-astro-cid-hu6ywz6e>張艾筆 Albee</div> <div class="role" data-astro-cid-hu6ywz6e>琢色映像工作室 共同負責人</div> </div> </a> <div class="member-body" data-astro-cid-hu6ywz6e> <p class="theme-line" data-astro-cid-hu6ywz6e>用媒體轉譯善的影響力，從廣告、MV、Podcast 到永續策劃。</p> <div class="focus-row" data-astro-cid-hu6ywz6e> <span class="focus-chip svc-chip-vocational" data-astro-cid-hu6ywz6e>職業服務</span> </div> </div> </article> <!-- Eric 鄭仲翔 --> <article class="member-card" data-astro-cid-hu6ywz6e> <a class="profile-btn" href="profiles/16-eric-cheng.html" data-astro-cid-hu6ywz6e>完整人物誌 <span class="arrow" data-astro-cid-hu6ywz6e>→</span></a> <a class="member-head" href="profiles/16-eric-cheng.html" data-astro-cid-hu6ywz6e> <div class="avatar" style="background-image:url(assets/img/members/eric.jpg)" data-astro-cid-hu6ywz6e></div> <div class="info" data-astro-cid-hu6ywz6e> <div class="name" data-astro-cid-hu6ywz6e>鄭仲翔 Eric</div> <div class="role" data-astro-cid-hu6ywz6e>精浚科技 協理</div> </div> </a> <div class="member-body" data-astro-cid-hu6ywz6e> <p class="theme-line" data-astro-cid-hu6ywz6e>以光機電整合，推動國產醫材與檢測設備的自主化。</p> <div class="focus-row" data-astro-cid-hu6ywz6e> <span class="focus-chip svc-chip-vocational" data-astro-cid-hu6ywz6e>職業服務</span> </div> </div> </article> <!-- Maya 鄭雯 --> <article class="member-card" data-astro-cid-hu6ywz6e> <a class="profile-btn" href="profiles/18-meiya-cheng.html" data-astro-cid-hu6ywz6e>完整人物誌 <span class="arrow" data-astro-cid-hu6ywz6e>→</span></a> <a class="member-head" href="profiles/18-meiya-cheng.html" data-astro-cid-hu6ywz6e> <div class="avatar" style="background-image:url(assets/img/members/meiya.jpg)" data-astro-cid-hu6ywz6e></div> <div class="info" data-astro-cid-hu6ywz6e> <div class="name" data-astro-cid-hu6ywz6e>鄭雯 Maya</div> <div class="role" data-astro-cid-hu6ywz6e>台灣願景發展 · 應用戲劇繪本芽</div> </div> </a> <div class="member-body" data-astro-cid-hu6ywz6e> <p class="theme-line" data-astro-cid-hu6ywz6e>跨戲劇、企管與兒家領域，以自然藝術橋梁建設具溫度和韌性的永續方案。</p> <div class="focus-row" data-astro-cid-hu6ywz6e> <span class="focus-chip svc-chip-community" data-astro-cid-hu6ywz6e>社區服務</span> </div> </div> </article> </div> <!-- 個人頁建置 onboarding 區（暫時隱藏，內部通知社員即可，不對外公開）
+  <section class="member-onboarding">
+    <div class="onboard-inner">
+      <span class="tag">給永力社社員</span>
+      <h2>個人頁怎麼建？</h2>
+      <p class="sub">跟教稿 AI 助理對話 <strong>15 分鐘</strong>，把你的中文名、職稱、永續主題、社群連結聊一聊,最後把對話結果<strong>整段複製、貼到一張表單裡</strong>就完成了。<br>不會用 AI 也沒關係,整個過程像跟人聊天一樣。</p>
+      <div class="onboard-cta-row">
+        <a class="onboard-btn-ghost" href="member-guide.html">先看流程</a>
+        <a class="onboard-btn-gold" href="#" id="onboard-gem-link" target="_blank">立刻開始使用 教稿助理 →</a>
+        <a class="onboard-btn-ink" href="#" id="onboard-form-link" target="_blank">立即 打開永力社表單 →</a>
+      </div>
+    </div>
+  </section>
+  --> <!-- CSS 保留,將 onboarding HTML 區段取消註解即可重新啟用 -->  <div style="margin: 40px 0 48px; text-align: center;" data-astro-cid-hu6ywz6e> <a class="back-link" href="index.html#members" data-astro-cid-hu6ywz6e>← 回首頁社友列表</a> </div> </div> <script>
+const toggle = document.querySelector('.nav-toggle');
+const nav = document.querySelector('header nav');
+if (toggle && nav) {
+  toggle.addEventListener('click', () => {
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!expanded));
+    nav.classList.toggle('open');
+  });
+}
+</script>  <footer> <div class="container"> <div> <h4>台北永續影響力扶輪社</h4> <p>Rotary Club of Taipei Sustainable Impact</p> <p>以職業服務社會 · 用影響力衡量價值</p> <p style="margin-top:14px;font-size:14px;color:var(--ink-4);"> 本報告書由永力社報告書工作小組製作<br> 主筆：陳明勇 Vincent · 工作組：CP 林學賢、艾筆團隊<br> 知識架構、網頁設計：江昱德 </p> </div> <div> <h4>章節導覽</h4> <ul> <li><a href="index.html#intro">關於永力社</a></li><li><a href="index.html#impact-report">影響力報告</a></li><li><a href="index.html#five-service">五大服務</a></li><li><a href="index.html#members">社友介紹</a></li><li><a href="index.html#impact-hub">服務計畫</a></li> </ul> </div> <div> <h4>版本資訊</h4> <ul> <li>2024-2026 永續影響力報告書</li> <li>2026 年 5 月發行</li> <li>持續更新中</li> <li class="license-li"> 本報告書採用 <strong>CC BY-NC-ND 4.0</strong> 授權<br> <span class="license-rules">可分享 · 必須標示來源 · 不得商用 · 不得改作</span> </li> </ul> </div> <div class="copyright">© 2024-2026 台北永續影響力扶輪社 3481</div> </div> </footer> </body></html>
