@@ -1,0 +1,31 @@
+name: v7 site check
+
+on:
+  push:
+    branches: [main]
+    paths: ["v7/**"]
+  pull_request:
+    paths: ["v7/**"]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Rebuild (產生器必須與已 commit 的 HTML 一致)
+        run: |
+          cd v7
+          python3 _build/build.py
+
+      - name: 驗證 build 冪等（有 diff 代表改了頁面卻沒跑 build.py 就 commit）
+        run: |
+          git diff --exit-code -- v7 || {
+            echo "::error::v7 內容與 build.py 產出不一致，請在本機跑 python3 _build/build.py 後重新 commit"
+            exit 1
+          }
+
+      - name: 品質閘門（斷鏈／中英對稱／sitemap／標記）
+        run: |
+          cd v7
+          python3 _build/check.py
