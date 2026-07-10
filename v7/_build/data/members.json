@@ -1,0 +1,682 @@
+{
+ "sections": [
+  {
+   "title": {
+    "zh": "社長 · 前社長 · 下屆社長",
+    "en": "Club President · Past Presidents · President-Elect"
+   },
+   "cards": [
+    {
+     "dataRole": "cp",
+     "profile": "profiles/01-cp-lin.html",
+     "avatarStyle": "background-image:url(assets/img/members/cp.jpg)",
+     "name": {
+      "zh": "林學賢 CP Impact",
+      "en": "Lin Xue-xian, CP Impact"
+     },
+     "role": {
+      "zh": "創社社長 · 社訓練師 · 新社員教育主委",
+      "en": "Charter President · Club Trainer · New Member Education Chair"
+     },
+     "profileBtn": {
+      "zh": "完整人物誌",
+      "en": "Full profile"
+     },
+     "theme": {
+      "zh": "建立永力扶輪社，把「社友的職業服務被看見」變成這個社存在的核心目的。台灣好夥伴志業 執行長 / 樂農生活志業 創辦人兼執行長。",
+      "en": "Founded the Club, making \"the vocational service of Members being seen\" the core purpose of this club's existence. CEO of Taiwan Good Partner Enterprise / Founder and CEO of Lenong Living Enterprise."
+     },
+     "chips": [
+      {
+       "cls": "svc-chip-community",
+       "label": {
+        "zh": "社區服務",
+        "en": "Community Service"
+       }
+      },
+      {
+       "cls": "svc-chip-youth",
+       "label": {
+        "zh": "青少年服務",
+        "en": "Youth Service"
+       }
+      },
+      {
+       "cls": "svc-chip-club",
+       "label": {
+        "zh": "社務服務",
+        "en": "Club Service"
+       }
+      },
+      {
+       "cls": "svc-chip-annual",
+       "label": {
+        "zh": "年度服務計畫",
+        "en": "Annual Service Project"
+       }
+      }
+     ]
+    },
+    {
+     "dataRole": "pp",
+     "profile": "profiles/07-nick-lin.html",
+     "avatarStyle": "background-image:url(assets/img/members/nick.jpg)",
+     "name": {
+      "zh": "林秉鴻 PP Nick",
+      "en": "Lin Bing-hong, PP Nick"
+     },
+     "role": {
+      "zh": "PP 前社長 · 副社長 · 社員主委",
+      "en": "Past President · Vice President · Membership Chair"
+     },
+     "profileBtn": {
+      "zh": "完整人物誌",
+      "en": "Full profile"
+     },
+     "theme": {
+      "zh": "把短期成果變成可被印刷、可被收藏、可被反覆翻閱的形式。奇桔數位行銷 執行長。",
+      "en": "Turning short-term results into a form that can be printed, collected, and re-read again and again. CEO of Qiju Digital Marketing."
+     },
+     "chips": [
+      {
+       "cls": "svc-chip-club",
+       "label": {
+        "zh": "社務服務",
+        "en": "Club Service"
+       }
+      }
+     ]
+    },
+    {
+     "dataRole": "pp",
+     "profile": null,
+     "avatarStyle": "background-image:url(assets/img/members/jennifer.jpg); background-size: 225% auto; background-position: 41.5% 9%",
+     "name": {
+      "zh": "蔡瑋蔓 Tsai, Wei-Man Jennifer",
+      "en": "Jennifer Tsai (Tsai Wei-man)"
+     },
+     "role": {
+      "zh": "PP 前社長 · 扶輪基金主委",
+      "en": "Past President · Rotary Foundation Chair"
+     },
+     "theme": {
+      "zh": "保險與風險管理｜國泰人壽 行銷總監｜財稅規劃。",
+      "en": "Insurance and risk management | Marketing Director, Cathay Life Insurance | Tax and financial planning."
+     }
+    },
+    {
+     "dataRole": "pp",
+     "profile": "profiles/04-helen-lai.html",
+     "avatarStyle": "background-image:url(assets/img/members/helen.jpg)",
+     "name": {
+      "zh": "賴光蘭 PP Helen",
+      "en": "Helen Lai (PP Helen)"
+     },
+     "role": {
+      "zh": "PP 前社長 · 財務長",
+      "en": "Past President · Treasurer"
+     },
+     "profileBtn": {
+      "zh": "完整人物誌",
+      "en": "Full profile"
+     },
+     "theme": {
+      "zh": "三十多年陪伴心智障礙青年走進職場、走進社區，讓他們有角色、有貢獻、有尊嚴。育成社會福利基金會 執行長。",
+      "en": "For more than thirty years, accompanying young people with intellectual disabilities into the workplace and the community, giving them roles, contributions, and dignity. CEO of the Yucheng Social Welfare Foundation."
+     },
+     "chips": [
+      {
+       "cls": "svc-chip-vocational",
+       "label": {
+        "zh": "職業服務",
+        "en": "Vocational Service"
+       }
+      },
+      {
+       "cls": "svc-chip-international",
+       "label": {
+        "zh": "國際服務",
+        "en": "International Service"
+       }
+      },
+      {
+       "cls": "svc-chip-youth",
+       "label": {
+        "zh": "青少年服務",
+        "en": "Youth Service"
+       }
+      }
+     ]
+    },
+    {
+     "dataRole": "pe",
+     "profile": "profiles/08-rich-huang.html",
+     "avatarStyle": "background-image:url(assets/img/members/rich.jpg)",
+     "name": {
+      "zh": "黃丞隆 PE Rich",
+      "en": "Rich Huang (PE Rich)"
+     },
+     "role": {
+      "zh": "PE 社長當選人 · 代理秘書",
+      "en": "President-Elect · Acting Secretary"
+     },
+     "profileBtn": {
+      "zh": "完整人物誌",
+      "en": "Full profile"
+     },
+     "theme": {
+      "zh": "在創社初期承接下一棒，因為相信永力社的方向值得被推下去。全人健康&ESG 顧問服務 / 護全禪心國際 產品主任。",
+      "en": "Took up the next term in the Club's founding period, because he believes the Club's direction is worth carrying forward. Holistic Health and ESG Consulting Services / Product Director, Huquan Chanxin International."
+     },
+     "chips": [
+      {
+       "cls": "svc-chip-club",
+       "label": {
+        "zh": "社務服務",
+        "en": "Club Service"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": {
+    "zh": "社友（依姓氏筆畫）",
+    "en": "Members (Ordered by Surname Stroke Count)"
+   },
+   "cards": [
+    {
+     "dataRole": null,
+     "profile": "profiles/02-vicky-lee.html",
+     "avatarStyle": "background-image:url(assets/img/members/vicky.jpg)",
+     "name": {
+      "zh": "李琪 Vicky",
+      "en": "Vicky Lee (Li Qi)"
+     },
+     "role": {
+      "zh": "社區服務主委 · 旅學女力",
+      "en": "Community Service Chair · Travel-Learning Women's Power"
+     },
+     "profileBtn": {
+      "zh": "完整人物誌",
+      "en": "Full profile"
+     },
+     "theme": {
+      "zh": "把職業服務做好，就同時是社會服務。讓二度就業婦女成為導覽員；與淡水國中合作旅學 PBL 教案，與淡江大學合作帶領學生進行社會影響力評估。旅學堂工作室 創辦人 / 新北市社區旅學關懷協會 理事長。",
+      "en": "Doing vocational service well is, at the same time, social service. She helps women re-entering employment become tour guides; collaborates with Tamsui Junior High School on travel-learning PBL lesson plans; and works with Tamkang University to lead students in social impact assessment. Founder of Lxuetang Studio / Chairperson of the New Taipei City Community Travel-Learning Care Association."
+     },
+     "chips": [
+      {
+       "cls": "svc-chip-vocational",
+       "label": {
+        "zh": "職業服務",
+        "en": "Vocational Service"
+       }
+      },
+      {
+       "cls": "svc-chip-community",
+       "label": {
+        "zh": "社區服務",
+        "en": "Community Service"
+       }
+      },
+      {
+       "cls": "svc-chip-annual",
+       "label": {
+        "zh": "年度服務計畫",
+        "en": "Annual Service Project"
+       }
+      }
+     ]
+    },
+    {
+     "dataRole": null,
+     "profile": "profiles/05-lisa-lin.html",
+     "avatarStyle": "background-image:url(assets/img/members/lisa.jpg)",
+     "name": {
+      "zh": "林映如 Lisa",
+      "en": "Lisa Lin (Lin Ying-ru)"
+     },
+     "role": {
+      "zh": "ESG 永續報告書推動小組 · 國際服務計畫主委",
+      "en": "ESG Sustainability Report Working Group · International Service Project Chair"
+     },
+     "profileBtn": {
+      "zh": "完整人物誌",
+      "en": "Full profile"
+     },
+     "theme": {
+      "zh": "把零廢棄、淨灘、海洋永續從理念變成日常行動，帶上百位志工換來真實改變。自由業 / 永續百行。",
+      "en": "Turning zero waste, beach cleanups, and ocean sustainability from ideas into daily action, bringing hundreds of volunteers together for real change. Freelancer / Sustainable Baixing."
+     },
+     "chips": [
+      {
+       "cls": "svc-chip-community",
+       "label": {
+        "zh": "社區服務",
+        "en": "Community Service"
+       }
+      },
+      {
+       "cls": "svc-chip-annual",
+       "label": {
+        "zh": "年度服務計畫",
+        "en": "Annual Service Project"
+       }
+      }
+     ]
+    },
+    {
+     "dataRole": null,
+     "profile": "profiles/15-wayne-lin.html",
+     "avatarStyle": "background-image:url(assets/img/members/wayne.jpg)",
+     "name": {
+      "zh": "林修緯 Wayne",
+      "en": "Wayne Lin (Lin Xiu-wei)"
+     },
+     "role": {
+      "zh": "公勝保險經紀人 南安普敦事業部",
+      "en": "Gong Sheng Insurance Brokers, Southampton Division"
+     },
+     "profileBtn": {
+      "zh": "完整人物誌",
+      "en": "Full profile"
+     },
+     "theme": {
+      "zh": "用財商思維，為家庭建立永續的防禦率。",
+      "en": "Using financial-intelligence thinking to build a sustainable defense rate for families."
+     },
+     "chips": [
+      {
+       "cls": "svc-chip-vocational",
+       "label": {
+        "zh": "職業服務",
+        "en": "Vocational Service"
+       }
+      }
+     ]
+    },
+    {
+     "dataRole": null,
+     "profile": "profiles/06-james-gao.html",
+     "avatarStyle": "background-image:url(assets/img/members/james.jpg)",
+     "name": {
+      "zh": "高清坊 James",
+      "en": "James Gao (Gao Qing-fang)"
+     },
+     "role": {
+      "zh": "服務計畫主委 · 通用閣 閣主",
+      "en": "Service Project Chair · Master of Tongyong Ge"
+     },
+     "profileBtn": {
+      "zh": "完整人物誌",
+      "en": "Full profile"
+     },
+     "theme": {
+      "zh": "用空間設計回應高齡照顧、生命教育、創新教育訓練。通用閣室內裝修 閣主。",
+      "en": "Using spatial design to respond to elderly care, life education, and innovative education and training. Master of Tongyong Ge Interior Renovation."
+     },
+     "chips": [
+      {
+       "cls": "svc-chip-vocational",
+       "label": {
+        "zh": "職業服務",
+        "en": "Vocational Service"
+       }
+      },
+      {
+       "cls": "svc-chip-annual",
+       "label": {
+        "zh": "年度服務計畫",
+        "en": "Annual Service Project"
+       }
+      }
+     ]
+    },
+    {
+     "dataRole": null,
+     "profile": null,
+     "avatarStyle": "background-image:url(assets/img/members/chris.jpg)",
+     "name": {
+      "zh": "許崇禧 Chris",
+      "en": "Chris Hsu (Xu Chong-xi)"
+     },
+     "role": {
+      "zh": "世華音響視聽館 負責人",
+      "en": "Owner of Shihua Audio-Visual Hall"
+     },
+     "theme": {
+      "zh": "修隨身聽起家近 40 年，自創 HS-audio 純音工坊。",
+      "en": "Started by repairing personal stereos nearly 40 years ago, and founded HS-audio, a pure-sound workshop."
+     },
+     "chips": [
+      {
+       "cls": "svc-chip-club",
+       "label": {
+        "zh": "社務服務",
+        "en": "Club Service"
+       }
+      }
+     ]
+    },
+    {
+     "dataRole": null,
+     "profile": "profiles/09-vincent-chen.html",
+     "avatarStyle": "background-image:url(assets/img/members/vincent.jpg)",
+     "name": {
+      "zh": "陳明勇 Vincent",
+      "en": "Vincent Chen (Chen Ming-yong)"
+     },
+     "role": {
+      "zh": "ESG 永續報告書推動小組 · 引導師",
+      "en": "ESG Sustainability Report Working Group · Facilitator"
+     },
+     "profileBtn": {
+      "zh": "完整人物誌",
+      "en": "Full profile"
+     },
+     "theme": {
+      "zh": "用引導技術、SROI、ESG 的方法論，把社區、企業、社友之間的對話接起來。朝邦文教基金會 董事暨引導師。",
+      "en": "Using facilitation techniques, SROI, and ESG methodologies to connect the dialogue among communities, enterprises, and Members. Director and Facilitator, Chaopang Cultural and Educational Foundation."
+     },
+     "chips": [
+      {
+       "cls": "svc-chip-vocational",
+       "label": {
+        "zh": "職業服務",
+        "en": "Vocational Service"
+       }
+      },
+      {
+       "cls": "svc-chip-community",
+       "label": {
+        "zh": "社區服務",
+        "en": "Community Service"
+       }
+      },
+      {
+       "cls": "svc-chip-club",
+       "label": {
+        "zh": "社務服務",
+        "en": "Club Service"
+       }
+      },
+      {
+       "cls": "svc-chip-annual",
+       "label": {
+        "zh": "年度服務計畫",
+        "en": "Annual Service Project"
+       }
+      }
+     ]
+    },
+    {
+     "dataRole": null,
+     "profile": "profiles/03-derek-huang.html",
+     "avatarStyle": "background-image:url(assets/img/members/derek.jpg)",
+     "name": {
+      "zh": "黃世祿 Derek",
+      "en": "Derek Huang (Huang Shi-lu)"
+     },
+     "role": {
+      "zh": "智信資訊 總經理",
+      "en": "General Manager, Zhixin Information"
+     },
+     "profileBtn": {
+      "zh": "完整人物誌",
+      "en": "Full profile"
+     },
+     "theme": {
+      "zh": "把社務、知識、服務計畫的資料，放進一套可被檢視、可被傳承的系統裡。",
+      "en": "Putting the data of Club affairs, knowledge, and service projects into a system that can be reviewed and passed on."
+     },
+     "chips": [
+      {
+       "cls": "svc-chip-club",
+       "label": {
+        "zh": "社務服務",
+        "en": "Club Service"
+       }
+      }
+     ]
+    },
+    {
+     "dataRole": null,
+     "profile": null,
+     "avatarStyle": "background-image:url(assets/img/members/grace.jpg)",
+     "name": {
+      "zh": "劉彥琳 Grace",
+      "en": "Grace Liu (Liu Yan-lin)"
+     },
+     "role": {
+      "zh": "聯誼活動主委 · 磐石保險業務協理",
+      "en": "Social Activities Chair · Associate Manager, Panshi Insurance"
+     },
+     "theme": {
+      "zh": "保險業 30 年輔導夥伴，創立喜樂樂團讓音樂成為心靈支持。磐石保險經紀人 業務協理。",
+      "en": "A guiding partner in the insurance industry for 30 years, who founded the Joyful Orchestra to make music a source of spiritual support. Associate Manager, Panshi Insurance Brokers."
+     },
+     "chips": [
+      {
+       "cls": "svc-chip-vocational",
+       "label": {
+        "zh": "職業服務",
+        "en": "Vocational Service"
+       }
+      }
+     ]
+    },
+    {
+     "dataRole": null,
+     "profile": null,
+     "avatarStyle": "background-image:url(assets/img/members/rita.jpg)",
+     "name": {
+      "zh": "蕭瑛瑱 Rita",
+      "en": "Rita Xiao (Xiao Ying-tian)"
+     },
+     "role": {
+      "zh": "通用閣室內裝修股份有限公司 / 行政",
+      "en": "Tongyong Ge Interior Renovation Co., Ltd. / Administration"
+     }
+    }
+   ]
+  },
+  {
+   "title": {
+    "zh": "衛星社",
+    "en": "Satellite Club"
+   },
+   "desc": {
+    "zh": "台北永續影響力共融衛星社｜2025 年 11 月創社，Irene 擔任創社主席。",
+    "en": "Taipei Sustainable Impact Inclusive Satellite Club | Founded November 2025, with Irene as charter chair."
+   },
+   "cards": [
+    {
+     "dataRole": null,
+     "profile": "profiles/19-irene-chen.html",
+     "avatarStyle": "background-image:url(assets/img/members/irene.jpg)",
+     "name": {
+      "zh": "陳美華 Irene",
+      "en": "Irene Chen (Chen Mei-hua)"
+     },
+     "role": {
+      "zh": "衛星社 主席 · 魚籃文化 執行長",
+      "en": "Satellite Club Chair · CEO of Yulan Culture"
+     },
+     "profileBtn": {
+      "zh": "完整人物誌",
+      "en": "Full profile"
+     },
+     "theme": {
+      "zh": "用敘事留住地方與信仰的歷史；永力社創社秘書、衛星社創社主席。",
+      "en": "Using narrative to preserve the history of place and faith; charter secretary of the Club and charter chair of the satellite club."
+     },
+     "chips": [
+      {
+       "cls": "svc-chip-community",
+       "label": {
+        "zh": "社區服務",
+        "en": "Community Service"
+       }
+      },
+      {
+       "cls": "svc-chip-club",
+       "label": {
+        "zh": "社務服務",
+        "en": "Club Service"
+       }
+      }
+     ]
+    },
+    {
+     "dataRole": null,
+     "profile": "profiles/13-teresa-yao.html",
+     "avatarStyle": "background-image:url(assets/img/members/teresa.jpg)",
+     "name": {
+      "zh": "姚曼菁 S. Teresa",
+      "en": "S. Teresa Yao (Yao Man-jing)"
+     },
+     "role": {
+      "zh": "衛星社 秘書 · 台灣老母雞協會 秘書長",
+      "en": "Satellite Club Secretary · Secretary-General of the Taiwan Old Mother Hen Association"
+     },
+     "profileBtn": {
+      "zh": "完整人物誌",
+      "en": "Full profile"
+     },
+     "theme": {
+      "zh": "在尼泊爾建立本地 NGO，讓教育、婦女培力、弱勢關懷成為永續運作的力量。",
+      "en": "Established a local NGO in Nepal, making education, women's empowerment, and care for the disadvantaged a force for sustainable operation."
+     },
+     "chips": [
+      {
+       "cls": "svc-chip-international",
+       "label": {
+        "zh": "國際服務",
+        "en": "International Service"
+       }
+      }
+     ]
+    },
+    {
+     "dataRole": null,
+     "profile": null,
+     "avatarStyle": "background-image:url(assets/img/members/rick.jpg)",
+     "name": {
+      "zh": "周煐傑 Rick",
+      "en": "Rick Zhou (Zhou Ying-jie)"
+     },
+     "role": {
+      "zh": "Drama Action 執行長",
+      "en": "CEO of Drama Action"
+     },
+     "theme": {
+      "zh": "以戲劇教育培訓提升人物質素，建立美好生命共榮圈。",
+      "en": "Using drama education and training to raise the quality of people and build a circle of flourishing for a good life."
+     },
+     "chips": [
+      {
+       "cls": "svc-chip-vocational",
+       "label": {
+        "zh": "職業服務",
+        "en": "Vocational Service"
+       }
+      }
+     ]
+    },
+    {
+     "dataRole": null,
+     "profile": "profiles/10-albee-chang.html",
+     "avatarStyle": "background-image:url(assets/img/members/albee.jpg)",
+     "name": {
+      "zh": "張艾筆 Albee",
+      "en": "Albee Chang (Zhang Ai-bi)"
+     },
+     "role": {
+      "zh": "琢色映像工作室 共同負責人",
+      "en": "Co-Owner of Zhuose Image Studio"
+     },
+     "profileBtn": {
+      "zh": "完整人物誌",
+      "en": "Full profile"
+     },
+     "theme": {
+      "zh": "用媒體轉譯善的影響力，從廣告、MV、Podcast 到永續策劃。",
+      "en": "Using media to translate the impact of goodness, from advertising, MVs, and podcasts to sustainability planning."
+     },
+     "chips": [
+      {
+       "cls": "svc-chip-vocational",
+       "label": {
+        "zh": "職業服務",
+        "en": "Vocational Service"
+       }
+      }
+     ]
+    },
+    {
+     "dataRole": null,
+     "profile": "profiles/16-eric-cheng.html",
+     "avatarStyle": "background-image:url(assets/img/members/eric.jpg)",
+     "name": {
+      "zh": "鄭仲翔 Eric",
+      "en": "Eric Cheng (Cheng Zhong-xiang)"
+     },
+     "role": {
+      "zh": "精浚科技 協理",
+      "en": "Associate Manager, Jingjun Technology"
+     },
+     "profileBtn": {
+      "zh": "完整人物誌",
+      "en": "Full profile"
+     },
+     "theme": {
+      "zh": "以光機電整合，推動國產醫材與檢測設備的自主化。",
+      "en": "Using optomechatronic integration to advance the localization of domestically made medical devices and testing equipment."
+     },
+     "chips": [
+      {
+       "cls": "svc-chip-vocational",
+       "label": {
+        "zh": "職業服務",
+        "en": "Vocational Service"
+       }
+      }
+     ]
+    },
+    {
+     "dataRole": null,
+     "profile": "profiles/18-meiya-cheng.html",
+     "avatarStyle": "background-image:url(assets/img/members/meiya.jpg)",
+     "name": {
+      "zh": "鄭雯 Maya",
+      "en": "Maya Cheng (Cheng Wen)"
+     },
+     "role": {
+      "zh": "台灣願景發展 · 應用戲劇繪本芽",
+      "en": "Taiwan Vision Development · Applied Drama Picture-Book Sprout"
+     },
+     "profileBtn": {
+      "zh": "完整人物誌",
+      "en": "Full profile"
+     },
+     "theme": {
+      "zh": "跨戲劇、企管與兒家領域，以自然藝術橋梁建設具溫度和韌性的永續方案。",
+      "en": "Bridging drama, business management, and the children-and-family field, using nature and art as a bridge to build warm and resilient sustainability solutions."
+     },
+     "chips": [
+      {
+       "cls": "svc-chip-community",
+       "label": {
+        "zh": "社區服務",
+        "en": "Community Service"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "trailing": "<!-- CSS 保留,將 onboarding HTML 區段取消註解即可重新啟用 -->"
+}

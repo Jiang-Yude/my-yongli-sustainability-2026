@@ -19,6 +19,7 @@ V7 單一來源產生器（B 架構）
    改這一個常數再跑一次 build 即可，hreflang/canonical/sitemap 全部跟著更新。
 """
 import os, re, html
+import members_render
 
 # ====== 設定 ======
 BASE_URL = "https://3481rctsi.vercel.app"   # ⚠️ V7 若換網址，改這裡再 rebuild
@@ -194,6 +195,8 @@ def main():
                                 HEADER_MARK, r'<header class="topbar">.*?</header>', "header", rel)
         content = replace_block(content, render(lang,"footer",REL,lang_href),
                                 FOOTER_MARK, r'<footer\b.*?</footer>', "footer", rel)
+        # 社員名冊（資料驅動：_build/data/members.json，只有 members.html 有標記）
+        content = members_render.apply_members(content, lang)
         # head SEO/GEO
         tm = re.search(r'<title>(.*?)</title>', content, flags=re.S)
         title_text = tm.group(1).strip() if tm else SITE_NAME[lang]

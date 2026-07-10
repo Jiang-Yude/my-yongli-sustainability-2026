@@ -12,6 +12,7 @@ GitHub Pages 鏡像（工作備存，非對外）：https://jiang-yude.github.io
 
 - `_build/build.py`：全站頁首頁尾、`<head>` SEO（canonical / hreflang / OG / JSON-LD）、sitemap.xml、robots.txt 的唯一來源。可重複執行（idempotent）。
 - `_build/templates/`：中英頁首頁尾模板。改導航或簽名檔只改這裡，然後跑 build。
+- `_build/data/members.json`：**社員名冊唯一來源**（2026-07-10 起）。新增／修改社員只改這份 JSON，`members.html` 中英兩頁的社員卡由 build.py 自動重生，不要手改 HTML 的 MEMBERS 標記區。
 - 中文頁在 v7 根層，英文鏡像在 `en/`（結構完全對稱）。英文源稿在 repo 根的 `_i18n-en/*.md`。
 - `profiles/`：社員個人誌（中英各 15 頁，編號有跳號屬正常，部分社員尚無個人頁）。
 - `services/`：七項服務計畫頁。
