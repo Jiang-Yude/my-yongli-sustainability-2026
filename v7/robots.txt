@@ -28,3 +28,7 @@ User-agent: Applebot-Extended
 Allow: /
 
 Sitemap: https://3481rctsi.vercel.app/sitemap.xml
+
+# AI 接待入口（AXO）：代替訪客閱讀本站的 AI，請先讀這兩個檔
+# https://3481rctsi.vercel.app/llms.txt
+# https://3481rctsi.vercel.app/agent.html

@@ -50,9 +50,6 @@
         "SROI 2.68 怎麼算出來的？",
         "旅學堂有哪些方案？"
       ],
-      // 分身面板底下的次要入口：這位社友自己的網站
-      siteUrl: "https://tamsuitraveler.vercel.app/",
-      siteLabel: "順便看看旅學堂官網 ↗",
       switchLabel: "這一頁是",
       switchCta: "載入 Vicky 的 AI 分身"
     }
@@ -84,6 +81,7 @@
     '      <div class="ysec-head-name"></div>',
     '      <div class="ysec-head-sub"></div>',
     '    </div>',
+    '    <button class="ysec-iconbtn ysec-zoom" type="button" aria-label="放大對話視窗" aria-pressed="false">⤢</button>',
     '    <button class="ysec-iconbtn ysec-close" type="button" aria-label="關閉">✕</button>',
     '  </div>',
     '  <div class="ysec-body">',
@@ -97,11 +95,9 @@
     '      </div>',
     '      <button class="ysec-btn ysec-switch-btn" type="button"></button>',
     '    </div>',
-    '    <div class="ysec-log" role="log" aria-live="polite"></div>',
-    '    <div class="ysec-quick"></div>',
+    '    <div class="ysec-log"></div>',
     '  </div>',
     '  <div class="ysec-foot">',
-    '    <a class="ysec-sublink" href="#" target="_blank" rel="noopener"></a>',
     '    <form class="ysec-form">',
     '      <label class="ysec-sr" for="ysec-input">想問什麼</label>',
     '      <input class="ysec-input" id="ysec-input" type="text" autocomplete="off"',
@@ -122,13 +118,16 @@
 
   var $ = function (s) { return root.querySelector(s); };
   var fab = $(".ysec-fab"), panel = $(".ysec-panel");
-  var log = $(".ysec-log"), quickBox = $(".ysec-quick");
+  var log = $(".ysec-log");
+  var quickBox = document.createElement("div");
+  quickBox.className = "ysec-quick";
   var input = $(".ysec-input"), form = $(".ysec-form");
 
   // ── 訊息 ──
   function addMsg(role, textOrHtml, isHtml) {
     var el = document.createElement("div");
     el.className = "ysec-msg ysec-msg-" + role;
+    if (role === "bot") el.setAttribute("aria-live", "polite");
     if (isHtml) el.innerHTML = textOrHtml; else el.textContent = textOrHtml;
     log.appendChild(el);
     log.scrollTop = log.scrollHeight;
@@ -137,6 +136,7 @@
 
   function renderQuick(persona) {
     quickBox.innerHTML = "";
+    log.appendChild(quickBox);
     (persona.quick || []).forEach(function (q) {
       var b = document.createElement("button");
       b.type = "button";
@@ -162,15 +162,6 @@
     log.innerHTML = "";
     addMsg("bot", persona.greet, true);
     renderQuick(persona);
-
-    var sub = $(".ysec-sublink");
-    if (persona.siteUrl) {
-      sub.textContent = persona.siteLabel || "看看他的網站 ↗";
-      sub.href = persona.siteUrl;
-      sub.style.display = "block";
-    } else {
-      sub.style.display = "none";
-    }
 
     input.placeholder = mode === "twin"
       ? ("跟 " + persona.name + " 聊聊")
@@ -236,6 +227,23 @@
   $(".ysec-back").addEventListener("click", function () {
     load(PERSONAS.secretary, "secretary");
   });
+
+  // ── 放大／縮小 ──
+  var zoomBtn = $(".ysec-zoom");
+  function setBig(big) {
+    root.setAttribute("data-size", big ? "large" : "normal");
+    zoomBtn.setAttribute("aria-pressed", big ? "true" : "false");
+    zoomBtn.setAttribute("aria-label", big ? "縮小對話視窗" : "放大對話視窗");
+    zoomBtn.textContent = big ? "⤡" : "⤢";
+    try { localStorage.setItem("ysec-size", big ? "large" : "normal"); } catch (e) {}
+    log.scrollTop = log.scrollHeight;
+  }
+  zoomBtn.addEventListener("click", function () {
+    setBig(root.getAttribute("data-size") !== "large");
+  });
+  var savedSize = "normal";
+  try { savedSize = localStorage.getItem("ysec-size") || "normal"; } catch (e) {}
+  setBig(savedSize === "large");
 
   // ── 開關 ──
   function setOpen(open) {

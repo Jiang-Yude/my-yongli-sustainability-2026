@@ -7,6 +7,12 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://3481rctsi.vercel.app/about-yongli.html"/>
   </url>
   <url>
+    <loc>https://3481rctsi.vercel.app/agent.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://3481rctsi.vercel.app/agent.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://3481rctsi.vercel.app/en/agent.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://3481rctsi.vercel.app/agent.html"/>
+  </url>
+  <url>
     <loc>https://3481rctsi.vercel.app/analysis.html</loc>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://3481rctsi.vercel.app/analysis.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://3481rctsi.vercel.app/en/analysis.html"/>
@@ -29,6 +35,12 @@
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://3481rctsi.vercel.app/about-yongli.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://3481rctsi.vercel.app/en/about-yongli.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://3481rctsi.vercel.app/about-yongli.html"/>
+  </url>
+  <url>
+    <loc>https://3481rctsi.vercel.app/en/agent.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://3481rctsi.vercel.app/agent.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://3481rctsi.vercel.app/en/agent.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://3481rctsi.vercel.app/agent.html"/>
   </url>
   <url>
     <loc>https://3481rctsi.vercel.app/en/analysis.html</loc>

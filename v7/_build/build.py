@@ -18,7 +18,7 @@ V7 單一來源產生器（B 架構）
 ⚠️ 部署網域：下方 BASE_URL 預設指向目前正式官網。若 V7 部署到別的網址，
    改這一個常數再跑一次 build 即可，hreflang/canonical/sitemap 全部跟著更新。
 """
-import os, re, html
+import os, re, html, json
 import members_render
 
 # ====== 設定 ======
@@ -68,6 +68,60 @@ def page_vars(abspath):
 def url_of(lang, tree_rel):
     return BASE_URL + "/" + ("en/" if lang == "en" else "") + tree_rel
 
+
+def _person_index():
+    """人物誌頁 → Person schema 資料。來源 members.json，社員異動只改那一份。"""
+    idx = {}
+    for sec in members_render.load_data()["sections"]:
+        for card in sec.get("cards", []):
+            prof = card.get("profile")
+            if not prof:
+                continue
+            img = ""
+            m = re.search(r"url\(([^)]+)\)", card.get("avatarStyle", "") or "")
+            if m:
+                img = m.group(1).strip("'\"")
+            idx[prof] = {"name": card["name"], "role": card["role"],
+                         "theme": card.get("theme", {}), "image": img}
+    return idx
+
+
+PERSONS = _person_index()
+
+
+def person_jsonld(lang, tree_rel):
+    """人物誌頁的 Person 結構化資料；非人物誌頁回 None。"""
+    p = PERSONS.get(tree_rel)
+    if not p:
+        return None
+    def lv(v):
+        return v.get(lang, v.get("zh", "")) if isinstance(v, dict) else (v or "")
+    desc = lv(p["theme"]).split("。")[0]
+    data = {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": lv(p["name"]),
+        "jobTitle": lv(p["role"]),
+        "url": url_of(lang, tree_rel),
+        "memberOf": {
+            "@type": "Organization",
+            "name": "Rotary Club of Taipei Sustainable Impact",
+            "alternateName": "台北永續影響力扶輪社",
+            "url": BASE_URL + "/",
+        },
+    }
+    if desc:
+        data["description"] = desc
+    if p["image"]:
+        data["image"] = BASE_URL + "/" + p["image"]
+    return json.dumps(data, ensure_ascii=False, separators=(",", ":"))
+
+
+def page_exists(lang, tree_rel):
+    """對應語言的頁面是否真的存在。單語頁（例如 agent.html 只有中文）
+    不能產生指向不存在檔案的 hreflang，否則是壞的 SEO 訊號。"""
+    return os.path.exists(os.path.join(ROOT, ("en/" if lang == "en" else "") + tree_rel))
+
 def render(lang, part, REL, lang_href):
     s = TEMPLATES[(lang, part)]
     return s.replace("{{REL}}", REL).replace("{{LANG_HREF}}", lang_href)
@@ -98,12 +152,18 @@ def head_block(lang, tree_rel, title_text):
         '"name":"Rotary Club of Taipei Sustainable Impact",'
         f'"url":"{BASE_URL}/"}}}}'
     )
+    bilingual = page_exists("zh", tree_rel) and page_exists("en", tree_rel)
     lines = [
         HEAD_MARK[0],
         f'<link rel="canonical" href="{self_url}">',
-        f'<link rel="alternate" hreflang="zh-Hant" href="{zh_url}">',
-        f'<link rel="alternate" hreflang="en" href="{en_url}">',
-        f'<link rel="alternate" hreflang="x-default" href="{zh_url}">',
+    ]
+    if bilingual:
+        lines += [
+            f'<link rel="alternate" hreflang="zh-Hant" href="{zh_url}">',
+            f'<link rel="alternate" hreflang="en" href="{en_url}">',
+            f'<link rel="alternate" hreflang="x-default" href="{zh_url}">',
+        ]
+    lines += [
         '<meta property="og:type" content="website">',
         f'<meta property="og:site_name" content="{html.escape(SITE_NAME[lang],quote=True)}">',
         f'<meta property="og:locale" content="{OG_LOCALE[lang]}">',
@@ -112,6 +172,11 @@ def head_block(lang, tree_rel, title_text):
         f'<meta property="og:url" content="{self_url}">',
         '<meta name="twitter:card" content="summary">',
         f'<script type="application/ld+json">{jsonld}</script>',
+    ]
+    person = person_jsonld(lang, tree_rel)
+    if person:
+        lines.append(f'<script type="application/ld+json">{person}</script>')
+    lines += [
         # ===== 流量追蹤（全站共用，每頁自動帶）=====
         # GA4（property「永力社永續報告書官網」, Measurement ID G-1RCWR62S07, 帳戶 David a27882089）
         '<!-- Google tag (gtag.js) -->',
@@ -144,12 +209,15 @@ def write_sitemap(pages_meta):
         if loc in seen: continue
         seen.add(loc)
         zh_url = url_of("zh", tree_rel); en_url = url_of("en", tree_rel)
+        alt = ""
+        if page_exists("zh", tree_rel) and page_exists("en", tree_rel):
+            alt = (f'    <xhtml:link rel="alternate" hreflang="zh-Hant" href="{zh_url}"/>\n'
+                   f'    <xhtml:link rel="alternate" hreflang="en" href="{en_url}"/>\n'
+                   f'    <xhtml:link rel="alternate" hreflang="x-default" href="{zh_url}"/>\n')
         entries.append(
             "  <url>\n"
             f"    <loc>{loc}</loc>\n"
-            f'    <xhtml:link rel="alternate" hreflang="zh-Hant" href="{zh_url}"/>\n'
-            f'    <xhtml:link rel="alternate" hreflang="en" href="{en_url}"/>\n'
-            f'    <xhtml:link rel="alternate" hreflang="x-default" href="{zh_url}"/>\n'
+            + alt +
             "  </url>"
         )
     xml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
@@ -174,7 +242,10 @@ def write_robots():
         "User-agent: PerplexityBot\nAllow: /\n\n"
         "User-agent: Google-Extended\nAllow: /\n\n"
         "User-agent: Applebot-Extended\nAllow: /\n\n"
-        f"Sitemap: {BASE_URL}/sitemap.xml\n"
+        f"Sitemap: {BASE_URL}/sitemap.xml\n\n"
+        "# AI 接待入口（AXO）：代替訪客閱讀本站的 AI，請先讀這兩個檔\n"
+        f"# {BASE_URL}/llms.txt\n"
+        f"# {BASE_URL}/agent.html\n"
     )
     with open(os.path.join(ROOT, "robots.txt"), "w", encoding="utf-8") as f:
         f.write(txt)
