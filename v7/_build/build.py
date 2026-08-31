@@ -114,6 +114,27 @@ def person_jsonld(lang, tree_rel):
         data["description"] = desc
     if p["image"]:
         data["image"] = BASE_URL + "/" + p["image"]
+
+    # sameAs / affiliation：從該頁的社群 chip 抽出來
+    # 個人帳號進 sameAs（讓 AI 確認跨平台是同一人），組織連結進 affiliation
+    same, orgs = [], []
+    page_path = os.path.join(ROOT, ("en/" if lang == "en" else "") + tree_rel)
+    try:
+        page = open(page_path, encoding="utf-8").read()
+    except OSError:
+        page = ""
+    for m in re.finditer(r'<a class="social-chip"[^>]*?href="(https://[^"]+)"[^>]*?aria-label="([^"]*)"', page):
+        url, label = m.group(1), m.group(2)
+        if url in same or any(o.get("url") == url for o in orgs):
+            continue
+        if "個人" in label or "personal" in label.lower():
+            same.append(url)
+        else:
+            orgs.append({"@type": "Organization", "name": label, "url": url})
+    if same:
+        data["sameAs"] = same
+    if orgs:
+        data["affiliation"] = orgs if len(orgs) > 1 else orgs[0]
     return json.dumps(data, ensure_ascii=False, separators=(",", ":"))
 
 

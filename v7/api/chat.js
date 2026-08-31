@@ -47,6 +47,48 @@ const PERSONAS = {
 const MAX_TURNS = 20;        // 一次最多帶幾則歷史
 const MAX_CHARS = 1500;      // 單則訊息長度上限
 
+/* ── 用量上限（2026-08-31 江江訂）──────────────────────────────
+   單一 IP：每分鐘 20 次、每天 100 次
+   全站   ：每天 2000 次
+   計數放在函式執行個體的記憶體裡，零外部依賴。
+   ⚠️ 誠實標註：Vercel 會視流量開多個執行個體，各自計數；冷啟動也會歸零。
+   所以這是「擋掉單機猛打」的護欄，不是精準配額。要精準就得接 KV／Redis。
+   ──────────────────────────────────────────────────────────── */
+const LIMITS = { ipPerMin: 20, ipPerDay: 100, sitePerDay: 2000 };
+const hits = new Map();      // key -> [timestamps]
+let siteDay = { day: "", count: 0 };
+
+function clientIp(req) {
+  const fwd = req.headers["x-forwarded-for"];
+  if (fwd) return String(fwd).split(",")[0].trim();
+  return req.headers["x-real-ip"] || req.socket && req.socket.remoteAddress || "unknown";
+}
+
+function overLimit(ip, now) {
+  const today = new Date(now).toISOString().slice(0, 10);
+  if (siteDay.day !== today) siteDay = { day: today, count: 0 };
+  if (siteDay.count >= LIMITS.sitePerDay) return "site_daily";
+
+  const list = (hits.get(ip) || []).filter(function (t) { return now - t < 86400000; });
+  if (list.length >= LIMITS.ipPerDay) { hits.set(ip, list); return "ip_daily"; }
+  if (list.filter(function (t) { return now - t < 60000; }).length >= LIMITS.ipPerMin) {
+    hits.set(ip, list);
+    return "ip_minute";
+  }
+
+  list.push(now);
+  hits.set(ip, list);
+  siteDay.count += 1;
+  if (hits.size > 5000) hits.clear();   // 記憶體保險，避免無限成長
+  return null;
+}
+
+const LIMIT_REPLY = {
+  ip_minute: "你問得有點快，休息一下下再問我好嗎？",
+  ip_daily: "今天聊得很多了，明天再來找我聊吧。",
+  site_daily: "今天問的人比較多，已經到今天的上限了，明天再來吧。"
+};
+
 module.exports = async function handler(req, res) {
   if (req.method !== "POST") {
     res.status(405).json({ error: "只接受 POST" });
@@ -66,6 +108,12 @@ module.exports = async function handler(req, res) {
     return;
   }
 
+  var limited = overLimit(clientIp(req), Date.now());
+  if (limited) {
+    res.status(429).json({ error: limited, reply: LIMIT_REPLY[limited] });
+    return;
+  }
+
   var apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) {
     res.status(503).json({
@@ -76,8 +124,13 @@ module.exports = async function handler(req, res) {
   }
 
   var model = process.env.OPENAI_MODEL || "gpt-5.6-luna";
+  var lang = body.lang === "en" ? "en" : "zh";
+  var kb = (lang === "en" && KNOWLEDGE[persona + "_en"]) || KNOWLEDGE[persona] || "（無資料）";
   var systemText = PERSONAS[persona].prompt +
-    "\n\n===== 以下是你能依據的資料 =====\n" + (KNOWLEDGE[persona] || "（無資料）");
+    (lang === "en"
+      ? "\n\nThe visitor is reading the English edition of this site. Reply in English, keeping the same persona, tone limits and guardrails."
+      : "") +
+    "\n\n===== 以下是你能依據的資料 =====\n" + kb;
 
   var chatMessages = [{ role: "system", content: systemText }].concat(
     messages.map(function (m) {

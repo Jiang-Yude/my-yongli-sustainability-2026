@@ -27,6 +27,16 @@ SOURCES = {
         ("local", "profiles/02-vicky-lee.html", "李琪 Vicky 在永力社的人物誌"),
         ("remote", "https://tamsuitraveler.vercel.app/", "旅學堂官網首頁"),
     ],
+    # 英文站用的知識，key 為「人格_en」，後端依訪客語言取用
+    "secretary_en": [
+        ("local", "en/index.html", "Club homepage"),
+        ("local", "en/about-yongli.html", "About the club"),
+        ("local", "en/methodology.html", "Impact measurement methodology"),
+    ],
+    "vicky_en": [
+        ("local", "en/profiles/02-vicky-lee.html", "Vicky Lee's member profile"),
+        ("remote", "https://tamsuitraveler.vercel.app/", "Tamsui Traveler website (Chinese)"),
+    ],
 }
 
 
