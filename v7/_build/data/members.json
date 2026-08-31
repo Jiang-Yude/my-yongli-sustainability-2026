@@ -2,8 +2,8 @@
  "sections": [
   {
    "title": {
-    "zh": "社長 · 前社長 · 下屆社長",
-    "en": "Club President · Past Presidents · President-Elect"
+    "zh": "現任社長 · 前社長 · 下屆社長",
+    "en": "Current President · Past Presidents · President-Elect"
    },
    "cards": [
     {
@@ -149,16 +149,16 @@
      ]
     },
     {
-     "dataRole": "pe",
+     "dataRole": "p",
      "profile": "profiles/08-rich-huang.html",
      "avatarStyle": "background-image:url(assets/img/members/rich.jpg)",
      "name": {
-      "zh": "黃丞隆 PE Rich",
-      "en": "Rich Huang (PE Rich)"
+      "zh": "黃丞隆 P Rich",
+      "en": "Rich Huang (P Rich)"
      },
      "role": {
-      "zh": "PE 社長當選人 · 代理秘書",
-      "en": "President-Elect · Acting Secretary"
+      "zh": "現任社長（P） · 代理秘書",
+      "en": "President (P) · Acting Secretary"
      },
      "profileBtn": {
       "zh": "完整人物誌",
@@ -174,6 +174,57 @@
        "label": {
         "zh": "社務服務",
         "en": "Club Service"
+       }
+      }
+     ]
+    },
+    {
+     "dataRole": "pe",
+     "profile": "profiles/09-vincent-chen.html",
+     "avatarStyle": "background-image:url(assets/img/members/vincent.jpg)",
+     "name": {
+      "zh": "陳明勇 PE Vincent",
+      "en": "Vincent Chen (Chen Ming-yong)"
+     },
+     "role": {
+      "zh": "PE 社長當選人 · ESG 永續報告書推動小組 · 引導師",
+      "en": "President-Elect · ESG Sustainability Report Working Group · Facilitator"
+     },
+     "profileBtn": {
+      "zh": "完整人物誌",
+      "en": "Full profile"
+     },
+     "theme": {
+      "zh": "用引導技術、SROI、ESG 的方法論，把社區、企業、社友之間的對話接起來。朝邦文教基金會 董事暨引導師。",
+      "en": "Using facilitation techniques, SROI, and ESG methodologies to connect the dialogue among communities, enterprises, and Members. Director and Facilitator, Chaopang Cultural and Educational Foundation."
+     },
+     "chips": [
+      {
+       "cls": "svc-chip-vocational",
+       "label": {
+        "zh": "職業服務",
+        "en": "Vocational Service"
+       }
+      },
+      {
+       "cls": "svc-chip-community",
+       "label": {
+        "zh": "社區服務",
+        "en": "Community Service"
+       }
+      },
+      {
+       "cls": "svc-chip-club",
+       "label": {
+        "zh": "社務服務",
+        "en": "Club Service"
+       }
+      },
+      {
+       "cls": "svc-chip-annual",
+       "label": {
+        "zh": "年度服務計畫",
+        "en": "Annual Service Project"
        }
       }
      ]
@@ -356,57 +407,6 @@
        "label": {
         "zh": "社務服務",
         "en": "Club Service"
-       }
-      }
-     ]
-    },
-    {
-     "dataRole": null,
-     "profile": "profiles/09-vincent-chen.html",
-     "avatarStyle": "background-image:url(assets/img/members/vincent.jpg)",
-     "name": {
-      "zh": "陳明勇 Vincent",
-      "en": "Vincent Chen (Chen Ming-yong)"
-     },
-     "role": {
-      "zh": "ESG 永續報告書推動小組 · 引導師",
-      "en": "ESG Sustainability Report Working Group · Facilitator"
-     },
-     "profileBtn": {
-      "zh": "完整人物誌",
-      "en": "Full profile"
-     },
-     "theme": {
-      "zh": "用引導技術、SROI、ESG 的方法論，把社區、企業、社友之間的對話接起來。朝邦文教基金會 董事暨引導師。",
-      "en": "Using facilitation techniques, SROI, and ESG methodologies to connect the dialogue among communities, enterprises, and Members. Director and Facilitator, Chaopang Cultural and Educational Foundation."
-     },
-     "chips": [
-      {
-       "cls": "svc-chip-vocational",
-       "label": {
-        "zh": "職業服務",
-        "en": "Vocational Service"
-       }
-      },
-      {
-       "cls": "svc-chip-community",
-       "label": {
-        "zh": "社區服務",
-        "en": "Community Service"
-       }
-      },
-      {
-       "cls": "svc-chip-club",
-       "label": {
-        "zh": "社務服務",
-        "en": "Club Service"
-       }
-      },
-      {
-       "cls": "svc-chip-annual",
-       "label": {
-        "zh": "年度服務計畫",
-        "en": "Annual Service Project"
        }
       }
      ]
