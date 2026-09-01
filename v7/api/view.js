@@ -53,14 +53,27 @@ module.exports = async (req, res) => {
   const isBot = /bot|crawl|spider|slurp|headless|preview|facebookexternalhit|monitor|lighthouse/i.test(ua);
   const increment = body.increment !== false && !isBot;
 
+  const ip = String(req.headers['x-forwarded-for'] || '').split(',')[0].trim() || 'na';
   const day = taipeiDay();
   const month = day.slice(0, 7);
   const seg = path.split('/').filter(Boolean);
   // 分區：/profiles/xxx/ → profiles、/en/... → en、首頁沒有分區
   const section = seg.length >= 2 ? seg[0] : null;
 
-  const cmds = [];
+  /* 限流（2026-09-01 Codex 跨家審抓到）：這支端點原本誰都能狂打，
+     可以無限灌高計數、也會把 Upstash 的免費額度燒光。
+     同一 IP 每分鐘最多 30 次寫入，超過就只讀不寫（不回錯誤，避免變成偵測工具）。 */
+  let allowWrite = increment;
   if (increment) {
+    try {
+      const rk = `${P}vrate:${ip}:${Math.floor(Date.now() / 60000)}`;
+      const [n] = (await pipe([['INCR', rk], ['EXPIRE', rk, 90]])).map((o) => (o && o.result != null ? o.result : 0));
+      if (Number(n) > 30) allowWrite = false;
+    } catch (e) { /* 限流壞掉不擋計數 */ }
+  }
+
+  const cmds = [];
+  if (allowWrite) {
     cmds.push(['INCR', `${P}page:${path}`]);
     cmds.push(['INCR', `${P}global`]);
     cmds.push(['INCR', `${P}global:day:${day}`]);
@@ -80,7 +93,7 @@ module.exports = async (req, res) => {
     const results = out.map((o) => (o && o.result != null ? o.result : 0));
     /* 當天這個 hash 的第一筆（HINCRBY 回 1）才設過期時間，留 90 天。
        一定要 await：serverless 在回應送出後會凍結，沒 await 的 promise 送不出去。 */
-    if (increment && path.length <= 120) {
+    if (allowWrite && path.length <= 120) {
       const hIdx = cmds.findIndex((c) => c[0] === 'HINCRBY');
       if (hIdx >= 0 && Number(results[hIdx]) === 1) {
         try { await pipe([['EXPIRE', `${P}pageday:${day}`, 7776000]]); } catch { /* 設不成不擋計數 */ }
