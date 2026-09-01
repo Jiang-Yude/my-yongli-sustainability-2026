@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="robots" content="noindex,nofollow" />
+<title>後台流量查詢｜台北永續影響力扶輪社</title>
+<meta name="description" content="永續影響力報告書網站的流量與 AI 助理提問分析。" />
+<link rel="stylesheet" href="/assets/css/common.css" />
+<style>
+/* ── 站長儀表板專屬樣式 ───────────────────────────────
+   類別色為圖表專用，不是官網五色暖光原值：原值的 sky 跟 lavender
+   在色盲模擬下 ΔE 只有 1.2，直接拿來當類別色會分不出來。
+   下面這組是加深彩度並重排順序後跑過 dataviz validator 的版本
+   （六項檢查全過，色序固定不可輪播；sand↔mint 在 protan 下 ΔE 7.5，
+   所以凡用到這兩色的圖都必須有直接標籤或間隙當第二重編碼）。 */
+:root{
+  --k1:#c9463a; --k2:#2f7fb5; --k3:#b8791f; --k4:#2c8a63; --k5:#6b4f9e; --k6:#8a8f2a;
+  --seq1:#e3eef6; --seq2:#bcd8ea; --seq3:#8ebdd9; --seq4:#5c9cc4; --seq5:#2f7fb5; --seq6:#1d5a83;
+  --grid:#E5DFD2;
+  /* 下面幾個是把本站 common.css 的變數名，對應成這頁沿用知識官網寫法時用到的名字 */
+  --paper:var(--bg-card); --ink-faint:var(--ink-mute);
+  --radius-md:12px; --radius-lg:16px; --radius-pill:999px;
+  --shadow:0 1px 3px rgba(0,0,0,.04),0 4px 12px rgba(0,0,0,.04);
+}
+.dash{max-width:1180px;margin:0 auto;padding:28px clamp(16px,4vw,40px) 90px}
+.gate{max-width:460px;margin:80px auto;padding:34px 30px;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow);text-align:center}
+.gate h2{font-size:24px;margin-bottom:8px}
+.gate p{color:var(--ink-faint);font-size:16px;margin-bottom:20px;line-height:1.7}
+.gate input{width:100%;font-family:inherit;font-size:19px;padding:13px 16px;border:1px solid var(--line);border-radius:var(--radius-pill);background:#fff;color:var(--ink);text-align:center;letter-spacing:.12em}
+.gate input:focus{outline:none;border-color:var(--k2);box-shadow:0 0 0 3px rgba(47,127,181,.16)}
+.gate button{margin-top:14px;width:100%;font-family:inherit;font-size:18px;font-weight:700;padding:13px;border:none;border-radius:var(--radius-pill);background:var(--ink);color:#fff;cursor:pointer}
+.gate button:hover{background:#000}
+.gate .err{margin-top:12px;color:var(--k1);font-size:16px;min-height:24px}
+
+.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:24px}
+.toolbar select,.toolbar input[type=search]{font-family:inherit;font-size:17px;padding:9px 14px;border:1px solid var(--line);border-radius:var(--radius-pill);background:#fff;color:var(--ink)}
+.toolbar .spacer{flex:1}
+.toolbar .stamp{font-size:15px;color:var(--ink-faint)}
+.btn-lite{font-family:inherit;font-size:16px;padding:9px 16px;border:1px solid var(--line);border-radius:var(--radius-pill);background:#fff;color:var(--ink-soft);cursor:pointer}
+.btn-lite:hover{border-color:var(--ink-faint)}
+.btn-lite.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(142px,1fr));gap:12px;margin-bottom:34px}
+.tile{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-md);padding:16px 16px}
+.tile .n{font:700 30px/1.05 "JetBrains Mono",monospace;color:var(--ink);white-space:nowrap}
+.tile .l{margin-top:7px;font-size:15px;color:var(--ink-faint)}
+.tile .d{margin-top:5px;font-size:15px}
+.tile .d.up{color:var(--k4)} .tile .d.down{color:var(--k1)} .tile .d.flat{color:var(--ink-faint)}
+
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-lg);padding:24px clamp(16px,3vw,28px);margin-bottom:26px}
+.panel h2{font-size:clamp(21px,2.6vw,26px);margin-bottom:4px}
+.panel .read{font-size:16px;color:var(--ink-faint);line-height:1.7;margin-bottom:18px}
+.panel .read b{color:var(--ink-soft)}
+.scroll{overflow-x:auto}
+.scroll.tall{max-height:66vh;overflow-y:auto;border:1px solid var(--line-soft);border-radius:10px}
+.scroll.tall table.list th{position:sticky;top:0;background:var(--paper);z-index:2}
+figure{margin:0}
+figcaption{margin-top:10px;font-size:15px;color:var(--ink-faint);line-height:1.65}
+
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin:0 0 12px;font-size:15px;color:var(--ink-soft)}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:baseline}
+
+.hbar{display:grid;grid-template-columns:minmax(0,1fr);gap:7px}
+.hbar .row{display:grid;grid-template-columns:minmax(150px,300px) 1fr auto;gap:12px;align-items:center;font-size:16px;cursor:pointer;padding:3px 4px;border-radius:8px}
+.hbar .row:hover{background:var(--bg-soft)}
+.hbar .row.sel{background:#f3ece0;box-shadow:inset 0 0 0 1px var(--line)}
+.hbar .lb{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ink-soft)}
+.hbar .tr{background:var(--bg-soft);border-radius:4px;height:19px;position:relative;overflow:hidden}
+.hbar .fl{position:absolute;left:0;top:0;bottom:0;border-radius:0 4px 4px 0;background:var(--k2)}
+.hbar .vv{font:600 15px/1 "JetBrains Mono",monospace;color:var(--ink-faint);min-width:42px;text-align:right}
+
+table.grid{border-collapse:separate;border-spacing:2px;font-size:15px}
+table.grid th{font-weight:500;color:var(--ink-faint);text-align:left;padding:4px 8px;white-space:nowrap;font-size:14px}
+table.grid th.rot{writing-mode:vertical-rl;height:104px;padding:6px 2px;text-align:right;line-height:1.15}
+table.grid td.cell{width:44px;height:34px;text-align:center;border-radius:5px;font:600 14px/1 "JetBrains Mono",monospace;cursor:pointer;color:#1a1612}
+table.grid td.cell.z{color:#c9c0ae}
+table.grid td.cell:hover{outline:2px solid var(--ink);outline-offset:-2px}
+table.grid td.rowlb{padding:4px 10px 4px 4px;white-space:nowrap;max-width:270px;overflow:hidden;text-overflow:ellipsis;color:var(--ink-soft)}
+table.grid td.tot{font:600 14px/1 "JetBrains Mono",monospace;color:var(--ink-faint);padding-left:8px}
+
+/* 對話串：一段對話一張卡，訪客靠右、AI 助理靠左，看起來就是聊天記錄。
+   原本一列一列的表格看不出誰問誰答，江江 2026-09-01 反應「搞不懂」後改的。 */
+.toolbar .rng{display:inline-flex;align-items:center;gap:7px;font-size:15px;color:var(--ink-faint)}
+.toolbar .rng input[type=date]{font-family:inherit;font-size:15px;padding:7px 9px;width:138px;border:1px solid var(--line);border-radius:var(--radius-pill);background:#fff;color:var(--ink)}
+
+/* 訪客清單：先看誰來過、問了幾次、在問什麼，點開才展開那個人的對話串。
+   36 位訪客的對話一次全攤開有七千像素，江江 2026-09-01 反應「打不開」後改的。 */
+.vlist{border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden}
+.vrow{display:grid;grid-template-columns:minmax(150px,1.3fr) 62px 62px 96px minmax(140px,1fr);gap:12px;align-items:center;
+  padding:12px 16px;border-bottom:1px solid var(--line-soft);cursor:pointer;font-size:16px;background:var(--paper)}
+.vrow:last-child{border-bottom:none}
+.vrow:hover{background:var(--bg-soft)}
+.vrow.open{background:#f3ece0}
+.vrow.hit{box-shadow:inset 3px 0 0 var(--k2)}
+.vrow .nm{display:flex;align-items:center;gap:8px;min-width:0}
+.vrow .nm .cav{width:26px;height:26px;border-radius:50%;background:var(--bg-soft);border:1px solid var(--line);flex:0 0 26px;display:flex;align-items:center;justify-content:center;font-size:14px}
+.vrow .nm b{font:500 15px/1.4 "JetBrains Mono",monospace;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vrow .nm small{color:var(--ink-faint);font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vrow .n{font:600 16px/1 "JetBrains Mono",monospace;text-align:right;color:var(--ink)}
+.vrow .dt{font:500 14px/1 "JetBrains Mono",monospace;color:var(--ink-faint)}
+.vrow .tp{font-size:15px;color:var(--ink-soft);display:flex;align-items:center;gap:7px;min-width:0}
+.vrow .tp i{width:10px;height:10px;border-radius:3px;flex:0 0 10px}
+.vrow .tp span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vhead{display:grid;grid-template-columns:minmax(150px,1.3fr) 62px 62px 96px minmax(140px,1fr);gap:12px;
+  padding:9px 16px;background:var(--bg-soft);border-bottom:1px solid var(--line);font-size:14px;color:var(--ink-faint)}
+.vhead .n{text-align:right}
+.vbody{display:none;padding:16px;background:#fdfbf6;border-bottom:1px solid var(--line-soft)}
+.vbody.on{display:block}
+@media(max-width:720px){
+  .vrow,.vhead{grid-template-columns:1fr 54px 78px;gap:8px}
+  .vrow .dt,.vhead .dt,.vrow .tp,.vhead .tp{display:none}
+  .vrow .tp.m{display:flex;grid-column:1/-1;margin-top:2px}
+}
+.conv{border:1px solid var(--line);border-radius:var(--radius-md);margin-bottom:14px;overflow:hidden;background:var(--paper)}
+.conv.hit{box-shadow:0 0 0 2px rgba(47,127,181,.35)}
+.conv .ch{display:flex;flex-wrap:wrap;gap:10px;align-items:baseline;padding:11px 16px;background:var(--bg-soft);border-bottom:1px solid var(--line-soft);font-size:15px;color:var(--ink-faint)}
+.conv .ch .pg{color:var(--ink-soft);font-weight:500}
+.conv .ch .pg a{color:inherit}
+.conv .ch .who{font-family:"JetBrains Mono",monospace;font-size:14px}
+.conv .ch .cnt{margin-left:auto;white-space:nowrap}
+.conv .sep{display:flex;align-items:center;gap:10px;margin:16px 0 12px;font-size:14px;color:var(--ink-faint)}
+.conv .sep::before,.conv .sep::after{content:"";height:1px;background:var(--line-soft);flex:1}
+.conv .sep span{white-space:nowrap}
+.msg.on .bub{outline:2px solid var(--k3);outline-offset:2px}
+.conv .body{padding:14px 16px}
+.msg{display:flex;margin-bottom:11px;gap:9px}
+.msg:last-child{margin-bottom:0}
+.msg.u{justify-content:flex-end}
+.msg .bub{max-width:min(660px,84%);padding:10px 14px;border-radius:14px;font-size:16px;line-height:1.65;white-space:pre-wrap;word-break:break-word}
+.msg.u .bub{background:#2f7fb5;color:#fff;border-bottom-right-radius:5px}
+.msg.b .bub{background:var(--bg-soft);color:var(--ink);border:1px solid var(--line-soft);border-bottom-left-radius:5px}
+.msg.b .bub.clip{max-height:5.4em;overflow:hidden;position:relative;cursor:pointer}
+.msg.b .bub.clip::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2.2em;background:linear-gradient(180deg,rgba(250,245,236,0),var(--bg-soft))}
+.msg .ava{width:28px;height:28px;border-radius:50%;background:var(--bg-soft);border:1px solid var(--line);flex:0 0 28px;display:flex;align-items:center;justify-content:center;font-size:15px}
+.msg .t{font:500 13px/1.9 "JetBrains Mono",monospace;color:var(--ink-faint);flex:0 0 auto;align-self:flex-end}
+.msg .kd{display:inline-block;font-size:13px;padding:1px 8px;border-radius:999px;background:rgba(255,255,255,.22);margin-right:7px;vertical-align:1px}
+.msg.b .more{font-size:14px;color:var(--k2);cursor:pointer;margin-top:4px}
+table.list{width:100%;border-collapse:collapse;font-size:16px}
+table.list th{text-align:left;font-weight:500;font-size:15px;color:var(--ink-faint);border-bottom:1px solid var(--line);padding:8px 10px;white-space:nowrap}
+table.list td{border-bottom:1px solid var(--line-soft);padding:9px 10px;vertical-align:top;line-height:1.6}
+table.list td.t{font:500 14px/1.5 "JetBrains Mono",monospace;color:var(--ink-faint);white-space:nowrap}
+table.list td.p{font-size:14px;color:var(--ink-faint);max-width:210px;word-break:break-all}
+table.list tr.bot td{color:var(--ink-faint);background:var(--bg-soft)}
+
+.tag{display:inline-block;font-size:14px;padding:2px 9px;border-radius:999px;border:1px solid var(--line);color:var(--ink-soft);white-space:nowrap}
+.tag.alert{border-color:var(--k1);color:var(--k1)}
+details.raw{margin-top:16px}
+details.raw>summary{cursor:pointer;font-size:16px;color:var(--ink-faint);padding:8px 0}
+.note{font-size:15px;color:var(--ink-faint);line-height:1.7;margin-top:12px;padding-top:12px;border-top:1px dashed var(--line)}
+.flag{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:10px;background:#fdf3f1;border:1px solid #f0c9c2;font-size:16px;line-height:1.65;margin-bottom:10px}
+.flag.ok{background:#f0f6f2;border-color:#c9e0d3}
+.flag .ic{font-size:19px;line-height:1.3}
+@media(max-width:720px){
+  .hbar .row{grid-template-columns:minmax(110px,1fr) 1fr auto}
+  .tile .n{font-size:28px}
+  /* 手機上日期範圍那組會撐破 390px，讓它自己占一整行並平分寬度 */
+  .toolbar .rng{width:100%;flex-wrap:nowrap}
+  .toolbar .rng input[type=date]{flex:1 1 0;min-width:0;padding:7px 8px;font-size:15px}
+  .toolbar .rng>span{flex:0 0 auto}
+  .toolbar{gap:8px}
+  .toolbar .btn-lite{font-size:15px;padding:8px 12px}
+  .dash{padding-left:12px;padding-right:12px}
+}
+</style>
+<!--SITE-HEAD:START-->
+<link rel="canonical" href="https://3481rctsi.vercel.app/stats.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="台北永續影響力扶輪社｜永續影響力報告書">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="後台流量查詢｜台北永續影響力扶輪社">
+<meta property="og:url" content="https://3481rctsi.vercel.app/stats.html">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"台北永續影響力扶輪社｜永續影響力報告書","url":"https://3481rctsi.vercel.app/","inLanguage":"zh-Hant","publisher":{"@type":"Organization","name":"Rotary Club of Taipei Sustainable Impact","url":"https://3481rctsi.vercel.app/"}}</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1RCWR62S07"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1RCWR62S07');</script>
+<!--SITE-HEAD:END-->
+</head>
+<body>
+<!--SITE-HEADER:START-->
+<header class="topbar"> <div class="inner"> <a class="brand" href="index.html" aria-label="回首頁"> <span class="mark">永</span>永續影響力扶輪社年度報告書 </a> <button class="nav-toggle" aria-label="開啟選單" aria-expanded="false"> <span></span><span></span><span></span> </button> <nav> <a href="index.html#intro">關於永力社</a><a href="index.html#impact-report">影響力報告</a><a href="index.html#five-service">五大服務</a><a href="index.html#members">社友介紹</a><a href="index.html#impact-hub">服務計畫</a> </nav> <a class="lang-switch" href="en/stats.html" hreflang="en" aria-label="Switch to English">EN</a> </div> </header>
+<!--SITE-HEADER:END-->
+
+<section class="gate" id="gate">
+  <h2>後台流量查詢</h2>
+  <p>這頁要密碼。</p>
+  <input type="password" id="pw" autocomplete="current-password" placeholder="密碼" />
+  <button id="go">進入</button>
+  <div class="err" id="err"></div>
+</section>
+
+<main class="dash" id="dash" hidden>
+
+  <div class="toolbar">
+    <button class="btn-lite" data-span="30">近 30 天</button>
+    <button class="btn-lite" data-span="90">近 3 個月</button>
+    <button class="btn-lite" data-span="180">近半年</button>
+    <button class="btn-lite" data-span="365">近一年</button>
+    <button class="btn-lite" data-span="all">全部</button>
+    <span class="rng"><input type="date" id="d1" aria-label="開始日期"><span>到</span><input type="date" id="d2" aria-label="結束日期"><button class="btn-lite" id="go2">看這段</button></span>
+    <div class="spacer"></div>
+    <button class="btn-lite" id="lock">鎖上</button>
+  </div>
+  <p class="sub" style="margin:-14px 0 22px"><span id="rangelabel"></span>　<span class="stamp" id="stamp"></span></p>
+
+  <div class="tiles" id="tiles"></div>
+
+  <section class="panel">
+    <h2>流量趨勢</h2>
+    <p class="read">怎麼讀：<b>看形狀不看單日數字。</b>上面是每天有多少人看網頁，下面是每天有多少人跟 AI 助理講話。兩張圖分開畫（不共用一個 Y 軸），因為量級差十倍以上，疊在一起看不出小的那條在動。發文、開課、講座之後這兩條會一起翹起來。</p>
+    <figure>
+      <div class="scroll"><div id="chart-pv"></div></div>
+      <figcaption id="cap-pv"></figcaption>
+    </figure>
+    <figure style="margin-top:22px">
+      <div class="scroll"><div id="chart-chat"></div></div>
+      <figcaption id="cap-chat"></figcaption>
+    </figure>
+  </section>
+
+  <section class="panel">
+    <h2>哪些頁面被看</h2>
+    <p class="read">怎麼讀：<b>這是從開站到現在的累計，不受上面的期間選擇影響。</b>條越長看的人越多。點任何一列，下面的「AI 助理對話明細」會只留這一頁的提問，看得到讀者在這頁卡在哪。</p>
+    <div class="toolbar" style="margin-bottom:14px">
+      <button class="btn-lite on" data-scope="all">全部</button>
+      <button class="btn-lite" data-scope="zh">中文站</button>
+      <button class="btn-lite" data-scope="profiles">社友頁</button>
+      <button class="btn-lite" data-scope="services">服務案例</button>
+      <button class="btn-lite" data-scope="en">英文站</button>
+      <input type="search" id="pgq" placeholder="搜尋頁面網址" />
+    </div>
+    <figure>
+      <div class="hbar" id="pages"></div>
+      <figcaption id="cap-pages"></figcaption>
+    </figure>
+    <details class="raw"><summary>看完整清單（含冷門頁）</summary><div class="scroll tall" id="pages-all"></div></details>
+  </section>
+
+  <section class="panel">
+    <h2>這段期間誰在動</h2>
+    <p class="read">怎麼讀：<b>這張只算你選的期間，跟上面的累計榜互補。</b>累計榜是老本，這張是現在的動能。長條是期間內的瀏覽數，灰字是開站到現在的累計。每頁每日的記錄從 2026-09-01 才開始，在那之前沒有這個維度。</p>
+    <figure>
+      <div class="hbar" id="pages-month"></div>
+      <figcaption id="cap-pmonth"></figcaption>
+    </figure>
+  </section>
+
+  <section class="panel">
+    <h2>AI 助理：大家都問什麼</h2>
+    <p class="read">怎麼讀：<b>格子越深表示在那一頁問那類問題的人越多。</b>點任何一個格子，下面的明細會只留那一格的對話。問題分類是<b>關鍵詞規則自動分的，不是 AI 判讀</b>，分不出來的一律歸「其他」，原句在最下面的明細都查得到。</p>
+    <div class="legend" id="lg-kind"></div>
+    <figure>
+      <div class="hbar" id="kinds"></div>
+      <figcaption id="cap-kinds"></figcaption>
+    </figure>
+    <figure style="margin-top:26px">
+      <div class="scroll"><div id="chart-stack"></div></div>
+      <figcaption id="cap-stack"></figcaption>
+    </figure>
+    <figure style="margin-top:26px">
+      <div class="scroll"><table class="grid" id="matrix"></table></div>
+      <figcaption id="cap-matrix"></figcaption>
+    </figure>
+  </section>
+
+  <section class="panel">
+    <h2>要注意的事</h2>
+    <p class="read">怎麼讀：這區是<b>機器用規則掃出來的異常訊號</b>，不是結論。每條都附可以直接查的原句，看過才算數。</p>
+    <div id="flags"></div>
+  </section>
+
+  <section class="panel">
+    <h2>AI 助理對話明細</h2>
+    <p class="read">怎麼讀：<b>一段對話一張卡</b>，藍色是訪客說的、灰色是 AI 助理回的，由上往下就是當時的先後順序。上面的圖點下去會只留有命中的那幾段，命中的那句會亮起來。訪客原話一字不改，只看得到瀏覽器識別碼，看不到是誰。</p>
+    <div class="toolbar" style="margin-bottom:14px">
+      <span class="stamp" id="filt">目前：全部</span>
+      <button class="btn-lite" id="clearf">清除篩選</button>
+      <input type="search" id="cq" placeholder="搜尋對話內容" />
+      <label style="font-size:16px;color:var(--ink-faint)"><input type="checkbox" id="showbot" /> 展開 AI 助理的完整回答</label>
+    </div>
+    <div class="scroll tall" id="chatlist"></div>
+  </section>
+
+  <section class="panel">
+    <h2>統計機制自我檢查</h2>
+    <p class="read">怎麼讀：這區在回答「<b>這些數字本身可不可信</b>」。埋點漏一頁，那一頁的流量就是零，看起來像沒人看，其實是沒在數。</p>
+    <div id="health"></div>
+    <div class="note">
+      記錄方式：自建 Vercel Function ＋ Upstash Redis，不經過 Google Analytics。
+      瀏覽數同一瀏覽器同一頁一小時只計一次；機器人 User-Agent 不計；後台這頁自己不計。
+      AI 助理對話只記匿名瀏覽器識別碼，不做會員、不記 IP、不追個人軌跡。
+      資料庫與江江的知識官網共用同一個實例，本站所有資料加 <code>y:</code> 前綴隔離。
+    </div>
+  </section>
+
+</main>
+
+<!-- 這頁沒有 <footer>，所以 build.py 不會把 views.js 與永力秘書 widget 注入進來：
+     後台是自己在看，計進流量會污染數字，也不需要客服。
+     雙保險：views.js 開頭遇到 /stats.html 也會直接 return，
+     stats-dash.js 統計時同樣濾掉 /stats.html 的對話。 -->
+<script src="/assets/js/stats-dash.js"></script>
+</body>
+</html>

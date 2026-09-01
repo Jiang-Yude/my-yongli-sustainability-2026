@@ -274,6 +274,7 @@ def write_robots():
 def main():
     pages = sorted(iter_pages())
     stats = {"zh": 0, "en": 0}; pages_meta = []; samples = []
+    page_titles = {}   # 給 /stats.html 用：路徑 → 頁面標題
     for p in pages:
         rel, lang, tree_rel, REL, lang_href = page_vars(p)
         with open(p, encoding="utf-8") as f:
@@ -295,12 +296,25 @@ def main():
         content = inject_head(content, head_block(lang, tree_rel, title_text))
         with open(p, "w", encoding="utf-8") as f:
             f.write(content)
-        stats[lang] += 1; pages_meta.append((lang, tree_rel))
+        stats[lang] += 1
+        # 後台流量查詢頁是 noindex 的內部頁，不該出現在 sitemap
+        if tree_rel != "stats.html":
+            pages_meta.append((lang, tree_rel))
+        # 後台流量查詢頁要把 /profiles/xxx.html 翻成人看得懂的名字，這裡順手收一份。
+        # ⚠️ 用 rel 不能用 tree_rel：tree_rel 對英文頁已經去掉 en/ 前綴，
+        #    中英文會共用同一個 key，後跑的英文標題會蓋掉中文的。
+        _t = title_text.split("｜")[0].split(" | ")[0].strip()
+        _u = "/" + rel
+        if _u.endswith("/index.html"):
+            _u = _u[:-10]
+        page_titles[_u] = {"title": _t, "lang": lang}
         if len(samples) < 4:
             samples.append(f"  {rel}  canonical={url_of(lang,tree_rel)}  ↔ {lang_href}")
     n = write_sitemap(pages_meta); write_robots()
+    with open(os.path.join(ROOT, "page-titles.json"), "w", encoding="utf-8") as f:
+        json.dump(page_titles, f, ensure_ascii=False, indent=1)
     print(f"✅ build 完成：中文 {stats['zh']} 頁、英文 {stats['en']} 頁")
-    print(f"   sitemap.xml（{n} URLs）+ robots.txt 已產生  | BASE_URL={BASE_URL}")
+    print(f"   sitemap.xml（{n} URLs）+ robots.txt + page-titles.json（{len(page_titles)} 筆）已產生  | BASE_URL={BASE_URL}")
     print("路徑抽樣：\n" + "\n".join(samples))
 
 if __name__ == "__main__":

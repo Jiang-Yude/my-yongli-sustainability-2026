@@ -1,0 +1,246 @@
+{
+ "/about-yongli.html": {
+  "title": "關於永力社",
+  "lang": "zh"
+ },
+ "/agent.html": {
+  "title": "把這頁交給你的 AI",
+  "lang": "zh"
+ },
+ "/analysis.html": {
+  "title": "多框架影響力分析",
+  "lang": "zh"
+ },
+ "/cases.html": {
+  "title": "實際案例",
+  "lang": "zh"
+ },
+ "/disclosure-framework.html": {
+  "title": "揭露架構",
+  "lang": "zh"
+ },
+ "/en/about-yongli.html": {
+  "title": "About the Club",
+  "lang": "en"
+ },
+ "/en/agent.html": {
+  "title": "Hand This Page to Your AI",
+  "lang": "en"
+ },
+ "/en/analysis.html": {
+  "title": "Multi-Framework Impact Analysis",
+  "lang": "en"
+ },
+ "/en/cases.html": {
+  "title": "Case Study",
+  "lang": "en"
+ },
+ "/en/disclosure-framework.html": {
+  "title": "Disclosure Framework",
+  "lang": "en"
+ },
+ "/en/": {
+  "title": "Rotary Club of Taipei Sustainable Impact",
+  "lang": "en"
+ },
+ "/en/members.html": {
+  "title": "Member Profiles",
+  "lang": "en"
+ },
+ "/en/methodology.html": {
+  "title": "Impact Measurement Methodology",
+  "lang": "en"
+ },
+ "/en/profiles/01-cp-lin.html": {
+  "title": "CP Lin",
+  "lang": "en"
+ },
+ "/en/profiles/02-vicky-lee.html": {
+  "title": "Vicky Lee",
+  "lang": "en"
+ },
+ "/en/profiles/03-derek-huang.html": {
+  "title": "Derek Huang",
+  "lang": "en"
+ },
+ "/en/profiles/04-helen-lai.html": {
+  "title": "PP Helen Lai",
+  "lang": "en"
+ },
+ "/en/profiles/05-lisa-lin.html": {
+  "title": "Lisa Lin",
+  "lang": "en"
+ },
+ "/en/profiles/06-james-gao.html": {
+  "title": "James Gao",
+  "lang": "en"
+ },
+ "/en/profiles/07-nick-lin.html": {
+  "title": "PP Nick Lin",
+  "lang": "en"
+ },
+ "/en/profiles/08-rich-huang.html": {
+  "title": "P Rich Huang",
+  "lang": "en"
+ },
+ "/en/profiles/09-vincent-chen.html": {
+  "title": "Vincent Chen",
+  "lang": "en"
+ },
+ "/en/profiles/10-albee-chang.html": {
+  "title": "Albee Chang",
+  "lang": "en"
+ },
+ "/en/profiles/13-teresa-yao.html": {
+  "title": "S. Teresa Yao",
+  "lang": "en"
+ },
+ "/en/profiles/15-wayne-lin.html": {
+  "title": "Wayne Lin",
+  "lang": "en"
+ },
+ "/en/profiles/16-eric-cheng.html": {
+  "title": "Eric Cheng",
+  "lang": "en"
+ },
+ "/en/profiles/18-meiya-cheng.html": {
+  "title": "Maya Cheng",
+  "lang": "en"
+ },
+ "/en/profiles/19-irene-chen.html": {
+  "title": "Irene Chen",
+  "lang": "en"
+ },
+ "/en/services/01-zhongyi.html": {
+  "title": "Taipei Zhongyi Elementary School Little Farm Environmental Education Service Project",
+  "lang": "en"
+ },
+ "/en/services/02-tamsui.html": {
+  "title": "Green Tamsui: Light Rail Culture and Sustainability Co-Creation Service Project",
+  "lang": "en"
+ },
+ "/en/services/03-eco-edu.html": {
+  "title": "Realizing Environmental Education for Sustainability: Promoting a Net-Zero New Lifestyle Project",
+  "lang": "en"
+ },
+ "/en/services/04-life-warrior.html": {
+  "title": "Sustainable Life Warriors and Legacy: Innovative Education and Training Project",
+  "lang": "en"
+ },
+ "/en/services/05-dental.html": {
+  "title": "Health for All Begins with Teeth! Service Project",
+  "lang": "en"
+ },
+ "/en/services/06-community.html": {
+  "title": "Community Sustainability Support Project: Co-Creating Local ESG Action",
+  "lang": "en"
+ },
+ "/en/services/07-zero-waste-mazu.html": {
+  "title": "Zero Waste for Mazu: Local Sustainability Action",
+  "lang": "en"
+ },
+ "/": {
+  "title": "永力社",
+  "lang": "zh"
+ },
+ "/members.html": {
+  "title": "社友介紹",
+  "lang": "zh"
+ },
+ "/methodology.html": {
+  "title": "影響力衡量方法",
+  "lang": "zh"
+ },
+ "/profiles/01-cp-lin.html": {
+  "title": "林學賢 CP",
+  "lang": "zh"
+ },
+ "/profiles/02-vicky-lee.html": {
+  "title": "李琪 Vicky",
+  "lang": "zh"
+ },
+ "/profiles/03-derek-huang.html": {
+  "title": "黃世祿 Derek",
+  "lang": "zh"
+ },
+ "/profiles/04-helen-lai.html": {
+  "title": "賴光蘭 PP Helen",
+  "lang": "zh"
+ },
+ "/profiles/05-lisa-lin.html": {
+  "title": "林映如 Lisa",
+  "lang": "zh"
+ },
+ "/profiles/06-james-gao.html": {
+  "title": "高清坊 James",
+  "lang": "zh"
+ },
+ "/profiles/07-nick-lin.html": {
+  "title": "林秉鴻 PP Nick",
+  "lang": "zh"
+ },
+ "/profiles/08-rich-huang.html": {
+  "title": "黃丞隆 P Rich",
+  "lang": "zh"
+ },
+ "/profiles/09-vincent-chen.html": {
+  "title": "陳明勇 PE Vincent",
+  "lang": "zh"
+ },
+ "/profiles/10-albee-chang.html": {
+  "title": "張艾筆 Albee",
+  "lang": "zh"
+ },
+ "/profiles/13-teresa-yao.html": {
+  "title": "姚曼菁 S. Teresa",
+  "lang": "zh"
+ },
+ "/profiles/15-wayne-lin.html": {
+  "title": "林修緯 Wayne Lin",
+  "lang": "zh"
+ },
+ "/profiles/16-eric-cheng.html": {
+  "title": "鄭仲翔 Eric",
+  "lang": "zh"
+ },
+ "/profiles/18-meiya-cheng.html": {
+  "title": "鄭雯 Maya",
+  "lang": "zh"
+ },
+ "/profiles/19-irene-chen.html": {
+  "title": "陳美華 Irene",
+  "lang": "zh"
+ },
+ "/services/01-zhongyi.html": {
+  "title": "台北忠義國小 小田園環境教育服務計畫 — 永力扶輪社 2024-2026 永續報告",
+  "lang": "zh"
+ },
+ "/services/02-tamsui.html": {
+  "title": "綠動淡水 輕軌文化永續共創服務計畫 — 永力扶輪社 2024-2026 永續報告",
+  "lang": "zh"
+ },
+ "/services/03-eco-edu.html": {
+  "title": "落實環教永續力 推動淨零新生活計畫 — 永力扶輪社 2024-2026 永續報告",
+  "lang": "zh"
+ },
+ "/services/04-life-warrior.html": {
+  "title": "永續的生命鬥士與傳承 創新教育訓練計畫 — 永力扶輪社 2024-2026 永續報告",
+  "lang": "zh"
+ },
+ "/services/05-dental.html": {
+  "title": "全民健康 由齒開始！服務計畫 — 永力扶輪社 2024-2026 永續報告",
+  "lang": "zh"
+ },
+ "/services/06-community.html": {
+  "title": "社區永續支持計畫 共創在地 ESG 行動 — 永力扶輪社 2024-2026 永續報告",
+  "lang": "zh"
+ },
+ "/services/07-zero-waste-mazu.html": {
+  "title": "零廢敬媽祖 在地永續行動 — 永力扶輪社 2024-2026 永續報告",
+  "lang": "zh"
+ },
+ "/stats.html": {
+  "title": "後台流量查詢",
+  "lang": "zh"
+ }
+}

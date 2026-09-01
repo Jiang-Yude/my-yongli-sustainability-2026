@@ -21,6 +21,33 @@
     document.querySelector('script[src*="yongli-secretary.js"]');
   var REL = (script && script.getAttribute("data-rel")) || "";
   var API = REL + "api/chat";
+  var LOG_API = REL + "api/chat-log";
+
+  /* 對話記錄（2026-09-01 加）：只為了讓江江在 /stats.html 看得到「大家都問什麼」。
+     vid＝這台瀏覽器的隨機碼、sid＝這次瀏覽的隨機碼，兩個都不是帳號、也不對應到人。
+     不記 IP、不做會員、不追跨站行為。記錄失敗一律安靜跳過，不影響對話。 */
+  function rid() { return Math.random().toString(36).slice(2, 10); }
+  function getId(key, store) {
+    try {
+      var v = store.getItem(key);
+      if (!v) { v = rid(); store.setItem(key, v); }
+      return v;
+    } catch (e) { return "na"; }
+  }
+  function logChat(role, text, persona) {
+    try {
+      fetch(LOG_API, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          vid: getId("ysec-vid", localStorage),
+          sid: getId("ysec-sid", sessionStorage),
+          role: role, text: text, persona: persona,
+          page: location.pathname
+        })
+      }).catch(function () {});
+    } catch (e) {}
+  }
   var LANG = (document.documentElement.getAttribute("lang") || "zh")
     .toLowerCase().indexOf("en") === 0 ? "en" : "zh";
   function t(v) {
@@ -221,6 +248,7 @@
     addMsg("me", text);
     history.push({ role: "user", text: text });
     save();
+    logChat("user", text, current.key);
 
     var typing = addMsg("bot", '<span class="ysec-dots"><i></i><i></i><i></i></span>', true);
     typing.classList.add("ysec-typing");
@@ -237,6 +265,7 @@
         typing.textContent = reply;
         if (data && data.reply && !data.error) history.push({ role: "model", text: reply });
         save();
+        if (data && data.reply && !data.error) logChat("bot", reply, current.key);
         log.scrollTop = log.scrollHeight;
       })
       .catch(function () {
