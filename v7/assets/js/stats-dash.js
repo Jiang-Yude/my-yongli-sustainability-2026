@@ -315,7 +315,8 @@
       onPick: function (r) { sel.page = (sel.page === r.key ? null : r.key); sel.kind = null; renderPages(); renderChat(); }
     });
     var sum = rows.reduce(function (a, r) { return a + r.views; }, 0);
-    $('cap-pages').textContent = '累計瀏覽前 20 名（' + (rows.length) + ' 個頁面共 ' + num(sum) + ' 次）。點一列可以往下看那一頁的提問。';
+    $('cap-pages').textContent = '累計瀏覽前 20 名（' + (rows.length) + ' 個頁面共 ' + num(sum) + ' 次）。點一列可以往下看那一頁的提問。'
+      + '⚠️ 2026-08-30 以前的每頁數字是 GA4 每 10 天前十名快照的加總，是近似值；09-01 起才是精確計數。';
     var all = ['<table class="list"><thead><tr><th>#</th><th>頁面</th><th>網址</th><th style="text-align:right">累計</th></tr></thead><tbody>'];
     rows.forEach(function (r, i) {
       all.push('<tr><td class="t">' + (i + 1) + '</td><td>' + esc(title(r.path)) + '</td><td class="p">' + esc(r.path) + '</td><td style="text-align:right;font-family:JetBrains Mono,monospace">' + num(r.views) + '</td></tr>');
@@ -597,7 +598,11 @@
       ? '已開始記錄，本月有 ' + S.pageDaily.length + ' 天資料'
       : '2026-09-01 才開始記，在那之前只有累計總數，看不出單頁的時間趨勢', !!(S.pageDaily && S.pageDaily.length)]);
     rows.push(['💬', 'AI 助理對話保存', '每月一份，各留最近 20000 筆；目前有 ' + (S.chatMonths || []).join('、'), true]);
-    rows.push(['🔍', '沒有記錄的東西', '停留時間、來源網站（referrer）、獨立訪客數都沒有在記。想知道人從哪裡來，要另外加埋點。', false]);
+    rows.push(['🔀', '這頁的數字有兩個來源，分界在 2026-08-31',
+      '2026-06-01 到 08-30 是從 GA4 匯進來的（每日總數精確；**每頁的數字是近似值**，來源是每 10 天一次的前十名快照加總，佔總量約 96%，缺的是每期十名以外的長尾）。'
+      + '2026-08-31 沒有資料（GA4 那份自動匯出停在 08-30，自建埋點 09-01 才開始）。'
+      + '2026-09-01 起是自建埋點的精確計數。GA4 本身仍在跑，兩套並存。', false]);
+    rows.push(['🔍', '沒有記錄的東西', '停留時間、來源網站（referrer）、獨立訪客數，這套都沒有在記。要看這些去 GA4（`G-1RCWR62S07`）或 Vercel Analytics，那邊比這裡準。這套的不可取代之處是「訪客在哪一頁問了 AI 什麼」。', false]);
     $('health').innerHTML = rows.map(function (f) {
       return '<div class="flag' + (f[3] ? ' ok' : '') + '"><span class="ic">' + f[0] + '</span><span><b>' + esc(f[1]) + '</b><br>' + esc(f[2]) + '</span></div>';
     }).join('');
