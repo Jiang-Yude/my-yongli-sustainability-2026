@@ -49,6 +49,14 @@ module.exports = async (req, res) => {
   body = body || {};
 
   const path = normalizePath(body.path);
+  let ref = '';
+  try {
+    const r = String(body.ref || '').trim();
+    if (r) {
+      const h = new URL(r).hostname.replace(/^www\./, '');
+      if (h && !h.endsWith('3481rctsi.vercel.app')) ref = h.slice(0, 60);
+    }
+  } catch { /* 壞掉的 referrer 就當沒有 */ }
   const ua = String(req.headers['user-agent'] || '');
   const isBot = /bot|crawl|spider|slurp|headless|preview|facebookexternalhit|monitor|lighthouse/i.test(ua);
   const increment = body.increment !== false && !isBot;
@@ -82,6 +90,15 @@ module.exports = async (req, res) => {
     /* 每頁每日：一天一個 hash，欄位是路徑。page:<path> 只有累計總數，
        看不出「這頁這週有沒有人看」。path 超過 120 字元不記（防灌爆）。 */
     if (path.length <= 120) cmds.push(['HINCRBY', `${P}pageday:${day}`, path, 1]);
+    /* 獨立訪客（2026-09-01 加）：HyperLogLog 存瀏覽器識別碼。
+       選 HLL 不只為了省空間，是因為它**存不下原始值**，
+       「反查某個人看過哪些頁」在資料結構上就辦不到。誤差 0.81%。 */
+    if (body.vid) {
+      cmds.push(['PFADD', `${P}uv:day:${day}`, String(body.vid).slice(0, 24)]);
+      cmds.push(['PFADD', `${P}uv:month:${month}`, String(body.vid).slice(0, 24)]);
+    }
+    /* 來源網站：只記主機名不記完整網址（完整網址常夾帶查詢字串與個資） */
+    if (ref) cmds.push(['ZINCRBY', `${P}ref:${month}`, 1, ref]);
     cmds.push(['ZADD', `${P}idx:days`, Number(day.replace(/-/g, '')), day]);
     cmds.push(['ZADD', `${P}idx:months`, Number(month.replace('-', '')), month]);
   }

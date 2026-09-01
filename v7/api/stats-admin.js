@@ -178,8 +178,24 @@ module.exports = async (req, res) => {
 
     /* 本站沒有站內搜尋功能，所以沒有 search 與零命中詞這兩塊。 */
 
+    /* 獨立訪客（HLL 近似，誤差 0.81%）與來源網站，2026-09-01 起才有 */
+    const uvDayKeys = rangeDays.map((d) => `${P}uv:day:${d}`);
+    const uvRange = uvDayKeys.length ? Number((await pipe([['PFCOUNT', ...uvDayKeys]]))[0] || 0) : 0;
+    const uvByDay = uvDayKeys.length
+      ? (await pipe(uvDayKeys.map((k) => ['PFCOUNT', k]))).map((v, i) => ({ date: rangeDays[i], uv: Number(v || 0) }))
+      : [];
+    const refFlat = await pipe(spanMonths.map((m) => ['ZRANGE', `${P}ref:${m}`, 0, 99, 'REV', 'WITHSCORES']));
+    const refMap = {};
+    refFlat.forEach((flat) => {
+      flat = flat || [];
+      for (let i = 0; i < flat.length; i += 2) refMap[flat[i]] = (refMap[flat[i]] || 0) + Number(flat[i + 1] || 0);
+    });
+    const refs = Object.keys(refMap).map((h) => ({ host: h, n: refMap[h] }))
+      .sort((a, b) => b.n - a.n).slice(0, 40);
+
     res.status(200).json({
       ok: true, today, from, to, spanDays, earliest,
+      uvRange, uvByDay, refs,
       prevFrom, prevTo, prevTotal,
       chatMonths, availableMonths: months.map((m) => m.month),
       total, days, months, pages, sections, pageDaily,

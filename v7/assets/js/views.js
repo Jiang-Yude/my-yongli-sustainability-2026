@@ -3,6 +3,15 @@
 // 防重刷：同一瀏覽器、同一頁、同一小時只送一次 +1。不記 IP、不放 cookie。
 // 要在頁面上顯示數字：放 <span data-views="page"></span> 或 data-views="global"。
 (function () {
+  /* 瀏覽器識別碼：只為了算「幾個人」，不是帳號、不對應到任何真人。
+     存這台瀏覽器的 localStorage，清掉就換一個新的。 */
+  function vid() {
+    try {
+      var v = localStorage.getItem('yviewsVid');
+      if (!v) { v = Math.random().toString(36).slice(2, 12); localStorage.setItem('yviewsVid', v); }
+      return v;
+    } catch (e) { return ''; }
+  }
   function path() {
     var p = location.pathname.split('?')[0].split('#')[0];
     if (p.length > 1 && p.slice(-11) === '/index.html') p = p.slice(0, -10);
@@ -31,7 +40,7 @@
     fetch('/api/view', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ path: p, increment: firstThisHour }),
+      body: JSON.stringify({ path: p, increment: firstThisHour, vid: vid(), ref: document.referrer || '' }),
     })
       .then(function (r) { return r.json(); })
       .then(function (d) {
