@@ -32,6 +32,16 @@ function taipeiStamp(d = new Date()) {
   }).format(d); // "YYYY-MM-DD, HH:MM"
 }
 
+// 保存期限（2026-09-07 立，規則 webpage-builder Mode 27）：每月一個 list，該月結束後再保留 RETENTION_DAYS 天
+// （以台北 00:00 起算），到期整個月自動刪除。用 EXPIREAT ... NX：只在還沒設過時設，
+// 重複寫入不會把期限往後推。彙總統計（瀏覽數等）不受影響，只有原始對話有期限。
+const RETENTION_DAYS = 365;
+function expireAtFor(month /* 'YYYY-MM' */) {
+  const [y, m] = month.split('-').map(Number);
+  const nextMonthStartTaipei = Date.UTC(y, m, 1) - 8 * 3600 * 1000; // m 是 1-based，等於下個月的 0-based 索引
+  return Math.floor(nextMonthStartTaipei / 1000) + RETENTION_DAYS * 86400;
+}
+
 module.exports = async (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   if (req.method === 'OPTIONS') { res.status(204).end(); return; }
@@ -71,10 +81,13 @@ module.exports = async (req, res) => {
   });
 
   try {
-    await pipe([
+    const out = await pipe([
       ['LPUSH', `${P}chat:${month}`, entry],
       ['LTRIM', `${P}chat:${month}`, 0, 19999],
+      ['EXPIREAT', `${P}chat:${month}`, expireAtFor(month), 'NX'],
     ]);
+    const bad = (Array.isArray(out) ? out : []).find((o) => o && o.error);
+    if (bad) { res.status(200).json({ ok: false, error: String(bad.error) }); return; }
     res.status(200).json({ ok: true });
   } catch (e) {
     res.status(200).json({ ok: false, error: String(e.message || e) });
