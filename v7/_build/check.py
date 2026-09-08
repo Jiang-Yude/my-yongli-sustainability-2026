@@ -8,6 +8,7 @@ V7 部署前品質閘門。任何一項失敗 → exit 1，不要部署。
      （/_vercel/ 為 Vercel 執行期路徑，排除）
   2. 中英對稱：profiles/ 與 services/ 中英檔名集合必須一致；
      根層每個內容頁 en/ 都要有對應鏡像
+     （BACKEND_ONLY 的單語內部後台頁除外）
   3. sitemap 覆蓋：sitemap.xml 列出的每個 URL 都要有對應本地檔案
   4. build 標記完整：每個內容頁都要有 SITE-HEADER / SITE-FOOTER / SITE-HEAD
      標記（缺了 build.py 會靜默跳過，這裡把它變成硬錯誤）
@@ -21,6 +22,10 @@ from urllib.parse import unquote
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # = v7/
 BASE_URL = "https://3481rctsi.vercel.app"
+
+# 單語內部後台頁：不對外、不進 sitemap、沒有英文鏡像、沒有 footer。
+# 對外雙語內容頁的規則（中英對稱、footer 標記）對它不適用。
+BACKEND_ONLY = {"stats.html"}
 
 errors = []
 
@@ -59,8 +64,8 @@ for sub in ("profiles", "services"):
     for name in sorted(en - zh):
         errors.append(f"[中英不對稱] en/{sub}/{name} 沒有中文對應 {sub}/{name}")
 
-zh_root = {f for f in os.listdir(ROOT) if f.endswith(".html")}
-en_root = {f for f in os.listdir(os.path.join(ROOT, "en")) if f.endswith(".html")}
+zh_root = {f for f in os.listdir(ROOT) if f.endswith(".html")} - BACKEND_ONLY
+en_root = {f for f in os.listdir(os.path.join(ROOT, "en")) if f.endswith(".html")} - BACKEND_ONLY
 for name in sorted(zh_root - en_root):
     errors.append(f"[中英不對稱] 根層 {name} 沒有英文鏡像 en/{name}")
 for name in sorted(en_root - zh_root):
@@ -82,7 +87,10 @@ else:
 MARKS = ("<!--SITE-HEADER:START-->", "<!--SITE-FOOTER:START-->", "<!--SITE-HEAD:START-->")
 for page in html_pages():
     content = open(page, encoding="utf-8", errors="ignore").read()
-    missing = [m for m in MARKS if m not in content]
+    marks = MARKS
+    if os.path.relpath(page, ROOT) in BACKEND_ONLY:
+        marks = tuple(m for m in MARKS if "FOOTER" not in m)
+    missing = [m for m in marks if m not in content]
     if missing:
         errors.append(f"[缺標記] {os.path.relpath(page, ROOT)}: {', '.join(missing)}")
 

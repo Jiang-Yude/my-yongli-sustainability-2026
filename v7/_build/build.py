@@ -48,6 +48,10 @@ HEADER_MARK = ("<!--SITE-HEADER:START-->", "<!--SITE-HEADER:END-->")
 FOOTER_MARK = ("<!--SITE-FOOTER:START-->", "<!--SITE-FOOTER:END-->")
 HEAD_MARK   = ("<!--SITE-HEAD:START-->",   "<!--SITE-HEAD:END-->")
 
+# 單語內部後台頁：不對外、不進 sitemap、沒有英文鏡像、不埋追蹤碼、沒有語言切換。
+# ⚠️ _build/check.py 有一份同名的 BACKEND_ONLY，兩邊要一起改。
+BACKEND_ONLY = {"stats.html"}
+
 def iter_pages():
     for dirpath, dirnames, filenames in os.walk(ROOT):
         if os.sep + "_build" in dirpath or dirpath.endswith("_build"):
@@ -197,17 +201,22 @@ def head_block(lang, tree_rel, title_text):
     person = person_jsonld(lang, tree_rel)
     if person:
         lines.append(f'<script type="application/ld+json">{person}</script>')
-    lines += [
-        # ===== 流量追蹤（全站共用，每頁自動帶）=====
-        # GA4（property「永力社永續報告書官網」, Measurement ID G-1RCWR62S07, 帳戶 David a27882089）
-        '<!-- Google tag (gtag.js) -->',
-        '<script async src="https://www.googletagmanager.com/gtag/js?id=G-1RCWR62S07"></script>',
-        "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1RCWR62S07');</script>",
-        # Vercel Web Analytics + Speed Insights（需在 Vercel 專案後台開啟 Analytics 才會 serve script）
-        '<script defer src="/_vercel/insights/script.js"></script>',
-        '<script defer src="/_vercel/speed-insights/script.js"></script>',
-        HEAD_MARK[1],
-    ]
+    # ===== 流量追蹤（全站共用，每頁自動帶）=====
+    # ⚠️ 後台流量查詢頁 stats.html 完全不埋點：這頁的用途就是看流量，
+    #    自己被埋點會把「查數據」這個動作算成訪客，污染自己要看的統計。
+    #    密碼擋不住：gtag 在 head，密碼輸入框在 body，驗證前就已送出 page_view。
+    #    noindex 只影響搜尋引擎收錄，跟追蹤無關。
+    if tree_rel not in BACKEND_ONLY:
+        lines += [
+            # GA4（property「永力社永續報告書官網」, Measurement ID G-1RCWR62S07, 帳戶 David a27882089）
+            '<!-- Google tag (gtag.js) -->',
+            '<script async src="https://www.googletagmanager.com/gtag/js?id=G-1RCWR62S07"></script>',
+            "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1RCWR62S07');</script>",
+            # Vercel Web Analytics + Speed Insights（需在 Vercel 專案後台開啟 Analytics 才會 serve script）
+            '<script defer src="/_vercel/insights/script.js"></script>',
+            '<script defer src="/_vercel/speed-insights/script.js"></script>',
+        ]
+    lines.append(HEAD_MARK[1])
     return "\n".join(lines)
 
 def inject_head(content, block):
@@ -284,7 +293,12 @@ def main():
         content = re.sub(r'(<html[^>]*\blang=")[^"]*(")',
                          lambda m: m.group(1) + want + m.group(2), content, count=1)
         # header / footer
-        content = replace_block(content, render(lang,"header",REL,lang_href),
+        header_html = render(lang,"header",REL,lang_href)
+        # 後台流量查詢頁是單語內部頁，沒有英文鏡像，
+        # 保留語言切換會連到不存在的 en/stats.html（斷鏈）。
+        if tree_rel in BACKEND_ONLY:
+            header_html = re.sub(r'<a class="lang-switch".*?</a>\s*', '', header_html, flags=re.S)
+        content = replace_block(content, header_html,
                                 HEADER_MARK, r'<header class="topbar">.*?</header>', "header", rel)
         content = replace_block(content, render(lang,"footer",REL,lang_href),
                                 FOOTER_MARK, r'<footer\b.*?</footer>', "footer", rel)
@@ -298,7 +312,7 @@ def main():
             f.write(content)
         stats[lang] += 1
         # 後台流量查詢頁是 noindex 的內部頁，不該出現在 sitemap
-        if tree_rel != "stats.html":
+        if tree_rel not in BACKEND_ONLY:
             pages_meta.append((lang, tree_rel))
         # 後台流量查詢頁要把 /profiles/xxx.html 翻成人看得懂的名字，這裡順手收一份。
         # ⚠️ 用 rel 不能用 tree_rel：tree_rel 對英文頁已經去掉 en/ 前綴，
