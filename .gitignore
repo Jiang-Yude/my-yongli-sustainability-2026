@@ -22,3 +22,9 @@ _trash/
 **/.astro/
 **/dist/
 **/.cache/
+
+node_modules/
+cloudflare/public/
+cloudflare/.dev.vars
+cloudflare/.wrangler/
+.wrangler/

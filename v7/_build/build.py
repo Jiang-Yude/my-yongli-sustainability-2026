@@ -22,7 +22,7 @@ import os, re, html, json
 import members_render
 
 # ====== 設定 ======
-BASE_URL = "https://3481rctsi.vercel.app"   # ⚠️ V7 若換網址，改這裡再 rebuild
+BASE_URL = "https://rctsi.3481.org"   # ⚠️ V7 若換網址，改這裡再 rebuild
 
 SITE_NAME = {
     "zh": "台北永續影響力扶輪社｜永續影響力報告書",

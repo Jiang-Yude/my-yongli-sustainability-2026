@@ -23,7 +23,7 @@ import sys
 from urllib.parse import unquote
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # = v7/
-BASE_URL = "https://3481rctsi.vercel.app"
+BASE_URL = "https://rctsi.3481.org"
 
 # 單語內部後台頁：不對外、不進 sitemap、沒有英文鏡像、沒有 footer。
 # 對外雙語內容頁的規則（中英對稱、footer 標記）對它不適用。

@@ -59,7 +59,7 @@ module.exports = async (req, res) => {
     const m = rawRef.match(/^https?:\/\/([^/:?#]+)/i);
     if (m && m[1]) {
       const h = m[1].toLowerCase().replace(/^www\./, '');
-      if (h && !h.endsWith('3481rctsi.vercel.app')) ref = h.slice(0, 60);
+      if (h && !h.endsWith('rctsi.3481.org') && !h.endsWith('3481rctsi.vercel.app')) ref = h.slice(0, 60);
     }
   }
   const ua = String(req.headers['user-agent'] || '');

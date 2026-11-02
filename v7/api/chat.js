@@ -1,18 +1,19 @@
 /**
- * 永力秘書 / 社友 AI 分身 — 對話後端（Vercel Serverless Function）
+ * 永力秘書 / 社友 AI 分身 — 對話後端（Vercel 寫法；Cloudflare 由 cloudflare/functions 轉接）
  * -----------------------------------------------------------------
  * 前端： POST /api/chat  { persona: "secretary" | "vicky", messages: [{role,text}] }
  * 回傳： { reply: "..." }
  *
  * 需要的環境變數（在 Vercel 專案 → Settings → Environment Variables 設定，
  * 絕對不要寫進程式碼或 commit）：
- *   OPENAI_API_KEY  必填
- *   OPENAI_MODEL    選填，預設 gpt-5.6-luna；換模型只改這個變數
+ *   ANTHROPIC_API_KEY  必填（Claude）
+ *   ANTHROPIC_MODEL    選填，預設 claude-opus-5-5；換模型只改這個變數
  *
  * 知識來源：./_knowledge.js（由 _build/twin_knowledge.py 產生）
  * 來源網頁更新後要重跑：cd v7 && python3 _build/twin_knowledge.py
  */
 const KNOWLEDGE = require("./_knowledge.js");
+const Anthropic = require("@anthropic-ai/sdk");
 
 const PERSONAS = {
   secretary: {
@@ -114,7 +115,7 @@ module.exports = async function handler(req, res) {
     return;
   }
 
-  var apiKey = process.env.OPENAI_API_KEY;
+  var apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) {
     res.status(503).json({
       error: "not_configured",
@@ -123,7 +124,7 @@ module.exports = async function handler(req, res) {
     return;
   }
 
-  var model = process.env.OPENAI_MODEL || "gpt-5.6-luna";
+  var model = process.env.ANTHROPIC_MODEL || "claude-opus-5-5";
   var lang = body.lang === "en" ? "en" : "zh";
   var kb = (lang === "en" && KNOWLEDGE[persona + "_en"]) || KNOWLEDGE[persona] || "（無資料）";
   var systemText = PERSONAS[persona].prompt +
@@ -132,44 +133,50 @@ module.exports = async function handler(req, res) {
       : "") +
     "\n\n===== 以下是你能依據的資料 =====\n" + kb;
 
-  var chatMessages = [{ role: "system", content: systemText }].concat(
-    messages.map(function (m) {
-      return {
-        role: m.role === "model" || m.role === "assistant" ? "assistant" : "user",
-        content: String(m.text || "").slice(0, MAX_CHARS)
-      };
-    })
-  );
+  // Claude 要求 user 開頭、user/assistant 交替：丟掉開頭的招呼語，同角色連續訊息合併
+  var chatMessages = [];
+  messages.forEach(function (m) {
+    var role = m.role === "model" || m.role === "assistant" || m.role === "bot" ? "assistant" : "user";
+    var text = String(m.text || "").slice(0, MAX_CHARS).trim();
+    if (!text) return;
+    if (!chatMessages.length && role === "assistant") return;
+    var last = chatMessages[chatMessages.length - 1];
+    if (last && last.role === role) last.content += "\n\n" + text;
+    else chatMessages.push({ role: role, content: text });
+  });
+  if (!chatMessages.length || chatMessages[chatMessages.length - 1].role !== "user") {
+    res.status(400).json({ error: "沒有收到訊息" });
+    return;
+  }
 
   try {
-    var r = await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": "Bearer " + apiKey
-      },
-      body: JSON.stringify({ model: model, messages: chatMessages })
+    var client = new Anthropic({ apiKey: apiKey });
+    var data = await client.beta.messages.create({
+      model: model,
+      max_tokens: 4096,
+      output_config: { effort: "low" },   // 聊天短答，low 就夠
+      betas: ["server-side-fallback-2026-07-01"],
+      fallbacks: "default",
+      // 知識庫很長且固定，快取起來省錢
+      system: [{ type: "text", text: systemText, cache_control: { type: "ephemeral" } }],
+      messages: chatMessages
     });
 
-    var data = await r.json();
-    if (!r.ok) {
-      console.error("OpenAI API 回錯：", r.status, JSON.stringify(data).slice(0, 500));
-      res.status(502).json({
-        error: "upstream",
-        detail: (data && data.error && data.error.message) || ("HTTP " + r.status),
-        reply: "我這邊剛剛沒接上，麻煩再問一次。"
-      });
-      return;
-    }
-
-    var choice = data && data.choices && data.choices[0];
-    var reply = ((choice && choice.message && choice.message.content) || "").trim();
+    var reply = data.stop_reason === "refusal" ? "" : data.content
+      .filter(function (b) { return b.type === "text"; })
+      .map(function (b) { return b.text; })
+      .join("").trim();
 
     if (!reply) {
       reply = "這個問題我這邊沒有足夠的資料可以回答，你可以看看網站上其他段落。";
     }
     res.status(200).json({ reply: reply, persona: persona });
   } catch (err) {
+    if (err instanceof Anthropic.APIError) {
+      console.error("Claude API 回錯：", err.status, String(err.message).slice(0, 500));
+      res.status(502).json({ error: "upstream", detail: err.message, reply: "我這邊剛剛沒接上，麻煩再問一次。" });
+      return;
+    }
     console.error("chat handler error:", err);
     res.status(500).json({ error: "server", reply: "我這邊出了點狀況，麻煩再試一次。" });
   }

@@ -1,7 +1,7 @@
 # V7 中英雙語版 · 正式官網（目前線上版本）
 
-正式官網：https://3481rctsi.vercel.app/ （中文）
-英文版：https://3481rctsi.vercel.app/en/
+正式官網：https://rctsi.3481.org/ （中文）
+英文版：https://rctsi.3481.org/en/
 GitHub Pages 鏡像（工作備存，非對外）：https://jiang-yude.github.io/my-yongli-sustainability-2026/v7/
 
 > 本資料夾是**目前對外的唯一正式版本**（2026-05-31 上線，取代舊 v4）。
