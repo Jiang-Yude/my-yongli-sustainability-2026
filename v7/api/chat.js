@@ -49,21 +49,31 @@ const PERSONAS = {
 const PLAIN_TEXT_RULE = "回答一律用純文字：不要用 Markdown，不要出現 **、#、-、*、` 這類符號，" +
   "不用粗體、標題或項目符號清單。要分點就用「一、二、三」或「第一、第二」寫成短句，段落之間空一行。";
 
-// 保險：模型偶爾還是會帶符號，送出前清掉。只拿掉成對的格式標記，
-// 網址或內文裡單獨出現的 * 不動
+// 保險：模型偶爾還是會帶符號，送出前清掉。網址先收起來不碰，
+// 只拿掉成對的格式標記（可巢狀），最後再放回網址
 function stripMarkdown(t) {
-  return t
+  var urls = [];
+  function keep(u) { urls.push(u); return "\u0000" + (urls.length - 1) + "\u0000"; }
+  t = t
     .replace(/```[^\n]*\n([\s\S]*?)```/g, "$1")
     .replace(/\[([^\]\n]+)\]\((https?:\/\/[^)\s]+)\)/g, function (_, text, url) {
-      return text === url ? url : text + "（" + url + "）";
+      return text === url ? keep(url) : text + "（" + keep(url) + "）";
     })
-    .replace(/\*\*(?=\S)([^*\n]+?)(?<=\S)\*\*/g, "$1")
-    .replace(/__(?=\S)([^_\n]+?)(?<=\S)__/g, "$1")
-    .replace(/(^|[^\w*\/])\*(?=\S)([^*\n]+?)(?<=\S)\*(?![\w*])/g, "$1$2")
+    .replace(/https?:\/\/[^\s）)」』>]+/g, keep);
+  var prev;
+  do {
+    prev = t;
+    t = t
+      .replace(/\*\*(?=\S)([^\n]+?)(?<=\S)\*\*/g, "$1")
+      .replace(/__(?=\S)([^\n]+?)(?<=\S)__/g, "$1")
+      .replace(/(^|[^\w*\/])\*(?=[^\s*])([^*\n]+?)(?<=[^\s*])\*(?![\w*])/g, "$1$2");
+  } while (t !== prev);
+  return t
     .replace(/`([^`\n]+)`/g, "$1")
     .replace(/^#{1,6}\s+/gm, "")
     .replace(/^\s*[-*•]\s+/gm, "・")
     .replace(/\n{3,}/g, "\n\n")
+    .replace(/\u0000(\d+)\u0000/g, function (_, i) { return urls[+i]; })
     .trim();
 }
 

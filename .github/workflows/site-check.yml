@@ -12,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # dateModified 要逐版比對正文，淺層歷史會算錯
 
       - name: Rebuild (產生器必須與已 commit 的 HTML 一致)
         run: |

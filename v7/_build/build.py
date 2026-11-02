@@ -206,20 +206,25 @@ def _body_text(page_html):
     t = t.replace("3481rctsi.vercel.app", "rctsi.3481.org")
     return _strip(t)
 
-def last_content_date(rel):
+def last_content_date(rel, content=""):
     """正文最後一次真的有改的 commit 日期：逐版比對正文純文字，跟前一版不同的最新那版。
-    只有一版就用那版（新建頁）；git 讀不到就回 None，不寫 dateModified。"""
+    只有一版就用那版（新建頁）。淺層 clone 或 git 讀不到時，沿用頁面上已記的日期
+    （沒有就不寫），避免淺層邊界被當成建立日期、也讓 build 結果跟已 commit 的一致。"""
     import subprocess
     def git(*args):
         return subprocess.run(["git", *args], cwd=ROOT, capture_output=True,
                               text=True, timeout=30).stdout
+    m = re.search(r'"@type":"WebPage".*?"dateModified":"([^"]+)"', content)
+    kept = m.group(1) if m else None
     try:
+        if git("rev-parse", "--is-shallow-repository").strip() != "false":
+            return kept
         log = [l.split(" ", 1) for l in git("log", "--format=%H %cI", "--", rel).splitlines() if l]
         if not log:
-            return None
+            return kept
         texts = [_body_text(git("show", f"{h}:v7/{rel}")) for h, _ in log]
     except Exception:
-        return None
+        return kept
     for i, (h, date) in enumerate(log):
         if i + 1 == len(log) or texts[i] != texts[i + 1]:
             return date
@@ -280,7 +285,7 @@ def head_block(lang, tree_rel, title_text, content="", rel=""):
                 "author": ORG, "publisher": ORG, "image": image}
         if desc:
             page["description"] = desc
-        modified = last_content_date(rel)
+        modified = last_content_date(rel, content)
         if modified:
             page["dateModified"] = modified
         lines.append('<script type="application/ld+json">'
