@@ -59,7 +59,19 @@ function stripMarkdown(t) {
     .replace(/\[([^\]\n]+)\]\((https?:\/\/[^)\s]+)\)/g, function (_, text, url) {
       return text === url ? keep(url) : text + "（" + keep(url) + "）";
     })
-    .replace(/https?:\/\/[^\s）)」』>]+/g, keep);
+    .replace(/https?:\/\/[^\s`\u0000（）「」『』<>，。、；！？]+/g, function (u, at, all) {
+      // 網址尾巴如果是外層格式的收尾（例如 **網址**），或不成對的 ) 與句尾標點，還給外面
+      var tail = "";
+      var before = all.slice(Math.max(0, at - 2), at);
+      for (;;) {
+        var c = u.slice(-1);
+        if (/[*_]/.test(c) && before.indexOf(c) !== -1) { tail = c + tail; u = u.slice(0, -1); continue; }
+        if (c === ")" && (u.match(/\(/g) || []).length < (u.match(/\)/g) || []).length) { tail = c + tail; u = u.slice(0, -1); continue; }
+        if (/[.,;:!?]/.test(c)) { tail = c + tail; u = u.slice(0, -1); continue; }
+        break;
+      }
+      return keep(u) + tail;
+    });
   var prev;
   do {
     prev = t;
