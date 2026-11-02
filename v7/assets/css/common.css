@@ -542,7 +542,7 @@ footer {
 }
 footer .container { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 32px; }
 @media (max-width: 720px) { footer .container { grid-template-columns: 1fr; } }
-footer h4 { color: var(--gold-soft); font-family: "Noto Serif TC", serif; font-size: 0.95rem; margin-bottom: 12px; }
+footer .foot-title { color: var(--gold-soft); font-family: "Noto Serif TC", serif; font-size: 0.95rem; font-weight: 600; line-height: 1.4; margin: 0 0 12px; }
 footer p, footer li { font-size: 0.85rem; color: #B5AE9F; line-height: 1.7; margin: 0 0 6px; }
 footer ul { list-style: none; padding: 0; margin: 0; }
 footer a { color: #D6CFC2; }

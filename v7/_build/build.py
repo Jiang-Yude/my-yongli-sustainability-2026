@@ -163,7 +163,54 @@ def replace_block(content, rendered, marks, legacy_pattern, label, relname):
     print(f"  ⚠️ {relname}：找不到 {label}，跳過")
     return content
 
-def head_block(lang, tree_rel, title_text):
+ORG = {"@type": "Organization", "name": "Rotary Club of Taipei Sustainable Impact",
+       "alternateName": "台北永續影響力扶輪社", "url": BASE_URL + "/"}
+DEFAULT_IMAGE = BASE_URL + "/assets/img/yongli-logo.png"
+
+def _strip(t):
+    return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", t))).strip()
+
+def own_description(content):
+    """頁面原本自己寫的 meta description（SITE-HEAD 區塊以外）。"""
+    outside = re.sub(re.escape(HEAD_MARK[0]) + r".*?" + re.escape(HEAD_MARK[1]), "", content, flags=re.S)
+    m = re.search(r'<meta name="description" content="([^"]*)"', outside)
+    return html.unescape(m.group(1)).strip() if m else None
+
+def auto_description(content, lang):
+    """沒寫 description 的頁，從正文第一段夠長的 <p> 擷取，不另寫新字。"""
+    body = re.sub(r"<!--SITE-(HEADER|FOOTER):START-->.*?<!--SITE-\1:END-->", "", content, flags=re.S)
+    body = re.sub(r"<(script|style)\b.*?</\1>", "", body, flags=re.S)
+    h1 = re.search(r"</h1>", body)
+    if h1:
+        body = body[h1.end():]
+    limit, floor = (155, 80) if lang == "en" else (110, 50)
+    for m in re.finditer(r"<p\b([^>]*)>(.*?)</p>", body, flags=re.S):
+        if re.search(r'class="[^"]*(eyebrow|label|kicker|caption|tag|meta|quote|credit|proposer)', m.group(1)):
+            continue
+        t = _strip(m.group(2))
+        if re.match(r"(Proposer|提案人)\s*[·・]", t):
+            continue
+        if len(t) >= floor:
+            if len(t) > limit:
+                cut = t[:limit]
+                stop = max(cut.rfind(c) for c in ("。", "，", ". ", ", ", "；"))
+                t = (cut[:stop + 1] if stop > limit * 0.5 else cut).rstrip(" ,，、") + "…"
+            return t
+    return None
+
+def last_content_date(rel):
+    """最後一次改內容的 commit 日期。換網址、補 meta 這類全站機械性 commit 不算。"""
+    import subprocess
+    try:
+        out = subprocess.run(
+            ["git", "log", "-1", "--format=%cI", "--invert-grep",
+             "--grep=搬到 Cloudflare", "--grep=4O 說明資料", "--", rel],
+            cwd=ROOT, capture_output=True, text=True, timeout=10).stdout.strip()
+    except Exception:
+        out = ""
+    return out or None
+
+def head_block(lang, tree_rel, title_text, content="", rel=""):
     self_url = url_of(lang, tree_rel)
     zh_url = url_of("zh", tree_rel)
     en_url = url_of("en", tree_rel)
@@ -195,9 +242,34 @@ def head_block(lang, tree_rel, title_text):
         f'<meta property="og:locale:alternate" content="{OG_LOCALE[other]}">',
         f'<meta property="og:title" content="{t}">',
         f'<meta property="og:url" content="{self_url}">',
+    ]
+    desc = own_description(content)
+    if desc is None:
+        desc = auto_description(content, lang)
+        if desc:
+            lines.append(f'<meta name="description" content="{html.escape(desc, quote=True)}">')
+    person_img = (PERSONS.get(tree_rel) or {}).get("image")
+    image = BASE_URL + "/" + person_img if person_img else DEFAULT_IMAGE
+    if desc:
+        lines.append(f'<meta property="og:description" content="{html.escape(desc, quote=True)}">')
+    lines += [
+        f'<meta property="og:image" content="{image}">',
         '<meta name="twitter:card" content="summary">',
         f'<script type="application/ld+json">{jsonld}</script>',
     ]
+    if tree_rel not in BACKEND_ONLY:
+        page = {"@context": "https://schema.org", "@type": "WebPage",
+                "name": title_text, "url": self_url,
+                "inLanguage": "zh-Hant" if lang == "zh" else "en",
+                "isPartOf": {"@type": "WebSite", "url": BASE_URL + "/"},
+                "author": ORG, "publisher": ORG, "image": image}
+        if desc:
+            page["description"] = desc
+        modified = last_content_date(rel)
+        if modified:
+            page["dateModified"] = modified
+        lines.append('<script type="application/ld+json">'
+                     + json.dumps(page, ensure_ascii=False, separators=(",", ":")) + '</script>')
     person = person_jsonld(lang, tree_rel)
     if person:
         lines.append(f'<script type="application/ld+json">{person}</script>')
@@ -212,9 +284,6 @@ def head_block(lang, tree_rel, title_text):
             '<!-- Google tag (gtag.js) -->',
             '<script async src="https://www.googletagmanager.com/gtag/js?id=G-1RCWR62S07"></script>',
             "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1RCWR62S07');</script>",
-            # Vercel Web Analytics + Speed Insights（需在 Vercel 專案後台開啟 Analytics 才會 serve script）
-            '<script defer src="/_vercel/insights/script.js"></script>',
-            '<script defer src="/_vercel/speed-insights/script.js"></script>',
         ]
     lines.append(HEAD_MARK[1])
     return "\n".join(lines)
@@ -307,7 +376,7 @@ def main():
         # head SEO/GEO
         tm = re.search(r'<title>(.*?)</title>', content, flags=re.S)
         title_text = tm.group(1).strip() if tm else SITE_NAME[lang]
-        content = inject_head(content, head_block(lang, tree_rel, title_text))
+        content = inject_head(content, head_block(lang, tree_rel, title_text, content, rel))
         with open(p, "w", encoding="utf-8") as f:
             f.write(content)
         stats[lang] += 1

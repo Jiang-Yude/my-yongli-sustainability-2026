@@ -7,7 +7,7 @@
  * 需要的環境變數（在 Vercel 專案 → Settings → Environment Variables 設定，
  * 絕對不要寫進程式碼或 commit）：
  *   ANTHROPIC_API_KEY  必填（Claude）
- *   ANTHROPIC_MODEL    選填，預設 claude-opus-5-5；換模型只改這個變數
+ *   ANTHROPIC_MODEL    選填，預設 claude-haiku-5-5；換模型只改這個變數
  *
  * 知識來源：./_knowledge.js（由 _build/twin_knowledge.py 產生）
  * 來源網頁更新後要重跑：cd v7 && python3 _build/twin_knowledge.py
@@ -44,6 +44,23 @@ const PERSONAS = {
     ].join("\n")
   }
 };
+
+// 對話框不渲染 Markdown，符號會原樣露出來
+const PLAIN_TEXT_RULE = "回答一律用純文字：不要用 Markdown，不要出現 **、#、-、*、` 這類符號，" +
+  "不用粗體、標題或項目符號清單。要分點就用「一、二、三」或「第一、第二」寫成短句，段落之間空一行。";
+
+// 保險：模型偶爾還是會帶符號，送出前清掉
+function stripMarkdown(t) {
+  return t
+    .replace(/\*\*(.+?)\*\*/g, "$1")
+    .replace(/__(.+?)__/g, "$1")
+    .replace(/`([^`]+)`/g, "$1")
+    .replace(/^#{1,6}\s*/gm, "")
+    .replace(/^\s*[-*•]\s+/gm, "・")
+    .replace(/\*/g, "")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
 
 const MAX_TURNS = 20;        // 一次最多帶幾則歷史
 const MAX_CHARS = 1500;      // 單則訊息長度上限
@@ -124,13 +141,14 @@ module.exports = async function handler(req, res) {
     return;
   }
 
-  var model = process.env.ANTHROPIC_MODEL || "claude-opus-5-5";
+  var model = process.env.ANTHROPIC_MODEL || "claude-haiku-5-5";
   var lang = body.lang === "en" ? "en" : "zh";
   var kb = (lang === "en" && KNOWLEDGE[persona + "_en"]) || KNOWLEDGE[persona] || "（無資料）";
   var systemText = PERSONAS[persona].prompt +
     (lang === "en"
       ? "\n\nThe visitor is reading the English edition of this site. Reply in English, keeping the same persona, tone limits and guardrails."
       : "") +
+    "\n\n" + PLAIN_TEXT_RULE +
     "\n\n===== 以下是你能依據的資料 =====\n" + kb;
 
   // Claude 要求 user 開頭、user/assistant 交替：丟掉開頭的招呼語，同角色連續訊息合併
@@ -151,12 +169,10 @@ module.exports = async function handler(req, res) {
 
   try {
     var client = new Anthropic({ apiKey: apiKey });
-    var data = await client.beta.messages.create({
+    var data = await client.messages.create({
       model: model,
       max_tokens: 4096,
-      output_config: { effort: "low" },   // 聊天短答，low 就夠
-      betas: ["server-side-fallback-2026-07-01"],
-      fallbacks: "default",
+      output_config: { effort: "medium" },
       // 知識庫很長且固定，快取起來省錢
       system: [{ type: "text", text: systemText, cache_control: { type: "ephemeral" } }],
       messages: chatMessages
@@ -166,6 +182,7 @@ module.exports = async function handler(req, res) {
       .filter(function (b) { return b.type === "text"; })
       .map(function (b) { return b.text; })
       .join("").trim();
+    reply = stripMarkdown(reply);
 
     if (!reply) {
       reply = "這個問題我這邊沒有足夠的資料可以回答，你可以看看網站上其他段落。";
