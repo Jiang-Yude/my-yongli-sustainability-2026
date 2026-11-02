@@ -8,8 +8,11 @@ import view from "../../../v7/api/view.js";
 const HANDLERS = { chat, "chat-log": chatLog, "stats-admin": statsAdmin, view };
 
 export async function onRequest(context) {
-  const handler = HANDLERS[context.params.name];
-  if (!handler) return new Response("Not found", { status: 404 });
+  const name = context.params.name;
+  if (typeof name !== "string" || !Object.hasOwn(HANDLERS, name)) {
+    return new Response("Not found", { status: 404 });
+  }
+  const handler = HANDLERS[name];
 
   const { request, env } = context;
   globalThis.process = globalThis.process || {};

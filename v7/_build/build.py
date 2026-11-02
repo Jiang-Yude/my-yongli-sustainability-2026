@@ -198,17 +198,32 @@ def auto_description(content, lang):
             return t
     return None
 
+def _body_text(page_html):
+    """正文純文字：去掉 build 注入的頁首、導覽、頁尾、script/style 與標籤，網域統一，
+    只要正文字面沒變就視為同一版內容。"""
+    t = re.sub(r"<!--SITE-(HEAD|HEADER|FOOTER):START-->.*?<!--SITE-\1:END-->", "", page_html, flags=re.S)
+    t = re.sub(r"<(head|script|style|header|footer|nav)\b.*?</\1>", "", t, flags=re.S | re.I)
+    t = t.replace("3481rctsi.vercel.app", "rctsi.3481.org")
+    return _strip(t)
+
 def last_content_date(rel):
-    """最後一次改內容的 commit 日期。換網址、補 meta 這類全站機械性 commit 不算。"""
+    """正文最後一次真的有改的 commit 日期：逐版比對正文純文字，跟前一版不同的最新那版。
+    只有一版就用那版（新建頁）；git 讀不到就回 None，不寫 dateModified。"""
     import subprocess
+    def git(*args):
+        return subprocess.run(["git", *args], cwd=ROOT, capture_output=True,
+                              text=True, timeout=30).stdout
     try:
-        out = subprocess.run(
-            ["git", "log", "-1", "--format=%cI", "--invert-grep",
-             "--grep=搬到 Cloudflare", "--grep=4O 說明資料", "--", rel],
-            cwd=ROOT, capture_output=True, text=True, timeout=10).stdout.strip()
+        log = [l.split(" ", 1) for l in git("log", "--format=%H %cI", "--", rel).splitlines() if l]
+        if not log:
+            return None
+        texts = [_body_text(git("show", f"{h}:v7/{rel}")) for h, _ in log]
     except Exception:
-        out = ""
-    return out or None
+        return None
+    for i, (h, date) in enumerate(log):
+        if i + 1 == len(log) or texts[i] != texts[i + 1]:
+            return date
+    return None
 
 def head_block(lang, tree_rel, title_text, content="", rel=""):
     self_url = url_of(lang, tree_rel)

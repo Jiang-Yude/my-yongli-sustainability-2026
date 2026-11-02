@@ -49,15 +49,20 @@ const PERSONAS = {
 const PLAIN_TEXT_RULE = "回答一律用純文字：不要用 Markdown，不要出現 **、#、-、*、` 這類符號，" +
   "不用粗體、標題或項目符號清單。要分點就用「一、二、三」或「第一、第二」寫成短句，段落之間空一行。";
 
-// 保險：模型偶爾還是會帶符號，送出前清掉
+// 保險：模型偶爾還是會帶符號，送出前清掉。只拿掉成對的格式標記，
+// 網址或內文裡單獨出現的 * 不動
 function stripMarkdown(t) {
   return t
-    .replace(/\*\*(.+?)\*\*/g, "$1")
-    .replace(/__(.+?)__/g, "$1")
-    .replace(/`([^`]+)`/g, "$1")
-    .replace(/^#{1,6}\s*/gm, "")
+    .replace(/```[^\n]*\n([\s\S]*?)```/g, "$1")
+    .replace(/\[([^\]\n]+)\]\((https?:\/\/[^)\s]+)\)/g, function (_, text, url) {
+      return text === url ? url : text + "（" + url + "）";
+    })
+    .replace(/\*\*(?=\S)([^*\n]+?)(?<=\S)\*\*/g, "$1")
+    .replace(/__(?=\S)([^_\n]+?)(?<=\S)__/g, "$1")
+    .replace(/(^|[^\w*\/])\*(?=\S)([^*\n]+?)(?<=\S)\*(?![\w*])/g, "$1$2")
+    .replace(/`([^`\n]+)`/g, "$1")
+    .replace(/^#{1,6}\s+/gm, "")
     .replace(/^\s*[-*•]\s+/gm, "・")
-    .replace(/\*/g, "")
     .replace(/\n{3,}/g, "\n\n")
     .trim();
 }
