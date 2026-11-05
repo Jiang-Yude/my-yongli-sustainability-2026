@@ -2149,3 +2149,7 @@ th {
   .lang-switch{ margin-left:auto; order:1; padding:4px 11px; font-size:13px; }
   .nav-toggle{ order:2; margin-left:10px; }
 }
+
+/* 2026-11 導覽錨點：跳到區塊時不要被上方固定導覽列蓋住 */
+section[id],[id].section{scroll-margin-top:96px}
+html{scroll-padding-top:96px}
