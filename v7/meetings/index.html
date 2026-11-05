@@ -281,6 +281,8 @@
 <link rel="stylesheet" href="/assets/css/yongli-secretary.css">
 <script src="/assets/js/yongli-secretary.js" data-rel="/" defer></script>
 <script src="/assets/js/views.js" defer></script>
+<!-- 全站手機選單開關（2026-11 AUT 修正：原本只有首頁有） -->
+<script>(function(){var b=document.querySelector('.nav-toggle'),n=document.querySelector('.topbar nav');if(!b||!n||b.dataset.navBound)return;b.dataset.navBound='1';b.addEventListener('click',function(){var o=b.classList.toggle('open');n.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');});n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){b.classList.remove('open');n.classList.remove('open');b.setAttribute('aria-expanded','false');});});})();</script>
 <!--SITE-FOOTER:END-->
 
 <div class="mt-lb" id="mt-lb" role="dialog" aria-modal="true" aria-label="照片放大"><button class="x" aria-label="關閉">×</button><button class="p" aria-label="上一張">‹</button><img alt=""><button class="n" aria-label="下一張">›</button><p class="mt-lb-cap"></p></div>
