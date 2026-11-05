@@ -1,0 +1,7 @@
+# 1. sitemap.xml 新增（網址不帶 .html，跟伺服器實際網址一致）
+  <url><loc>https://rctsi.3481.org/meetings/</loc><lastmod>2026-11-05</lastmod></url>
+  <url><loc>https://rctsi.3481.org/profiles/20-jiang-yude</loc><lastmod>2026-11-05</lastmod></url>
+  <url><loc>https://rctsi.3481.org/profiles/21-ivy-huang</loc><lastmod>2026-11-05</lastmod></url>
+
+# 2. llms.txt 的 Core Pages 加一行
+- [例會與活動紀錄](https://rctsi.3481.org/meetings/)：2024-2026 兩個年度、42 次例會與 54 場活動的海報與照片，含 41 場講者與講題

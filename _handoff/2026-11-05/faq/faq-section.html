@@ -1,0 +1,70 @@
+<!-- ===== 永力社常見問題（FAQ）=====
+放置建議：首頁最下方（頁尾之前），或「關於永力社」最下方，二選一，不要兩頁都放（避免重複內容）。
+1. 把 <section> 整段貼進頁面。
+2. 最下面那段 FAQPage 結構化資料（ld+json）跟著一起貼，放在 body 裡也有效。
+3. 上線前請社內確認每一題答案。FAQPage 結構化資料必須跟頁面上看得到的文字一致，改答案時兩邊一起改。
+資料來源：官網 llms.txt、台北永續影響力扶輪社內部規章（2026.07.01 編訂）、25-26 年度行事曆、例會海報。
+-->
+<style>
+.faq-list{max-width:820px}
+.faq-item{border:1px solid var(--line);border-radius:var(--radius);background:var(--bg-card);margin:0 0 12px;overflow:hidden}
+.faq-item summary{cursor:pointer;list-style:none;padding:16px 48px 16px 20px;position:relative;font-weight:600;font-size:16.5px;line-height:1.6;color:var(--ink)}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";position:absolute;right:20px;top:14px;font-size:22px;color:var(--gold);font-weight:400}
+.faq-item[open] summary::after{content:"−"}
+.faq-item .faq-a{padding:0 20px 18px;color:var(--ink-soft);line-height:1.9}
+.faq-item .faq-a p{margin:0 0 8px}
+.faq-updated{color:var(--ink-mute);font-size:13px;margin-top:8px}
+</style>
+<section class="profile-section" id="faq"> <div class="container">
+<h2>常見問題</h2>
+<div class="faq-list">
+
+<details class="faq-item" open><summary>永力社是什麼樣的扶輪社？</summary>
+<div class="faq-a"><p>永力社是國際扶輪 3481 地區的「台北永續影響力扶輪社」，2024 年 11 月正式授證成立，是一個以創造永續影響力為核心使命的新創扶輪社。</p>
+<p>每位社友把自己的職業專業連結 ESG 趨勢，落實在職業、社務、服務與生活實踐中。這個網站是我們 2024-2026 年度的永續影響力報告書。</p></div></details>
+
+<details class="faq-item"><summary>永力社的例會什麼時候開？</summary>
+<div class="faq-a"><p>每個月兩次例會：</p>
+<p>實體例會在每月第二週的星期六，中午 11:30 到下午 2:00，餐敘後 12:50 正式開始。</p>
+<p>線上例會在每月第四週的星期一，晚上 7:30 到 9:00，使用 Zoom，8:00 正式開始。</p>
+<p>遇到國定假日或特殊活動會調整，以每次的例會公告為準。歷次例會可以看<a href="meetings/">例會與活動紀錄</a>。</p></div></details>
+
+<details class="faq-item"><summary>不是社友，可以參加例會嗎？</summary>
+<div class="faq-a"><p>可以。例會歡迎來賓參加，海報上都會列出講者、講題與報名方式。</p>
+<p>線上例會用 Zoom，實體例會會酌收餐費（歷次海報多為新台幣 1,000 元）。實際費用與報名請以當次海報為準，或來信 ri3481rctsi@gmail.com 詢問。</p></div></details>
+
+<details class="faq-item"><summary>要怎麼加入永力社？</summary>
+<div class="faq-a"><p>先來參加例會認識大家。新社友在 6 個月內出席例會（含爐邊會議、陽光例會或社區服務）合計 3 次以上，由推薦社友協助提出申請。</p>
+<p>接著由社員委員會主委會同社長、秘書與推薦社友進行職業拜訪與國際扶輪介紹，提報理事會通過、徵詢全體社友無異議後，繳交入社費與常年社費，在例會上宣誓授證，正式入社。</p></div></details>
+
+<details class="faq-item"><summary>扶輪的五大服務是什麼？</summary>
+<div class="faq-a"><p>五大服務是社務服務、職業服務、社區服務、國際服務、青少年服務。</p>
+<p>永力社特別重視職業服務：把每位社友本業的專業，直接變成對社會有用的服務。社友在五大服務的投入，可以在<a href="members.html">社友介紹</a>與<a href="cases.html">服務計畫</a>裡看到。</p></div></details>
+
+<details class="faq-item"><summary>SROI 是什麼？永力社怎麼衡量影響力？</summary>
+<div class="faq-a"><p>SROI 是社會投資報酬率，用來估算每投入 1 元資源，創造了多少社會價值。</p>
+<p>例如社友李琪 Vicky 推動的淡水女路，SROI 為 2.68 倍。完整的衡量方法寫在<a href="methodology.html">影響力衡量方法</a>。</p></div></details>
+
+<details class="faq-item"><summary>台北永續影響力共融衛星社跟永力社是什麼關係？</summary>
+<div class="faq-a"><p>共融衛星社是永力社的衛星社，2025 年 11 月創社，由陳美華 Irene 擔任創社主席。衛星社的社友一起參與永力社的例會與服務。</p></div></details>
+
+<details class="faq-item"><summary>這份報告書的內容可以引用嗎？</summary>
+<div class="faq-a"><p>可以分享，但必須標示來源。本報告書採 CC BY-NC-ND 4.0 授權：可分享、必須標示來源、不得商用、不得改作。</p>
+<p>引用時請註明「台北永續影響力扶輪社 2024-2026 永續影響力報告書」，並附上本站網址。</p></div></details>
+
+</div>
+<p class="faq-updated">最後更新：2026 年 11 月</p>
+</div> </section>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"永力社是什麼樣的扶輪社？","acceptedAnswer":{"@type":"Answer","text":"永力社是國際扶輪 3481 地區的「台北永續影響力扶輪社」，2024 年 11 月正式授證成立，是一個以創造永續影響力為核心使命的新創扶輪社。每位社友把自己的職業專業連結 ESG 趨勢，落實在職業、社務、服務與生活實踐中。這個網站是我們 2024-2026 年度的永續影響力報告書。"}},
+{"@type":"Question","name":"永力社的例會什麼時候開？","acceptedAnswer":{"@type":"Answer","text":"每個月兩次例會：實體例會在每月第二週的星期六，中午 11:30 到下午 2:00，餐敘後 12:50 正式開始。線上例會在每月第四週的星期一，晚上 7:30 到 9:00，使用 Zoom，8:00 正式開始。遇到國定假日或特殊活動會調整，以每次的例會公告為準。"}},
+{"@type":"Question","name":"不是社友，可以參加例會嗎？","acceptedAnswer":{"@type":"Answer","text":"可以。例會歡迎來賓參加，海報上都會列出講者、講題與報名方式。線上例會用 Zoom，實體例會會酌收餐費（歷次海報多為新台幣 1,000 元）。實際費用與報名請以當次海報為準，或來信 ri3481rctsi@gmail.com 詢問。"}},
+{"@type":"Question","name":"要怎麼加入永力社？","acceptedAnswer":{"@type":"Answer","text":"先來參加例會認識大家。新社友在 6 個月內出席例會（含爐邊會議、陽光例會或社區服務）合計 3 次以上，由推薦社友協助提出申請。接著由社員委員會主委會同社長、秘書與推薦社友進行職業拜訪與國際扶輪介紹，提報理事會通過、徵詢全體社友無異議後，繳交入社費與常年社費，在例會上宣誓授證，正式入社。"}},
+{"@type":"Question","name":"扶輪的五大服務是什麼？","acceptedAnswer":{"@type":"Answer","text":"五大服務是社務服務、職業服務、社區服務、國際服務、青少年服務。永力社特別重視職業服務：把每位社友本業的專業，直接變成對社會有用的服務。"}},
+{"@type":"Question","name":"SROI 是什麼？永力社怎麼衡量影響力？","acceptedAnswer":{"@type":"Answer","text":"SROI 是社會投資報酬率，用來估算每投入 1 元資源，創造了多少社會價值。例如社友李琪 Vicky 推動的淡水女路，SROI 為 2.68 倍。完整的衡量方法寫在本站的影響力衡量方法頁。"}},
+{"@type":"Question","name":"台北永續影響力共融衛星社跟永力社是什麼關係？","acceptedAnswer":{"@type":"Answer","text":"共融衛星社是永力社的衛星社，2025 年 11 月創社，由陳美華 Irene 擔任創社主席。衛星社的社友一起參與永力社的例會與服務。"}},
+{"@type":"Question","name":"這份報告書的內容可以引用嗎？","acceptedAnswer":{"@type":"Answer","text":"可以分享，但必須標示來源。本報告書採 CC BY-NC-ND 4.0 授權：可分享、必須標示來源、不得商用、不得改作。引用時請註明「台北永續影響力扶輪社 2024-2026 永續影響力報告書」，並附上本站網址。"}}
+]}</script>
+<!-- ===== FAQ END ===== -->
