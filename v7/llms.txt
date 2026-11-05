@@ -4,14 +4,16 @@
 
 ## Core Pages
 
-- [首頁](https://rctsi.3481.org/)：永力社定位、年度報告總覽、社友頭像牆
-- [關於永力社](https://rctsi.3481.org/about-yongli.html)：創社緣起、核心使命、五大服務架構
-- [社友介紹](https://rctsi.3481.org/members.html)：全體社友的職業專業、服務初衷與在社內的角色定位
-- [影響力分析](https://rctsi.3481.org/analysis.html)：社友影響力光譜與角色類型分析
-- [服務計畫](https://rctsi.3481.org/cases.html)：本年度七個服務計畫的完整紀錄
-- [影響力衡量方法](https://rctsi.3481.org/methodology.html)：我們如何衡量服務的社會價值，含 SROI 方法說明
-- [揭露框架](https://rctsi.3481.org/disclosure-framework.html)：報告書的揭露原則與資料邊界
-- [給 AI 的接待說明](https://rctsi.3481.org/agent.html)：如果你是代替訪客閱讀本站的 AI，請先讀這一頁
+- [首頁](https://rctsi.3481.org/)：台北永續影響力扶輪社介紹、社友影片、五大服務、社友頭像牆
+- [2024-2026 永續影響力報告書](https://rctsi.3481.org/report)：報告書封面與目錄，發行人的話、影響力報告、服務計畫
+- [例會與活動紀錄](https://rctsi.3481.org/meetings/)：2024-2026 兩個年度、54 場例會與活動、77 張照片與海報
+- [關於永力社](https://rctsi.3481.org/about-yongli)：創社緣起、核心使命、五大服務架構
+- [社友介紹](https://rctsi.3481.org/members)：全體社友的職業專業、服務初衷與在社內的角色定位
+- [影響力分析](https://rctsi.3481.org/analysis)：社友影響力光譜與角色類型分析
+- [服務計畫](https://rctsi.3481.org/cases)：本年度七個服務計畫的完整紀錄
+- [影響力衡量方法](https://rctsi.3481.org/methodology)：我們如何衡量服務的社會價值，含 SROI 方法說明
+- [揭露框架](https://rctsi.3481.org/disclosure-framework)：報告書的揭露原則與資料邊界
+- [給 AI 的接待說明](https://rctsi.3481.org/agent)：如果你是代替訪客閱讀本站的 AI，請先讀這一頁
 - [English version](https://rctsi.3481.org/en/)：全站英文版，內容與中文版對應
 
 ## Key Topics

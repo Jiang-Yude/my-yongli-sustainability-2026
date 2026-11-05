@@ -25,7 +25,7 @@ import members_render
 BASE_URL = "https://rctsi.3481.org"   # ⚠️ V7 若換網址，改這裡再 rebuild
 
 SITE_NAME = {
-    "zh": "台北永續影響力扶輪社｜永續影響力報告書",
+    "zh": "台北永續影響力扶輪社",
     "en": "Rotary Club of Taipei Sustainable Impact",
 }
 OG_LOCALE = {"zh": "zh_TW", "en": "en_US"}
@@ -70,7 +70,17 @@ def page_vars(abspath):
     return rel, lang, tree_rel, REL, lang_href
 
 def url_of(lang, tree_rel):
-    return BASE_URL + "/" + ("en/" if lang == "en" else "") + tree_rel
+    """對外網址一律不帶 .html：Cloudflare Pages 會把 .html 308 轉到無副檔名，
+    canonical／hreflang／og:url／sitemap／JSON-LD 都要寫最終網址（2026-11 4O 修正）。"""
+    path = tree_rel
+    if path == "index.html" or path.endswith("/index.html"):
+        path = path[:-len("index.html")]
+    elif path.endswith(".html"):
+        path = path[:-len(".html")]
+    return BASE_URL + "/" + ("en/" if lang == "en" else "") + path
+
+
+LASTMOD = {}   # (lang, tree_rel) → 正文最後修改日，給 sitemap 的 <lastmod>
 
 
 def _person_index():
@@ -288,8 +298,17 @@ def head_block(lang, tree_rel, title_text, content="", rel=""):
         modified = last_content_date(rel, content)
         if modified:
             page["dateModified"] = modified
+            LASTMOD[(lang, tree_rel)] = modified[:10]
         lines.append('<script type="application/ld+json">'
                      + json.dumps(page, ensure_ascii=False, separators=(",", ":")) + '</script>')
+    if tree_rel == "index.html":
+        org = {"@context": "https://schema.org", "@type": "Organization",
+               "name": "Rotary Club of Taipei Sustainable Impact",
+               "alternateName": ["台北永續影響力扶輪社", "永力社"],
+               "url": BASE_URL + "/", "logo": DEFAULT_IMAGE, "foundingDate": "2024",
+               "parentOrganization": {"@type": "Organization", "name": "Rotary International District 3481"}}
+        lines.append('<script type="application/ld+json">'
+                     + json.dumps(org, ensure_ascii=False, separators=(",", ":")) + '</script>')
     person = person_jsonld(lang, tree_rel)
     if person:
         lines.append(f'<script type="application/ld+json">{person}</script>')
@@ -333,9 +352,11 @@ def write_sitemap(pages_meta):
             alt = (f'    <xhtml:link rel="alternate" hreflang="zh-Hant" href="{zh_url}"/>\n'
                    f'    <xhtml:link rel="alternate" hreflang="en" href="{en_url}"/>\n'
                    f'    <xhtml:link rel="alternate" hreflang="x-default" href="{zh_url}"/>\n')
+        lm = LASTMOD.get((lang, tree_rel))
         entries.append(
             "  <url>\n"
             f"    <loc>{loc}</loc>\n"
+            + (f"    <lastmod>{lm}</lastmod>\n" if lm else "")
             + alt +
             "  </url>"
         )

@@ -1,363 +1,474 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://rctsi.3481.org/about-yongli.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/about-yongli.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/about-yongli.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/about-yongli.html"/>
+    <loc>https://rctsi.3481.org/about-yongli</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/about-yongli"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/about-yongli"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/about-yongli"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/agent.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/agent.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/agent.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/agent.html"/>
+    <loc>https://rctsi.3481.org/agent</loc>
+    <lastmod>2026-08-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/agent"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/agent"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/agent"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/analysis.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/analysis.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/analysis.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/analysis.html"/>
+    <loc>https://rctsi.3481.org/analysis</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/analysis"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/analysis"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/analysis"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/cases.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/cases.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/cases.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/cases.html"/>
+    <loc>https://rctsi.3481.org/cases</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/cases"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/cases"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/cases"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/disclosure-framework.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/disclosure-framework.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/disclosure-framework.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/disclosure-framework.html"/>
+    <loc>https://rctsi.3481.org/disclosure-framework</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/disclosure-framework"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/disclosure-framework"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/disclosure-framework"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/en/about-yongli.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/about-yongli.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/about-yongli.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/about-yongli.html"/>
+    <loc>https://rctsi.3481.org/en/about-yongli</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/about-yongli"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/about-yongli"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/about-yongli"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/en/agent.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/agent.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/agent.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/agent.html"/>
+    <loc>https://rctsi.3481.org/en/agent</loc>
+    <lastmod>2026-08-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/agent"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/agent"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/agent"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/en/analysis.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/analysis.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/analysis.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/analysis.html"/>
+    <loc>https://rctsi.3481.org/en/analysis</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/analysis"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/analysis"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/analysis"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/en/cases.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/cases.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/cases.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/cases.html"/>
+    <loc>https://rctsi.3481.org/en/cases</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/cases"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/cases"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/cases"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/en/disclosure-framework.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/disclosure-framework.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/disclosure-framework.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/disclosure-framework.html"/>
+    <loc>https://rctsi.3481.org/en/disclosure-framework</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/disclosure-framework"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/disclosure-framework"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/disclosure-framework"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/en/index.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/index.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/index.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/index.html"/>
+    <loc>https://rctsi.3481.org/en/</loc>
+    <lastmod>2026-08-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/en/members.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/members.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/members.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/members.html"/>
+    <loc>https://rctsi.3481.org/en/meetings/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/meetings/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/meetings/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/meetings/"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/en/methodology.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/methodology.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/methodology.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/methodology.html"/>
+    <loc>https://rctsi.3481.org/en/members</loc>
+    <lastmod>2026-08-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/members"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/members"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/members"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/en/profiles/01-cp-lin.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/01-cp-lin.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/01-cp-lin.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/01-cp-lin.html"/>
+    <loc>https://rctsi.3481.org/en/methodology</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/methodology"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/methodology"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/methodology"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/en/profiles/02-vicky-lee.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/02-vicky-lee.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/02-vicky-lee.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/02-vicky-lee.html"/>
+    <loc>https://rctsi.3481.org/en/profiles/01-cp-lin</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/01-cp-lin"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/01-cp-lin"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/01-cp-lin"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/en/profiles/03-derek-huang.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/03-derek-huang.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/03-derek-huang.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/03-derek-huang.html"/>
+    <loc>https://rctsi.3481.org/en/profiles/02-vicky-lee</loc>
+    <lastmod>2026-08-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/02-vicky-lee"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/02-vicky-lee"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/02-vicky-lee"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/en/profiles/04-helen-lai.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/04-helen-lai.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/04-helen-lai.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/04-helen-lai.html"/>
+    <loc>https://rctsi.3481.org/en/profiles/03-derek-huang</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/03-derek-huang"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/03-derek-huang"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/03-derek-huang"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/en/profiles/05-lisa-lin.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/05-lisa-lin.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/05-lisa-lin.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/05-lisa-lin.html"/>
+    <loc>https://rctsi.3481.org/en/profiles/04-helen-lai</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/04-helen-lai"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/04-helen-lai"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/04-helen-lai"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/en/profiles/06-james-gao.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/06-james-gao.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/06-james-gao.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/06-james-gao.html"/>
+    <loc>https://rctsi.3481.org/en/profiles/05-lisa-lin</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/05-lisa-lin"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/05-lisa-lin"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/05-lisa-lin"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/en/profiles/07-nick-lin.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/07-nick-lin.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/07-nick-lin.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/07-nick-lin.html"/>
+    <loc>https://rctsi.3481.org/en/profiles/06-james-gao</loc>
+    <lastmod>2026-07-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/06-james-gao"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/06-james-gao"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/06-james-gao"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/en/profiles/08-rich-huang.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/08-rich-huang.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/08-rich-huang.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/08-rich-huang.html"/>
+    <loc>https://rctsi.3481.org/en/profiles/07-nick-lin</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/07-nick-lin"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/07-nick-lin"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/07-nick-lin"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/en/profiles/09-vincent-chen.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/09-vincent-chen.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/09-vincent-chen.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/09-vincent-chen.html"/>
+    <loc>https://rctsi.3481.org/en/profiles/08-rich-huang</loc>
+    <lastmod>2026-08-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/08-rich-huang"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/08-rich-huang"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/08-rich-huang"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/en/profiles/10-albee-chang.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/10-albee-chang.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/10-albee-chang.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/10-albee-chang.html"/>
+    <loc>https://rctsi.3481.org/en/profiles/09-vincent-chen</loc>
+    <lastmod>2026-08-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/09-vincent-chen"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/09-vincent-chen"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/09-vincent-chen"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/en/profiles/13-teresa-yao.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/13-teresa-yao.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/13-teresa-yao.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/13-teresa-yao.html"/>
+    <loc>https://rctsi.3481.org/en/profiles/10-albee-chang</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/10-albee-chang"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/10-albee-chang"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/10-albee-chang"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/en/profiles/15-wayne-lin.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/15-wayne-lin.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/15-wayne-lin.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/15-wayne-lin.html"/>
+    <loc>https://rctsi.3481.org/en/profiles/13-teresa-yao</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/13-teresa-yao"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/13-teresa-yao"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/13-teresa-yao"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/en/profiles/16-eric-cheng.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/16-eric-cheng.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/16-eric-cheng.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/16-eric-cheng.html"/>
+    <loc>https://rctsi.3481.org/en/profiles/15-wayne-lin</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/15-wayne-lin"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/15-wayne-lin"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/15-wayne-lin"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/en/profiles/18-meiya-cheng.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/18-meiya-cheng.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/18-meiya-cheng.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/18-meiya-cheng.html"/>
+    <loc>https://rctsi.3481.org/en/profiles/16-eric-cheng</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/16-eric-cheng"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/16-eric-cheng"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/16-eric-cheng"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/en/profiles/19-irene-chen.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/19-irene-chen.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/19-irene-chen.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/19-irene-chen.html"/>
+    <loc>https://rctsi.3481.org/en/profiles/18-meiya-cheng</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/18-meiya-cheng"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/18-meiya-cheng"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/18-meiya-cheng"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/en/services/01-zhongyi.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/services/01-zhongyi.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/services/01-zhongyi.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/services/01-zhongyi.html"/>
+    <loc>https://rctsi.3481.org/en/profiles/19-irene-chen</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/19-irene-chen"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/19-irene-chen"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/19-irene-chen"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/en/services/02-tamsui.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/services/02-tamsui.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/services/02-tamsui.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/services/02-tamsui.html"/>
+    <loc>https://rctsi.3481.org/en/profiles/20-jiang-yude</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/20-jiang-yude"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/20-jiang-yude"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/20-jiang-yude"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/en/services/03-eco-edu.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/services/03-eco-edu.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/services/03-eco-edu.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/services/03-eco-edu.html"/>
+    <loc>https://rctsi.3481.org/en/profiles/21-ivy-huang</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/21-ivy-huang"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/21-ivy-huang"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/21-ivy-huang"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/en/services/04-life-warrior.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/services/04-life-warrior.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/services/04-life-warrior.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/services/04-life-warrior.html"/>
+    <loc>https://rctsi.3481.org/en/report</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/report"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/report"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/report"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/en/services/05-dental.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/services/05-dental.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/services/05-dental.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/services/05-dental.html"/>
+    <loc>https://rctsi.3481.org/en/services/01-zhongyi</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/services/01-zhongyi"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/services/01-zhongyi"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/services/01-zhongyi"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/en/services/06-community.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/services/06-community.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/services/06-community.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/services/06-community.html"/>
+    <loc>https://rctsi.3481.org/en/services/02-tamsui</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/services/02-tamsui"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/services/02-tamsui"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/services/02-tamsui"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/en/services/07-zero-waste-mazu.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/services/07-zero-waste-mazu.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/services/07-zero-waste-mazu.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/services/07-zero-waste-mazu.html"/>
+    <loc>https://rctsi.3481.org/en/services/03-eco-edu</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/services/03-eco-edu"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/services/03-eco-edu"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/services/03-eco-edu"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/index.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/index.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/index.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/index.html"/>
+    <loc>https://rctsi.3481.org/en/services/04-life-warrior</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/services/04-life-warrior"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/services/04-life-warrior"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/services/04-life-warrior"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/members.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/members.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/members.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/members.html"/>
+    <loc>https://rctsi.3481.org/en/services/05-dental</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/services/05-dental"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/services/05-dental"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/services/05-dental"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/methodology.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/methodology.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/methodology.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/methodology.html"/>
+    <loc>https://rctsi.3481.org/en/services/06-community</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/services/06-community"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/services/06-community"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/services/06-community"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/profiles/01-cp-lin.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/01-cp-lin.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/01-cp-lin.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/01-cp-lin.html"/>
+    <loc>https://rctsi.3481.org/en/services/07-zero-waste-mazu</loc>
+    <lastmod>2026-07-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/services/07-zero-waste-mazu"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/services/07-zero-waste-mazu"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/services/07-zero-waste-mazu"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/profiles/02-vicky-lee.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/02-vicky-lee.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/02-vicky-lee.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/02-vicky-lee.html"/>
+    <loc>https://rctsi.3481.org/</loc>
+    <lastmod>2026-08-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/profiles/03-derek-huang.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/03-derek-huang.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/03-derek-huang.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/03-derek-huang.html"/>
+    <loc>https://rctsi.3481.org/meetings/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/meetings/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/meetings/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/meetings/"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/profiles/04-helen-lai.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/04-helen-lai.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/04-helen-lai.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/04-helen-lai.html"/>
+    <loc>https://rctsi.3481.org/members</loc>
+    <lastmod>2026-08-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/members"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/members"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/members"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/profiles/05-lisa-lin.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/05-lisa-lin.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/05-lisa-lin.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/05-lisa-lin.html"/>
+    <loc>https://rctsi.3481.org/methodology</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/methodology"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/methodology"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/methodology"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/profiles/06-james-gao.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/06-james-gao.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/06-james-gao.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/06-james-gao.html"/>
+    <loc>https://rctsi.3481.org/profiles/01-cp-lin</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/01-cp-lin"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/01-cp-lin"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/01-cp-lin"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/profiles/07-nick-lin.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/07-nick-lin.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/07-nick-lin.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/07-nick-lin.html"/>
+    <loc>https://rctsi.3481.org/profiles/02-vicky-lee</loc>
+    <lastmod>2026-08-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/02-vicky-lee"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/02-vicky-lee"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/02-vicky-lee"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/profiles/08-rich-huang.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/08-rich-huang.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/08-rich-huang.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/08-rich-huang.html"/>
+    <loc>https://rctsi.3481.org/profiles/03-derek-huang</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/03-derek-huang"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/03-derek-huang"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/03-derek-huang"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/profiles/09-vincent-chen.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/09-vincent-chen.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/09-vincent-chen.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/09-vincent-chen.html"/>
+    <loc>https://rctsi.3481.org/profiles/04-helen-lai</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/04-helen-lai"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/04-helen-lai"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/04-helen-lai"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/profiles/10-albee-chang.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/10-albee-chang.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/10-albee-chang.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/10-albee-chang.html"/>
+    <loc>https://rctsi.3481.org/profiles/05-lisa-lin</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/05-lisa-lin"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/05-lisa-lin"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/05-lisa-lin"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/profiles/13-teresa-yao.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/13-teresa-yao.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/13-teresa-yao.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/13-teresa-yao.html"/>
+    <loc>https://rctsi.3481.org/profiles/06-james-gao</loc>
+    <lastmod>2026-07-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/06-james-gao"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/06-james-gao"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/06-james-gao"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/profiles/15-wayne-lin.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/15-wayne-lin.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/15-wayne-lin.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/15-wayne-lin.html"/>
+    <loc>https://rctsi.3481.org/profiles/07-nick-lin</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/07-nick-lin"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/07-nick-lin"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/07-nick-lin"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/profiles/16-eric-cheng.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/16-eric-cheng.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/16-eric-cheng.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/16-eric-cheng.html"/>
+    <loc>https://rctsi.3481.org/profiles/08-rich-huang</loc>
+    <lastmod>2026-08-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/08-rich-huang"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/08-rich-huang"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/08-rich-huang"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/profiles/18-meiya-cheng.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/18-meiya-cheng.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/18-meiya-cheng.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/18-meiya-cheng.html"/>
+    <loc>https://rctsi.3481.org/profiles/09-vincent-chen</loc>
+    <lastmod>2026-08-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/09-vincent-chen"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/09-vincent-chen"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/09-vincent-chen"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/profiles/19-irene-chen.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/19-irene-chen.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/19-irene-chen.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/19-irene-chen.html"/>
+    <loc>https://rctsi.3481.org/profiles/10-albee-chang</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/10-albee-chang"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/10-albee-chang"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/10-albee-chang"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/services/01-zhongyi.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/services/01-zhongyi.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/services/01-zhongyi.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/services/01-zhongyi.html"/>
+    <loc>https://rctsi.3481.org/profiles/13-teresa-yao</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/13-teresa-yao"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/13-teresa-yao"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/13-teresa-yao"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/services/02-tamsui.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/services/02-tamsui.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/services/02-tamsui.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/services/02-tamsui.html"/>
+    <loc>https://rctsi.3481.org/profiles/15-wayne-lin</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/15-wayne-lin"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/15-wayne-lin"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/15-wayne-lin"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/services/03-eco-edu.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/services/03-eco-edu.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/services/03-eco-edu.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/services/03-eco-edu.html"/>
+    <loc>https://rctsi.3481.org/profiles/16-eric-cheng</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/16-eric-cheng"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/16-eric-cheng"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/16-eric-cheng"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/services/04-life-warrior.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/services/04-life-warrior.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/services/04-life-warrior.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/services/04-life-warrior.html"/>
+    <loc>https://rctsi.3481.org/profiles/18-meiya-cheng</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/18-meiya-cheng"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/18-meiya-cheng"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/18-meiya-cheng"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/services/05-dental.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/services/05-dental.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/services/05-dental.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/services/05-dental.html"/>
+    <loc>https://rctsi.3481.org/profiles/19-irene-chen</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/19-irene-chen"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/19-irene-chen"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/19-irene-chen"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/services/06-community.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/services/06-community.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/services/06-community.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/services/06-community.html"/>
+    <loc>https://rctsi.3481.org/profiles/20-jiang-yude</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/20-jiang-yude"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/20-jiang-yude"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/20-jiang-yude"/>
   </url>
   <url>
-    <loc>https://rctsi.3481.org/services/07-zero-waste-mazu.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/services/07-zero-waste-mazu.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/services/07-zero-waste-mazu.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/services/07-zero-waste-mazu.html"/>
+    <loc>https://rctsi.3481.org/profiles/21-ivy-huang</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/profiles/21-ivy-huang"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/profiles/21-ivy-huang"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/profiles/21-ivy-huang"/>
+  </url>
+  <url>
+    <loc>https://rctsi.3481.org/report</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/report"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/report"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/report"/>
+  </url>
+  <url>
+    <loc>https://rctsi.3481.org/services/01-zhongyi</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/services/01-zhongyi"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/services/01-zhongyi"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/services/01-zhongyi"/>
+  </url>
+  <url>
+    <loc>https://rctsi.3481.org/services/02-tamsui</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/services/02-tamsui"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/services/02-tamsui"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/services/02-tamsui"/>
+  </url>
+  <url>
+    <loc>https://rctsi.3481.org/services/03-eco-edu</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/services/03-eco-edu"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/services/03-eco-edu"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/services/03-eco-edu"/>
+  </url>
+  <url>
+    <loc>https://rctsi.3481.org/services/04-life-warrior</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/services/04-life-warrior"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/services/04-life-warrior"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/services/04-life-warrior"/>
+  </url>
+  <url>
+    <loc>https://rctsi.3481.org/services/05-dental</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/services/05-dental"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/services/05-dental"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/services/05-dental"/>
+  </url>
+  <url>
+    <loc>https://rctsi.3481.org/services/06-community</loc>
+    <lastmod>2026-05-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/services/06-community"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/services/06-community"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/services/06-community"/>
+  </url>
+  <url>
+    <loc>https://rctsi.3481.org/services/07-zero-waste-mazu</loc>
+    <lastmod>2026-07-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://rctsi.3481.org/services/07-zero-waste-mazu"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rctsi.3481.org/en/services/07-zero-waste-mazu"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rctsi.3481.org/services/07-zero-waste-mazu"/>
   </url>
 </urlset>

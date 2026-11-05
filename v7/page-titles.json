@@ -43,6 +43,10 @@
   "title": "Rotary Club of Taipei Sustainable Impact",
   "lang": "en"
  },
+ "/en/meetings/": {
+  "title": "Meetings and Activities",
+  "lang": "en"
+ },
  "/en/members.html": {
   "title": "Member Profiles",
   "lang": "en"
@@ -111,6 +115,18 @@
   "title": "Irene Chen",
   "lang": "en"
  },
+ "/en/profiles/20-jiang-yude.html": {
+  "title": "Jiang Yu-de (Coach Jiang)",
+  "lang": "en"
+ },
+ "/en/profiles/21-ivy-huang.html": {
+  "title": "Dr. Ivy Huang (Huang Min-jing)",
+  "lang": "en"
+ },
+ "/en/report.html": {
+  "title": "2024-2026 Sustainability Impact Report",
+  "lang": "en"
+ },
  "/en/services/01-zhongyi.html": {
   "title": "Taipei Zhongyi Elementary School Little Farm Environmental Education Service Project",
   "lang": "en"
@@ -140,7 +156,11 @@
   "lang": "en"
  },
  "/": {
-  "title": "永力社",
+  "title": "台北永續影響力扶輪社",
+  "lang": "zh"
+ },
+ "/meetings/": {
+  "title": "例會與活動紀錄 — 永力扶輪社 2024-2026 永續報告",
   "lang": "zh"
  },
  "/members.html": {
@@ -209,6 +229,18 @@
  },
  "/profiles/19-irene-chen.html": {
   "title": "陳美華 Irene",
+  "lang": "zh"
+ },
+ "/profiles/20-jiang-yude.html": {
+  "title": "江昱德 Jiang",
+  "lang": "zh"
+ },
+ "/profiles/21-ivy-huang.html": {
+  "title": "黃敏菁 Dr. Ivy",
+  "lang": "zh"
+ },
+ "/report.html": {
+  "title": "2024-2026 永續影響力報告書",
   "lang": "zh"
  },
  "/services/01-zhongyi.html": {

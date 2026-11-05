@@ -2,3 +2,7 @@ name = "3481rctsi"
 pages_build_output_dir = "public"
 compatibility_date = "2025-09-01"
 compatibility_flags = ["nodejs_compat"]
+
+[[r2_buckets]]
+binding = "VIDEOS"
+bucket_name = "rctsi-videos"

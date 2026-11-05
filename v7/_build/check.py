@@ -47,7 +47,8 @@ for page in html_pages():
     content = open(page, encoding="utf-8", errors="ignore").read()
     for m in re.finditer(r'(?:href|src)="([^"#?]+)', content):
         u = m.group(1)
-        if u.startswith(("http", "mailto:", "tel:", "data:", "//", "javascript:", "/_vercel")):
+        # /video/ 是 Cloudflare Pages Function 從 R2 串流的影片，不在靜態檔案裡
+        if u.startswith(("http", "mailto:", "tel:", "data:", "//", "javascript:", "/_vercel", "/video/")):
             continue
         ref_count += 1
         if u.startswith("/"):
@@ -81,8 +82,9 @@ else:
     sitemap = open(sitemap_path, encoding="utf-8").read()
     for loc in re.findall(r"<loc>([^<]+)</loc>", sitemap):
         rel = loc.replace(BASE_URL, "").lstrip("/")
-        target = os.path.join(ROOT, unquote(rel)) if rel else os.path.join(ROOT, "index.html")
-        if not os.path.exists(target):
+        r = unquote(rel)
+        cands = [os.path.join(ROOT, r + "index.html")] if (not r or r.endswith("/")) else [os.path.join(ROOT, r), os.path.join(ROOT, r + ".html")]
+        if not any(os.path.exists(c) for c in cands):
             errors.append(f"[sitemap] 列了不存在的頁面：{loc}")
 
 # 4. build 標記完整

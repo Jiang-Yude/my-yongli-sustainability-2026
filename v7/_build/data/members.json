@@ -239,6 +239,43 @@
    "cards": [
     {
      "dataRole": null,
+     "profile": "profiles/20-jiang-yude.html",
+     "avatarStyle": "background-image:url(assets/img/members/jiang.webp)",
+     "name": {
+      "zh": "江昱德 Jiang",
+      "en": "Jiang Yu-de (Coach Jiang)"
+     },
+     "role": {
+      "zh": "報告書知識架構 · 網頁設計",
+      "en": "Report Information Architecture · Web Design"
+     },
+     "profileBtn": {
+      "zh": "完整人物誌",
+      "en": "Full profile"
+     },
+     "theme": {
+      "zh": "把專業工作者腦中的經驗整理出來，讓 AI 學會你的方式，也讓社友的故事可以被傳承。江江教練 AI 知識管理 創辦人。",
+      "en": "Organizing the experience in professionals' heads so that AI can learn their way of working, and so that Members' stories can be passed on. Founder of Coach Jiang AI Knowledge Management."
+     },
+     "chips": [
+      {
+       "cls": "svc-chip-vocational",
+       "label": {
+        "zh": "職業服務",
+        "en": "Vocational Service"
+       }
+      },
+      {
+       "cls": "svc-chip-club",
+       "label": {
+        "zh": "社務服務",
+        "en": "Club Service"
+       }
+      }
+     ]
+    },
+    {
+     "dataRole": null,
      "profile": "profiles/02-vicky-lee.html",
      "avatarStyle": "background-image:url(assets/img/members/vicky.jpg)",
      "name": {
@@ -437,6 +474,43 @@
        "label": {
         "zh": "社務服務",
         "en": "Club Service"
+       }
+      }
+     ]
+    },
+    {
+     "dataRole": null,
+     "profile": "profiles/21-ivy-huang.html",
+     "avatarStyle": "background-image:url(assets/img/members/ivy.jpg)",
+     "name": {
+      "zh": "黃敏菁 Dr. Ivy",
+      "en": "Dr. Ivy Huang (Huang Min-jing)"
+     },
+     "role": {
+      "zh": "WELLINA 品牌創辦人 · 芳香教育",
+      "en": "Founder of WELLINA · Aromatherapy Education"
+     },
+     "profileBtn": {
+      "zh": "完整人物誌",
+      "en": "Full profile"
+     },
+     "theme": {
+      "zh": "從社福夥伴種下的香草，到企業參與的調香課，把芳香教育走成一條共好的產業鏈。Dr. Ivy × WELLINA 國際芳香療癒與品牌香氣首席整合顧問。",
+      "en": "From herbs planted by social welfare partners to scent-blending classes joined by companies, she has turned aromatherapy education into an industry chain that benefits everyone. Dr. Ivy × WELLINA, Chief Integration Consultant for International Aromatherapy and Brand Fragrance."
+     },
+     "chips": [
+      {
+       "cls": "svc-chip-vocational",
+       "label": {
+        "zh": "職業服務",
+        "en": "Vocational Service"
+       }
+      },
+      {
+       "cls": "svc-chip-community",
+       "label": {
+        "zh": "社區服務",
+        "en": "Community Service"
        }
       }
      ]
