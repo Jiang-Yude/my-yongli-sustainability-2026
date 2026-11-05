@@ -40,7 +40,7 @@ Founded in 2024 in Rotary International District 3481, the Rotary Club of Taipei
 
 #### Our Attitude Toward This Report
 
-We choose to approach this annual report with a degree of humility. Rather than deliberately emphasizing that this is a sustainability impact report, we present it as a faithful record of the Club's Members during the 2024-2026 year, throughout their participation in Club affairs and the execution of service projects.
+We choose to approach this annual report with a degree of humility. This is a sustainability impact report, but it does not claim to follow corporate ESG standards or any specific social impact assessment framework. It is a faithful record of the Club's Members during the 2024-2026 year, throughout their participation in Club affairs and the execution of service projects.
 
 The Club is not a corporate organization, nor is it an ESG report centered on the disclosure of operating performance. At the same time, it is not entirely equivalent to a social impact report prepared according to a specific assessment method. For the Club, this report presents how Members continually respond to the needs of the community, society, and the environment through professional expertise, Rotary service, and partner collaboration, and organize the results of service, the learning process, and the trajectory of impact into a record that can be seen, learned from, and continued.
 
